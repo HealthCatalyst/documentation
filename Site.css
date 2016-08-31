@@ -1,0 +1,835 @@
+﻿body {
+  padding-top: 90px;
+  padding-bottom: 20px;
+  background-color: #f0f3f6;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Set padding to keep content from hitting the edges */
+
+.body-content {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.btn-success {
+  background-color: #00a75a;
+  border-color: #00a75a;
+}
+.btn-danger {
+  background-color: #ed1c24;
+  border-color: #ed1c24;
+}
+.test-link {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333333;
+  white-space: nowrap;
+}
+  .test-link:hover {
+    background-color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    color: #262626;
+  }
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+
+.dl-horizontal dt { white-space: normal; }
+
+/* Set width on the form input elements since they're 100% wide by default */
+
+input,
+select,
+textarea { max-width: 280px; }
+
+.navbar-logo-background-brand { background-image: url("../Images/leadingWiselyLogo.png"); }
+
+.selected-interval { color: deepskyblue; }
+
+.interval-btn:hover,
+.interval-btn:focus,
+.interval-btn:active {
+  color: deepskyblue !important;
+  background-color: #fff !important;
+  border-color: #ccc !important;
+  outline: none !important;
+  -webkit-box-shadow: 0 0 0;
+  -ms-box-shadow: 0 0 0;
+  box-shadow: 0 0 0;
+}
+
+.interval-position {
+  width: 267px;
+  float: right;
+}
+
+/* Chart specific items - should probably be in their own stylesheet*/
+
+/* ReSharper disable once Html.TagNotResolved */
+.chart rect { fill: steelblue; }
+
+/* ReSharper disable once Html.TagNotResolved */
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+/* ReSharper disable once Html.TagNotResolved */
+.axis path,
+/* ReSharper disable once Html.TagNotResolved */
+.axis line {
+  fill: none;
+  stroke: #000;
+  -webkit-shape-rendering: crispEdges;
+  -moz-shape-rendering: crispEdges;
+  -ms-shape-rendering: crispEdges;
+  -o-shape-rendering: crispEdges;
+  shape-rendering: crispEdges;
+}
+
+/* ReSharper disable once Html.TagNotResolved */
+.axis text { font-size: 11px; }
+
+/*.x.axis path {display: none;}*/
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.dot {
+  fill: steelblue;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.bar { fill: steelblue; }
+
+.cell {
+  width: 100%;
+  height: 100%;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 25px 10px;
+  -webkit-box-shadow:1px 2px 5px #c2c5c8,
+             -1px 2px 5px #c2c5c8;
+  -ms-box-shadow:1px 2px 5px #c2c5c8,
+             -1px 2px 5px #c2c5c8;
+  box-shadow:1px 2px 5px #c2c5c8,
+     -1px 2px 5px #c2c5c8;
+  background-color: white;
+}
+
+.cell .title {
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+.card {
+  width: 100%;
+  height: 9em;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px 20px;
+  -webkit-box-shadow:1px 2px 5px #c2c5c8,
+             -1px 2px 5px #c2c5c8;
+  -ms-box-shadow:1px 2px 5px #c2c5c8,
+             -1px 2px 5px #c2c5c8;
+  box-shadow:1px 2px 5px #c2c5c8,
+     -1px 2px 5px #c2c5c8;
+  background-color: white;
+}
+
+.card-share {
+  background-image: url("../Images/WatchlistShare.png");
+  background-repeat: no-repeat;
+  width: 1.5em;
+  height: 1.5em;
+  -ms-background-size: contain;
+  background-size: contain;
+  display: inline-block;
+}
+
+.card-info {
+  background-image: url("../Images/WatchlistInfo.png");
+  background-repeat: no-repeat;
+  width: 1.5em;
+  height: 1.5em;
+  -ms-background-size: contain;
+  background-size: contain;
+  display: inline-block;
+}
+
+.configure-card {
+  background-image: url("../Images/ConfigureEdit.png");
+  background-repeat: no-repeat;
+  height: 1.5em;
+  -ms-background-size: contain;
+  background-size: contain;
+  display: inline-block;
+  padding-left: 30px;
+  top: 1.5em;
+  position: relative;
+  background-position: left bottom;
+  height: 25px;
+}
+
+.remove-card {
+  background-image: url("../Images/ConfigureRemove.png");
+  background-repeat: no-repeat;
+  height: 1.5em;
+  -ms-background-size: contain;
+  background-size: contain;
+  display: inline-block;
+  padding-left: 30px;
+  top: 1.5em;
+  position: relative;
+  float: right;
+  background-position: left bottom;
+  height: 25px;
+}
+
+.arrow-up-green {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid #00a75a;
+  display: inline-block;
+}
+
+.arrow-up-red {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid #ed1c24;
+  display: inline-block;
+}
+
+.arrow-down-red {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid #ed1c24;
+  display: inline-block;
+}
+
+.arrow-down-green {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid #00a75a;
+  display: inline-block;
+}
+
+.arrow-neutral {
+  width: 0;
+  height: 0;
+  border: 10px solid gray;
+  margin: 3px 8px;
+  display: inline-block;
+}
+
+.card .arrow {
+  display: inline-block;
+  /*font-size: 3em;
+  font-weight: 300;*/
+}
+
+.card .value {
+  display: inline-block;
+  font-size: 3em;
+  font-weight: 300;
+  padding-left: 10px;
+}
+
+.card a {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin:0 0;
+  vertical-align: middle;
+  color: slategrey;
+}
+.card a:hover {
+      color: #384655;
+    text-decoration: none;
+}
+.card .goal {
+  font-size: small;
+  font-weight: bold;
+  color: #00a75a;
+}
+
+.card .nogoal { height: 18px; }
+
+.card .share {
+  text-align: right;
+  font-size: 1.2em;
+}
+.card .share-no-data {
+   text-align: right;
+  font-size: 1.2em;
+  color: #c2c5c8;
+}
+.card .title {
+  font-size: 1.5em;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.card .title-no-data {
+  font-size: 1.5em;
+  font-weight: 900;
+  color: #c2c5c8;
+  white-space: nowrap;
+}
+.card .text-no-data {
+  font-size: 1.25em;
+  color: #c2c5c8;
+  line-height: 50px;
+  text-align: center;
+}
+.card .small-text-no-data {
+  font-size: 1em;
+  color: #c2c5c8;  
+  text-align: center;
+}
+.card .text-right {
+  text-align: right;
+}
+
+.card .bold {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.card .bottom {
+  float: none;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.card .green { color: #00a75a; }
+
+.card .red { color: #ed1c24; }
+
+.card .neutral { color: gray; }
+
+.card-body {
+  height: 8em;
+  width: 80%;
+  margin: 0 auto;
+}
+.configure-card-modal  .modal-dialog{
+    top: 10%;
+    z-index: 1050;
+    width: 50%;
+    height: 80%;
+    margin: 0 auto;
+}
+.configure-chart-modal  .modal-dialog{
+    top: 10%;
+    z-index: 1050;
+    width: 55%;
+    height: 80%;
+    margin: 0 auto;
+}
+.configure-filters-modal .modal-dialog{
+    top: 10%;
+    z-index: 1050;
+    width: 60%;
+    height: 80%;
+    margin: 0 auto;
+}
+.notification {
+  margin: 0;
+  display: inline-block;
+  width: 100%;
+}
+
+.notification-body {
+  overflow-y: auto;
+  height: 30em;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.middle-title {
+  padding: 5px 15px;
+  -ms-border-radius: 0;
+  border-radius: 0;
+    background-color: #c2c2c2;
+    color: white;
+    font-weight: bold;
+}
+
+.notification-component {
+  width: 100%;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  -webkit-box-shadow:1px 2px 5px #c2c5c8,
+             -1px 2px 5px #c2c5c8;
+  -ms-box-shadow:1px 2px 5px #c2c5c8,
+             -1px 2px 5px #c2c5c8;
+  box-shadow:1px 2px 5px #c2c5c8,
+     -1px 2px 5px #c2c5c8;
+  background-color: white;
+}
+
+.notification-content { border-bottom: 1px solid #cccccc; }
+
+.notification-arrow {
+   -webkit-transform: translateY(50%);
+  -moz-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  -o-transform: translateY(50%);
+  transform: translateY(50%);
+}
+
+.notification-up-green {
+  background-image: url("../Images/NotificationsGreenUp.png");
+  background-repeat: no-repeat;
+  height: 2em;
+  -ms-background-size: contain;
+  background-size: contain;
+}
+
+.notification-down-green {
+  background-image: url("../Images/NotificationsGreenDown.png");
+  background-repeat: no-repeat;
+  height: 2em;
+  -ms-background-size: contain;
+  background-size: contain;
+}
+
+.notification-up-red {
+  background-image: url("../Images/NotificationsRedUp.png");
+  background-repeat: no-repeat;
+  height: 2em;
+  -ms-background-size: contain;
+  background-size: contain;
+}
+
+.notification-down-red {
+  background-image: url("../Images/NotificationsRedDown.png");
+  background-repeat: no-repeat;
+  height: 2em;
+  -ms-background-size: contain;
+  background-size: contain;
+}
+
+.notification-hide {
+  background-image: url("../Images/NotificationsHide.png");
+  background-repeat: no-repeat;
+  height: 3em;
+  width: 1em;
+  -ms-background-size: contain;
+  background-size: contain;
+}
+
+.notification-modal {
+    position: fixed;
+    top: 10%;
+    left: 18.5%;
+    z-index: 1050;
+    width: 80%;
+    height: 80%;
+    margin-left: -10%;
+}
+.green { color: #00a75a; }
+
+.red { color: #ed1c24; }
+
+.orange { color: #f1803c; }
+
+.notification-arrow  a { color: slategrey; }
+
+.notification-arrow  a:active { color: #384655; }
+
+.notification-arrow  a:hover {
+  color: #384655;
+  text-decoration: none;
+}
+
+.notification-line.ng-move,
+.notification-line.ng-leave {
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: all linear 0.5s;
+  -ms-transition: all linear 0.5s;
+  -o-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+
+.notification-line.ng-leave.ng-leave-active,
+.notification-line.ng-move {
+  -ms-opacity: 0;
+  opacity: 0;
+  max-height: 0;
+}
+
+.notification-line.ng-leave,
+.notification-line.ng-move.ng-move-active {
+  -ms-opacity: 1;
+  opacity: 1;
+  max-height: 300px;
+}
+
+.notification-body ul {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 0;
+}
+.notification-component .title { font-size: 2em; }
+
+.configure-notifications {
+  background-image: url("../Images/ConfigureEdit.png");
+  background-repeat: no-repeat;
+  height: 5em;
+  -ms-background-size: contain;
+  background-size: contain;
+  padding-left: 30px;
+  top: 1.5em;
+  position: relative;
+  background-position: left bottom;
+  height: 25px;
+}
+
+.configure-notifications a {
+  font-family: "Open Sans", sans-serif;
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 0 0;
+    vertical-align: middle;
+    color: slategrey;
+}
+.configure-notifications a:hover {
+  color: #384655;
+  text-decoration: none;
+}
+.hide-notifications a {
+  font-family: "Open Sans", sans-serif;
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 0 0;
+    vertical-align: middle;
+    color: slategrey;
+}
+
+.hide-notifications a:hover {
+  color: #384655;
+  text-decoration: none;
+}
+
+.hide-notifications {
+  background-image: url("../Images/ConfigureRemove.png");
+  background-repeat: no-repeat;
+  height: 5em;
+  -ms-background-size: contain;
+  background-size: contain;
+  padding-left: 30px;
+  top: 1.5em;
+  position: relative;
+  background-position: left bottom;
+  height: 25px;
+}
+
+.configure-notifications-modal .modal-dialog {
+   /*width: 1000px;*/
+    /*position: fixed;*/
+    top: 10%;
+    left: 18.5%;
+    z-index: 1050;
+    width: 80%;
+    height: 80%;
+    margin-left: -10%;
+}
+.add-panel {
+    float: right;
+    color: #00a75a;
+    font-weight: bold;
+    font-size: 18px;
+}
+.add-list {
+   list-style-type: none;
+}
+.watchlistItemPanel {
+  background-image: url("../Images/AddPanel/WatchlistItem.png");
+}
+.linechartPanel {
+  background-image: url("../Images/AddPanel/LineGraph.png");
+}
+.barchartPanel {
+  background-image: url("../Images/AddPanel/BarChart.png");
+}
+a.add-item {  
+  background-repeat: no-repeat;
+  -ms-background-size: contain;
+  background-size: contain;
+  padding-left: 50px;
+  background-position: left bottom;
+  font-size: 1.5em;
+  color: black;
+}
+li.add-item {
+  top: 1.5em;
+  position: relative;
+  height: 5em;
+}
+.add-item:hover {
+  text-decoration: none;
+}
+.chart-metric > td {
+  padding: 10px 10px 10px 0;
+}
+.chart-metric-head > td {
+  padding-right:10px;
+}
+.chart-share {
+  display: inline-block;
+  float: right;
+  font-family: "Open Sans", sans-serif;
+  padding-right: 10px;
+}
+.centered {
+  width: 100%;
+  text-align: center;
+}
+.block-centered {
+  margin: 0 auto;
+}
+
+.standard-font {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5em;
+  vertical-align: middle;
+}
+ul.no-decorations li{
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+ul.inline li{
+  display: inline;
+}
+.btn-transparent {
+  color: slategray;
+  background-color: transparent;
+}
+
+.btn-transparent:hover, .btn-transparent:active {
+  color: #515353;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+}
+
+.alert-table td { vertical-align: middle !important; }
+
+/* form styling */
+
+#form-container {
+  background: #fff;
+  margin-bottom: 20px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#form-container .page-header {
+  background: white;
+  margin: 0;
+  padding: 30px;
+  -ms-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -ms-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* numbered buttons */
+
+#status-buttons a {
+  color: slategray;
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#status-buttons a:hover, #status-buttons a:active , #status-buttons a.active  {
+   text-decoration: none;
+  color: darkslategray;
+  font-weight: bold;
+}
+
+/* we will style the span as the circled number */
+
+  #status-buttons span {
+    color: white;
+    background: slategray;
+    display: block;
+    height: 30px;
+    margin: 0 auto 10px;
+    padding-top: 5px;
+    width: 30px;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+.name-group {
+  padding-bottom: 50px;
+}
+.form-group-more-margin {
+  margin: 15px 0 30px 0;
+}
+.alert-active {
+  color: green;
+}
+.alert-disabled {
+  color: red;
+}
+
+.chart-configuration {
+  width: 100%;
+  height: 15em;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+}
+ .dataTables_scrollBody{
+   border-top: 1px solid #111;
+}
+.card-configuration {
+  width: 100%;
+  height: 9em;
+  background-color: white;
+}
+.vertical-center {
+  -webkit-transform: translateY(50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+    top: 40%;
+}
+
+.news-rss {
+  width: 100%;
+  height: 100%;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
+  padding:10px;
+  -webkit-box-shadow: 1px 2px 5px #c2c5c8,
+                      -1px 2px 5px #c2c5c8;
+  -ms-box-shadow: 1px 2px 5px #c2c5c8,
+                  -1px 2px 5px #c2c5c8;
+  box-shadow: 1px 2px 5px #c2c5c8,
+              -1px 2px 5px #c2c5c8;
+  background-color: white;
+}
+.news-rss .title { font-size: 2em; }
+
+/* ANIMATION STYLINGS
+============================================================================= */
+
+#create-notification-form {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  padding: 30px;
+}
+
+#form-views { width: auto; }
+
+/* basic styling for entering and leaving */
+
+/* left and right added to ensure full width */
+
+#form-views.ng-enter,
+#form-views.ng-leave {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+
+/* enter animation */
+
+#form-views.ng-enter {
+  -webkit-animation: slideInRight 0.5s both ease;
+  -moz-animation: slideInRight 0.5s both ease;
+  -ms-animation: slideInRight 0.5s both ease;
+  -o-animation: slideInRight 0.5s both ease;
+  animation: slideInRight 0.5s both ease;
+}
+
+/* leave animation */
+
+#form-views.ng-leave {
+  -webkit-animation: slideOutLeft 0.5s both ease;
+  -moz-animation: slideOutLeft 0.5s both ease;
+  -ms-animation: slideOutLeft 0.5s both ease;
+  -o-animation: slideOutLeft 0.5s both ease;
+  animation: slideOutLeft 0.5s both ease;
+}
+
+.firefox-width {
+  width: 100px;
+}
+/* ANIMATIONS
+============================================================================= */
+
+/* slide out to the left */
+
+@keyframes slideOutLeft {
+  to { transform: translateX(-200%); }
+}
+
+@-moz-keyframes slideOutLeft {
+  to { -moz-transform: translateX(-200%); }
+}
+
+@-webkit-keyframes slideOutLeft {
+  to { -webkit-transform: translateX(-200%); }
+}
+
+/* slide in from the right */
+
+@keyframes slideInRight {
+  from { transform: translateX(200%); }
+
+  to { transform: translateX(0); }
+}
+
+@-moz-keyframes slideInRight {
+  from { -moz-transform: translateX(200%); }
+
+  to { -moz-transform: translateX(0); }
+}
+
+@-webkit-keyframes slideInRight {
+  from { -webkit-transform: translateX(200%); }
+
+  to { -webkit-transform: translateX(0); }
+}
