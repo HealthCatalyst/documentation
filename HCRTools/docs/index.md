@@ -1,6 +1,6 @@
 # Welcome to HCRTools
 
-The purpose? Get you started with healthcare machine learning in R.
+This package will get you started with healthcare machine learning in R.
 
 ## What can you do with it?
 
