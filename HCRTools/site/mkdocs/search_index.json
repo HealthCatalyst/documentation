@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome to HCRTools\n\n\nThe purpose? Get you started in R with healthcare machine learning.\n\n\nWhat can you do with it?\n\n\n\n\nCompare models based on your data.\n\n\nSave and deploy a model.\n\n\nPerform risk-adjusted comparisons.\n\n\nDo trend analysis following Nelson rules.\n\n\nImprove sparse data via longitudinal imputation.\n\n\n\n\nHow is it specific to healthcare?\n\n\n\n\nLongitudinal algorithms\n\n\nLongitudinal imputation\n\n\nUndersampling for unbalanced classes\n\n\nA focus on SQL Server\n\n\n\n\nHow to download\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.\n\n\n\nHow to install",
+            "text": "Welcome to HCRTools\n\n\nThe purpose? Get you started with healthcare machine learning in R.\n\n\nWhat can you do with it?\n\n\n\n\nCompare models based on your data.\n\n\nSave and deploy a model.\n\n\nPerform risk-adjusted comparisons.\n\n\nDo trend analysis following Nelson rules.\n\n\nImprove sparse data via longitudinal imputation.\n\n\n\n\nHow is it specific to healthcare?\n\n\n\n\nLongitudinal algorithms\n\n\nLongitudinal imputation\n\n\nUndersampling for unbalanced classes\n\n\nA focus on SQL Server and Oracle\n\n\n\n\nHow to download\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.\n\n\n\nHow to install",
             "title": "Home"
         },
         {
             "location": "/#welcome-to-hcrtools",
-            "text": "The purpose? Get you started in R with healthcare machine learning.",
+            "text": "The purpose? Get you started with healthcare machine learning in R.",
             "title": "Welcome to HCRTools"
         },
         {
@@ -17,7 +17,7 @@
         },
         {
             "location": "/#how-is-it-specific-to-healthcare",
-            "text": "Longitudinal algorithms  Longitudinal imputation  Undersampling for unbalanced classes  A focus on SQL Server",
+            "text": "Longitudinal algorithms  Longitudinal imputation  Undersampling for unbalanced classes  A focus on SQL Server and Oracle",
             "title": "How is it specific to healthcare?"
         },
         {
