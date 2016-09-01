@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome to HCRTools\n\n\nThe purpose? Get you started in R with healthcare machine learning.\n\n\nWhat can you do with it?\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\nwhat up\n - Awesome command of coolness.\n\n\n\n\nHow to download\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.\n\n\n\nHow to install",
+            "text": "Welcome to HCRTools\n\n\nThe purpose? Get you started in R with healthcare machine learning.\n\n\nWhat can you do with it?\n\n\n\n\nCompare models based on your data.\n\n\nSave and deploy a model.\n\n\nPerform risk-adjusted comparisons\n\n\nDo trend analysis following Nelson rules\n\n\nImprove sparse data via longitudinal imputation \n\n\n\n\nHow is it specific to healthcare?\n\n\n\n\nLongitudinal algorithms\n\n\nLongitudinal imputation\n\n\nUndersampling for unbalanced classes\n\n\nA focus on SQL Server\n\n\n\n\nHow to download\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.\n\n\n\nHow to install",
             "title": "Home"
         },
         {
@@ -12,8 +12,13 @@
         },
         {
             "location": "/#what-can-you-do-with-it",
-            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.  what up  - Awesome command of coolness.",
+            "text": "Compare models based on your data.  Save and deploy a model.  Perform risk-adjusted comparisons  Do trend analysis following Nelson rules  Improve sparse data via longitudinal imputation",
             "title": "What can you do with it?"
+        },
+        {
+            "location": "/#how-is-it-specific-to-healthcare",
+            "text": "Longitudinal algorithms  Longitudinal imputation  Undersampling for unbalanced classes  A focus on SQL Server",
+            "title": "How is it specific to healthcare?"
         },
         {
             "location": "/#how-to-download",

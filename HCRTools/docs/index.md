@@ -4,11 +4,18 @@ The purpose? Get you started in R with healthcare machine learning.
 
 ## What can you do with it?
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-* `what up` - Awesome command of coolness.
+* Compare models based on your data.
+* Save and deploy a model.
+* Perform risk-adjusted comparisons
+* Do trend analysis following Nelson rules
+* Improve sparse data via longitudinal imputation 
+
+## How is it specific to healthcare?
+
+* Longitudinal algorithms
+* Longitudinal imputation
+* Undersampling for unbalanced classes
+* A focus on SQL Server
 
 ## How to download
 
