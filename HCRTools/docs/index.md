@@ -1,6 +1,6 @@
 # Welcome to HCRTools
 
-The purpose? Get you started in R with healthcare machine learning.
+The purpose? Get you started with healthcare machine learning in R.
 
 ## What can you do with it?
 
@@ -15,7 +15,7 @@ The purpose? Get you started in R with healthcare machine learning.
 * Longitudinal algorithms
 * Longitudinal imputation
 * Undersampling for unbalanced classes
-* A focus on SQL Server
+* A focus on SQL Server and Oracle
 
 ## How to download
 
