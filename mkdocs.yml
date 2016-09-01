@@ -1,0 +1,5 @@
+site_name: My Docs!
+pages:
+- Home: docs/index.md
+- About: docs/about.md
+theme: readthedocs
