@@ -9,6 +9,7 @@ The purpose? Get you started with healthcare machine learning in R.
 * Perform risk-adjusted comparisons.
 * Do trend analysis following Nelson rules.
 * Improve sparse data via longitudinal imputation.
+* Something else!
 
 ## How is it specific to healthcare?
 
