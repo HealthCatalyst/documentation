@@ -2,4 +2,6 @@ site_name: HCRTools documentation!
 pages:
 - Home: index.md
 - About: about.md
+repo_url: https://github.com/HealthCatalystSLC/HCRTools
+repo_name: 'GitHub'
 theme: readthedocs
