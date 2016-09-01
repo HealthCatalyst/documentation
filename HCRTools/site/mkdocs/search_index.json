@@ -2,23 +2,28 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\nwhat up\n - Awesome command of coolness.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
+            "text": "Welcome to HCRTools\n\n\nThe purpose? Get you started in R with healthcare machine learning.\n\n\nWhat can you do with it?\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\nwhat up\n - Awesome command of coolness.\n\n\n\n\nHow to download\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.\n\n\n\nHow to install",
             "title": "Home"
         },
         {
-            "location": "/#welcome-to-mkdocs",
-            "text": "For full documentation visit  mkdocs.org .",
-            "title": "Welcome to MkDocs"
+            "location": "/#welcome-to-hcrtools",
+            "text": "The purpose? Get you started in R with healthcare machine learning.",
+            "title": "Welcome to HCRTools"
         },
         {
-            "location": "/#commands",
+            "location": "/#what-can-you-do-with-it",
             "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.  what up  - Awesome command of coolness.",
-            "title": "Commands"
+            "title": "What can you do with it?"
         },
         {
-            "location": "/#project-layout",
+            "location": "/#how-to-download",
             "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
-            "title": "Project layout"
+            "title": "How to download"
+        },
+        {
+            "location": "/#how-to-install",
+            "text": "",
+            "title": "How to install"
         },
         {
             "location": "/about/",

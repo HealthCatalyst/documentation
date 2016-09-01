@@ -1,8 +1,8 @@
-# Welcome to MkDocs
+# Welcome to HCRTools
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+The purpose? Get you started in R with healthcare machine learning.
 
-## Commands
+## What can you do with it?
 
 * `mkdocs new [dir-name]` - Create a new project.
 * `mkdocs serve` - Start the live-reloading docs server.
@@ -10,9 +10,12 @@ For full documentation visit [mkdocs.org](http://mkdocs.org).
 * `mkdocs help` - Print this help message.
 * `what up` - Awesome command of coolness.
 
-## Project layout
+## How to download
 
     mkdocs.yml    # The configuration file.
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+
+
+## How to install
