@@ -1,5 +1,0 @@
-site_name: HCPyTools documentation!
-pages:
-- Home: docs/index.md
-- About: docs/about.md
-theme: readthedocs
