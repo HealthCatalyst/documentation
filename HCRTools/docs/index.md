@@ -6,9 +6,9 @@ The purpose? Get you started in R with healthcare machine learning.
 
 * Compare models based on your data.
 * Save and deploy a model.
-* Perform risk-adjusted comparisons
-* Do trend analysis following Nelson rules
-* Improve sparse data via longitudinal imputation 
+* Perform risk-adjusted comparisons.
+* Do trend analysis following Nelson rules.
+* Improve sparse data via longitudinal imputation.
 
 ## How is it specific to healthcare?
 
