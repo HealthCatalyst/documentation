@@ -14,8 +14,8 @@ This package will get you started with healthcare machine learning in R.
 
 ## How is it specific to healthcare?
 
-* Longitudinal algorithms
 * Longitudinal imputation
+* Risk-adjusted comparisons
 * A focus on SQL Server
 
 ------------------
