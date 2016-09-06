@@ -8,5 +8,5 @@ In other words, while you might have great data, it has to be in a form that the
 
 ## How can HCRTools help me prepare data prior to model-creation?
 
-* Via [longitudinal imputation](/model-pre-processing/longitudinal-imputation). Think of this as a way to person-specific values forward in time.
+* Via [longitudinal imputation](/model-pre-processing/longitudinal-imputation). Think of this as a way to pull person-specific values forward in time.
 * Via [seasonality handling](/model-pre-processing/seasonality-handling). Think of this as a way to make a date-time column model-ready. 
