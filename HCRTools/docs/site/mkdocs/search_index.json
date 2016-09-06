@@ -24,11 +24,6 @@
             "location": "/#how-to-install",
             "text": "Work in the console of RStudio or RGui   Grab prerequisites   install.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lubridate',\n'pROC','R6','ranger','ROCR','RODBC'),repos =  https://cran.cnr.berkeley.edu/ )   Install HCRTools   library(devtools)\ndevtools::install_github(repo='HealthCatalystSLC/HCRTools')",
             "title": "How to install"
-        },
-        {
-            "location": "/about/",
-            "text": "301 Moved Permanently\n\n\n\n\n301 Moved Permanently\n\n\nnginx/1.6.2",
-            "title": "About"
         }
     ]
 }

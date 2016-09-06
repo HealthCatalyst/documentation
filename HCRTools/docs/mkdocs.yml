@@ -1,0 +1,10 @@
+site_name: HCRTools documentation!
+repo_url: https://github.com/HealthCatalystSLC/HCRTools
+repo_name: 'GitHub'
+theme: readthedocs
+site_descritpion: 'Documentation for HCRTools, the R library for healthcare machine learning'
+docs_dir: 'templates'
+
+
+pages:
+- Home: index.md
