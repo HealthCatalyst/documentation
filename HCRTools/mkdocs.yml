@@ -11,7 +11,7 @@ pages:
   - Where do I begin?: getting-started/where-do-i-begin.md
   - FAQ: getting-started/FAQ.md
 - Model Pre-processing:
-  - Pre-processing overview: model-pre-processing/pre-processing-overview.md
+  - Feature engineering overview: model-pre-processing/feature-eng-overview.md
   - Longitudinal Imputation: model-pre-processing/longitudinal-imputation.md
   - Seasonality Handling: model-pre-processing/seasonality-handling.md
 - Comparing and Deploying Models:

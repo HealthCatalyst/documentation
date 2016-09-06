@@ -61,12 +61,12 @@
             "title": "FAQ"
         },
         {
-            "location": "/model-pre-processing/pre-processing-overview/",
+            "location": "/model-pre-processing/feature-eng-overview/",
             "text": "Overview of pre-processing",
-            "title": "Pre-processing overview"
+            "title": "Feature engineering overview"
         },
         {
-            "location": "/model-pre-processing/pre-processing-overview/#overview-of-pre-processing",
+            "location": "/model-pre-processing/feature-eng-overview/#overview-of-pre-processing",
             "text": "",
             "title": "Overview of pre-processing"
         },
