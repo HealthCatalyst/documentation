@@ -94,7 +94,11 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#overview-of-pre-processing">Overview of pre-processing</a></li>
+                <li class="toctree-l3"><a href="#overview-of-pre-processing-and-feature-engineering">Overview of pre-processing and feature engineering</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-is-feature-engineering">What is feature engineering?</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-can-hcrtools-help-me-prepare-data-prior-to-model-creation">How can HCRTools help me prepare data prior to model-creation?</a></li>
                 
             
             </ul>
@@ -210,7 +214,15 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="overview-of-pre-processing">Overview of pre-processing</h1>
+                <h1 id="overview-of-pre-processing-and-feature-engineering">Overview of pre-processing and feature engineering</h1>
+<h2 id="what-is-feature-engineering">What is feature engineering?</h2>
+<p>From wikipedia: "Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work."</p>
+<p>In other words, while you might have great data, it has to be in a form that the algorithms can use to make a model.</p>
+<h2 id="how-can-hcrtools-help-me-prepare-data-prior-to-model-creation">How can HCRTools help me prepare data prior to model-creation?</h2>
+<ul>
+<li>Via <a href="../../model-pre-processing/longitudinal-imputation">longitudinal imputation</a>. Think of this as a way to pull person-specific values forward in time.</li>
+<li>Via <a href="../../model-pre-processing/seasonality-handling">seasonality handling</a>. Think of this as a way to make a date-time column model-ready. </li>
+</ul>
               
             </div>
           </div>
