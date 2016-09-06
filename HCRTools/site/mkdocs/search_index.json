@@ -24,6 +24,121 @@
             "location": "/#how-to-install",
             "text": "Work in the console of RStudio or RGui   Grab prerequisites   install.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lubridate',\n'pROC','R6','ranger','ROCR','RODBC'),repos =  https://cran.cnr.berkeley.edu/ )   Install HCRTools   library(devtools)\ndevtools::install_github(repo='HealthCatalystSLC/HCRTools')",
             "title": "How to install"
+        },
+        {
+            "location": "/getting-started/where-do-i-begin/",
+            "text": "Where do I begin with HCRTools?\n\n\nThat, of course, depends on what you want to accomplish:\n\n\nIf you want create a model on your data via machine learning\n\n\n\n\nLook at the \npre-processing tools\n that might help your model. \n\n\nLook at the \nmodel development page\n to create and compare models.\n\n\nLook at the \ndeployment page\n to deploy model.\n\n\n\n\nIf you want to do general healthcare statistics\n\n\n\n\nLook \nhere\n to calculate cross-column correlations on your data.\n\n\nLook \nhere\n to perform trend analysis across your data following Nelson rules.\n\n\n\n\nIf you want to do risk-adjusted comparisons\n\n\n\n\nLook \nhere\n if you want to compare several hospitals or units in terms of risk-adjusted performance.",
+            "title": "Where do I begin?"
+        },
+        {
+            "location": "/getting-started/where-do-i-begin/#where-do-i-begin-with-hcrtools",
+            "text": "That, of course, depends on what you want to accomplish:",
+            "title": "Where do I begin with HCRTools?"
+        },
+        {
+            "location": "/getting-started/where-do-i-begin/#if-you-want-create-a-model-on-your-data-via-machine-learning",
+            "text": "Look at the  pre-processing tools  that might help your model.   Look at the  model development page  to create and compare models.  Look at the  deployment page  to deploy model.",
+            "title": "If you want create a model on your data via machine learning"
+        },
+        {
+            "location": "/getting-started/where-do-i-begin/#if-you-want-to-do-general-healthcare-statistics",
+            "text": "Look  here  to calculate cross-column correlations on your data.  Look  here  to perform trend analysis across your data following Nelson rules.",
+            "title": "If you want to do general healthcare statistics"
+        },
+        {
+            "location": "/getting-started/where-do-i-begin/#if-you-want-to-do-risk-adjusted-comparisons",
+            "text": "Look  here  if you want to compare several hospitals or units in terms of risk-adjusted performance.",
+            "title": "If you want to do risk-adjusted comparisons"
+        },
+        {
+            "location": "/getting-started/FAQ/",
+            "text": "FAQ",
+            "title": "FAQ"
+        },
+        {
+            "location": "/getting-started/FAQ/#faq",
+            "text": "",
+            "title": "FAQ"
+        },
+        {
+            "location": "/model-pre-processing/pre-processing-overview/",
+            "text": "Overview of pre-processing",
+            "title": "Pre-processing overview"
+        },
+        {
+            "location": "/model-pre-processing/pre-processing-overview/#overview-of-pre-processing",
+            "text": "",
+            "title": "Overview of pre-processing"
+        },
+        {
+            "location": "/model-pre-processing/longitudinal-imputation/",
+            "text": "Longitudinal Imputation",
+            "title": "Longitudinal Imputation"
+        },
+        {
+            "location": "/model-pre-processing/longitudinal-imputation/#longitudinal-imputation",
+            "text": "",
+            "title": "Longitudinal Imputation"
+        },
+        {
+            "location": "/model-pre-processing/seasonality-handling/",
+            "text": "Seasonality handling",
+            "title": "Seasonality Handling"
+        },
+        {
+            "location": "/model-pre-processing/seasonality-handling/#seasonality-handling",
+            "text": "",
+            "title": "Seasonality handling"
+        },
+        {
+            "location": "/comparing-and-deploying/compare/",
+            "text": "Compare",
+            "title": "Develop and Compare"
+        },
+        {
+            "location": "/comparing-and-deploying/compare/#compare",
+            "text": "",
+            "title": "Compare"
+        },
+        {
+            "location": "/comparing-and-deploying/deploy/",
+            "text": "deploy",
+            "title": "Deploying a Best Model"
+        },
+        {
+            "location": "/comparing-and-deploying/deploy/#deploy",
+            "text": "",
+            "title": "deploy"
+        },
+        {
+            "location": "/healthcare-statistics/risk-adjusted-comparisons/",
+            "text": "risk-adjusted-comparison",
+            "title": "Risk-adjusted Comparisons"
+        },
+        {
+            "location": "/healthcare-statistics/risk-adjusted-comparisons/#risk-adjusted-comparison",
+            "text": "",
+            "title": "risk-adjusted-comparison"
+        },
+        {
+            "location": "/healthcare-statistics/trend-analysis/",
+            "text": "trend-analysis",
+            "title": "Trend Analysis"
+        },
+        {
+            "location": "/healthcare-statistics/trend-analysis/#trend-analysis",
+            "text": "",
+            "title": "trend-analysis"
+        },
+        {
+            "location": "/healthcare-statistics/find-correlations/",
+            "text": "find-correlations",
+            "title": "Find Correlations"
+        },
+        {
+            "location": "/healthcare-statistics/find-correlations/#find-correlations",
+            "text": "",
+            "title": "find-correlations"
         }
     ]
 }

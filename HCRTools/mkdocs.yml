@@ -1,4 +1,4 @@
-site_name: HCRTools documentation!
+site_name: HCRTools Documentation
 repo_url: https://github.com/HealthCatalystSLC/HCRTools
 repo_name: 'GitHub'
 theme: readthedocs
@@ -7,3 +7,18 @@ docs_dir: 'templates'
 
 pages:
 - Home: index.md
+- Getting started:
+  - Where do I begin?: getting-started/where-do-i-begin.md
+  - FAQ: getting-started/FAQ.md
+- Model Pre-processing:
+  - Pre-processing overview: model-pre-processing/pre-processing-overview.md
+  - Longitudinal Imputation: model-pre-processing/longitudinal-imputation.md
+  - Seasonality Handling: model-pre-processing/seasonality-handling.md
+- Comparing and Deploying Models:
+  - Develop and Compare: comparing-and-deploying/compare.md
+  - Deploying a Best Model: comparing-and-deploying/deploy.md
+- Healthcare Statistics:
+  - Risk-adjusted Comparisons: healthcare-statistics/risk-adjusted-comparisons.md
+  - Trend Analysis: healthcare-statistics/trend-analysis.md
+  - Find Correlations: healthcare-statistics/find-correlations.md
+

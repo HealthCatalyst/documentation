@@ -9,4 +9,80 @@
     </url>
     
 
+    
+        
+    <url>
+     <loc>None/getting-started/where-do-i-begin/</loc>
+     <lastmod>2016-09-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/getting-started/FAQ/</loc>
+     <lastmod>2016-09-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/model-pre-processing/pre-processing-overview/</loc>
+     <lastmod>2016-09-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/model-pre-processing/longitudinal-imputation/</loc>
+     <lastmod>2016-09-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/model-pre-processing/seasonality-handling/</loc>
+     <lastmod>2016-09-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/comparing-and-deploying/compare/</loc>
+     <lastmod>2016-09-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/comparing-and-deploying/deploy/</loc>
+     <lastmod>2016-09-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/healthcare-statistics/risk-adjusted-comparisons/</loc>
+     <lastmod>2016-09-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/healthcare-statistics/trend-analysis/</loc>
+     <lastmod>2016-09-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/healthcare-statistics/find-correlations/</loc>
+     <lastmod>2016-09-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
 </urlset>
