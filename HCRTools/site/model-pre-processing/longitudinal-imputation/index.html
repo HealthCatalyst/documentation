@@ -107,11 +107,11 @@
                 
                     <li><a class="toctree-l4" href="#why-is-it-helpful">Why is it helpful?</a></li>
                 
-                    <li><a class="toctree-l4" href="#is-any-longitudinal-data-set-ready-for-hcrtools-to-work-on-it">Is any longitudinal data set ready for HCRTools to work on it?</a></li>
+                    <li><a class="toctree-l4" href="#is-any-longitudinal-dataset-ready-for-hcrtools-to-work-on-it">Is any longitudinal dataset ready for HCRTools to work on it?</a></li>
                 
-                    <li><a class="toctree-l4" href="#so-how-do-we-do-it-already">So, how do we do it already?</a></li>
+                    <li><a class="toctree-l4" href="#so-how-do-we-do-it">So, how do we do it?</a></li>
                 
-                    <li><a class="toctree-l4" href="#groupedlocf-function-specs">GroupedLOCF function specs</a></li>
+                    <li><a class="toctree-l4" href="#function-specs-for-groupedlocf">Function specs for GroupedLOCF</a></li>
                 
                     <li><a class="toctree-l4" href="#full-example-code">Full example code</a></li>
                 
@@ -222,15 +222,15 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="longitudinal-imputation-via-groupedlocf">Longitudinal Imputation via GroupedLOCF</h1>
+                <h1 id="longitudinal-imputation-via-groupedlocf">Longitudinal Imputation via <code>GroupedLOCF</code></h1>
 <h2 id="what-is-this">What is this?</h2>
 <p>In healthcare one often works with datasets that have multiple rows for a single person, over time. This is called longitudinal data.</p>
-<p>If you want to fill in some of the NULL in such a dataset, HCRTools lets you pull values forward within each person's particular history. In other words, Joe's weight from a year ago can be pulled forward to Joe's rows corresponding to last week or last month.</p>
+<p>If you want to fill in some of the NULLs in such a dataset, HCRTools lets you pull values forward within each person's particular history. In other words, Joe's weight from a year ago can be pulled forward to Joe's rows corresponding to last week or last month.</p>
 <h2 id="why-is-it-helpful">Why is it helpful?</h2>
 <p>This may help make your models more accurate, or help fill in your data for disparate calculations/visualizations.</p>
-<h2 id="is-any-longitudinal-data-set-ready-for-hcrtools-to-work-on-it">Is any longitudinal data set ready for HCRTools to work on it?</h2>
-<p>Nope. You have to first order your data by a PersonID column and then by a date/time column (with time going down the rows).</p>
-<h2 id="so-how-do-we-do-it-already">So, how do we do it already?</h2>
+<h2 id="is-any-longitudinal-dataset-ready-for-hcrtools-to-work-on-it">Is any longitudinal dataset ready for HCRTools to work on it?</h2>
+<p>Nope. You have to first order your data by a PersonID column and then by a date-time column (with time going down the rows).</p>
+<h2 id="so-how-do-we-do-it">So, how do we do it?</h2>
 <ul>
 <li>First, we'll load HCRTools and create a fake dataset in R (that you can play with)</li>
 </ul>
@@ -245,14 +245,14 @@ head(df,n=7) # Looking at the raw data
 </code></pre>
 
 <ul>
-<li>Now let's do the imputation, using the GroupedLOCF function. LOCF stands for last value carried forward</li>
+<li>Now let's do the imputation by calling the <code>GroupedLOCF</code> function. LOCF stands for last value carried forward</li>
 </ul>
 <pre><code class="R">df.result = GroupedLOCF(df, 'PersonID')
 
 head(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)
 </code></pre>
 
-<h2 id="groupedlocf-function-specs">GroupedLOCF function specs</h2>
+<h2 id="function-specs-for-groupedlocf">Function specs for <code>GroupedLOCF</code></h2>
 <ul>
 <li>
 <p><strong>Return</strong>: data frame of same shape as input data frame.</p>

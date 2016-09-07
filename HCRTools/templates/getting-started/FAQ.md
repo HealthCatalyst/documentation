@@ -4,7 +4,7 @@
 
 While data scientists in healthcare will likely find this project valuable, the audience HCTools targets are those BI developers, data architects, and SQL-based folks that would love to create appropriate and accurate models on their data. While packages like scikit-learn are certainly irreplaceable, we think that there is a set of data problems specific to healthcare that warrant new tools.
 
-## How does HCTools focus on healthcare?
+## How does HCRTools focus on healthcare?
  
 HCTools differs from other machine learning packages in that it focuses on data issues specific to healthcare. This means that we pay attention to longitudinal questions, offer easy solutions specific to data with imbalanced classes, and provide easy connections and deployment to SQL Server.
 

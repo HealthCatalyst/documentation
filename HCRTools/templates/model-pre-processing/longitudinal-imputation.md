@@ -1,20 +1,20 @@
-# Longitudinal Imputation via GroupedLOCF
+# Longitudinal Imputation via ``GroupedLOCF``
 
 ## What is this?
 
 In healthcare one often works with datasets that have multiple rows for a single person, over time. This is called longitudinal data.
 
-If you want to fill in some of the NULL in such a dataset, HCRTools lets you pull values forward within each person's particular history. In other words, Joe's weight from a year ago can be pulled forward to Joe's rows corresponding to last week or last month.
+If you want to fill in some of the NULLs in such a dataset, HCRTools lets you pull values forward within each person's particular history. In other words, Joe's weight from a year ago can be pulled forward to Joe's rows corresponding to last week or last month.
 
 ## Why is it helpful?
 
 This may help make your models more accurate, or help fill in your data for disparate calculations/visualizations.
 
-## Is any longitudinal data set ready for HCRTools to work on it?
+## Is any longitudinal dataset ready for HCRTools to work on it?
 
-Nope. You have to first order your data by a PersonID column and then by a date/time column (with time going down the rows).
+Nope. You have to first order your data by a PersonID column and then by a date-time column (with time going down the rows).
 
-## So, how do we do it already?
+## So, how do we do it?
 
 * First, we'll load HCRTools and create a fake dataset in R (that you can play with)
 
@@ -29,7 +29,7 @@ df = data.frame(PersonID=c(1,1,2,2,3,3,3),
 head(df,n=7) # Looking at the raw data
 ```
 
-* Now let's do the imputation, using the GroupedLOCF function. LOCF stands for last value carried forward
+* Now let's do the imputation by calling the ``GroupedLOCF`` function. LOCF stands for last value carried forward
 
 ```{R}
 df.result = GroupedLOCF(df, 'PersonID')
@@ -38,7 +38,7 @@ head(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)
 ```
 
 
-## GroupedLOCF function specs
+## Function specs for ``GroupedLOCF``
 
 - __Return__: data frame of same shape as input data frame.
 
