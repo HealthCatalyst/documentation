@@ -33,7 +33,7 @@ head(df.result)
 
 ## Function specs for ``ConvertDateTimeColToDummies``
 
-- __Return__: data frame of same length, but greater width compared to the input data frame.
+- __Return__: a data frame of same length, but greater width compared to the input data frame.
 
 - __Arguments__:
     - __df__: a data frame. This data frame contains a date-time column.

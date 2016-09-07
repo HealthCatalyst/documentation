@@ -40,7 +40,7 @@ head(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)
 
 ## Function specs for ``GroupedLOCF``
 
-- __Return__: data frame of same shape as input data frame.
+- __Return__: a data frame of same shape as input data frame.
 
 - __Arguments__:
     - __df__: a data frame. This data contains NULLs or NAs.

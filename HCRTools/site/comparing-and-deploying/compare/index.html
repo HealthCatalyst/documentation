@@ -123,7 +123,18 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#compare">Compare</a></li>
+                <li class="toctree-l3"><a href="#create-and-compare-models-via-grouplasso-and-randomforest">Create and compare models via GroupLasso and RandomForest</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#what-is-this">What is this?</a></li>
+                
+                    <li><a class="toctree-l4" href="#is-any-dataset-ready-for-model-creation">Is any dataset ready for model creation?</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-can-i-improve-my-model-performance">How can I improve my model performance?</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via SelectData</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-2-set-your-parameters-via-supervisedmodelparameters">Step 2: Set your parameters via SupervisedModelParameters</a></li>
                 
             
             </ul>
@@ -210,7 +221,87 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="compare">Compare</h1>
+                <h1 id="create-and-compare-models-via-grouplasso-and-randomforest">Create and compare models via <code>GroupLasso</code> and <code>RandomForest</code></h1>
+<h1 id="what-is-this">What is this?</h1>
+<p>These classes let one create and compare custom models on varied datasets.</p>
+<p>One can do both classification (ie, predict Y or N) as well as regression (ie, predict a numeric field).</p>
+<h2 id="is-any-dataset-ready-for-model-creation">Is any dataset ready for model creation?</h2>
+<p>Nope. It'll help if you can follow these guidelines:</p>
+<ul>
+<li>Don't use 0 or 1 for the independent variable when doing classification. Use Y/N instead. The IIF function in T-SQL may help here.</li>
+<li>Don't pull in test data in this step. In other words, to compare models, we don't need to worry about those rows that need a prediction quite yet.</li>
+</ul>
+<h2 id="how-can-i-improve-my-model-performance">How can I improve my model performance?</h2>
+<ul>
+<li>If you have lots of NULL cells and your data is longitudinal, you may want to try <a href="../../model-pre-processing/longitudinal-imputation">GroupedLOCF</a>.</li>
+<li>If you think the phenomenon you're trying to predict has a seasonal or diurnal component, you may need some <a href="../../model-pre-processing/seasonality-handling">feature engineering</a>.</li>
+</ul>
+<h2 id="step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via <code>SelectData</code></h2>
+<ul>
+<li>
+<p><strong>Return</strong>: a data frame that represents your data.</p>
+</li>
+<li>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><strong>server</strong>: a server name. You'll pull data from this server.</li>
+<li><strong>database</strong>: a database name. You'll pull data from this database.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="r">ptm &lt;- proc.time()
+library(HCRTools)
+
+connection.string = &quot;
+driver={SQL Server};
+server=localhost;
+database=AdventureWorks2012;
+trusted_connection=true
+&quot;
+
+query = &quot;
+SELECT
+[OrganizationLevel]
+,[MaritalStatus]
+,[Gender]
+,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
+,[VacationHours]
+,[SickLeaveHours]
+FROM [AdventureWorks2012].[HumanResources].[Employee]
+&quot;
+
+df &lt;- SelectData(connection.string, query)
+head(df)
+str(df)
+</code></pre>
+
+<h2 id="step-2-set-your-parameters-via-supervisedmodelparameters">Step 2: Set your parameters via <code>SupervisedModelParameters</code></h2>
+<ul>
+<li>
+<p><strong>Return</strong>: an object representing your specific configuration.</p>
+</li>
+<li>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><strong>df</strong>: a server name. You'll pull data from this server.</li>
+<li><strong>type</strong>: a string. This will either be 'CLASSIFICATION' or 'REGRESSION'</li>
+<li><strong>impute</strong>: a boolean, defaults to FALSE. Whether to impute values with column mean (for numeric columns) or column mode (for categorical columns).</li>
+<li><strong>grainCol</strong>: a string, defaults to None. Name of possible GrainID column in your dataset. If specified, this column will be removed, as it won't help the algorithm.</li>
+<li><strong>predictedCol</strong>: a string. Name of variable (or column) that you want to predict. </li>
+<li><strong>debug</strong>: a boolean, defaults to FALSE. If TRUE, code output is verbose for easier debugging.</li>
+<li><strong>cores</strong>: an int, defaults to 4. Number of cores on machine to use for model training.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="r">p &lt;- SupervisedModelParameters$new()
+p$df = df
+p$type = 'CLASSIFICATION'
+p$impute = TRUE
+p$grainCol = ''
+p$predictedCol = 'SalariedFlag'
+p$debug = FALSE
+p$cores = 1
+</code></pre>
               
             </div>
           </div>
