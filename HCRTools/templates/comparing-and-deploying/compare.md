@@ -1,4 +1,4 @@
-# Create and compare models via ``GroupLasso`` and ``RandomForest``
+# Create and compare models via ``Lasso`` and ``RandomForest``
 
 # What is this?
 
@@ -58,12 +58,12 @@ str(df)
 - __Return__: an object representing your specific configuration.
 
 - __Arguments__:
-    - __df__: a server name. You'll pull data from this server.
-    - __type__: a string. This will either be 'CLASSIFICATION' or 'REGRESSION'
-    - __impute__: a boolean, defaults to FALSE. Whether to impute values with column mean (for numeric columns) or column mode (for categorical columns).
+    - __df__: a data frame. The data your model is based on.
+    - __type__: a string. This will either be 'CLASSIFICATION' or 'REGRESSION'.
+    - __impute__: a boolean, defaults to FALSE. Whether to impute by replacing NULLs with column mean (for numeric columns) or column mode (for categorical columns).
     - __grainCol__: a string, defaults to None. Name of possible GrainID column in your dataset. If specified, this column will be removed, as it won't help the algorithm.
     - __predictedCol__: a string. Name of variable (or column) that you want to predict. 
-    - __debug__: a boolean, defaults to FALSE. If TRUE, code output is verbose for easier debugging.
+    - __debug__: a boolean, defaults to FALSE. If TRUE, console output when comparing models is verbose for easier debugging.
     - __cores__: an int, defaults to 4. Number of cores on machine to use for model training.
 
 ```{r}
@@ -75,4 +75,23 @@ p$grainCol = ''
 p$predictedCol = 'SalariedFlag'
 p$debug = FALSE
 p$cores = 1
+```
+
+## Step 3: Create the models via the ``Lasso`` and ``RandomForest`` algorithms.
+
+```{r}
+# Run Lasso
+lasso <- Lasso$new(p)
+lasso$run()
+
+# Run RandomForest
+rf <- RandomForest$new(p)
+rf$run()
+```
+
+## Full example code
+
+```{R}
+
+
 ```
