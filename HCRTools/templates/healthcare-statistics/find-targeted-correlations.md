@@ -1,6 +1,56 @@
 # Find correlations with a specific variable via ``CalculateTargetedCorrelations``
 
-
 ## What is this?
 
+When trying to understand the factors driving a particular processes, it can be helpful to view the correlations between several variables and your variable of interest. This ``CalculateTargetedCorrelations`` function lets one quickly check the correlations between all numeric fields in a dataset and a specified column.
+
 ## Why is it helpful?
+
+You can quickly see how well other variables explain your variable of interest.
+
+## So, how do we do it?
+
+* First, we'll load HCRTools, create a fake dataset on which to work, and look at it:
+
+```{r}
+library(HCRTools)
+
+df <- data.frame(a=c(1,2,3,4,5,6),
+b=c(6,5,4,3,2,1),
+c=c(3,4,2,1,3,5),
+d=c('M','F','F','F','M','F')) #<- categorical coulmns are ignored
+
+head(df)
+```
+
+* Next, we'll find the correlations between `'c'` and the other numeric columns in the dataset represented by `df`.
+
+```{r}
+res <- CalculateTargetedCorrelations(df,'c')
+res
+```
+
+## Function specs for ``CalculateTargetedCorrelations``
+
+- __Return__: a data frame of same length as input data frame, but three columns wide.
+
+- __Arguments__:
+    - __df__: a data frame. This dataset contains at least two numeric columns.
+    - __target.col__: a string. Column name of the variable of interest. Correlations of all other numeric columns are calculated against this column. 
+    
+
+## Full example code
+
+```{r}
+library(HCRTools)
+
+df <- data.frame(a=c(1,2,3,4,5,6),
+b=c(6,5,4,3,2,1),
+c=c(3,4,2,1,3,5),
+d=c('M','F','F','F','M','F')) #<- categorical coulmns are ignored
+
+head(df)
+
+res <- CalculateTargetedCorrelations(df,'c')
+res
+```

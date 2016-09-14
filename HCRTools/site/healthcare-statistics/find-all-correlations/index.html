@@ -172,6 +172,12 @@
                 
                     <li><a class="toctree-l4" href="#why-is-it-helpful">Why is it helpful?</a></li>
                 
+                    <li><a class="toctree-l4" href="#so-how-do-we-do-it">So, how do we do it?</a></li>
+                
+                    <li><a class="toctree-l4" href="#function-specs-for-calculateallcorrelations">Function specs for CalculateAllCorrelations</a></li>
+                
+                    <li><a class="toctree-l4" href="#full-example-code">Full example code</a></li>
+                
             
             </ul>
         
@@ -223,7 +229,55 @@
               
                 <h1 id="find-correlations-with-a-specific-variable-via-calculateallcorrelations">Find correlations with a specific variable via <code>CalculateAllCorrelations</code></h1>
 <h2 id="what-is-this">What is this?</h2>
+<p>In healthcare (as in other fields) it's often helpful to understand the relationships between the variables in one's dataset. This provides that functionality by finding the correlations for all numeric columns in a particular dataset.</p>
 <h2 id="why-is-it-helpful">Why is it helpful?</h2>
+<p>You can quickly see the relationships present in your data.</p>
+<h2 id="so-how-do-we-do-it">So, how do we do it?</h2>
+<ul>
+<li>First, we'll load HCRTools, create a fake dataset on which to work, and look at it:</li>
+</ul>
+<pre><code class="r">library(HCRTools)
+
+df &lt;- data.frame(a=c(1,2,3,4,5,6),
+b=c(6,5,4,3,2,1),
+c=c(3,4,2,1,3,5),
+d=c('M','F','F','F','M','F')) #&lt;- is ignored
+
+head(df)
+</code></pre>
+
+<ul>
+<li>Next, we'll find the correlations between all numeric columns in the dataset represented by <code>df</code>.</li>
+</ul>
+<pre><code class="r">res &lt;- CalculateAllCorrelations(df)
+res
+</code></pre>
+
+<h2 id="function-specs-for-calculateallcorrelations">Function specs for <code>CalculateAllCorrelations</code></h2>
+<ul>
+<li>
+<p><strong>Return</strong>: a data frame of same length as input data frame, but three columns wide.</p>
+</li>
+<li>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><strong>df</strong>: a data frame. This dataset contains at least two numeric columns. </li>
+</ul>
+</li>
+</ul>
+<h2 id="full-example-code">Full example code</h2>
+<pre><code class="r">library(HCRTools)
+
+df &lt;- data.frame(a=c(1,2,3,4,5,6),
+b=c(6,5,4,3,2,1),
+c=c(3,4,2,1,3,5),
+d=c('M','F','F','F','M','F')) #&lt;- is ignored
+
+head(df)
+
+res &lt;- CalculateAllCorrelations(df)
+res
+</code></pre>
               
             </div>
           </div>

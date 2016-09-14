@@ -142,7 +142,7 @@
         },
         {
             "location": "/model-pre-processing/seasonality-handling/",
-            "text": "Seasonality handling via \nConvertDateTimeColToDummies\n\n\nWhat is this?\n\n\nIn healthcare date-time stamp columns are common, but unfortunately machine learning algorithms do not handle them well.\n\n\nWhy is it helpful?\n\n\nOne has to do some simple feature engineering in order to take advantage of potential seasonality effects in a dataset. This works simply by transforming a date-time column into multiple columns that represent MonthOfYear, WeekOfYear, DayOfMonth, DayOfWeek, etc.\n\n\nSo, how do we do it?\n\n\n\n\nFirst, we'll load HCRTools, create a fake dataset on which to work, and look at it:\n\n\n\n\nDTCol = c(\n2001-06-09 12:45:05\n,\n2002-01-29 09:30:05\n,\n2002-02-02 07:36:50\n,\n          \n2002-03-04 16:45:01\n,\n2002-11-13 20:00:10\n,\n2003-01-29 07:31:43\n,\n          \n2003-07-07 17:30:02\n,\n2003-09-28 01:03:20\n)\ny1 \n- c(.5,1,3,6,8,13,14,1)\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1)\ndf \n- data.frame(DTCol,y1,y2)\n\nhead(df)\n\n\n\n\n\n\nNext, we'll create the extra date and time colums by calling the function and then we'll look at the transformed dataset\n\n\n\n\ndf.result \n- ConvertDateTimeColToDummies(df, 'DTCol')\n\nhead(df.result)\n\n\n\n\nFunction specs for \nConvertDateTimeColToDummies\n\n\n\n\n\n\nReturn\n: a data frame of same length, but greater width compared to the input data frame.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This data frame contains a date-time column.\n\n\ndate.time.col\n: a string. Column name for the date-time column in your data frame that you want to split into multiple date and time columns. Works best in ISO 8601 format (ie, datetime or datetime2 in T-SQL).\n\n\ndepth\n: a string, defaults to \n'h'\n. Indicates how many columns should be added to data frame. \n'd'\n, \n'h'\n, \n'm'\n, \n's'\n expands to depth of day, hour, minute, and second, respectively. \n\n\nreturn.dt.col\n: boolean, defaults to \nFALSE\n. Indicates whether to return original date-time column with modified data frame.\n\n\n\n\n\n\n\n\nFull example code\n\n\nlibrary(HCRTools)\nDTCol = c(\n2001-06-09 12:45:05\n,\n2002-01-29 09:30:05\n,\n2002-02-02 07:36:50\n,\n          \n2002-03-04 16:45:01\n,\n2002-11-13 20:00:10\n,\n2003-01-29 07:31:43\n,\n          \n2003-07-07 17:30:02\n,\n2003-09-28 01:03:20\n)\ny1 \n- c(.5,1,3,6,8,13,14,1)\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1)\ndf \n- data.frame(DTCol,y1,y2)\n\ndf \n- ConvertDateTimeColToDummies(df, 'DTCol')",
+            "text": "Seasonality handling via \nConvertDateTimeColToDummies\n\n\nWhat is this?\n\n\nIn healthcare date-time stamp columns are common, but unfortunately machine learning algorithms do not handle them well.\n\n\nWhy is it helpful?\n\n\nOne has to do some simple feature engineering in order to take advantage of potential seasonality effects in a dataset. This works simply by transforming a date-time column into multiple columns that represent MonthOfYear, WeekOfYear, DayOfMonth, DayOfWeek, etc.\n\n\nSo, how do we do it?\n\n\n\n\nFirst, we'll load HCRTools, create a fake dataset on which to work, and look at it:\n\n\n\n\nlibrary(HCRTools)\nDTCol = c(\n2001-06-09 12:45:05\n,\n2002-01-29 09:30:05\n,\n2002-02-02 07:36:50\n,\n          \n2002-03-04 16:45:01\n,\n2002-11-13 20:00:10\n,\n2003-01-29 07:31:43\n,\n          \n2003-07-07 17:30:02\n,\n2003-09-28 01:03:20\n)\ny1 \n- c(.5,1,3,6,8,13,14,1)\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1)\ndf \n- data.frame(DTCol,y1,y2)\n\nhead(df)\n\n\n\n\n\n\nNext, we'll create the extra date and time colums by calling the function and then we'll look at the transformed dataset\n\n\n\n\ndf.result \n- ConvertDateTimeColToDummies(df, 'DTCol')\n\nhead(df.result)\n\n\n\n\nFunction specs for \nConvertDateTimeColToDummies\n\n\n\n\n\n\nReturn\n: a data frame of same length, but greater width compared to the input data frame.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This data frame contains a date-time column.\n\n\ndate.time.col\n: a string. Column name for the date-time column in your data frame that you want to split into multiple date and time columns. Works best in ISO 8601 format (ie, datetime or datetime2 in T-SQL).\n\n\ndepth\n: a string, defaults to \n'h'\n. Indicates how many columns should be added to data frame. \n'd'\n, \n'h'\n, \n'm'\n, \n's'\n expands to depth of day, hour, minute, and second, respectively. \n\n\nreturn.dt.col\n: boolean, defaults to \nFALSE\n. Indicates whether to return original date-time column with modified data frame.\n\n\n\n\n\n\n\n\nFull example code\n\n\nlibrary(HCRTools)\nDTCol = c(\n2001-06-09 12:45:05\n,\n2002-01-29 09:30:05\n,\n2002-02-02 07:36:50\n,\n          \n2002-03-04 16:45:01\n,\n2002-11-13 20:00:10\n,\n2003-01-29 07:31:43\n,\n          \n2003-07-07 17:30:02\n,\n2003-09-28 01:03:20\n)\ny1 \n- c(.5,1,3,6,8,13,14,1)\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1)\ndf \n- data.frame(DTCol,y1,y2)\n\ndf \n- ConvertDateTimeColToDummies(df, 'DTCol')",
             "title": "Seasonality Handling"
         },
         {
@@ -162,7 +162,7 @@
         },
         {
             "location": "/model-pre-processing/seasonality-handling/#so-how-do-we-do-it",
-            "text": "First, we'll load HCRTools, create a fake dataset on which to work, and look at it:   DTCol = c( 2001-06-09 12:45:05 , 2002-01-29 09:30:05 , 2002-02-02 07:36:50 ,\n           2002-03-04 16:45:01 , 2002-11-13 20:00:10 , 2003-01-29 07:31:43 ,\n           2003-07-07 17:30:02 , 2003-09-28 01:03:20 )\ny1  - c(.5,1,3,6,8,13,14,1)\ny2  - c(.8,1,1.2,1.2,1.2,1.3,1.3,1)\ndf  - data.frame(DTCol,y1,y2)\n\nhead(df)   Next, we'll create the extra date and time colums by calling the function and then we'll look at the transformed dataset   df.result  - ConvertDateTimeColToDummies(df, 'DTCol')\n\nhead(df.result)",
+            "text": "First, we'll load HCRTools, create a fake dataset on which to work, and look at it:   library(HCRTools)\nDTCol = c( 2001-06-09 12:45:05 , 2002-01-29 09:30:05 , 2002-02-02 07:36:50 ,\n           2002-03-04 16:45:01 , 2002-11-13 20:00:10 , 2003-01-29 07:31:43 ,\n           2003-07-07 17:30:02 , 2003-09-28 01:03:20 )\ny1  - c(.5,1,3,6,8,13,14,1)\ny2  - c(.8,1,1.2,1.2,1.2,1.3,1.3,1)\ndf  - data.frame(DTCol,y1,y2)\n\nhead(df)   Next, we'll create the extra date and time colums by calling the function and then we'll look at the transformed dataset   df.result  - ConvertDateTimeColToDummies(df, 'DTCol')\n\nhead(df.result)",
             "title": "So, how do we do it?"
         },
         {
@@ -297,7 +297,7 @@
         },
         {
             "location": "/healthcare-statistics/trend-analysis/",
-            "text": "Trend Analysis via \nFindTrends\n\n\nWhat is this?\n\n\nIn healthcare one often wants to automatically detect trends occuring across many different measures at the same time. Further, one wants to be able to group by various categories and find trends among subsets of the patient population. \n\n\nHere one can quickly look across 50+ measures for those that have experienced \nnotable trends according to Nelson rule 3\n.\n\n\nWhy is it helpful?\n\n\nThis \nFindTrends\n function allows one to quickly see if any numeric columns in a dataset have been trending downward or upward over six consecutive months, using automatic subgroupings (like on Gender, for example).\n\n\nSo, how do we do it?\n\n\nFirst, get some data organized (via SQL or Excel) that has the following:\n\n\n\n\nA numeric column (like mortality rate) that could have a trend\n\n\nA categorical column (like Gender) that we'll group by to check trends for Females and Males\n\n\n\n\nFunction specs for \nFindTrends\n\n\n\n\n\n\nReturn\n: a data frame describing which measures were trending, over which dimensions (ie, Male/Female), and the trend end-date.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This data contains both the (numeric) measure columns and (categorical) columns to group by.\n\n\ndatecol\n: a string. Column name for the date or date-time column in your data frame.\n\n\ncoltoaggregate\n: a string. Column name for the categorical column we'll group by.\n\n\n\n\n\n\n\n\nFull example code\n\n\ndates \n- c(as.Date(\n2012-01-01\n),as.Date(\n2012-01-02\n),as.Date(\n2012-02-01\n),\n      as.Date(\n2012-03-01\n),as.Date(\n2012-04-01\n),as.Date(\n2012-05-01\n),\n      as.Date(\n2012-06-01\n),as.Date(\n2012-06-02\n))\ny1 \n- c(0,1,2,6,8,13,14,16)               # large positive\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1.5)     # small positive\ny3 \n- c(1,0,-2,-2,-4,-5,-7,-8)            # big negative\ny4 \n- c(.5,0,-.5,-.5,-.5,-.5,-.6,0)       # small negative\ngender \n- c('M','F','F','F','F','F','F','F')\ndf \n- data.frame(dates,y1,y2,y3,y4,gender)\n\nres = FindTrends(df = df,\n                 datecol = 'dates',\n                 coltoaggregate = 'gender')",
+            "text": "Trend Analysis via \nFindTrends\n\n\nWhat is this?\n\n\nIn healthcare one often wants to automatically detect trends occuring across many different measures at the same time. Further, one wants to be able to group by various categories and find trends among subsets of the patient population. \n\n\nHere one can quickly look across 50+ measures for those that have experienced \nnotable trends according to Nelson rule 3\n.\n\n\nWhy is it helpful?\n\n\nThis \nFindTrends\n function allows one to quickly see if any numeric columns in a dataset have been trending downward or upward over six consecutive months, using automatic subgroupings (like on Gender, for example).\n\n\nSo, how do we do it?\n\n\n\n\n\n\nFirst, get some data organized (via SQL or Excel) that has the following:\n\n\n\n\n\n\nA numeric column (like mortality rate) that could have a trend\n\n\n\n\n\n\nA categorical column (like Gender) that we'll group by to check trends for Females and Males\n\n\n\n\n\n\nCreate some fake data\n\n\n\n\n\n\ndates \n- c(as.Date(\n2012-01-01\n),as.Date(\n2012-01-02\n),as.Date(\n2012-02-01\n),\n      as.Date(\n2012-03-01\n),as.Date(\n2012-04-01\n),as.Date(\n2012-05-01\n),\n      as.Date(\n2012-06-01\n),as.Date(\n2012-06-02\n))\ny1 \n- c(0,1,2,6,8,13,14,16)               # large positive\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1.5)     # small positive\ny3 \n- c(1,0,-2,-2,-4,-5,-7,-8)            # big negative\ny4 \n- c(.5,0,-.5,-.5,-.5,-.5,-.6,0)       # small negative\ngender \n- c('M','F','F','F','F','F','F','F')\ndf \n- data.frame(dates,y1,y2,y3,y4,gender)\n\n\n\n\n\n\nFind trends via \nFindTrends\n\n\n\n\nres = FindTrends(df = df,\n                 datecol = 'dates',\n                 coltoaggregate = 'gender')\nres\n\n\n\n\nFunction specs for \nFindTrends\n\n\n\n\n\n\nReturn\n: a data frame describing which measures were trending, over which dimensions (ie, Male/Female), and the trend end-date.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This data contains both the (numeric) measure columns and (categorical) columns to group by.\n\n\ndatecol\n: a string. Column name for the date or date-time column in your data frame.\n\n\ncoltoaggregate\n: a string. Column name for the categorical column we'll group by.\n\n\n\n\n\n\n\n\nFull example code\n\n\ndates \n- c(as.Date(\n2012-01-01\n),as.Date(\n2012-01-02\n),as.Date(\n2012-02-01\n),\n      as.Date(\n2012-03-01\n),as.Date(\n2012-04-01\n),as.Date(\n2012-05-01\n),\n      as.Date(\n2012-06-01\n),as.Date(\n2012-06-02\n))\ny1 \n- c(0,1,2,6,8,13,14,16)               # large positive\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1.5)     # small positive\ny3 \n- c(1,0,-2,-2,-4,-5,-7,-8)            # big negative\ny4 \n- c(.5,0,-.5,-.5,-.5,-.5,-.6,0)       # small negative\ngender \n- c('M','F','F','F','F','F','F','F')\ndf \n- data.frame(dates,y1,y2,y3,y4,gender)\n\nres = FindTrends(df = df,\n                 datecol = 'dates',\n                 coltoaggregate = 'gender')\nres",
             "title": "Trend Analysis"
         },
         {
@@ -317,7 +317,7 @@
         },
         {
             "location": "/healthcare-statistics/trend-analysis/#so-how-do-we-do-it",
-            "text": "First, get some data organized (via SQL or Excel) that has the following:   A numeric column (like mortality rate) that could have a trend  A categorical column (like Gender) that we'll group by to check trends for Females and Males",
+            "text": "First, get some data organized (via SQL or Excel) that has the following:    A numeric column (like mortality rate) that could have a trend    A categorical column (like Gender) that we'll group by to check trends for Females and Males    Create some fake data    dates  - c(as.Date( 2012-01-01 ),as.Date( 2012-01-02 ),as.Date( 2012-02-01 ),\n      as.Date( 2012-03-01 ),as.Date( 2012-04-01 ),as.Date( 2012-05-01 ),\n      as.Date( 2012-06-01 ),as.Date( 2012-06-02 ))\ny1  - c(0,1,2,6,8,13,14,16)               # large positive\ny2  - c(.8,1,1.2,1.2,1.2,1.3,1.3,1.5)     # small positive\ny3  - c(1,0,-2,-2,-4,-5,-7,-8)            # big negative\ny4  - c(.5,0,-.5,-.5,-.5,-.5,-.6,0)       # small negative\ngender  - c('M','F','F','F','F','F','F','F')\ndf  - data.frame(dates,y1,y2,y3,y4,gender)   Find trends via  FindTrends   res = FindTrends(df = df,\n                 datecol = 'dates',\n                 coltoaggregate = 'gender')\nres",
             "title": "So, how do we do it?"
         },
         {
@@ -327,12 +327,12 @@
         },
         {
             "location": "/healthcare-statistics/trend-analysis/#full-example-code",
-            "text": "dates  - c(as.Date( 2012-01-01 ),as.Date( 2012-01-02 ),as.Date( 2012-02-01 ),\n      as.Date( 2012-03-01 ),as.Date( 2012-04-01 ),as.Date( 2012-05-01 ),\n      as.Date( 2012-06-01 ),as.Date( 2012-06-02 ))\ny1  - c(0,1,2,6,8,13,14,16)               # large positive\ny2  - c(.8,1,1.2,1.2,1.2,1.3,1.3,1.5)     # small positive\ny3  - c(1,0,-2,-2,-4,-5,-7,-8)            # big negative\ny4  - c(.5,0,-.5,-.5,-.5,-.5,-.6,0)       # small negative\ngender  - c('M','F','F','F','F','F','F','F')\ndf  - data.frame(dates,y1,y2,y3,y4,gender)\n\nres = FindTrends(df = df,\n                 datecol = 'dates',\n                 coltoaggregate = 'gender')",
+            "text": "dates  - c(as.Date( 2012-01-01 ),as.Date( 2012-01-02 ),as.Date( 2012-02-01 ),\n      as.Date( 2012-03-01 ),as.Date( 2012-04-01 ),as.Date( 2012-05-01 ),\n      as.Date( 2012-06-01 ),as.Date( 2012-06-02 ))\ny1  - c(0,1,2,6,8,13,14,16)               # large positive\ny2  - c(.8,1,1.2,1.2,1.2,1.3,1.3,1.5)     # small positive\ny3  - c(1,0,-2,-2,-4,-5,-7,-8)            # big negative\ny4  - c(.5,0,-.5,-.5,-.5,-.5,-.6,0)       # small negative\ngender  - c('M','F','F','F','F','F','F','F')\ndf  - data.frame(dates,y1,y2,y3,y4,gender)\n\nres = FindTrends(df = df,\n                 datecol = 'dates',\n                 coltoaggregate = 'gender')\nres",
             "title": "Full example code"
         },
         {
             "location": "/healthcare-statistics/find-targeted-correlations/",
-            "text": "Find correlations with a specific variable via \nCalculateTargetedCorrelations\n\n\nWhat is this?\n\n\nWhy is it helpful?",
+            "text": "Find correlations with a specific variable via \nCalculateTargetedCorrelations\n\n\nWhat is this?\n\n\nWhen trying to understand the factors driving a particular processes, it can be helpful to view the correlations between several variables and your variable of interest. This \nCalculateTargetedCorrelations\n function lets one quickly check the correlations between all numeric fields in a dataset and a specified column.\n\n\nWhy is it helpful?\n\n\nYou can quickly see how well other variables explain your variable of interest.\n\n\nSo, how do we do it?\n\n\n\n\nFirst, we'll load HCRTools, create a fake dataset on which to work, and look at it:\n\n\n\n\nlibrary(HCRTools)\n\ndf \n- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #\n- categorical coulmns are ignored\n\nhead(df)\n\n\n\n\n\n\nNext, we'll find the correlations between \n'c'\n and the other numeric columns in the dataset represented by \ndf\n.\n\n\n\n\nres \n- CalculateTargetedCorrelations(df,'c')\nres\n\n\n\n\nFunction specs for \nCalculateTargetedCorrelations\n\n\n\n\n\n\nReturn\n: a data frame of same length as input data frame, but three columns wide.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This dataset contains at least two numeric columns.\n\n\ntarget.col\n: a string. Column name of the variable of interest. Correlations of all other numeric columns are calculated against this column. \n\n\n\n\n\n\n\n\nFull example code\n\n\nlibrary(HCRTools)\n\ndf \n- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #\n- categorical coulmns are ignored\n\nhead(df)\n\nres \n- CalculateTargetedCorrelations(df,'c')\nres",
             "title": "Find Targeted Correlations"
         },
         {
@@ -342,17 +342,32 @@
         },
         {
             "location": "/healthcare-statistics/find-targeted-correlations/#what-is-this",
-            "text": "",
+            "text": "When trying to understand the factors driving a particular processes, it can be helpful to view the correlations between several variables and your variable of interest. This  CalculateTargetedCorrelations  function lets one quickly check the correlations between all numeric fields in a dataset and a specified column.",
             "title": "What is this?"
         },
         {
             "location": "/healthcare-statistics/find-targeted-correlations/#why-is-it-helpful",
-            "text": "",
+            "text": "You can quickly see how well other variables explain your variable of interest.",
             "title": "Why is it helpful?"
         },
         {
+            "location": "/healthcare-statistics/find-targeted-correlations/#so-how-do-we-do-it",
+            "text": "First, we'll load HCRTools, create a fake dataset on which to work, and look at it:   library(HCRTools)\n\ndf  - data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) # - categorical coulmns are ignored\n\nhead(df)   Next, we'll find the correlations between  'c'  and the other numeric columns in the dataset represented by  df .   res  - CalculateTargetedCorrelations(df,'c')\nres",
+            "title": "So, how do we do it?"
+        },
+        {
+            "location": "/healthcare-statistics/find-targeted-correlations/#function-specs-for-calculatetargetedcorrelations",
+            "text": "Return : a data frame of same length as input data frame, but three columns wide.    Arguments :   df : a data frame. This dataset contains at least two numeric columns.  target.col : a string. Column name of the variable of interest. Correlations of all other numeric columns are calculated against this column.",
+            "title": "Function specs for CalculateTargetedCorrelations"
+        },
+        {
+            "location": "/healthcare-statistics/find-targeted-correlations/#full-example-code",
+            "text": "library(HCRTools)\n\ndf  - data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) # - categorical coulmns are ignored\n\nhead(df)\n\nres  - CalculateTargetedCorrelations(df,'c')\nres",
+            "title": "Full example code"
+        },
+        {
             "location": "/healthcare-statistics/find-all-correlations/",
-            "text": "Find correlations with a specific variable via \nCalculateAllCorrelations\n\n\nWhat is this?\n\n\nWhy is it helpful?",
+            "text": "Find correlations with a specific variable via \nCalculateAllCorrelations\n\n\nWhat is this?\n\n\nIn healthcare (as in other fields) it's often helpful to understand the relationships between the variables in one's dataset. This provides that functionality by finding the correlations for all numeric columns in a particular dataset.\n\n\nWhy is it helpful?\n\n\nYou can quickly see the relationships present in your data.\n\n\nSo, how do we do it?\n\n\n\n\nFirst, we'll load HCRTools, create a fake dataset on which to work, and look at it:\n\n\n\n\nlibrary(HCRTools)\n\ndf \n- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #\n- is ignored\n\nhead(df)\n\n\n\n\n\n\nNext, we'll find the correlations between all numeric columns in the dataset represented by \ndf\n.\n\n\n\n\nres \n- CalculateAllCorrelations(df)\nres\n\n\n\n\nFunction specs for \nCalculateAllCorrelations\n\n\n\n\n\n\nReturn\n: a data frame of same length as input data frame, but three columns wide.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This dataset contains at least two numeric columns. \n\n\n\n\n\n\n\n\nFull example code\n\n\nlibrary(HCRTools)\n\ndf \n- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #\n- is ignored\n\nhead(df)\n\nres \n- CalculateAllCorrelations(df)\nres",
             "title": "Find All Correlations"
         },
         {
@@ -362,13 +377,28 @@
         },
         {
             "location": "/healthcare-statistics/find-all-correlations/#what-is-this",
-            "text": "",
+            "text": "In healthcare (as in other fields) it's often helpful to understand the relationships between the variables in one's dataset. This provides that functionality by finding the correlations for all numeric columns in a particular dataset.",
             "title": "What is this?"
         },
         {
             "location": "/healthcare-statistics/find-all-correlations/#why-is-it-helpful",
-            "text": "",
+            "text": "You can quickly see the relationships present in your data.",
             "title": "Why is it helpful?"
+        },
+        {
+            "location": "/healthcare-statistics/find-all-correlations/#so-how-do-we-do-it",
+            "text": "First, we'll load HCRTools, create a fake dataset on which to work, and look at it:   library(HCRTools)\n\ndf  - data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) # - is ignored\n\nhead(df)   Next, we'll find the correlations between all numeric columns in the dataset represented by  df .   res  - CalculateAllCorrelations(df)\nres",
+            "title": "So, how do we do it?"
+        },
+        {
+            "location": "/healthcare-statistics/find-all-correlations/#function-specs-for-calculateallcorrelations",
+            "text": "Return : a data frame of same length as input data frame, but three columns wide.    Arguments :   df : a data frame. This dataset contains at least two numeric columns.",
+            "title": "Function specs for CalculateAllCorrelations"
+        },
+        {
+            "location": "/healthcare-statistics/find-all-correlations/#full-example-code",
+            "text": "library(HCRTools)\n\ndf  - data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) # - is ignored\n\nhead(df)\n\nres  - CalculateAllCorrelations(df)\nres",
+            "title": "Full example code"
         }
     ]
 }
