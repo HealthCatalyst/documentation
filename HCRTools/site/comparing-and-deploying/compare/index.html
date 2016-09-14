@@ -140,6 +140,12 @@
                 
                     <li><a class="toctree-l4" href="#full-example-code">Full example code</a></li>
                 
+                    <li><a class="toctree-l4" href="#lasso-details">Lasso Details</a></li>
+                
+                    <li><a class="toctree-l4" href="#randomforest-details">RandomForest Details</a></li>
+                
+                    <li><a class="toctree-l4" href="#associated-helper-method-getcutoffs">Associated helper method getCutOffs</a></li>
+                
             
             </ul>
         
@@ -318,8 +324,72 @@ rf$run()
 </code></pre>
 
 <h2 id="full-example-code">Full example code</h2>
-<pre><code class="R">
+<pre><code class="r">ptm &lt;- proc.time()
+library(HCRTools)
 
+connection.string = &quot;
+driver={SQL Server};
+server=localhost;
+database=AdventureWorks2012;
+trusted_connection=true
+&quot;
+
+query = &quot;
+SELECT
+ [OrganizationLevel]
+,[MaritalStatus]
+,[Gender]
+,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
+,[VacationHours]
+,[SickLeaveHours]
+FROM [AdventureWorks2012].[HumanResources].[Employee]
+&quot;
+
+df &lt;- SelectData(connection.string, query)
+head(df)
+
+set.seed(43)
+p &lt;- SupervisedModelParameters$new()
+p$df = df
+p$type = 'classification'
+p$impute = TRUE
+p$grainCol = ''
+p$predictedCol = 'SalariedFlag'
+p$debug = FALSE
+p$cores = 1
+
+# Run Lasso
+lasso &lt;- Lasso$new(p)
+lasso$run()
+
+# Run RandomForest
+rf &lt;- RandomForest$new(p)
+rf$run()
+
+print(proc.time() - ptm)
+</code></pre>
+
+<h2 id="lasso-details"><code>Lasso</code> Details</h2>
+<p>This version of Lasso is based on the Grouped Lasso alogrithm offered by the <a href="https://cran.r-project.org/web/packages/grpreg/grpreg.pdf">grpreg package</a>. We prefer simple models to complicated ones, so for tuning the lambda regularization parameter, we use the 1SE rule, which means that we take the model with fewest coefficients, which is also within one standard error of the best model. This way, we provide guidance as to which features (ie, columns) should be kept in the deployed model. </p>
+<h2 id="randomforest-details"><code>RandomForest</code> Details</h2>
+<p>This version of random forest is based on the wonderful <a href="https://cran.r-project.org/web/packages/ranger/ranger.pdf">ranger package</a>.</p>
+<h2 id="associated-helper-method-getcutoffs">Associated helper method <code>getCutOffs</code></h2>
+<ul>
+<li>
+<p><strong>Return</strong>: Nothing. Prints fall-over probability (ie, cut point) and the false-positive rate associated with the input true-positive rate.</p>
+</li>
+<li>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><strong>tpr</strong>: numeric. The true-positive rate you want to gather information about.</li>
+</ul>
+</li>
+<li>
+<p>After generating a model via the <code>Lasso</code> or <code>RandomForest</code>, here's how <code>getCutOffs</code> is used:</p>
+</li>
+</ul>
+<pre><code class="r">lasso$getCutOffs(tpr=0.8)
+rf$getCutOffs(tpr=0.8)
 </code></pre>
               
             </div>

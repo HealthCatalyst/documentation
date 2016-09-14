@@ -145,7 +145,23 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#risk-adjusted-comparison">risk-adjusted-comparison</a></li>
+                <li class="toctree-l3"><a href="#risk-adjusted-comparisons-via-riskadjustedcomparisons">Risk-adjusted comparisons via RiskAdjustedComparisons</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-is-this">What is this?</a></li>
+                
+                    <li><a class="toctree-l4" href="#why-is-it-helpful">Why is it helpful?</a></li>
+                
+                    <li><a class="toctree-l4" href="#so-how-do-we-do-it">So, how do we do it?</a></li>
+                
+                    <li><a class="toctree-l4" href="#class-specs-for-riskadjustedcomparisons">Class specs for RiskAdjustedComparisons</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via SelectData</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-2-set-your-parameters-via-supervisedmodelparameters">Step 2: Set your parameters via SupervisedModelParameters</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-3-create-the-models-via-the-lasso-and-randomforest-algorithms">Step 3: Create the models via the Lasso and RandomForest algorithms.</a></li>
+                
+                    <li><a class="toctree-l4" href="#full-example-code">Full example code</a></li>
                 
             
             </ul>
@@ -210,7 +226,130 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="risk-adjusted-comparison">risk-adjusted-comparison</h1>
+                <h1 id="risk-adjusted-comparisons-via-riskadjustedcomparisons">Risk-adjusted comparisons via <code>RiskAdjustedComparisons</code></h1>
+<h2 id="what-is-this">What is this?</h2>
+<p>In healthcare one often wants to compare the performance of two or more groups, or compare the performance of one group from year to year. What makes this difficult is that department heads often say, "Yeah our mortality rate was high, but we have sicker patients than those other guys."</p>
+<p>Risk-adjusted comparisons are thus important because they let you compare two healthcare groups on a particular measure (like mortality rate), adjusting for the health of the patients.</p>
+<h2 id="why-is-it-helpful">Why is it helpful?</h2>
+<p>This functionality helps because it allows you to make apples to apples comparisons across groups or units of time.</p>
+<h2 id="so-how-do-we-do-it">So, how do we do it?</h2>
+<p>First, get some data organized (in via SQL or Excel) that has the following:</p>
+<ul>
+<li>A measure column, such as mortality rate or readmission rate</li>
+<li>A groupby column, such as a HospitalUnit column, that'd have categories like GroupA, GroupB, etc
+    This column could also be years or months. R will group the data by this column for the comparisons.</li>
+</ul>
+<h2 id="class-specs-for-riskadjustedcomparisons">Class specs for <code>RiskAdjustedComparisons</code></h2>
+<ul>
+<li>
+<p><strong>Return</strong>: a data frame that represents your data.</p>
+</li>
+<li>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><strong>server</strong>: a server name. You'll pull data from this server.</li>
+<li><strong>database</strong>: a database name. You'll pull data from this database</li>
+</ul>
+</li>
+</ul>
+<h2 id="step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via <code>SelectData</code></h2>
+<pre><code class="r">ptm &lt;- proc.time()
+library(HCRTools)
+
+connection.string = &quot;
+driver={SQL Server};
+server=localhost;
+database=AdventureWorks2012;
+trusted_connection=true
+&quot;
+
+query = &quot;
+SELECT
+[OrganizationLevel]
+,[MaritalStatus]
+,[Gender]
+,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
+,[VacationHours]
+,[SickLeaveHours]
+FROM [AdventureWorks2012].[HumanResources].[Employee]
+&quot;
+
+df &lt;- SelectData(connection.string, query)
+head(df) # Look at the data you read in
+str(df)
+</code></pre>
+
+<h2 id="step-2-set-your-parameters-via-supervisedmodelparameters">Step 2: Set your parameters via <code>SupervisedModelParameters</code></h2>
+<ul>
+<li>
+<p><strong>Return</strong>: an object representing your specific configuration.</p>
+</li>
+<li>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><strong>df</strong>: a data frame. The data your model is based on.</li>
+<li><strong>groupCol</strong>: a string. R will group your data by this coulmn for the comparison. Could be a list of units in the hospital. Years or months would also work.</li>
+<li><strong>impute</strong>: a boolean, defaults to FALSE. Whether to impute by replacing NULLs with column mean (for numeric columns) or column mode (for categorical columns).</li>
+<li><strong>predictedCol</strong>: a string. Name of variable (or column) that you want to compare the groups by. This could be mortality or readmission, for example.</li>
+<li><strong>debug</strong>: a boolean, defaults to FALSE. If TRUE, console output when comparing models is verbose for easier debugging.</li>
+<li><strong>cores</strong>: an int, defaults to 4. Number of cores on machine to use for model training.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="r">p &lt;- SupervisedModelParameters$new()
+p$df = df
+p$groupCol = 'Gender'
+p$impute = TRUE
+p$predictedCol = 'SalariedFlag'
+p$debug = FALSE
+p$cores = 1
+</code></pre>
+
+<h2 id="step-3-create-the-models-via-the-lasso-and-randomforest-algorithms">Step 3: Create the models via the <code>Lasso</code> and <code>RandomForest</code> algorithms.</h2>
+<pre><code class="r"># Run Lasso
+lasso &lt;- Lasso$new(p)
+lasso$run()
+
+# Run RandomForest
+rf &lt;- RandomForest$new(p)
+rf$run()
+</code></pre>
+
+<h2 id="full-example-code">Full example code</h2>
+<pre><code class="r">library(HCRTools)
+
+connection.string = &quot;
+driver={SQL Server};
+server=localhost;
+database=AdventureWorks2012;
+trusted_connection=true
+&quot;
+
+query = &quot;
+SELECT
+[OrganizationLevel]
+,[MaritalStatus]
+,[Gender]
+,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
+,[VacationHours]
+,[SickLeaveHours]
+FROM [AdventureWorks2012].[HumanResources].[Employee]
+WHERE OrganizationLevel &lt;&gt; 0
+&quot;
+
+df &lt;- SelectData(connection.string, query)
+
+p &lt;- SupervisedModelParameters$new()
+p$df = df
+p$groupCol = 'OrganizationLevel'
+p$impute = TRUE
+p$predictedCol = 'SalariedFlag'
+p$debug = FALSE
+p$cores = 1
+
+riskAdjComp &lt;- RiskAdjustedComparisons$new(p)
+riskAdjComp$run()
+</code></pre>
               
             </div>
           </div>

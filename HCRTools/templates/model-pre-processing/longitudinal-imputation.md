@@ -18,7 +18,7 @@ Nope. You have to first order your data by a PersonID column and then by a date-
 
 * First, we'll load HCRTools and create a fake dataset in R (that you can play with)
 
-```{R}
+```{r}
 library(HCRTools)
 df = data.frame(PersonID=c(1,1,2,2,3,3,3),
                 wt=c(.5,NA,NA,NA,.3,.7,NA),
@@ -31,7 +31,7 @@ head(df,n=7) # Looking at the raw data
 
 * Now let's do the imputation by calling the ``GroupedLOCF`` function. LOCF stands for last value carried forward
 
-```{R}
+```{r}
 df.result = GroupedLOCF(df, 'PersonID')
 
 head(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)
@@ -49,7 +49,7 @@ head(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)
 
 ## Full example code
 
-```{R}
+```{r}
 library(HCRTools)
 df = data.frame(PersonID=c(1,1,2,2,3,3,3),
                 wt=c(.5,NA,NA,NA,.3,.7,NA),

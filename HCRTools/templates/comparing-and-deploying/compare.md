@@ -91,7 +91,71 @@ rf$run()
 
 ## Full example code
 
-```{R}
+```{r}
+ptm <- proc.time()
+library(HCRTools)
+
+connection.string = "
+driver={SQL Server};
+server=localhost;
+database=AdventureWorks2012;
+trusted_connection=true
+"
+
+query = "
+SELECT
+ [OrganizationLevel]
+,[MaritalStatus]
+,[Gender]
+,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
+,[VacationHours]
+,[SickLeaveHours]
+FROM [AdventureWorks2012].[HumanResources].[Employee]
+"
+
+df <- SelectData(connection.string, query)
+head(df)
+
+set.seed(43)
+p <- SupervisedModelParameters$new()
+p$df = df
+p$type = 'classification'
+p$impute = TRUE
+p$grainCol = ''
+p$predictedCol = 'SalariedFlag'
+p$debug = FALSE
+p$cores = 1
+
+# Run Lasso
+lasso <- Lasso$new(p)
+lasso$run()
+
+# Run RandomForest
+rf <- RandomForest$new(p)
+rf$run()
+
+print(proc.time() - ptm)
+```
+
+## ``Lasso`` Details
+
+This version of Lasso is based on the Grouped Lasso alogrithm offered by the [grpreg package](https://cran.r-project.org/web/packages/grpreg/grpreg.pdf). We prefer simple models to complicated ones, so for tuning the lambda regularization parameter, we use the 1SE rule, which means that we take the model with fewest coefficients, which is also within one standard error of the best model. This way, we provide guidance as to which features (ie, columns) should be kept in the deployed model. 
 
 
+## ``RandomForest`` Details
+
+This version of random forest is based on the wonderful [ranger package](https://cran.r-project.org/web/packages/ranger/ranger.pdf).
+
+## Associated helper method ``getCutOffs``
+
+- __Return__: Nothing. Prints fall-over probability (ie, cut point) and the false-positive rate associated with the input true-positive rate.
+
+- __Arguments__:
+    - __tpr__: numeric. The true-positive rate you want to gather information about.
+
+* After generating a model via the ``Lasso`` or ``RandomForest``, here's how ``getCutOffs`` is used:
+
+```{r}
+lasso$getCutOffs(tpr=0.8)
+rf$getCutOffs(tpr=0.8)
 ```
