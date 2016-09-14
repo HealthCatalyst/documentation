@@ -38,7 +38,7 @@ head(df.result)
 - __Arguments__:
     - __df__: a data frame. This data frame contains a date-time column.
     - __date.time.col__: a string. Column name for the date-time column in your data frame that you want to split into multiple date and time columns. Works best in ISO 8601 format (ie, datetime or datetime2 in T-SQL).
-    - __depth__: a string, defaults to `h`. Indicates how many columns should be added to data frame. `'d'`, `'h'`, `'m'`, `'s'` expands to depth of day, hour, minute, and second, respectively. 
+    - __depth__: a string, defaults to `'h'`. Indicates how many columns should be added to data frame. `'d'`, `'h'`, `'m'`, `'s'` expands to depth of day, hour, minute, and second, respectively. 
     - __return.dt.col__: boolean, defaults to `FALSE`. Indicates whether to return original date-time column with modified data frame.
 
 ## Full example code

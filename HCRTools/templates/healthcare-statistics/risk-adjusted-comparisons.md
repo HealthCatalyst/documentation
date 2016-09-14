@@ -13,7 +13,7 @@ This functionality helps because it allows you to make apples to apples comparis
 
 ## So, how do we do it?
 
-First, get some data organized (in via SQL or Excel) that has the following:
+First, get some data organized (via SQL or Excel) that has the following:
 
 * A measure column, such as mortality rate or readmission rate
 * A groupby column, such as a HospitalUnit column, that'd have categories like GroupA, GroupB, etc

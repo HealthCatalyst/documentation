@@ -78,7 +78,13 @@
     </url>
         
     <url>
-     <loc>None/healthcare-statistics/find-correlations/</loc>
+     <loc>None/healthcare-statistics/find-targeted-correlations/</loc>
+     <lastmod>2016-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/healthcare-statistics/find-all-correlations/</loc>
      <lastmod>2016-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>

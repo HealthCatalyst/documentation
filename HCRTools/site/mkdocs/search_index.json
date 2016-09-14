@@ -142,7 +142,7 @@
         },
         {
             "location": "/model-pre-processing/seasonality-handling/",
-            "text": "Seasonality handling via \nConvertDateTimeColToDummies\n\n\nWhat is this?\n\n\nIn healthcare date-time stamp columns are common, but unfortunately machine learning algorithms do not handle them well.\n\n\nWhy is it helpful?\n\n\nOne has to do some simple feature engineering in order to take advantage of potential seasonality effects in a dataset. This works simply by transforming a date-time column into multiple columns that represent MonthOfYear, WeekOfYear, DayOfMonth, DayOfWeek, etc.\n\n\nSo, how do we do it?\n\n\n\n\nFirst, we'll load HCRTools, create a fake dataset on which to work, and look at it:\n\n\n\n\nDTCol = c(\n2001-06-09 12:45:05\n,\n2002-01-29 09:30:05\n,\n2002-02-02 07:36:50\n,\n          \n2002-03-04 16:45:01\n,\n2002-11-13 20:00:10\n,\n2003-01-29 07:31:43\n,\n          \n2003-07-07 17:30:02\n,\n2003-09-28 01:03:20\n)\ny1 \n- c(.5,1,3,6,8,13,14,1)\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1)\ndf \n- data.frame(DTCol,y1,y2)\n\nhead(df)\n\n\n\n\n\n\nNext, we'll create the extra date and time colums by calling the function and then we'll look at the transformed dataset\n\n\n\n\ndf.result \n- ConvertDateTimeColToDummies(df, 'DTCol')\n\nhead(df.result)\n\n\n\n\nFunction specs for \nConvertDateTimeColToDummies\n\n\n\n\n\n\nReturn\n: a data frame of same length, but greater width compared to the input data frame.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This data frame contains a date-time column.\n\n\ndate.time.col\n: a string. Column name for the date-time column in your data frame that you want to split into multiple date and time columns. Works best in ISO 8601 format (ie, datetime or datetime2 in T-SQL).\n\n\ndepth\n: a string, defaults to 'h'. Indicates how many columns should be added to data frame. 'd', 'h', 'm', 's' expands to depth of day, hour, minute, and second, respectively. \n\n\nreturn.dt.col\n: boolean, defaults to FALSE. Indicates whether to return original date-time column with modified data frame.\n\n\n\n\n\n\n\n\nFull example code\n\n\nlibrary(HCRTools)\nDTCol = c(\n2001-06-09 12:45:05\n,\n2002-01-29 09:30:05\n,\n2002-02-02 07:36:50\n,\n          \n2002-03-04 16:45:01\n,\n2002-11-13 20:00:10\n,\n2003-01-29 07:31:43\n,\n          \n2003-07-07 17:30:02\n,\n2003-09-28 01:03:20\n)\ny1 \n- c(.5,1,3,6,8,13,14,1)\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1)\ndf \n- data.frame(DTCol,y1,y2)\n\ndf \n- ConvertDateTimeColToDummies(df, 'DTCol')",
+            "text": "Seasonality handling via \nConvertDateTimeColToDummies\n\n\nWhat is this?\n\n\nIn healthcare date-time stamp columns are common, but unfortunately machine learning algorithms do not handle them well.\n\n\nWhy is it helpful?\n\n\nOne has to do some simple feature engineering in order to take advantage of potential seasonality effects in a dataset. This works simply by transforming a date-time column into multiple columns that represent MonthOfYear, WeekOfYear, DayOfMonth, DayOfWeek, etc.\n\n\nSo, how do we do it?\n\n\n\n\nFirst, we'll load HCRTools, create a fake dataset on which to work, and look at it:\n\n\n\n\nDTCol = c(\n2001-06-09 12:45:05\n,\n2002-01-29 09:30:05\n,\n2002-02-02 07:36:50\n,\n          \n2002-03-04 16:45:01\n,\n2002-11-13 20:00:10\n,\n2003-01-29 07:31:43\n,\n          \n2003-07-07 17:30:02\n,\n2003-09-28 01:03:20\n)\ny1 \n- c(.5,1,3,6,8,13,14,1)\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1)\ndf \n- data.frame(DTCol,y1,y2)\n\nhead(df)\n\n\n\n\n\n\nNext, we'll create the extra date and time colums by calling the function and then we'll look at the transformed dataset\n\n\n\n\ndf.result \n- ConvertDateTimeColToDummies(df, 'DTCol')\n\nhead(df.result)\n\n\n\n\nFunction specs for \nConvertDateTimeColToDummies\n\n\n\n\n\n\nReturn\n: a data frame of same length, but greater width compared to the input data frame.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This data frame contains a date-time column.\n\n\ndate.time.col\n: a string. Column name for the date-time column in your data frame that you want to split into multiple date and time columns. Works best in ISO 8601 format (ie, datetime or datetime2 in T-SQL).\n\n\ndepth\n: a string, defaults to \n'h'\n. Indicates how many columns should be added to data frame. \n'd'\n, \n'h'\n, \n'm'\n, \n's'\n expands to depth of day, hour, minute, and second, respectively. \n\n\nreturn.dt.col\n: boolean, defaults to \nFALSE\n. Indicates whether to return original date-time column with modified data frame.\n\n\n\n\n\n\n\n\nFull example code\n\n\nlibrary(HCRTools)\nDTCol = c(\n2001-06-09 12:45:05\n,\n2002-01-29 09:30:05\n,\n2002-02-02 07:36:50\n,\n          \n2002-03-04 16:45:01\n,\n2002-11-13 20:00:10\n,\n2003-01-29 07:31:43\n,\n          \n2003-07-07 17:30:02\n,\n2003-09-28 01:03:20\n)\ny1 \n- c(.5,1,3,6,8,13,14,1)\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1)\ndf \n- data.frame(DTCol,y1,y2)\n\ndf \n- ConvertDateTimeColToDummies(df, 'DTCol')",
             "title": "Seasonality Handling"
         },
         {
@@ -167,7 +167,7 @@
         },
         {
             "location": "/model-pre-processing/seasonality-handling/#function-specs-for-convertdatetimecoltodummies",
-            "text": "Return : a data frame of same length, but greater width compared to the input data frame.    Arguments :   df : a data frame. This data frame contains a date-time column.  date.time.col : a string. Column name for the date-time column in your data frame that you want to split into multiple date and time columns. Works best in ISO 8601 format (ie, datetime or datetime2 in T-SQL).  depth : a string, defaults to 'h'. Indicates how many columns should be added to data frame. 'd', 'h', 'm', 's' expands to depth of day, hour, minute, and second, respectively.   return.dt.col : boolean, defaults to FALSE. Indicates whether to return original date-time column with modified data frame.",
+            "text": "Return : a data frame of same length, but greater width compared to the input data frame.    Arguments :   df : a data frame. This data frame contains a date-time column.  date.time.col : a string. Column name for the date-time column in your data frame that you want to split into multiple date and time columns. Works best in ISO 8601 format (ie, datetime or datetime2 in T-SQL).  depth : a string, defaults to  'h' . Indicates how many columns should be added to data frame.  'd' ,  'h' ,  'm' ,  's'  expands to depth of day, hour, minute, and second, respectively.   return.dt.col : boolean, defaults to  FALSE . Indicates whether to return original date-time column with modified data frame.",
             "title": "Function specs for ConvertDateTimeColToDummies"
         },
         {
@@ -247,7 +247,7 @@
         },
         {
             "location": "/healthcare-statistics/risk-adjusted-comparisons/",
-            "text": "Risk-adjusted comparisons via \nRiskAdjustedComparisons\n\n\nWhat is this?\n\n\nIn healthcare one often wants to compare the performance of two or more groups, or compare the performance of one group from year to year. What makes this difficult is that department heads often say, \"Yeah our mortality rate was high, but we have sicker patients than those other guys.\"\n\n\nRisk-adjusted comparisons are thus important because they let you compare two healthcare groups on a particular measure (like mortality rate), adjusting for the health of the patients.\n\n\nWhy is it helpful?\n\n\nThis functionality helps because it allows you to make apples to apples comparisons across groups or units of time.\n\n\nSo, how do we do it?\n\n\nFirst, get some data organized (in via SQL or Excel) that has both\n- A measure column, such as mortality rate or readmission rate\n- A groupby column, such as a HospitalUnit column, that'd have categories like GroupA, GroupB, etc\n    This column could also be years or months. R will group the data by this column for the comparisons.\n\n\nStep 1: Pull in the data via \nSelectData\n\n\n\n\n\n\nReturn\n: a data frame that represents your data.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\nserver\n: a server name. You'll pull data from this server.\n\n\ndatabase\n: a database name. You'll pull data from this database.\n\n\n\n\n\n\n\n\nptm \n- proc.time()\nlibrary(HCRTools)\n\nconnection.string = \n\ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true\n\n\n\nquery = \n\nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee]\n\n\n\ndf \n- SelectData(connection.string, query)\nhead(df) # Look at the data you read in\nstr(df)\n\n\n\n\nStep 2: Set your parameters via \nSupervisedModelParameters\n\n\n\n\n\n\nReturn\n: an object representing your specific configuration.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. The data your model is based on.\n\n\ngroupCol\n: a string. R will group your data by this coulmn for the comparison. Could be a list of units in the hospital. Years or months would also work.\n\n\nimpute\n: a boolean, defaults to FALSE. Whether to impute by replacing NULLs with column mean (for numeric columns) or column mode (for categorical columns).\n\n\npredictedCol\n: a string. Name of variable (or column) that you want to compare the groups by. This could be mortality or readmission, for example.\n\n\ndebug\n: a boolean, defaults to FALSE. If TRUE, console output when comparing models is verbose for easier debugging.\n\n\ncores\n: an int, defaults to 4. Number of cores on machine to use for model training.\n\n\n\n\n\n\n\n\np \n- SupervisedModelParameters$new()\np$df = df\np$groupCol = 'Gender'\np$impute = TRUE\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$cores = 1\n\n\n\n\nStep 3: Create the models via the \nLasso\n and \nRandomForest\n algorithms.\n\n\n# Run Lasso\nlasso \n- Lasso$new(p)\nlasso$run()\n\n# Run RandomForest\nrf \n- RandomForest$new(p)\nrf$run()\n\n\n\n\nFull example code\n\n\nlibrary(HCRTools)\n\nconnection.string = \n\ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true\n\n\n\nquery = \n\nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee]\nWHERE OrganizationLevel \n 0\n\n\n\ndf \n- SelectData(connection.string, query)\n\np \n- SupervisedModelParameters$new()\np$df = df\np$groupCol = 'OrganizationLevel'\np$impute = TRUE\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$cores = 1\n\nriskAdjComp \n- RiskAdjustedComparisons$new(p)\nriskAdjComp$run()",
+            "text": "Risk-adjusted comparisons via \nRiskAdjustedComparisons\n\n\nWhat is this?\n\n\nIn healthcare one often wants to compare the performance of two or more groups, or compare the performance of one group from year to year. What makes this difficult is that department heads often say, \"Yeah our mortality rate was high, but we have sicker patients than those other guys.\"\n\n\nRisk-adjusted comparisons are thus important because they let you compare two healthcare groups on a particular measure (like mortality rate), adjusting for the health of the patients.\n\n\nWhy is it helpful?\n\n\nThis functionality helps because it allows you to make apples to apples comparisons across groups or units of time.\n\n\nSo, how do we do it?\n\n\nFirst, get some data organized (via SQL or Excel) that has the following:\n\n\n\n\nA measure column, such as mortality rate or readmission rate\n\n\nA groupby column, such as a HospitalUnit column, that'd have categories like GroupA, GroupB, etc\n    This column could also be years or months. R will group the data by this column for the comparisons.\n\n\n\n\nClass specs for \nRiskAdjustedComparisons\n\n\n\n\n\n\nReturn\n: a data frame that represents your data.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\nserver\n: a server name. You'll pull data from this server.\n\n\ndatabase\n: a database name. You'll pull data from this database\n\n\n\n\n\n\n\n\nStep 1: Pull in the data via \nSelectData\n\n\nptm \n- proc.time()\nlibrary(HCRTools)\n\nconnection.string = \n\ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true\n\n\n\nquery = \n\nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee]\n\n\n\ndf \n- SelectData(connection.string, query)\nhead(df) # Look at the data you read in\nstr(df)\n\n\n\n\nStep 2: Set your parameters via \nSupervisedModelParameters\n\n\n\n\n\n\nReturn\n: an object representing your specific configuration.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. The data your model is based on.\n\n\ngroupCol\n: a string. R will group your data by this coulmn for the comparison. Could be a list of units in the hospital. Years or months would also work.\n\n\nimpute\n: a boolean, defaults to FALSE. Whether to impute by replacing NULLs with column mean (for numeric columns) or column mode (for categorical columns).\n\n\npredictedCol\n: a string. Name of variable (or column) that you want to compare the groups by. This could be mortality or readmission, for example.\n\n\ndebug\n: a boolean, defaults to FALSE. If TRUE, console output when comparing models is verbose for easier debugging.\n\n\ncores\n: an int, defaults to 4. Number of cores on machine to use for model training.\n\n\n\n\n\n\n\n\np \n- SupervisedModelParameters$new()\np$df = df\np$groupCol = 'Gender'\np$impute = TRUE\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$cores = 1\n\n\n\n\nStep 3: Create the models via the \nLasso\n and \nRandomForest\n algorithms.\n\n\n# Run Lasso\nlasso \n- Lasso$new(p)\nlasso$run()\n\n# Run RandomForest\nrf \n- RandomForest$new(p)\nrf$run()\n\n\n\n\nFull example code\n\n\nlibrary(HCRTools)\n\nconnection.string = \n\ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true\n\n\n\nquery = \n\nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee]\nWHERE OrganizationLevel \n 0\n\n\n\ndf \n- SelectData(connection.string, query)\n\np \n- SupervisedModelParameters$new()\np$df = df\np$groupCol = 'OrganizationLevel'\np$impute = TRUE\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$cores = 1\n\nriskAdjComp \n- RiskAdjustedComparisons$new(p)\nriskAdjComp$run()",
             "title": "Risk-adjusted Comparisons"
         },
         {
@@ -267,12 +267,17 @@
         },
         {
             "location": "/healthcare-statistics/risk-adjusted-comparisons/#so-how-do-we-do-it",
-            "text": "First, get some data organized (in via SQL or Excel) that has both\n- A measure column, such as mortality rate or readmission rate\n- A groupby column, such as a HospitalUnit column, that'd have categories like GroupA, GroupB, etc\n    This column could also be years or months. R will group the data by this column for the comparisons.",
+            "text": "First, get some data organized (via SQL or Excel) that has the following:   A measure column, such as mortality rate or readmission rate  A groupby column, such as a HospitalUnit column, that'd have categories like GroupA, GroupB, etc\n    This column could also be years or months. R will group the data by this column for the comparisons.",
             "title": "So, how do we do it?"
         },
         {
+            "location": "/healthcare-statistics/risk-adjusted-comparisons/#class-specs-for-riskadjustedcomparisons",
+            "text": "Return : a data frame that represents your data.    Arguments :   server : a server name. You'll pull data from this server.  database : a database name. You'll pull data from this database",
+            "title": "Class specs for RiskAdjustedComparisons"
+        },
+        {
             "location": "/healthcare-statistics/risk-adjusted-comparisons/#step-1-pull-in-the-data-via-selectdata",
-            "text": "Return : a data frame that represents your data.    Arguments :   server : a server name. You'll pull data from this server.  database : a database name. You'll pull data from this database.     ptm  - proc.time()\nlibrary(HCRTools)\n\nconnection.string =  \ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true \n\nquery =  \nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee] \n\ndf  - SelectData(connection.string, query)\nhead(df) # Look at the data you read in\nstr(df)",
+            "text": "ptm  - proc.time()\nlibrary(HCRTools)\n\nconnection.string =  \ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true \n\nquery =  \nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee] \n\ndf  - SelectData(connection.string, query)\nhead(df) # Look at the data you read in\nstr(df)",
             "title": "Step 1: Pull in the data via SelectData"
         },
         {
@@ -292,23 +297,78 @@
         },
         {
             "location": "/healthcare-statistics/trend-analysis/",
-            "text": "trend-analysis",
+            "text": "Trend Analysis via \nFindTrends\n\n\nWhat is this?\n\n\nIn healthcare one often wants to automatically detect trends occuring across many different measures at the same time. Further, one wants to be able to group by various categories and find trends among subsets of the patient population. \n\n\nHere one can quickly look across 50+ measures for those that have experienced \nnotable trends according to Nelson rule 3\n.\n\n\nWhy is it helpful?\n\n\nThis \nFindTrends\n function allows one to quickly see if any numeric columns in a dataset have been trending downward or upward over six consecutive months, using automatic subgroupings (like on Gender, for example).\n\n\nSo, how do we do it?\n\n\nFirst, get some data organized (via SQL or Excel) that has the following:\n\n\n\n\nA numeric column (like mortality rate) that could have a trend\n\n\nA categorical column (like Gender) that we'll group by to check trends for Females and Males\n\n\n\n\nFunction specs for \nFindTrends\n\n\n\n\n\n\nReturn\n: a data frame describing which measures were trending, over which dimensions (ie, Male/Female), and the trend end-date.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This data contains both the (numeric) measure columns and (categorical) columns to group by.\n\n\ndatecol\n: a string. Column name for the date or date-time column in your data frame.\n\n\ncoltoaggregate\n: a string. Column name for the categorical column we'll group by.\n\n\n\n\n\n\n\n\nFull example code\n\n\ndates \n- c(as.Date(\n2012-01-01\n),as.Date(\n2012-01-02\n),as.Date(\n2012-02-01\n),\n      as.Date(\n2012-03-01\n),as.Date(\n2012-04-01\n),as.Date(\n2012-05-01\n),\n      as.Date(\n2012-06-01\n),as.Date(\n2012-06-02\n))\ny1 \n- c(0,1,2,6,8,13,14,16)               # large positive\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1.5)     # small positive\ny3 \n- c(1,0,-2,-2,-4,-5,-7,-8)            # big negative\ny4 \n- c(.5,0,-.5,-.5,-.5,-.5,-.6,0)       # small negative\ngender \n- c('M','F','F','F','F','F','F','F')\ndf \n- data.frame(dates,y1,y2,y3,y4,gender)\n\nres = FindTrends(df = df,\n                 datecol = 'dates',\n                 coltoaggregate = 'gender')",
             "title": "Trend Analysis"
         },
         {
-            "location": "/healthcare-statistics/trend-analysis/#trend-analysis",
+            "location": "/healthcare-statistics/trend-analysis/#trend-analysis-via-findtrends",
             "text": "",
-            "title": "trend-analysis"
+            "title": "Trend Analysis via FindTrends"
         },
         {
-            "location": "/healthcare-statistics/find-correlations/",
-            "text": "find-correlations",
-            "title": "Find Correlations"
+            "location": "/healthcare-statistics/trend-analysis/#what-is-this",
+            "text": "In healthcare one often wants to automatically detect trends occuring across many different measures at the same time. Further, one wants to be able to group by various categories and find trends among subsets of the patient population.   Here one can quickly look across 50+ measures for those that have experienced  notable trends according to Nelson rule 3 .",
+            "title": "What is this?"
         },
         {
-            "location": "/healthcare-statistics/find-correlations/#find-correlations",
+            "location": "/healthcare-statistics/trend-analysis/#why-is-it-helpful",
+            "text": "This  FindTrends  function allows one to quickly see if any numeric columns in a dataset have been trending downward or upward over six consecutive months, using automatic subgroupings (like on Gender, for example).",
+            "title": "Why is it helpful?"
+        },
+        {
+            "location": "/healthcare-statistics/trend-analysis/#so-how-do-we-do-it",
+            "text": "First, get some data organized (via SQL or Excel) that has the following:   A numeric column (like mortality rate) that could have a trend  A categorical column (like Gender) that we'll group by to check trends for Females and Males",
+            "title": "So, how do we do it?"
+        },
+        {
+            "location": "/healthcare-statistics/trend-analysis/#function-specs-for-findtrends",
+            "text": "Return : a data frame describing which measures were trending, over which dimensions (ie, Male/Female), and the trend end-date.    Arguments :   df : a data frame. This data contains both the (numeric) measure columns and (categorical) columns to group by.  datecol : a string. Column name for the date or date-time column in your data frame.  coltoaggregate : a string. Column name for the categorical column we'll group by.",
+            "title": "Function specs for FindTrends"
+        },
+        {
+            "location": "/healthcare-statistics/trend-analysis/#full-example-code",
+            "text": "dates  - c(as.Date( 2012-01-01 ),as.Date( 2012-01-02 ),as.Date( 2012-02-01 ),\n      as.Date( 2012-03-01 ),as.Date( 2012-04-01 ),as.Date( 2012-05-01 ),\n      as.Date( 2012-06-01 ),as.Date( 2012-06-02 ))\ny1  - c(0,1,2,6,8,13,14,16)               # large positive\ny2  - c(.8,1,1.2,1.2,1.2,1.3,1.3,1.5)     # small positive\ny3  - c(1,0,-2,-2,-4,-5,-7,-8)            # big negative\ny4  - c(.5,0,-.5,-.5,-.5,-.5,-.6,0)       # small negative\ngender  - c('M','F','F','F','F','F','F','F')\ndf  - data.frame(dates,y1,y2,y3,y4,gender)\n\nres = FindTrends(df = df,\n                 datecol = 'dates',\n                 coltoaggregate = 'gender')",
+            "title": "Full example code"
+        },
+        {
+            "location": "/healthcare-statistics/find-targeted-correlations/",
+            "text": "Find correlations with a specific variable via \nCalculateTargetedCorrelations\n\n\nWhat is this?\n\n\nWhy is it helpful?",
+            "title": "Find Targeted Correlations"
+        },
+        {
+            "location": "/healthcare-statistics/find-targeted-correlations/#find-correlations-with-a-specific-variable-via-calculatetargetedcorrelations",
             "text": "",
-            "title": "find-correlations"
+            "title": "Find correlations with a specific variable via CalculateTargetedCorrelations"
+        },
+        {
+            "location": "/healthcare-statistics/find-targeted-correlations/#what-is-this",
+            "text": "",
+            "title": "What is this?"
+        },
+        {
+            "location": "/healthcare-statistics/find-targeted-correlations/#why-is-it-helpful",
+            "text": "",
+            "title": "Why is it helpful?"
+        },
+        {
+            "location": "/healthcare-statistics/find-all-correlations/",
+            "text": "Find correlations with a specific variable via \nCalculateAllCorrelations\n\n\nWhat is this?\n\n\nWhy is it helpful?",
+            "title": "Find All Correlations"
+        },
+        {
+            "location": "/healthcare-statistics/find-all-correlations/#find-correlations-with-a-specific-variable-via-calculateallcorrelations",
+            "text": "",
+            "title": "Find correlations with a specific variable via CalculateAllCorrelations"
+        },
+        {
+            "location": "/healthcare-statistics/find-all-correlations/#what-is-this",
+            "text": "",
+            "title": "What is this?"
+        },
+        {
+            "location": "/healthcare-statistics/find-all-correlations/#why-is-it-helpful",
+            "text": "",
+            "title": "Why is it helpful?"
         }
     ]
 }
