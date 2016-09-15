@@ -160,7 +160,9 @@
                 
                     <li><a class="toctree-l4" href="#so-how-do-we-do-it">So, how do we do it?</a></li>
                 
-                    <li><a class="toctree-l4" href="#function-specs-for-findtrends">Function specs for FindTrends</a></li>
+                    <li><a class="toctree-l4" href="#step-1-create-some-data-or-pull-it-from-sql-server">Step 1: Create some data or pull it from SQL Server</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-2-find-trends-via-findtrends">Step 2: Find trends via FindTrends</a></li>
                 
                     <li><a class="toctree-l4" href="#full-example-code">Full example code</a></li>
                 
@@ -234,20 +236,10 @@
 <h2 id="why-is-it-helpful">Why is it helpful?</h2>
 <p>This <code>FindTrends</code> function allows one to quickly see if any numeric columns in a dataset have been trending downward or upward over six consecutive months, using automatic subgroupings (like on Gender, for example).</p>
 <h2 id="so-how-do-we-do-it">So, how do we do it?</h2>
-<ul>
-<li>
-<p>First, get some data organized (via SQL or Excel) that has the following:</p>
-</li>
-<li>
-<p>A numeric column (like mortality rate) that could have a trend</p>
-</li>
-<li>
-<p>A categorical column (like Gender) that we'll group by to check trends for Females and Males</p>
-</li>
-<li>
-<p>Create some fake data</p>
-</li>
-</ul>
+<p>First, get some data organized (via SQL or Excel) that has the following.
+- A numeric column (like mortality rate) that could have a trend
+- A categorical column (like Gender) that we'll group by to check trends for Females and Males</p>
+<h2 id="step-1-create-some-data-or-pull-it-from-sql-server">Step 1: Create some data or pull it from SQL Server</h2>
 <pre><code class="r">dates &lt;- c(as.Date(&quot;2012-01-01&quot;),as.Date(&quot;2012-01-02&quot;),as.Date(&quot;2012-02-01&quot;),
       as.Date(&quot;2012-03-01&quot;),as.Date(&quot;2012-04-01&quot;),as.Date(&quot;2012-05-01&quot;),
       as.Date(&quot;2012-06-01&quot;),as.Date(&quot;2012-06-02&quot;))
@@ -259,16 +251,7 @@ gender &lt;- c('M','F','F','F','F','F','F','F')
 df &lt;- data.frame(dates,y1,y2,y3,y4,gender)
 </code></pre>
 
-<ul>
-<li>Find trends via <code>FindTrends</code></li>
-</ul>
-<pre><code class="r">res = FindTrends(df = df,
-                 datecol = 'dates',
-                 coltoaggregate = 'gender')
-res
-</code></pre>
-
-<h2 id="function-specs-for-findtrends">Function specs for <code>FindTrends</code></h2>
+<h2 id="step-2-find-trends-via-findtrends">Step 2: Find trends via <code>FindTrends</code></h2>
 <ul>
 <li>
 <p><strong>Return</strong>: a data frame describing which measures were trending, over which dimensions (ie, Male/Female), and the trend end-date.</p>
@@ -282,6 +265,12 @@ res
 </ul>
 </li>
 </ul>
+<pre><code class="r">res = FindTrends(df = df,
+                 datecol = 'dates',
+                 coltoaggregate = 'gender')
+res
+</code></pre>
+
 <h2 id="full-example-code">Full example code</h2>
 <pre><code class="r">dates &lt;- c(as.Date(&quot;2012-01-01&quot;),as.Date(&quot;2012-01-02&quot;),as.Date(&quot;2012-02-01&quot;),
       as.Date(&quot;2012-03-01&quot;),as.Date(&quot;2012-04-01&quot;),as.Date(&quot;2012-05-01&quot;),

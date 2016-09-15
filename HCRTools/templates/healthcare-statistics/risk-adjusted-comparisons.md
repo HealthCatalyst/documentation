@@ -19,14 +19,6 @@ First, get some data organized (via SQL or Excel) that has the following:
 * A groupby column, such as a HospitalUnit column, that'd have categories like GroupA, GroupB, etc
     This column could also be years or months. R will group the data by this column for the comparisons.
 
-## Class specs for ``RiskAdjustedComparisons``
-
-- __Return__: a data frame that represents your data.
-
-- __Arguments__:
-    - __server__: a server name. You'll pull data from this server.
-    - __database__: a database name. You'll pull data from this database
-
 ## Step 1: Pull in the data via ``SelectData``
 
 ```{r}
@@ -78,16 +70,11 @@ p$debug = FALSE
 p$cores = 1
 ```
 
-## Step 3: Create the models via the ``Lasso`` and ``RandomForest`` algorithms.
+## Step 3: Make the risk-adjusted comparison via ``RiskAdjustedComparisons``.
 
 ```{r}
-# Run Lasso
-lasso <- Lasso$new(p)
-lasso$run()
-
-# Run RandomForest
-rf <- RandomForest$new(p)
-rf$run()
+riskAdjComp <- RiskAdjustedComparisons$new(p)
+riskAdjComp$run()
 ```
 
 ## Full example code

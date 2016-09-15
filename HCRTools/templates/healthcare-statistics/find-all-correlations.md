@@ -2,7 +2,7 @@
 
 ## What is this?
 
-In healthcare (as in other fields) it's often helpful to understand the relationships between the variables in one's dataset. This provides that functionality by finding the correlations for all numeric columns in a particular dataset.
+In healthcare (as in other fields) it's often helpful to understand the relationships between the variables in one's dataset. This provides that functionality by finding the [correlations](https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient) for all numeric columns in a particular dataset.
 
 ## Why is it helpful?
 
@@ -37,6 +37,7 @@ res
 - __Arguments__:
     - __df__: a data frame. This dataset contains at least two numeric columns. 
     
+We use the [Pearson correlation coefficient](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/cor.html).
 
 ## Full example code
 

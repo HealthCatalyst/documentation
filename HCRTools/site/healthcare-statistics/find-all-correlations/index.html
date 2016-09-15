@@ -229,7 +229,7 @@
               
                 <h1 id="find-correlations-with-a-specific-variable-via-calculateallcorrelations">Find correlations with a specific variable via <code>CalculateAllCorrelations</code></h1>
 <h2 id="what-is-this">What is this?</h2>
-<p>In healthcare (as in other fields) it's often helpful to understand the relationships between the variables in one's dataset. This provides that functionality by finding the correlations for all numeric columns in a particular dataset.</p>
+<p>In healthcare (as in other fields) it's often helpful to understand the relationships between the variables in one's dataset. This provides that functionality by finding the <a href="https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient">correlations</a> for all numeric columns in a particular dataset.</p>
 <h2 id="why-is-it-helpful">Why is it helpful?</h2>
 <p>You can quickly see the relationships present in your data.</p>
 <h2 id="so-how-do-we-do-it">So, how do we do it?</h2>
@@ -265,6 +265,7 @@ res
 </ul>
 </li>
 </ul>
+<p>We use the <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/cor.html">Pearson correlation coefficient</a>.</p>
 <h2 id="full-example-code">Full example code</h2>
 <pre><code class="r">library(HCRTools)
 

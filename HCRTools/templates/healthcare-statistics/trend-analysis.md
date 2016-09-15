@@ -12,12 +12,11 @@ This ``FindTrends`` function allows one to quickly see if any numeric columns in
 
 ## So, how do we do it?
 
-* First, get some data organized (via SQL or Excel) that has the following:
-
+First, get some data organized (via SQL or Excel) that has the following.
 - A numeric column (like mortality rate) that could have a trend
 - A categorical column (like Gender) that we'll group by to check trends for Females and Males
 
-* Create some fake data
+## Step 1: Create some data or pull it from SQL Server
 
 ```{r}
 dates <- c(as.Date("2012-01-01"),as.Date("2012-01-02"),as.Date("2012-02-01"),
@@ -31,16 +30,7 @@ gender <- c('M','F','F','F','F','F','F','F')
 df <- data.frame(dates,y1,y2,y3,y4,gender)
 ```
 
-* Find trends via ``FindTrends``
-
-```{r}
-res = FindTrends(df = df,
-                 datecol = 'dates',
-                 coltoaggregate = 'gender')
-res
-```
-
-## Function specs for ``FindTrends``
+## Step 2: Find trends via ``FindTrends``
 
 - __Return__: a data frame describing which measures were trending, over which dimensions (ie, Male/Female), and the trend end-date.
 
@@ -48,6 +38,13 @@ res
     - __df__: a data frame. This data contains both the (numeric) measure columns and (categorical) columns to group by.
     - __datecol__: a string. Column name for the date or date-time column in your data frame.
     - __coltoaggregate__: a string. Column name for the categorical column we'll group by.
+
+```{r}
+res = FindTrends(df = df,
+                 datecol = 'dates',
+                 coltoaggregate = 'gender')
+res
+```
 
 ## Full example code
 

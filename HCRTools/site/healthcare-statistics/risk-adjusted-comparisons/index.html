@@ -153,13 +153,11 @@
                 
                     <li><a class="toctree-l4" href="#so-how-do-we-do-it">So, how do we do it?</a></li>
                 
-                    <li><a class="toctree-l4" href="#class-specs-for-riskadjustedcomparisons">Class specs for RiskAdjustedComparisons</a></li>
-                
                     <li><a class="toctree-l4" href="#step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via SelectData</a></li>
                 
                     <li><a class="toctree-l4" href="#step-2-set-your-parameters-via-supervisedmodelparameters">Step 2: Set your parameters via SupervisedModelParameters</a></li>
                 
-                    <li><a class="toctree-l4" href="#step-3-create-the-models-via-the-lasso-and-randomforest-algorithms">Step 3: Create the models via the Lasso and RandomForest algorithms.</a></li>
+                    <li><a class="toctree-l4" href="#step-3-make-the-risk-adjusted-comparison-via-riskadjustedcomparisons">Step 3: Make the risk-adjusted comparison via RiskAdjustedComparisons.</a></li>
                 
                     <li><a class="toctree-l4" href="#full-example-code">Full example code</a></li>
                 
@@ -246,19 +244,6 @@
 <li>A groupby column, such as a HospitalUnit column, that'd have categories like GroupA, GroupB, etc
     This column could also be years or months. R will group the data by this column for the comparisons.</li>
 </ul>
-<h2 id="class-specs-for-riskadjustedcomparisons">Class specs for <code>RiskAdjustedComparisons</code></h2>
-<ul>
-<li>
-<p><strong>Return</strong>: a data frame that represents your data.</p>
-</li>
-<li>
-<p><strong>Arguments</strong>:</p>
-<ul>
-<li><strong>server</strong>: a server name. You'll pull data from this server.</li>
-<li><strong>database</strong>: a database name. You'll pull data from this database</li>
-</ul>
-</li>
-</ul>
 <h2 id="step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via <code>SelectData</code></h2>
 <pre><code class="r">ptm &lt;- proc.time()
 library(HCRTools)
@@ -312,14 +297,9 @@ p$debug = FALSE
 p$cores = 1
 </code></pre>
 
-<h2 id="step-3-create-the-models-via-the-lasso-and-randomforest-algorithms">Step 3: Create the models via the <code>Lasso</code> and <code>RandomForest</code> algorithms.</h2>
-<pre><code class="r"># Run Lasso
-lasso &lt;- Lasso$new(p)
-lasso$run()
-
-# Run RandomForest
-rf &lt;- RandomForest$new(p)
-rf$run()
+<h2 id="step-3-make-the-risk-adjusted-comparison-via-riskadjustedcomparisons">Step 3: Make the risk-adjusted comparison via <code>RiskAdjustedComparisons</code>.</h2>
+<pre><code class="r">riskAdjComp &lt;- RiskAdjustedComparisons$new(p)
+riskAdjComp$run()
 </code></pre>
 
 <h2 id="full-example-code">Full example code</h2>
