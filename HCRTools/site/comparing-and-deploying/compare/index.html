@@ -383,7 +383,7 @@ print(proc.time() - ptm)
 <h2 id="randomforest-details"><code>RandomForest</code> Details</h2>
 <p>This version of random forest is based on the wonderful <a href="https://cran.r-project.org/web/packages/ranger/ranger.pdf">ranger package</a>.</p>
 <h2 id="linearmixedmodel-details"><code>LinearMixedModel</code> Details</h2>
-<p>This mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets.</p>
+<p>This mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets, and then scale up from there.</p>
 <p>Relevant example code:</p>
 <pre><code>p &lt;- SupervisedModelParameters$new()
 p$df = df

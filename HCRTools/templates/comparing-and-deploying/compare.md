@@ -147,7 +147,7 @@ This version of random forest is based on the wonderful [ranger package](https:/
 
 ## ``LinearMixedModel`` Details
 
-This mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets.
+This mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets, and then scale up from there.
 
 Relevant example code:
 
