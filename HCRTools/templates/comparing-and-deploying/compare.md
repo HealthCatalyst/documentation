@@ -175,10 +175,13 @@ Note: sometimes it's helpful to order your query by the grainCol and/or the pers
 - __Arguments__:
     - __tpr__: numeric. The true-positive rate you want to gather information about.
 
-* After generating a model via the ``Lasso`` or ``RandomForest``, here's how ``getCutOffs`` is used:
+* After generating a model via the methods above, here's how ``getCutOffs`` is used, depending on which model you want to learn about:
 
 ```{r}
-lasso$getCutOffs(tpr=0.8)
-rf$getCutOffs(tpr=0.8)
+lasso$getCutOffs(tpr=0.8) or
+
+rf$getCutOffs(tpr=0.8) or
+
+lmm$getCutOffs(tpr=0.8)
 ```
 

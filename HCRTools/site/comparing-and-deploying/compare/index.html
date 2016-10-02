@@ -412,11 +412,14 @@ lmm$run()
 </ul>
 </li>
 <li>
-<p>After generating a model via the <code>Lasso</code> or <code>RandomForest</code>, here's how <code>getCutOffs</code> is used:</p>
+<p>After generating a model via the methods above, here's how <code>getCutOffs</code> is used, depending on which model you want to learn about:</p>
 </li>
 </ul>
-<pre><code class="r">lasso$getCutOffs(tpr=0.8)
-rf$getCutOffs(tpr=0.8)
+<pre><code class="r">lasso$getCutOffs(tpr=0.8) or
+
+rf$getCutOffs(tpr=0.8) or
+
+lmm$getCutOffs(tpr=0.8)
 </code></pre>
               
             </div>
