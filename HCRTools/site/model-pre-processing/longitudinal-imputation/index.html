@@ -232,7 +232,7 @@
                 <h1 id="longitudinal-imputation-via-groupedlocf">Longitudinal Imputation via <code>GroupedLOCF</code></h1>
 <h2 id="what-is-this">What is this?</h2>
 <p>In healthcare one often works with datasets that have multiple rows for a single person, over time. This is called longitudinal data.</p>
-<p>If you want to fill in some of the NULLs in such a dataset, HCRTools lets you pull values forward within each person's particular history. In other words, Joe's weight from a year ago can be pulled forward to Joe's rows corresponding to last week or last month.</p>
+<p>If you want to fill in some of the NULLs in such a dataset, HCRTools lets implement the <a href="https://en.wikipedia.org/wiki/Imputation_(statistics)#Single_imputation">last observation carried forward</a> technique. In other words, Joe's weight from a year ago (which was his last weight data point) can be pulled forward to Joe's rows corresponding to last week or last month.</p>
 <h2 id="why-is-it-helpful">Why is it helpful?</h2>
 <p>This may help make your models more accurate, or help fill in your data for disparate calculations/visualizations.</p>
 <h2 id="is-any-longitudinal-dataset-ready-for-hcrtools-to-work-on-it">Is any longitudinal dataset ready for HCRTools to work on it?</h2>

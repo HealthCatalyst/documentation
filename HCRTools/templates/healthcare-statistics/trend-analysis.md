@@ -32,7 +32,7 @@ df <- data.frame(dates,y1,y2,y3,y4,gender)
 
 ## Step 2: Find trends via ``FindTrends``
 
-- __Return__: a data frame describing which measures were trending, over which dimensions (ie, Male/Female), and the trend end-date.
+- __Return__: A data frame containing the dimensional attribute (ie gender), the subset the data was grouped by (ie M/F), the measures that had trends (ie, mortality or readmission), and the ending month.
 
 - __Arguments__:
     - __df__: a data frame. This data contains both the (numeric) measure columns and (categorical) columns to group by.

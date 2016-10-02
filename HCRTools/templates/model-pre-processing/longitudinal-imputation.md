@@ -4,7 +4,7 @@
 
 In healthcare one often works with datasets that have multiple rows for a single person, over time. This is called longitudinal data.
 
-If you want to fill in some of the NULLs in such a dataset, HCRTools lets you pull values forward within each person's particular history. In other words, Joe's weight from a year ago can be pulled forward to Joe's rows corresponding to last week or last month.
+If you want to fill in some of the NULLs in such a dataset, HCRTools lets implement the [last observation carried forward](https://en.wikipedia.org/wiki/Imputation_(statistics)#Single_imputation) technique. In other words, Joe's weight from a year ago (which was his last weight data point) can be pulled forward to Joe's rows corresponding to last week or last month.
 
 ## Why is it helpful?
 

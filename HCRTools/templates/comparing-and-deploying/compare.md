@@ -1,4 +1,4 @@
-# Create and compare models via ``Lasso`` and ``RandomForest``
+# Create and compare models via ``Lasso``, ``RandomForest``, and ``LinearMixedModel``
 
 # What is this?
 
@@ -141,10 +141,32 @@ print(proc.time() - ptm)
 
 This version of Lasso is based on the Grouped Lasso alogrithm offered by the [grpreg package](https://cran.r-project.org/web/packages/grpreg/grpreg.pdf). We prefer simple models to complicated ones, so for tuning the lambda regularization parameter, we use the 1SE rule, which means that we take the model with fewest coefficients, which is also within one standard error of the best model. This way, we provide guidance as to which features (ie, columns) should be kept in the deployed model. 
 
-
 ## ``RandomForest`` Details
 
 This version of random forest is based on the wonderful [ranger package](https://cran.r-project.org/web/packages/ranger/ranger.pdf).
+
+## ``LinearMixedModel`` Details
+
+This mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets.
+
+Relevant example code:
+
+```
+p <- SupervisedModelParameters$new()
+p$df = df
+p$type = 'classification'
+p$impute = TRUE
+p$grainCol = 'PatientEncounterID' # This grain of the dataset (required)
+p$personCol = 'PatientID'         # This represents the person (required)
+p$predictedCol = 'HighA1C'
+p$debug = FALSE
+p$cores = 1
+
+lmm <- LinearMixedModel$new(p)
+lmm$run()
+```
+
+Note: sometimes it's helpful to order your query by the grainCol and/or the personCol. You might find higher accuracy by experimenting with these combinations.
 
 ## Associated helper method ``getCutOffs``
 
@@ -159,3 +181,4 @@ This version of random forest is based on the wonderful [ranger package](https:/
 lasso$getCutOffs(tpr=0.8)
 rf$getCutOffs(tpr=0.8)
 ```
+

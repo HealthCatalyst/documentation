@@ -123,7 +123,7 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#create-and-compare-models-via-lasso-and-randomforest">Create and compare models via Lasso and RandomForest</a></li>
+                <li class="toctree-l3"><a href="#create-and-compare-models-via-lasso-randomforest-and-linearmixedmodel">Create and compare models via Lasso, RandomForest, and LinearMixedModel</a></li>
                 
             
                 <li class="toctree-l3"><a href="#what-is-this">What is this?</a></li>
@@ -143,6 +143,8 @@
                     <li><a class="toctree-l4" href="#lasso-details">Lasso Details</a></li>
                 
                     <li><a class="toctree-l4" href="#randomforest-details">RandomForest Details</a></li>
+                
+                    <li><a class="toctree-l4" href="#linearmixedmodel-details">LinearMixedModel Details</a></li>
                 
                     <li><a class="toctree-l4" href="#associated-helper-method-getcutoffs">Associated helper method getCutOffs</a></li>
                 
@@ -238,7 +240,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="create-and-compare-models-via-lasso-and-randomforest">Create and compare models via <code>Lasso</code> and <code>RandomForest</code></h1>
+                <h1 id="create-and-compare-models-via-lasso-randomforest-and-linearmixedmodel">Create and compare models via <code>Lasso</code>, <code>RandomForest</code>, and <code>LinearMixedModel</code></h1>
 <h1 id="what-is-this">What is this?</h1>
 <p>These classes let one create and compare custom models on varied datasets.</p>
 <p>One can do both classification (ie, predict Y or N) as well as regression (ie, predict a numeric field).</p>
@@ -380,6 +382,24 @@ print(proc.time() - ptm)
 <p>This version of Lasso is based on the Grouped Lasso alogrithm offered by the <a href="https://cran.r-project.org/web/packages/grpreg/grpreg.pdf">grpreg package</a>. We prefer simple models to complicated ones, so for tuning the lambda regularization parameter, we use the 1SE rule, which means that we take the model with fewest coefficients, which is also within one standard error of the best model. This way, we provide guidance as to which features (ie, columns) should be kept in the deployed model. </p>
 <h2 id="randomforest-details"><code>RandomForest</code> Details</h2>
 <p>This version of random forest is based on the wonderful <a href="https://cran.r-project.org/web/packages/ranger/ranger.pdf">ranger package</a>.</p>
+<h2 id="linearmixedmodel-details"><code>LinearMixedModel</code> Details</h2>
+<p>This mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets.</p>
+<p>Relevant example code:</p>
+<pre><code>p &lt;- SupervisedModelParameters$new()
+p$df = df
+p$type = 'classification'
+p$impute = TRUE
+p$grainCol = 'PatientEncounterID' # This grain of the dataset (required)
+p$personCol = 'PatientID'         # This represents the person (required)
+p$predictedCol = 'HighA1C'
+p$debug = FALSE
+p$cores = 1
+
+lmm &lt;- LinearMixedModel$new(p)
+lmm$run()
+</code></pre>
+
+<p>Note: sometimes it's helpful to order your query by the grainCol and/or the personCol. You might find higher accuracy by experimenting with these combinations.</p>
 <h2 id="associated-helper-method-getcutoffs">Associated helper method <code>getCutOffs</code></h2>
 <ul>
 <li>
