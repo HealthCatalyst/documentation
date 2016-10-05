@@ -6,7 +6,7 @@ While data scientists in healthcare will likely find this project valuable, the 
 
 ## How does HCRTools focus on healthcare?
  
-HCTools differs from other machine learning packages in that it focuses on data issues specific to healthcare. This means that we pay attention to longitudinal questions, offer easy solutions specific to data with imbalanced classes, and provide easy connections and deployment to SQL Server.
+HCTools differs from other machine learning packages in that it focuses on data issues specific to healthcare. This means that we pay attention to longitudinal questions, offer an easy way to do risk-adjusted comparisons, and provide easy connections and deployment to SQL Server.
 
 ## Who started this project?
 
