@@ -17,6 +17,7 @@ Nope. It'll help if you can follow these guidelines:
 
 * If you have lots of NULL cells and your data is longitudinal, you may want to try [GroupedLOCF](/model-pre-processing/longitudinal-imputation).
 * If you think the phenomenon you're trying to predict has a seasonal or diurnal component, you may need some [feature engineering](/model-pre-processing/seasonality-handling).
+* If your data is longitudinal, you may want to try the ``LinearMixedModel`` (detailed below).
 
 ## Step 1: Pull in the data via ``SelectData``
 
@@ -59,7 +60,7 @@ str(df)
 
 - __Arguments__:
     - __df__: a data frame. The data your model is based on.
-    - __type__: a string. This will either be 'CLASSIFICATION' or 'REGRESSION'.
+    - __type__: a string. This will either be 'classification' or 'regression'.
     - __impute__: a boolean, defaults to FALSE. Whether to impute by replacing NULLs with column mean (for numeric columns) or column mode (for categorical columns).
     - __grainCol__: a string, defaults to None. Name of possible GrainID column in your dataset. If specified, this column will be removed, as it won't help the algorithm.
     - __predictedCol__: a string. Name of variable (or column) that you want to predict. 
@@ -69,7 +70,7 @@ str(df)
 ```{r}
 p <- SupervisedModelParameters$new()
 p$df = df
-p$type = 'CLASSIFICATION'
+p$type = 'classification'
 p$impute = TRUE
 p$grainCol = ''
 p$predictedCol = 'SalariedFlag'
@@ -111,6 +112,7 @@ SELECT
 ,[VacationHours]
 ,[SickLeaveHours]
 FROM [AdventureWorks2012].[HumanResources].[Employee]
+--WHERE InTestWindow = 'N'
 "
 
 df <- SelectData(connection.string, query)

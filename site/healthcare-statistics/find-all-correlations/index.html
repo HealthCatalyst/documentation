@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Find All Correlations - HCRTools Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Find All Correlations";
+    var mkdocs_page_input_path = "healthcare-statistics\find-all-correlations.md";
+    var mkdocs_page_url = "/healthcare-statistics/find-all-correlations/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HCRTools Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Getting started</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/where-do-i-begin/">Where do I begin?</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/FAQ/">FAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Model Pre-processing</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../model-pre-processing/feature-eng-overview/">Feature engineering overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../model-pre-processing/longitudinal-imputation/">Longitudinal Imputation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../model-pre-processing/seasonality-handling/">Seasonality Handling</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Comparing and Deploying Models</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../comparing-and-deploying/compare/">Develop and Compare</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../comparing-and-deploying/deploy/">Deploying a Best Model</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Healthcare Statistics</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../risk-adjusted-comparisons/">Risk-adjusted Comparisons</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../trend-analysis/">Trend Analysis</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../find-targeted-correlations/">Find Targeted Correlations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Find All Correlations</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#find-correlations-with-a-specific-variable-via-calculateallcorrelations">Find correlations with a specific variable via CalculateAllCorrelations</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-is-this">What is this?</a></li>
+                
+                    <li><a class="toctree-l4" href="#why-is-it-helpful">Why is it helpful?</a></li>
+                
+                    <li><a class="toctree-l4" href="#so-how-do-we-do-it">So, how do we do it?</a></li>
+                
+                    <li><a class="toctree-l4" href="#function-specs-for-calculateallcorrelations">Function specs for CalculateAllCorrelations</a></li>
+                
+                    <li><a class="toctree-l4" href="#full-example-code">Full example code</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HCRTools Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Healthcare Statistics &raquo;</li>
+        
+      
+    
+    <li>Find All Correlations</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/HealthCatalystSLC/HCRTools" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="find-correlations-with-a-specific-variable-via-calculateallcorrelations">Find correlations with a specific variable via <code>CalculateAllCorrelations</code></h1>
+<h2 id="what-is-this">What is this?</h2>
+<p>In healthcare (as in other fields) it's often helpful to understand the relationships between the variables in one's dataset. This provides that functionality by finding the <a href="https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient">correlations</a> for all numeric columns in a particular dataset.</p>
+<h2 id="why-is-it-helpful">Why is it helpful?</h2>
+<p>You can quickly see the relationships present in your data.</p>
+<h2 id="so-how-do-we-do-it">So, how do we do it?</h2>
+<ul>
+<li>First, we'll load HCRTools, create a fake dataset on which to work, and look at it:</li>
+</ul>
+<pre><code class="r">library(HCRTools)
+
+df &lt;- data.frame(a=c(1,2,3,4,5,6),
+b=c(6,5,4,3,2,1),
+c=c(3,4,2,1,3,5),
+d=c('M','F','F','F','M','F')) #&lt;- is ignored
+
+head(df)
+</code></pre>
+
+<ul>
+<li>Next, we'll find the correlations between all numeric columns in the dataset represented by <code>df</code>.</li>
+</ul>
+<pre><code class="r">res &lt;- CalculateAllCorrelations(df)
+res
+</code></pre>
+
+<h2 id="function-specs-for-calculateallcorrelations">Function specs for <code>CalculateAllCorrelations</code></h2>
+<ul>
+<li>
+<p><strong>Return</strong>: a data frame of same length as input data frame, but three columns wide.</p>
+</li>
+<li>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><strong>df</strong>: a data frame. This dataset contains at least two numeric columns. </li>
+</ul>
+</li>
+</ul>
+<p>We use the <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/cor.html">Pearson correlation coefficient</a>.</p>
+<h2 id="full-example-code">Full example code</h2>
+<pre><code class="r">library(HCRTools)
+
+df &lt;- data.frame(a=c(1,2,3,4,5,6),
+b=c(6,5,4,3,2,1),
+c=c(3,4,2,1,3,5),
+d=c('M','F','F','F','M','F')) #&lt;- is ignored
+
+head(df)
+
+res &lt;- CalculateAllCorrelations(df)
+res
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../find-targeted-correlations/" class="btn btn-neutral" title="Find Targeted Correlations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/HealthCatalystSLC/HCRTools" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../find-targeted-correlations/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>

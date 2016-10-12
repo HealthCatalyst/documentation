@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>None/</loc>
+     <lastmod>2016-10-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/getting-started/where-do-i-begin/</loc>
+     <lastmod>2016-10-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/getting-started/FAQ/</loc>
+     <lastmod>2016-10-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/model-pre-processing/feature-eng-overview/</loc>
+     <lastmod>2016-10-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/model-pre-processing/longitudinal-imputation/</loc>
+     <lastmod>2016-10-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/model-pre-processing/seasonality-handling/</loc>
+     <lastmod>2016-10-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/comparing-and-deploying/compare/</loc>
+     <lastmod>2016-10-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/comparing-and-deploying/deploy/</loc>
+     <lastmod>2016-10-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/healthcare-statistics/risk-adjusted-comparisons/</loc>
+     <lastmod>2016-10-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/healthcare-statistics/trend-analysis/</loc>
+     <lastmod>2016-10-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/healthcare-statistics/find-targeted-correlations/</loc>
+     <lastmod>2016-10-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/healthcare-statistics/find-all-correlations/</loc>
+     <lastmod>2016-10-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+</urlset>

@@ -1,0 +1,459 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Welcome to HCRTools\n\n\nThis package will get you started with healthcare machine learning in R.\n\n\nWhat can you do with it?\n\n\n\n\nCompare models based on your data.\n\n\nSave and deploy a model.\n\n\nPerform risk-adjusted comparisons.\n\n\nDo trend analysis following \nNelson rules\n.\n\n\nImprove sparse data via longitudinal imputation.\n\n\n\n\n\n\nHow is it specific to healthcare?\n\n\n\n\nLongitudinal machine learning via mixed models\n\n\nLongitudinal imputation\n\n\nRisk-adjusted comparisons\n\n\nA focus on SQL Server\n\n\n\n\n\n\nHow to install\n\n\nWork in the console of RStudio or RGui\n\n\n\n\nGrab prerequisites\n\n\n\n\ninstall.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lubridate',\n'pROC','R6','ranger','ROCR','RODBC'),repos = \nhttps://cran.cnr.berkeley.edu/\n)\n\n\n\n\n\n\nInstall HCRTools\n\n\n\n\nlibrary(devtools)\ndevtools::install_github(repo='HealthCatalystSLC/HCRTools')",
+            "title": "Home"
+        },
+        {
+            "location": "/#welcome-to-hcrtools",
+            "text": "This package will get you started with healthcare machine learning in R.",
+            "title": "Welcome to HCRTools"
+        },
+        {
+            "location": "/#what-can-you-do-with-it",
+            "text": "Compare models based on your data.  Save and deploy a model.  Perform risk-adjusted comparisons.  Do trend analysis following  Nelson rules .  Improve sparse data via longitudinal imputation.",
+            "title": "What can you do with it?"
+        },
+        {
+            "location": "/#how-is-it-specific-to-healthcare",
+            "text": "Longitudinal machine learning via mixed models  Longitudinal imputation  Risk-adjusted comparisons  A focus on SQL Server",
+            "title": "How is it specific to healthcare?"
+        },
+        {
+            "location": "/#how-to-install",
+            "text": "Work in the console of RStudio or RGui   Grab prerequisites   install.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lubridate',\n'pROC','R6','ranger','ROCR','RODBC'),repos =  https://cran.cnr.berkeley.edu/ )   Install HCRTools   library(devtools)\ndevtools::install_github(repo='HealthCatalystSLC/HCRTools')",
+            "title": "How to install"
+        },
+        {
+            "location": "/getting-started/where-do-i-begin/",
+            "text": "Where do I begin with HCRTools?\n\n\nThat, of course, depends on what you want to accomplish:\n\n\nIf you want create a model on your data via machine learning\n\n\n\n\nLook at the \npre-processing tools\n that might help your model. \n\n\nLook at the \nmodel development page\n to create and compare models.\n\n\nLook at the \ndeployment page\n to deploy model.\n\n\n\n\nIf you want to do general healthcare statistics\n\n\n\n\nLook \nhere\n to calculate cross-column correlations on your data.\n\n\nLook \nhere\n to perform trend analysis across your data following Nelson rules.\n\n\n\n\nIf you want to do risk-adjusted comparisons\n\n\n\n\nLook \nhere\n if you want to compare several hospitals or units in terms of risk-adjusted performance.",
+            "title": "Where do I begin?"
+        },
+        {
+            "location": "/getting-started/where-do-i-begin/#where-do-i-begin-with-hcrtools",
+            "text": "That, of course, depends on what you want to accomplish:",
+            "title": "Where do I begin with HCRTools?"
+        },
+        {
+            "location": "/getting-started/where-do-i-begin/#if-you-want-create-a-model-on-your-data-via-machine-learning",
+            "text": "Look at the  pre-processing tools  that might help your model.   Look at the  model development page  to create and compare models.  Look at the  deployment page  to deploy model.",
+            "title": "If you want create a model on your data via machine learning"
+        },
+        {
+            "location": "/getting-started/where-do-i-begin/#if-you-want-to-do-general-healthcare-statistics",
+            "text": "Look  here  to calculate cross-column correlations on your data.  Look  here  to perform trend analysis across your data following Nelson rules.",
+            "title": "If you want to do general healthcare statistics"
+        },
+        {
+            "location": "/getting-started/where-do-i-begin/#if-you-want-to-do-risk-adjusted-comparisons",
+            "text": "Look  here  if you want to compare several hospitals or units in terms of risk-adjusted performance.",
+            "title": "If you want to do risk-adjusted comparisons"
+        },
+        {
+            "location": "/getting-started/FAQ/",
+            "text": "HCRTools FAQ - Frequently Asked Questions\n\n\nWho is this project for?\n\n\nWhile data scientists in healthcare will likely find this project valuable, the audience HCTools targets are those BI developers, data architects, and SQL-based folks that would love to create appropriate and accurate models on their data. While packages like scikit-learn are certainly irreplaceable, we think that there is a set of data problems specific to healthcare that warrant new tools.\n\n\nHow does HCRTools focus on healthcare?\n\n\nHCTools differs from other machine learning packages in that it focuses on data issues specific to healthcare. This means that we pay attention to longitudinal questions, offer an easy way to do risk-adjusted comparisons, and provide easy connections and deployment to SQL Server.\n\n\nWho started this project?\n\n\nThis project began in the data science group at Health Catalyst, a Salt Lake City-based company based focused on improving healthcare outcomes.\n\n\nWhy was it open-sourced?\n\n\nWe believe that everyone benefits when healthcare is made more efficient and outcomes are improved. Machine learning is surprisingly new to healthcare and we want to quickly take healthcare down the machine learning adoption path. We believe that making helpful, simple tools widely available is one small way to make US healthcare a little less kludgy.",
+            "title": "FAQ"
+        },
+        {
+            "location": "/getting-started/FAQ/#hcrtools-faq-frequently-asked-questions",
+            "text": "",
+            "title": "HCRTools FAQ - Frequently Asked Questions"
+        },
+        {
+            "location": "/getting-started/FAQ/#who-is-this-project-for",
+            "text": "While data scientists in healthcare will likely find this project valuable, the audience HCTools targets are those BI developers, data architects, and SQL-based folks that would love to create appropriate and accurate models on their data. While packages like scikit-learn are certainly irreplaceable, we think that there is a set of data problems specific to healthcare that warrant new tools.",
+            "title": "Who is this project for?"
+        },
+        {
+            "location": "/getting-started/FAQ/#how-does-hcrtools-focus-on-healthcare",
+            "text": "HCTools differs from other machine learning packages in that it focuses on data issues specific to healthcare. This means that we pay attention to longitudinal questions, offer an easy way to do risk-adjusted comparisons, and provide easy connections and deployment to SQL Server.",
+            "title": "How does HCRTools focus on healthcare?"
+        },
+        {
+            "location": "/getting-started/FAQ/#who-started-this-project",
+            "text": "This project began in the data science group at Health Catalyst, a Salt Lake City-based company based focused on improving healthcare outcomes.",
+            "title": "Who started this project?"
+        },
+        {
+            "location": "/getting-started/FAQ/#why-was-it-open-sourced",
+            "text": "We believe that everyone benefits when healthcare is made more efficient and outcomes are improved. Machine learning is surprisingly new to healthcare and we want to quickly take healthcare down the machine learning adoption path. We believe that making helpful, simple tools widely available is one small way to make US healthcare a little less kludgy.",
+            "title": "Why was it open-sourced?"
+        },
+        {
+            "location": "/model-pre-processing/feature-eng-overview/",
+            "text": "Overview of pre-processing and feature engineering\n\n\nWhat is feature engineering?\n\n\nFrom wikipedia: \"Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work.\"\n\n\nIn other words, while you might have great data, it has to be in a form that the algorithms can use to make a model.\n\n\nHow can HCRTools help me prepare data prior to model-creation?\n\n\n\n\n\n\nVia \nlongitudinal imputation\n. Think of this as a way to pull person-specific values forward in time.\n\n\n\n\n\n\nVia \nseasonality handling\n. Think of this as a way to make a date-time column model-ready.",
+            "title": "Feature engineering overview"
+        },
+        {
+            "location": "/model-pre-processing/feature-eng-overview/#overview-of-pre-processing-and-feature-engineering",
+            "text": "",
+            "title": "Overview of pre-processing and feature engineering"
+        },
+        {
+            "location": "/model-pre-processing/feature-eng-overview/#what-is-feature-engineering",
+            "text": "From wikipedia: \"Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work.\"  In other words, while you might have great data, it has to be in a form that the algorithms can use to make a model.",
+            "title": "What is feature engineering?"
+        },
+        {
+            "location": "/model-pre-processing/feature-eng-overview/#how-can-hcrtools-help-me-prepare-data-prior-to-model-creation",
+            "text": "Via  longitudinal imputation . Think of this as a way to pull person-specific values forward in time.    Via  seasonality handling . Think of this as a way to make a date-time column model-ready.",
+            "title": "How can HCRTools help me prepare data prior to model-creation?"
+        },
+        {
+            "location": "/model-pre-processing/longitudinal-imputation/",
+            "text": "Longitudinal Imputation via \nGroupedLOCF\n\n\nWhat is this?\n\n\nIn healthcare one often works with datasets that have multiple rows for a single person, over time. This is called longitudinal data.\n\n\nIf you want to fill in some of the NULLs in such a dataset, HCRTools lets implement the \nlast observation carried forward\n technique. In other words, Joe's weight from a year ago (which was his last weight data point) can be pulled forward to Joe's rows corresponding to last week or last month.\n\n\nWhy is it helpful?\n\n\nThis may help make your models more accurate, or help fill in your data for disparate calculations/visualizations.\n\n\nIs any longitudinal dataset ready for HCRTools to work on it?\n\n\nNope. You have to first order your data by a PersonID column and then by a date-time column (with time going down the rows).\n\n\nSo, how do we do it?\n\n\n\n\nFirst, we'll load HCRTools and create a fake dataset in R (that you can play with)\n\n\n\n\nlibrary(HCRTools)\ndf = data.frame(PersonID=c(1,1,2,2,3,3,3),\n                wt=c(.5,NA,NA,NA,.3,.7,NA),\n                ht=c(NA,1,3,NA,4,NA,NA),\n                date=c('01/01/2015','01/15/2015','01/01/2015','01/15/2015',\n                       '01/01/2015','01/15/2015','01/30/2015'))\n\nhead(df,n=7) # Looking at the raw data\n\n\n\n\n\n\nNow let's do the imputation by calling the \nGroupedLOCF\n function. LOCF stands for last value carried forward\n\n\n\n\ndf.result = GroupedLOCF(df, 'PersonID')\n\nhead(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)\n\n\n\n\nFunction specs for \nGroupedLOCF\n\n\n\n\n\n\nReturn\n: a data frame of same shape as input data frame.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This data contains NULLs or NAs.\n\n\nid\n: a string. Column name for the PersonID column in your data frame.\n\n\n\n\n\n\n\n\nFull example code\n\n\nlibrary(HCRTools)\ndf = data.frame(PersonID=c(1,1,2,2,3,3,3),\n                wt=c(.5,NA,NA,NA,.3,.7,NA),\n                ht=c(NA,1,3,NA,4,NA,NA),\n                date=c('01/01/2015','01/15/2015','01/01/2015','01/15/2015',\n                       '01/01/2015','01/15/2015','01/30/2015'))\n\nhead(df,n=7) # Looking at the raw data\n\ndf.result = GroupedLOCF(df, 'PersonID')\n\nhead(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)",
+            "title": "Longitudinal Imputation"
+        },
+        {
+            "location": "/model-pre-processing/longitudinal-imputation/#longitudinal-imputation-via-groupedlocf",
+            "text": "",
+            "title": "Longitudinal Imputation via GroupedLOCF"
+        },
+        {
+            "location": "/model-pre-processing/longitudinal-imputation/#what-is-this",
+            "text": "In healthcare one often works with datasets that have multiple rows for a single person, over time. This is called longitudinal data.  If you want to fill in some of the NULLs in such a dataset, HCRTools lets implement the  last observation carried forward  technique. In other words, Joe's weight from a year ago (which was his last weight data point) can be pulled forward to Joe's rows corresponding to last week or last month.",
+            "title": "What is this?"
+        },
+        {
+            "location": "/model-pre-processing/longitudinal-imputation/#why-is-it-helpful",
+            "text": "This may help make your models more accurate, or help fill in your data for disparate calculations/visualizations.",
+            "title": "Why is it helpful?"
+        },
+        {
+            "location": "/model-pre-processing/longitudinal-imputation/#is-any-longitudinal-dataset-ready-for-hcrtools-to-work-on-it",
+            "text": "Nope. You have to first order your data by a PersonID column and then by a date-time column (with time going down the rows).",
+            "title": "Is any longitudinal dataset ready for HCRTools to work on it?"
+        },
+        {
+            "location": "/model-pre-processing/longitudinal-imputation/#so-how-do-we-do-it",
+            "text": "First, we'll load HCRTools and create a fake dataset in R (that you can play with)   library(HCRTools)\ndf = data.frame(PersonID=c(1,1,2,2,3,3,3),\n                wt=c(.5,NA,NA,NA,.3,.7,NA),\n                ht=c(NA,1,3,NA,4,NA,NA),\n                date=c('01/01/2015','01/15/2015','01/01/2015','01/15/2015',\n                       '01/01/2015','01/15/2015','01/30/2015'))\n\nhead(df,n=7) # Looking at the raw data   Now let's do the imputation by calling the  GroupedLOCF  function. LOCF stands for last value carried forward   df.result = GroupedLOCF(df, 'PersonID')\n\nhead(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)",
+            "title": "So, how do we do it?"
+        },
+        {
+            "location": "/model-pre-processing/longitudinal-imputation/#function-specs-for-groupedlocf",
+            "text": "Return : a data frame of same shape as input data frame.    Arguments :   df : a data frame. This data contains NULLs or NAs.  id : a string. Column name for the PersonID column in your data frame.",
+            "title": "Function specs for GroupedLOCF"
+        },
+        {
+            "location": "/model-pre-processing/longitudinal-imputation/#full-example-code",
+            "text": "library(HCRTools)\ndf = data.frame(PersonID=c(1,1,2,2,3,3,3),\n                wt=c(.5,NA,NA,NA,.3,.7,NA),\n                ht=c(NA,1,3,NA,4,NA,NA),\n                date=c('01/01/2015','01/15/2015','01/01/2015','01/15/2015',\n                       '01/01/2015','01/15/2015','01/30/2015'))\n\nhead(df,n=7) # Looking at the raw data\n\ndf.result = GroupedLOCF(df, 'PersonID')\n\nhead(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)",
+            "title": "Full example code"
+        },
+        {
+            "location": "/model-pre-processing/seasonality-handling/",
+            "text": "Seasonality handling via \nConvertDateTimeColToDummies\n\n\nWhat is this?\n\n\nIn healthcare date-time stamp columns are common, but unfortunately machine learning algorithms do not handle them well.\n\n\nWhy is it helpful?\n\n\nOne has to do some simple feature engineering in order to take advantage of potential seasonality effects in a dataset. This works simply by transforming a date-time column into multiple columns that represent MonthOfYear, WeekOfYear, DayOfMonth, DayOfWeek, etc.\n\n\nSo, how do we do it?\n\n\n\n\nFirst, we'll load HCRTools, create a fake dataset on which to work, and look at it:\n\n\n\n\nlibrary(HCRTools)\nDTCol = c(\n2001-06-09 12:45:05\n,\n2002-01-29 09:30:05\n,\n2002-02-02 07:36:50\n,\n          \n2002-03-04 16:45:01\n,\n2002-11-13 20:00:10\n,\n2003-01-29 07:31:43\n,\n          \n2003-07-07 17:30:02\n,\n2003-09-28 01:03:20\n)\ny1 \n- c(.5,1,3,6,8,13,14,1)\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1)\ndf \n- data.frame(DTCol,y1,y2)\n\nhead(df)\n\n\n\n\n\n\nNext, we'll create the extra date and time colums by calling the function and then we'll look at the transformed dataset\n\n\n\n\ndf.result \n- ConvertDateTimeColToDummies(df, 'DTCol')\n\nhead(df.result)\n\n\n\n\nFunction specs for \nConvertDateTimeColToDummies\n\n\n\n\n\n\nReturn\n: a data frame of same length, but greater width compared to the input data frame.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This data frame contains a date-time column.\n\n\ndate.time.col\n: a string. Column name for the date-time column in your data frame that you want to split into multiple date and time columns. Works best in ISO 8601 format (ie, datetime or datetime2 in T-SQL).\n\n\ndepth\n: a string, defaults to \n'h'\n. Indicates how many columns should be added to data frame. \n'd'\n, \n'h'\n, \n'm'\n, \n's'\n expands to depth of day, hour, minute, and second, respectively. \n\n\nreturn.dt.col\n: boolean, defaults to \nFALSE\n. Indicates whether to return original date-time column with modified data frame.\n\n\n\n\n\n\n\n\nFull example code\n\n\nlibrary(HCRTools)\nDTCol = c(\n2001-06-09 12:45:05\n,\n2002-01-29 09:30:05\n,\n2002-02-02 07:36:50\n,\n          \n2002-03-04 16:45:01\n,\n2002-11-13 20:00:10\n,\n2003-01-29 07:31:43\n,\n          \n2003-07-07 17:30:02\n,\n2003-09-28 01:03:20\n)\ny1 \n- c(.5,1,3,6,8,13,14,1)\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1)\ndf \n- data.frame(DTCol,y1,y2)\n\ndf \n- ConvertDateTimeColToDummies(df, 'DTCol')",
+            "title": "Seasonality Handling"
+        },
+        {
+            "location": "/model-pre-processing/seasonality-handling/#seasonality-handling-via-convertdatetimecoltodummies",
+            "text": "",
+            "title": "Seasonality handling via ConvertDateTimeColToDummies"
+        },
+        {
+            "location": "/model-pre-processing/seasonality-handling/#what-is-this",
+            "text": "In healthcare date-time stamp columns are common, but unfortunately machine learning algorithms do not handle them well.",
+            "title": "What is this?"
+        },
+        {
+            "location": "/model-pre-processing/seasonality-handling/#why-is-it-helpful",
+            "text": "One has to do some simple feature engineering in order to take advantage of potential seasonality effects in a dataset. This works simply by transforming a date-time column into multiple columns that represent MonthOfYear, WeekOfYear, DayOfMonth, DayOfWeek, etc.",
+            "title": "Why is it helpful?"
+        },
+        {
+            "location": "/model-pre-processing/seasonality-handling/#so-how-do-we-do-it",
+            "text": "First, we'll load HCRTools, create a fake dataset on which to work, and look at it:   library(HCRTools)\nDTCol = c( 2001-06-09 12:45:05 , 2002-01-29 09:30:05 , 2002-02-02 07:36:50 ,\n           2002-03-04 16:45:01 , 2002-11-13 20:00:10 , 2003-01-29 07:31:43 ,\n           2003-07-07 17:30:02 , 2003-09-28 01:03:20 )\ny1  - c(.5,1,3,6,8,13,14,1)\ny2  - c(.8,1,1.2,1.2,1.2,1.3,1.3,1)\ndf  - data.frame(DTCol,y1,y2)\n\nhead(df)   Next, we'll create the extra date and time colums by calling the function and then we'll look at the transformed dataset   df.result  - ConvertDateTimeColToDummies(df, 'DTCol')\n\nhead(df.result)",
+            "title": "So, how do we do it?"
+        },
+        {
+            "location": "/model-pre-processing/seasonality-handling/#function-specs-for-convertdatetimecoltodummies",
+            "text": "Return : a data frame of same length, but greater width compared to the input data frame.    Arguments :   df : a data frame. This data frame contains a date-time column.  date.time.col : a string. Column name for the date-time column in your data frame that you want to split into multiple date and time columns. Works best in ISO 8601 format (ie, datetime or datetime2 in T-SQL).  depth : a string, defaults to  'h' . Indicates how many columns should be added to data frame.  'd' ,  'h' ,  'm' ,  's'  expands to depth of day, hour, minute, and second, respectively.   return.dt.col : boolean, defaults to  FALSE . Indicates whether to return original date-time column with modified data frame.",
+            "title": "Function specs for ConvertDateTimeColToDummies"
+        },
+        {
+            "location": "/model-pre-processing/seasonality-handling/#full-example-code",
+            "text": "library(HCRTools)\nDTCol = c( 2001-06-09 12:45:05 , 2002-01-29 09:30:05 , 2002-02-02 07:36:50 ,\n           2002-03-04 16:45:01 , 2002-11-13 20:00:10 , 2003-01-29 07:31:43 ,\n           2003-07-07 17:30:02 , 2003-09-28 01:03:20 )\ny1  - c(.5,1,3,6,8,13,14,1)\ny2  - c(.8,1,1.2,1.2,1.2,1.3,1.3,1)\ndf  - data.frame(DTCol,y1,y2)\n\ndf  - ConvertDateTimeColToDummies(df, 'DTCol')",
+            "title": "Full example code"
+        },
+        {
+            "location": "/comparing-and-deploying/compare/",
+            "text": "Create and compare models via \nLasso\n, \nRandomForest\n, and \nLinearMixedModel\n\n\nWhat is this?\n\n\nThese classes let one create and compare custom models on varied datasets.\n\n\nOne can do both classification (ie, predict Y or N) as well as regression (ie, predict a numeric field).\n\n\nIs any dataset ready for model creation?\n\n\nNope. It'll help if you can follow these guidelines:\n\n\n\n\nDon't use 0 or 1 for the independent variable when doing classification. Use Y/N instead. The IIF function in T-SQL may help here.\n\n\nDon't pull in test data in this step. In other words, to compare models, we don't need to worry about those rows that need a prediction quite yet.\n\n\n\n\nHow can I improve my model performance?\n\n\n\n\nIf you have lots of NULL cells and your data is longitudinal, you may want to try \nGroupedLOCF\n.\n\n\nIf you think the phenomenon you're trying to predict has a seasonal or diurnal component, you may need some \nfeature engineering\n.\n\n\nIf your data is longitudinal, you may want to try the \nLinearMixedModel\n (detailed below).\n\n\n\n\nStep 1: Pull in the data via \nSelectData\n\n\n\n\n\n\nReturn\n: a data frame that represents your data.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\nserver\n: a server name. You'll pull data from this server.\n\n\ndatabase\n: a database name. You'll pull data from this database.\n\n\n\n\n\n\n\n\nptm \n- proc.time()\nlibrary(HCRTools)\n\nconnection.string = \n\ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true\n\n\n\nquery = \n\nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee]\n\n\n\ndf \n- SelectData(connection.string, query)\nhead(df)\nstr(df)\n\n\n\n\nStep 2: Set your parameters via \nSupervisedModelParameters\n\n\n\n\n\n\nReturn\n: an object representing your specific configuration.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. The data your model is based on.\n\n\ntype\n: a string. This will either be 'classification' or 'regression'.\n\n\nimpute\n: a boolean, defaults to FALSE. Whether to impute by replacing NULLs with column mean (for numeric columns) or column mode (for categorical columns).\n\n\ngrainCol\n: a string, defaults to None. Name of possible GrainID column in your dataset. If specified, this column will be removed, as it won't help the algorithm.\n\n\npredictedCol\n: a string. Name of variable (or column) that you want to predict. \n\n\ndebug\n: a boolean, defaults to FALSE. If TRUE, console output when comparing models is verbose for easier debugging.\n\n\ncores\n: an int, defaults to 4. Number of cores on machine to use for model training.\n\n\n\n\n\n\n\n\np \n- SupervisedModelParameters$new()\np$df = df\np$type = 'classification'\np$impute = TRUE\np$grainCol = ''\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$cores = 1\n\n\n\n\nStep 3: Create the models via the \nLasso\n and \nRandomForest\n algorithms.\n\n\n# Run Lasso\nlasso \n- Lasso$new(p)\nlasso$run()\n\n# Run RandomForest\nrf \n- RandomForest$new(p)\nrf$run()\n\n\n\n\nFull example code\n\n\nptm \n- proc.time()\nlibrary(HCRTools)\n\nconnection.string = \n\ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true\n\n\n\nquery = \n\nSELECT\n [OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee]\n--WHERE InTestWindow = 'N'\n\n\n\ndf \n- SelectData(connection.string, query)\nhead(df)\n\nset.seed(43)\np \n- SupervisedModelParameters$new()\np$df = df\np$type = 'classification'\np$impute = TRUE\np$grainCol = ''\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$cores = 1\n\n# Run Lasso\nlasso \n- Lasso$new(p)\nlasso$run()\n\n# Run RandomForest\nrf \n- RandomForest$new(p)\nrf$run()\n\nprint(proc.time() - ptm)\n\n\n\n\nLasso\n Details\n\n\nThis version of Lasso is based on the Grouped Lasso alogrithm offered by the \ngrpreg package\n. We prefer simple models to complicated ones, so for tuning the lambda regularization parameter, we use the 1SE rule, which means that we take the model with fewest coefficients, which is also within one standard error of the best model. This way, we provide guidance as to which features (ie, columns) should be kept in the deployed model. \n\n\nRandomForest\n Details\n\n\nThis version of random forest is based on the wonderful \nranger package\n.\n\n\nLinearMixedModel\n Details\n\n\nThis mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets, and then scale up from there.\n\n\nRelevant example code:\n\n\np \n- SupervisedModelParameters$new()\np$df = df\np$type = 'classification'\np$impute = TRUE\np$grainCol = 'PatientEncounterID' # This grain of the dataset (required)\np$personCol = 'PatientID'         # This represents the person (required)\np$predictedCol = 'HighA1C'\np$debug = FALSE\np$cores = 1\n\nlmm \n- LinearMixedModel$new(p)\nlmm$run()\n\n\n\n\nNote: sometimes it's helpful to order your query by the grainCol and/or the personCol. You might find higher accuracy by experimenting with these combinations.\n\n\nAssociated helper method \ngetCutOffs\n\n\n\n\n\n\nReturn\n: Nothing. Prints fall-over probability (ie, cut point) and the false-positive rate associated with the input true-positive rate.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ntpr\n: numeric. The true-positive rate you want to gather information about.\n\n\n\n\n\n\n\n\nAfter generating a model via the methods above, here's how \ngetCutOffs\n is used, depending on which model you want to learn about:\n\n\n\n\n\n\nlasso$getCutOffs(tpr=0.8) or\n\nrf$getCutOffs(tpr=0.8) or\n\nlmm$getCutOffs(tpr=0.8)",
+            "title": "Develop and Compare"
+        },
+        {
+            "location": "/comparing-and-deploying/compare/#create-and-compare-models-via-lasso-randomforest-and-linearmixedmodel",
+            "text": "",
+            "title": "Create and compare models via Lasso, RandomForest, and LinearMixedModel"
+        },
+        {
+            "location": "/comparing-and-deploying/compare/#what-is-this",
+            "text": "These classes let one create and compare custom models on varied datasets.  One can do both classification (ie, predict Y or N) as well as regression (ie, predict a numeric field).",
+            "title": "What is this?"
+        },
+        {
+            "location": "/comparing-and-deploying/compare/#is-any-dataset-ready-for-model-creation",
+            "text": "Nope. It'll help if you can follow these guidelines:   Don't use 0 or 1 for the independent variable when doing classification. Use Y/N instead. The IIF function in T-SQL may help here.  Don't pull in test data in this step. In other words, to compare models, we don't need to worry about those rows that need a prediction quite yet.",
+            "title": "Is any dataset ready for model creation?"
+        },
+        {
+            "location": "/comparing-and-deploying/compare/#how-can-i-improve-my-model-performance",
+            "text": "If you have lots of NULL cells and your data is longitudinal, you may want to try  GroupedLOCF .  If you think the phenomenon you're trying to predict has a seasonal or diurnal component, you may need some  feature engineering .  If your data is longitudinal, you may want to try the  LinearMixedModel  (detailed below).",
+            "title": "How can I improve my model performance?"
+        },
+        {
+            "location": "/comparing-and-deploying/compare/#step-1-pull-in-the-data-via-selectdata",
+            "text": "Return : a data frame that represents your data.    Arguments :   server : a server name. You'll pull data from this server.  database : a database name. You'll pull data from this database.     ptm  - proc.time()\nlibrary(HCRTools)\n\nconnection.string =  \ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true \n\nquery =  \nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee] \n\ndf  - SelectData(connection.string, query)\nhead(df)\nstr(df)",
+            "title": "Step 1: Pull in the data via SelectData"
+        },
+        {
+            "location": "/comparing-and-deploying/compare/#step-2-set-your-parameters-via-supervisedmodelparameters",
+            "text": "Return : an object representing your specific configuration.    Arguments :   df : a data frame. The data your model is based on.  type : a string. This will either be 'classification' or 'regression'.  impute : a boolean, defaults to FALSE. Whether to impute by replacing NULLs with column mean (for numeric columns) or column mode (for categorical columns).  grainCol : a string, defaults to None. Name of possible GrainID column in your dataset. If specified, this column will be removed, as it won't help the algorithm.  predictedCol : a string. Name of variable (or column) that you want to predict.   debug : a boolean, defaults to FALSE. If TRUE, console output when comparing models is verbose for easier debugging.  cores : an int, defaults to 4. Number of cores on machine to use for model training.     p  - SupervisedModelParameters$new()\np$df = df\np$type = 'classification'\np$impute = TRUE\np$grainCol = ''\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$cores = 1",
+            "title": "Step 2: Set your parameters via SupervisedModelParameters"
+        },
+        {
+            "location": "/comparing-and-deploying/compare/#step-3-create-the-models-via-the-lasso-and-randomforest-algorithms",
+            "text": "# Run Lasso\nlasso  - Lasso$new(p)\nlasso$run()\n\n# Run RandomForest\nrf  - RandomForest$new(p)\nrf$run()",
+            "title": "Step 3: Create the models via the Lasso and RandomForest algorithms."
+        },
+        {
+            "location": "/comparing-and-deploying/compare/#full-example-code",
+            "text": "ptm  - proc.time()\nlibrary(HCRTools)\n\nconnection.string =  \ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true \n\nquery =  \nSELECT\n [OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee]\n--WHERE InTestWindow = 'N' \n\ndf  - SelectData(connection.string, query)\nhead(df)\n\nset.seed(43)\np  - SupervisedModelParameters$new()\np$df = df\np$type = 'classification'\np$impute = TRUE\np$grainCol = ''\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$cores = 1\n\n# Run Lasso\nlasso  - Lasso$new(p)\nlasso$run()\n\n# Run RandomForest\nrf  - RandomForest$new(p)\nrf$run()\n\nprint(proc.time() - ptm)",
+            "title": "Full example code"
+        },
+        {
+            "location": "/comparing-and-deploying/compare/#lasso-details",
+            "text": "This version of Lasso is based on the Grouped Lasso alogrithm offered by the  grpreg package . We prefer simple models to complicated ones, so for tuning the lambda regularization parameter, we use the 1SE rule, which means that we take the model with fewest coefficients, which is also within one standard error of the best model. This way, we provide guidance as to which features (ie, columns) should be kept in the deployed model.",
+            "title": "Lasso Details"
+        },
+        {
+            "location": "/comparing-and-deploying/compare/#randomforest-details",
+            "text": "This version of random forest is based on the wonderful  ranger package .",
+            "title": "RandomForest Details"
+        },
+        {
+            "location": "/comparing-and-deploying/compare/#linearmixedmodel-details",
+            "text": "This mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets, and then scale up from there.  Relevant example code:  p  - SupervisedModelParameters$new()\np$df = df\np$type = 'classification'\np$impute = TRUE\np$grainCol = 'PatientEncounterID' # This grain of the dataset (required)\np$personCol = 'PatientID'         # This represents the person (required)\np$predictedCol = 'HighA1C'\np$debug = FALSE\np$cores = 1\n\nlmm  - LinearMixedModel$new(p)\nlmm$run()  Note: sometimes it's helpful to order your query by the grainCol and/or the personCol. You might find higher accuracy by experimenting with these combinations.",
+            "title": "LinearMixedModel Details"
+        },
+        {
+            "location": "/comparing-and-deploying/compare/#associated-helper-method-getcutoffs",
+            "text": "Return : Nothing. Prints fall-over probability (ie, cut point) and the false-positive rate associated with the input true-positive rate.    Arguments :   tpr : numeric. The true-positive rate you want to gather information about.     After generating a model via the methods above, here's how  getCutOffs  is used, depending on which model you want to learn about:    lasso$getCutOffs(tpr=0.8) or\n\nrf$getCutOffs(tpr=0.8) or\n\nlmm$getCutOffs(tpr=0.8)",
+            "title": "Associated helper method getCutOffs"
+        },
+        {
+            "location": "/comparing-and-deploying/deploy/",
+            "text": "Save and deploy models via \nDeployLasso\n, \nDeployRandomForest\n, or \nDeployLinearMixedModel\n\n\nWhat is this?\n\n\nThese classes let one save and deploy custom models on varied datasets via the following workflow: \n\n\n\n\nUsing the model development functions LINK!, you found a model that performs well. \n\n\nNow, you train and save model on your entire dataset (with the \nuseSavedModel\n argument set to FALSE). \n\n\nNext, flip the \nuseSavedModel\n argument to TRUE and rerun the script however often you need to generate new predictions. \n\n\nNow that you're using a saved model, you're just running new people/encounters against the saved model to generate predictions.  \n\n\n\n\n\n\nRetrain the model whenever significant changes occur with the data (perhaps quarterly) by flipping the \nuseSavedModel\n to FALSE and go to step 3. \n\n\n\n\nOne can do both classification (ie, predict Y or N) as well as regression (ie, predict a numeric field).\n\n\nIs any dataset ready for model creation and deployment?\n\n\nNope. It'll help if you can follow these guidelines:\n\n\n\n\nDon't use 0 or 1 for the independent variable when doing classification. Use Y/N instead. The IIF function in T-SQL may help here.\n\n\nCreate a column thath as \nY\n for those rows in the training set and \nN\n for those rows in the test set. Think of the test set as those people or enounters that need a prediction. This column can be called InTestWindow. \n\n\nUnlike the develop step ADD LINK TO DEV (which you should have already completed), you should now pull in both training and test rows in your query. \n\n\nOne has to create a table to receive the predicted values. You can work in SSMS (or SAMD, for those using Health Catalyst products):\n\n\nCreate these tables when doing classification or regression, respectively:\n\n\n\n\n\n\n\n\nCREATE TABLE [SAM].[dbo].[HCRDeployClassificationBASE] (\n[BindingID] [int] ,\n[BindingNM] [varchar] (255),\n[LastLoadDTS] [datetime2] (7),\n[GrainID] [decimal] (38, 0),\n[PredictedProbNBR] [decimal] (38, 2),\n[Factor1TXT] [varchar] (255),\n[Factor2TXT] [varchar] (255),\n[Factor3TXT] [varchar] (255)\n)\n\nCREATE TABLE [SAM].[dbo].[HCRDeployRegressionBASE] (\n[BindingID] [int],\n[BindingNM] [varchar] (255),\n[LastLoadDTS] [datetime2] (7),\n[GrainID] [decimal] (38, 0),\n[PredictedValueNBR] [decimal] (38, 2),\n[Factor1TXT] [varchar] (255),\n[Factor2TXT] [varchar] (255),\n[Factor3TXT] [varchar] (255)\n)\n\n\n\n\nHow can I improve my model performance?\n\n\nNote these preprocessing steps should first be tested and found useful in the develop step. ADD LINK to DEV!\n\n\n\n\nIf you have lots of NULL values, you may want to turn on imputation via the \nimpute\n argument (see below).\n\n\nIf you have lots of NULL cells and your data is longitudinal, you may want to try \nGroupedLOCF\n.\n\n\nIf you think the phenomenon you're trying to predict has a seasonal or diurnal component, you may need some \nfeature engineering\n.\n\n\nIf your data is longitudinal, you may want to try the \nLinearMixedModel\n (detailed below).\n\n\n\n\nStep 1: Pull in the data via \nSelectData\n\n\n\n\n\n\nReturn\n: a data frame that represents your data.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\nserver\n: a server name. You'll pull data from this server.\n\n\ndatabase\n: a database name. You'll pull data from this database.\n\n\n\n\n\n\n\n\nlibrary(HCRTools)\n\nconnection.string = \n\ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true\n\n\n\nquery = \n\nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee]\n\n\n\ndf \n- SelectData(connection.string, query)\nhead(df)\nstr(df)\n\n\n\n\nStep 2: Set your parameters via \nSupervisedModelParameters\n\n\n\n\n\n\nReturn\n: an object representing your specific configuration.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. The data your model is based on.\n\n\ntype\n: a string. This will either be 'classification' or 'regression'.\n\n\nimpute\n: a boolean, defaults to FALSE. Whether to impute by replacing NULLs with column mean (for numeric columns) or column mode (for categorical columns).\n\n\ngrainCol\n: a string, defaults to None. Name of possible GrainID column in your dataset. If specified, this column will be removed, as it won't help the algorithm.\n\n\ntestWindowCol\n: a string. Name of utility column used to indicate whether rows are in train or test set. Recall that test set receives predictions.\n\n\npredictedCol\n: a string. Name of variable (or column) that you want to predict. \n\n\ndebug\n: a boolean, defaults to FALSE. If TRUE, console output when comparing models is verbose for easier debugging.\n\n\nuseSavedModel\n: a boolean, defaults to FALSE. If TRUE, use the model that has been saved to disk in the current working directory (WD). If FALSE, save a new model to disk in the current WD. Use \ngetwd()\n in the console to check WD.\n\n\ncores\n: an int, defaults to 4. Number of cores on machine to use for model training.\n\n\nsqlConn\n: a string. Specifies the driver, server, database, and whether you're using a trusted connection (which is preferred).\n\n\ndestSchemaTable\n : a string. Denotes the output schema and table (separated by a period) where the predictions should be pushed.\n\n\n\n\n\n\n\n\np \n- DeploySupervisedModelParameters$new()\np$df = df\np$type = 'classification'\np$impute = TRUE\np$grainCol = 'GrainID'\np$testWindowCol = 'InTestWindow'\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$useSavedModel = FALSE\np$cores = 1\np$sqlConn = connection.string\np$destSchemaTable = 'dbo.HCRDeployClassificationBASE'\n\n\n\n\nStep 3: Create the models via the \nDeployLasso\n and \nDeployRandomForest\n algorithms.\n\n\n# Run Lasso (if that's what performed best in the develop step)\nlasso \n- DeployLasso$new(p)\nlasso$deploy()\n\n# Or run RandomForest (if that's what performed best in the develop step)\nrf \n- DeployRandomForest$new(p)\nrf$deploy()\n\n# Or run Linear Mixed Model (if that's what performed best in the develop step)\n\np$personCol = 'PatientID' # Change to your PatientID col\ndLMM \n- DeployLinearMixedModel$new(p)\ndLMM$deploy()\n\n\n\n\nFull example code\n\n\nptm \n- proc.time()\nlibrary(HCRTools)\n\nconnection.string = \n\ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true\n\n\n\nquery = \n\nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee]\n\n\n\ndf \n- SelectData(connection.string, query)\nhead(df)\nstr(df)\n\np \n- DeploySupervisedModelParameters$new()\np$df = df\np$type = 'classification'\np$impute = TRUE\np$grainCol = 'GrainID'\np$testWindowCol = 'InTestWindow'\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$useSavedModel = FALSE\np$cores = 1\np$sqlConn = connection.string\np$destSchemaTable = 'dbo.HCRDeployClassificationBASE'\n\nprint(proc.time() - ptm)\n\n\n\n\nLasso\n Details\n\n\nThis version of Lasso is based on the Grouped Lasso alogrithm offered by the \ngrpreg package\n. We prefer simple models to complicated ones, so for tuning the lambda regularization parameter, we use the 1SE rule, which means that we take the model with fewest coefficients, which is also within one standard error of the best model. This way, we provide guidance as to which features (ie, columns) should be kept in the deployed model. \n\n\nRandomForest\n Details\n\n\nThis version of random forest is based on the wonderful \nranger package\n.\n\n\nLinearMixedModel\n Details\n\n\nThis mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets, and then scale up from there.\n\n\nRelevant example code:\n\n\np \n- SupervisedModelParameters$new()\np$df = df\np$type = 'classification'\np$impute = TRUE\np$grainCol = 'PatientEncounterID' # This grain of the dataset (required)\np$personCol = 'PatientID'         # This represents the person (required)\np$predictedCol = 'HighA1C'\np$debug = FALSE\np$cores = 1\n\nlmm \n- LinearMixedModel$new(p)\nlmm$run()",
+            "title": "Deploying a Best Model"
+        },
+        {
+            "location": "/comparing-and-deploying/deploy/#save-and-deploy-models-via-deploylasso-deployrandomforest-or-deploylinearmixedmodel",
+            "text": "",
+            "title": "Save and deploy models via DeployLasso, DeployRandomForest, or DeployLinearMixedModel"
+        },
+        {
+            "location": "/comparing-and-deploying/deploy/#what-is-this",
+            "text": "These classes let one save and deploy custom models on varied datasets via the following workflow:    Using the model development functions LINK!, you found a model that performs well.   Now, you train and save model on your entire dataset (with the  useSavedModel  argument set to FALSE).   Next, flip the  useSavedModel  argument to TRUE and rerun the script however often you need to generate new predictions.   Now that you're using a saved model, you're just running new people/encounters against the saved model to generate predictions.      Retrain the model whenever significant changes occur with the data (perhaps quarterly) by flipping the  useSavedModel  to FALSE and go to step 3.    One can do both classification (ie, predict Y or N) as well as regression (ie, predict a numeric field).",
+            "title": "What is this?"
+        },
+        {
+            "location": "/comparing-and-deploying/deploy/#is-any-dataset-ready-for-model-creation-and-deployment",
+            "text": "Nope. It'll help if you can follow these guidelines:   Don't use 0 or 1 for the independent variable when doing classification. Use Y/N instead. The IIF function in T-SQL may help here.  Create a column thath as  Y  for those rows in the training set and  N  for those rows in the test set. Think of the test set as those people or enounters that need a prediction. This column can be called InTestWindow.   Unlike the develop step ADD LINK TO DEV (which you should have already completed), you should now pull in both training and test rows in your query.   One has to create a table to receive the predicted values. You can work in SSMS (or SAMD, for those using Health Catalyst products):  Create these tables when doing classification or regression, respectively:     CREATE TABLE [SAM].[dbo].[HCRDeployClassificationBASE] (\n[BindingID] [int] ,\n[BindingNM] [varchar] (255),\n[LastLoadDTS] [datetime2] (7),\n[GrainID] [decimal] (38, 0),\n[PredictedProbNBR] [decimal] (38, 2),\n[Factor1TXT] [varchar] (255),\n[Factor2TXT] [varchar] (255),\n[Factor3TXT] [varchar] (255)\n)\n\nCREATE TABLE [SAM].[dbo].[HCRDeployRegressionBASE] (\n[BindingID] [int],\n[BindingNM] [varchar] (255),\n[LastLoadDTS] [datetime2] (7),\n[GrainID] [decimal] (38, 0),\n[PredictedValueNBR] [decimal] (38, 2),\n[Factor1TXT] [varchar] (255),\n[Factor2TXT] [varchar] (255),\n[Factor3TXT] [varchar] (255)\n)",
+            "title": "Is any dataset ready for model creation and deployment?"
+        },
+        {
+            "location": "/comparing-and-deploying/deploy/#how-can-i-improve-my-model-performance",
+            "text": "Note these preprocessing steps should first be tested and found useful in the develop step. ADD LINK to DEV!   If you have lots of NULL values, you may want to turn on imputation via the  impute  argument (see below).  If you have lots of NULL cells and your data is longitudinal, you may want to try  GroupedLOCF .  If you think the phenomenon you're trying to predict has a seasonal or diurnal component, you may need some  feature engineering .  If your data is longitudinal, you may want to try the  LinearMixedModel  (detailed below).",
+            "title": "How can I improve my model performance?"
+        },
+        {
+            "location": "/comparing-and-deploying/deploy/#step-1-pull-in-the-data-via-selectdata",
+            "text": "Return : a data frame that represents your data.    Arguments :   server : a server name. You'll pull data from this server.  database : a database name. You'll pull data from this database.     library(HCRTools)\n\nconnection.string =  \ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true \n\nquery =  \nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee] \n\ndf  - SelectData(connection.string, query)\nhead(df)\nstr(df)",
+            "title": "Step 1: Pull in the data via SelectData"
+        },
+        {
+            "location": "/comparing-and-deploying/deploy/#step-2-set-your-parameters-via-supervisedmodelparameters",
+            "text": "Return : an object representing your specific configuration.    Arguments :   df : a data frame. The data your model is based on.  type : a string. This will either be 'classification' or 'regression'.  impute : a boolean, defaults to FALSE. Whether to impute by replacing NULLs with column mean (for numeric columns) or column mode (for categorical columns).  grainCol : a string, defaults to None. Name of possible GrainID column in your dataset. If specified, this column will be removed, as it won't help the algorithm.  testWindowCol : a string. Name of utility column used to indicate whether rows are in train or test set. Recall that test set receives predictions.  predictedCol : a string. Name of variable (or column) that you want to predict.   debug : a boolean, defaults to FALSE. If TRUE, console output when comparing models is verbose for easier debugging.  useSavedModel : a boolean, defaults to FALSE. If TRUE, use the model that has been saved to disk in the current working directory (WD). If FALSE, save a new model to disk in the current WD. Use  getwd()  in the console to check WD.  cores : an int, defaults to 4. Number of cores on machine to use for model training.  sqlConn : a string. Specifies the driver, server, database, and whether you're using a trusted connection (which is preferred).  destSchemaTable  : a string. Denotes the output schema and table (separated by a period) where the predictions should be pushed.     p  - DeploySupervisedModelParameters$new()\np$df = df\np$type = 'classification'\np$impute = TRUE\np$grainCol = 'GrainID'\np$testWindowCol = 'InTestWindow'\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$useSavedModel = FALSE\np$cores = 1\np$sqlConn = connection.string\np$destSchemaTable = 'dbo.HCRDeployClassificationBASE'",
+            "title": "Step 2: Set your parameters via SupervisedModelParameters"
+        },
+        {
+            "location": "/comparing-and-deploying/deploy/#step-3-create-the-models-via-the-deploylasso-and-deployrandomforest-algorithms",
+            "text": "# Run Lasso (if that's what performed best in the develop step)\nlasso  - DeployLasso$new(p)\nlasso$deploy()\n\n# Or run RandomForest (if that's what performed best in the develop step)\nrf  - DeployRandomForest$new(p)\nrf$deploy()\n\n# Or run Linear Mixed Model (if that's what performed best in the develop step)\n\np$personCol = 'PatientID' # Change to your PatientID col\ndLMM  - DeployLinearMixedModel$new(p)\ndLMM$deploy()",
+            "title": "Step 3: Create the models via the DeployLasso and DeployRandomForest algorithms."
+        },
+        {
+            "location": "/comparing-and-deploying/deploy/#full-example-code",
+            "text": "ptm  - proc.time()\nlibrary(HCRTools)\n\nconnection.string =  \ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true \n\nquery =  \nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee] \n\ndf  - SelectData(connection.string, query)\nhead(df)\nstr(df)\n\np  - DeploySupervisedModelParameters$new()\np$df = df\np$type = 'classification'\np$impute = TRUE\np$grainCol = 'GrainID'\np$testWindowCol = 'InTestWindow'\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$useSavedModel = FALSE\np$cores = 1\np$sqlConn = connection.string\np$destSchemaTable = 'dbo.HCRDeployClassificationBASE'\n\nprint(proc.time() - ptm)",
+            "title": "Full example code"
+        },
+        {
+            "location": "/comparing-and-deploying/deploy/#lasso-details",
+            "text": "This version of Lasso is based on the Grouped Lasso alogrithm offered by the  grpreg package . We prefer simple models to complicated ones, so for tuning the lambda regularization parameter, we use the 1SE rule, which means that we take the model with fewest coefficients, which is also within one standard error of the best model. This way, we provide guidance as to which features (ie, columns) should be kept in the deployed model.",
+            "title": "Lasso Details"
+        },
+        {
+            "location": "/comparing-and-deploying/deploy/#randomforest-details",
+            "text": "This version of random forest is based on the wonderful  ranger package .",
+            "title": "RandomForest Details"
+        },
+        {
+            "location": "/comparing-and-deploying/deploy/#linearmixedmodel-details",
+            "text": "This mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets, and then scale up from there.  Relevant example code:  p  - SupervisedModelParameters$new()\np$df = df\np$type = 'classification'\np$impute = TRUE\np$grainCol = 'PatientEncounterID' # This grain of the dataset (required)\np$personCol = 'PatientID'         # This represents the person (required)\np$predictedCol = 'HighA1C'\np$debug = FALSE\np$cores = 1\n\nlmm  - LinearMixedModel$new(p)\nlmm$run()",
+            "title": "LinearMixedModel Details"
+        },
+        {
+            "location": "/healthcare-statistics/risk-adjusted-comparisons/",
+            "text": "Risk-adjusted comparisons via \nRiskAdjustedComparisons\n\n\nWhat is this?\n\n\nIn healthcare one often wants to compare the performance of two or more groups, or compare the performance of one group from year to year. What makes this difficult is that department heads often say, \"Yeah our mortality rate was high, but we have sicker patients than those other guys.\"\n\n\nRisk-adjusted comparisons are thus important because they let you compare two healthcare groups on a particular measure (like mortality rate), adjusting for the health of the patients.\n\n\nWhy is it helpful?\n\n\nThis functionality helps because it allows you to make apples to apples comparisons across groups or units of time.\n\n\nSo, how do we do it?\n\n\nFirst, get some data organized (via SQL or Excel) that has the following:\n\n\n\n\nA measure column, such as mortality rate or readmission rate\n\n\nA groupby column, such as a HospitalUnit column, that'd have categories like GroupA, GroupB, etc\n    This column could also be years or months. R will group the data by this column for the comparisons.\n\n\n\n\nStep 1: Pull in the data via \nSelectData\n\n\nptm \n- proc.time()\nlibrary(HCRTools)\n\nconnection.string = \n\ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true\n\n\n\nquery = \n\nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee]\n\n\n\ndf \n- SelectData(connection.string, query)\nhead(df) # Look at the data you read in\nstr(df)\n\n\n\n\nStep 2: Set your parameters via \nSupervisedModelParameters\n\n\n\n\n\n\nReturn\n: an object representing your specific configuration.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. The data your model is based on.\n\n\ngroupCol\n: a string. R will group your data by this coulmn for the comparison. Could be a list of units in the hospital. Years or months would also work.\n\n\nimpute\n: a boolean, defaults to FALSE. Whether to impute by replacing NULLs with column mean (for numeric columns) or column mode (for categorical columns).\n\n\npredictedCol\n: a string. Name of variable (or column) that you want to compare the groups by. This could be mortality or readmission, for example.\n\n\ndebug\n: a boolean, defaults to FALSE. If TRUE, console output when comparing models is verbose for easier debugging.\n\n\ncores\n: an int, defaults to 4. Number of cores on machine to use for model training.\n\n\n\n\n\n\n\n\np \n- SupervisedModelParameters$new()\np$df = df\np$groupCol = 'Gender'\np$impute = TRUE\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$cores = 1\n\n\n\n\nStep 3: Make the risk-adjusted comparison via \nRiskAdjustedComparisons\n.\n\n\nriskAdjComp \n- RiskAdjustedComparisons$new(p)\nriskAdjComp$run()\n\n\n\n\nFull example code\n\n\nlibrary(HCRTools)\n\nconnection.string = \n\ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true\n\n\n\nquery = \n\nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee]\nWHERE OrganizationLevel \n 0\n\n\n\ndf \n- SelectData(connection.string, query)\n\np \n- SupervisedModelParameters$new()\np$df = df\np$groupCol = 'OrganizationLevel'\np$impute = TRUE\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$cores = 1\n\nriskAdjComp \n- RiskAdjustedComparisons$new(p)\nriskAdjComp$run()",
+            "title": "Risk-adjusted Comparisons"
+        },
+        {
+            "location": "/healthcare-statistics/risk-adjusted-comparisons/#risk-adjusted-comparisons-via-riskadjustedcomparisons",
+            "text": "",
+            "title": "Risk-adjusted comparisons via RiskAdjustedComparisons"
+        },
+        {
+            "location": "/healthcare-statistics/risk-adjusted-comparisons/#what-is-this",
+            "text": "In healthcare one often wants to compare the performance of two or more groups, or compare the performance of one group from year to year. What makes this difficult is that department heads often say, \"Yeah our mortality rate was high, but we have sicker patients than those other guys.\"  Risk-adjusted comparisons are thus important because they let you compare two healthcare groups on a particular measure (like mortality rate), adjusting for the health of the patients.",
+            "title": "What is this?"
+        },
+        {
+            "location": "/healthcare-statistics/risk-adjusted-comparisons/#why-is-it-helpful",
+            "text": "This functionality helps because it allows you to make apples to apples comparisons across groups or units of time.",
+            "title": "Why is it helpful?"
+        },
+        {
+            "location": "/healthcare-statistics/risk-adjusted-comparisons/#so-how-do-we-do-it",
+            "text": "First, get some data organized (via SQL or Excel) that has the following:   A measure column, such as mortality rate or readmission rate  A groupby column, such as a HospitalUnit column, that'd have categories like GroupA, GroupB, etc\n    This column could also be years or months. R will group the data by this column for the comparisons.",
+            "title": "So, how do we do it?"
+        },
+        {
+            "location": "/healthcare-statistics/risk-adjusted-comparisons/#step-1-pull-in-the-data-via-selectdata",
+            "text": "ptm  - proc.time()\nlibrary(HCRTools)\n\nconnection.string =  \ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true \n\nquery =  \nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee] \n\ndf  - SelectData(connection.string, query)\nhead(df) # Look at the data you read in\nstr(df)",
+            "title": "Step 1: Pull in the data via SelectData"
+        },
+        {
+            "location": "/healthcare-statistics/risk-adjusted-comparisons/#step-2-set-your-parameters-via-supervisedmodelparameters",
+            "text": "Return : an object representing your specific configuration.    Arguments :   df : a data frame. The data your model is based on.  groupCol : a string. R will group your data by this coulmn for the comparison. Could be a list of units in the hospital. Years or months would also work.  impute : a boolean, defaults to FALSE. Whether to impute by replacing NULLs with column mean (for numeric columns) or column mode (for categorical columns).  predictedCol : a string. Name of variable (or column) that you want to compare the groups by. This could be mortality or readmission, for example.  debug : a boolean, defaults to FALSE. If TRUE, console output when comparing models is verbose for easier debugging.  cores : an int, defaults to 4. Number of cores on machine to use for model training.     p  - SupervisedModelParameters$new()\np$df = df\np$groupCol = 'Gender'\np$impute = TRUE\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$cores = 1",
+            "title": "Step 2: Set your parameters via SupervisedModelParameters"
+        },
+        {
+            "location": "/healthcare-statistics/risk-adjusted-comparisons/#step-3-make-the-risk-adjusted-comparison-via-riskadjustedcomparisons",
+            "text": "riskAdjComp  - RiskAdjustedComparisons$new(p)\nriskAdjComp$run()",
+            "title": "Step 3: Make the risk-adjusted comparison via RiskAdjustedComparisons."
+        },
+        {
+            "location": "/healthcare-statistics/risk-adjusted-comparisons/#full-example-code",
+            "text": "library(HCRTools)\n\nconnection.string =  \ndriver={SQL Server};\nserver=localhost;\ndatabase=AdventureWorks2012;\ntrusted_connection=true \n\nquery =  \nSELECT\n[OrganizationLevel]\n,[MaritalStatus]\n,[Gender]\n,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag\n,[VacationHours]\n,[SickLeaveHours]\nFROM [AdventureWorks2012].[HumanResources].[Employee]\nWHERE OrganizationLevel   0 \n\ndf  - SelectData(connection.string, query)\n\np  - SupervisedModelParameters$new()\np$df = df\np$groupCol = 'OrganizationLevel'\np$impute = TRUE\np$predictedCol = 'SalariedFlag'\np$debug = FALSE\np$cores = 1\n\nriskAdjComp  - RiskAdjustedComparisons$new(p)\nriskAdjComp$run()",
+            "title": "Full example code"
+        },
+        {
+            "location": "/healthcare-statistics/trend-analysis/",
+            "text": "Trend Analysis via \nFindTrends\n\n\nWhat is this?\n\n\nIn healthcare one often wants to automatically detect trends occuring across many different measures at the same time. Further, one wants to be able to group by various categories and find trends among subsets of the patient population. \n\n\nHere one can quickly look across 50+ measures for those that have experienced \nnotable trends according to Nelson rule 3\n.\n\n\nWhy is it helpful?\n\n\nThis \nFindTrends\n function allows one to quickly see if any numeric columns in a dataset have been trending downward or upward over six consecutive months, using automatic subgroupings (like on Gender, for example).\n\n\nSo, how do we do it?\n\n\nFirst, get some data organized (via SQL or Excel) that has the following.\n- A numeric column (like mortality rate) that could have a trend\n- A categorical column (like Gender) that we'll group by to check trends for Females and Males\n\n\nStep 1: Create some data or pull it from SQL Server\n\n\ndates \n- c(as.Date(\n2012-01-01\n),as.Date(\n2012-01-02\n),as.Date(\n2012-02-01\n),\n      as.Date(\n2012-03-01\n),as.Date(\n2012-04-01\n),as.Date(\n2012-05-01\n),\n      as.Date(\n2012-06-01\n),as.Date(\n2012-06-02\n))\ny1 \n- c(0,1,2,6,8,13,14,16)               # large positive\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1.5)     # small positive\ny3 \n- c(1,0,-2,-2,-4,-5,-7,-8)            # big negative\ny4 \n- c(.5,0,-.5,-.5,-.5,-.5,-.6,0)       # small negative\ngender \n- c('M','F','F','F','F','F','F','F')\ndf \n- data.frame(dates,y1,y2,y3,y4,gender)\n\n\n\n\nStep 2: Find trends via \nFindTrends\n\n\n\n\n\n\nReturn\n: A data frame containing the dimensional attribute (ie gender), the subset the data was grouped by (ie M/F), the measures that had trends (ie, mortality or readmission), and the ending month.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This data contains both the (numeric) measure columns and (categorical) columns to group by.\n\n\ndatecol\n: a string. Column name for the date or date-time column in your data frame.\n\n\ncoltoaggregate\n: a string. Column name for the categorical column we'll group by.\n\n\n\n\n\n\n\n\nres = FindTrends(df = df,\n                 datecol = 'dates',\n                 coltoaggregate = 'gender')\nres\n\n\n\n\nFull example code\n\n\ndates \n- c(as.Date(\n2012-01-01\n),as.Date(\n2012-01-02\n),as.Date(\n2012-02-01\n),\n      as.Date(\n2012-03-01\n),as.Date(\n2012-04-01\n),as.Date(\n2012-05-01\n),\n      as.Date(\n2012-06-01\n),as.Date(\n2012-06-02\n))\ny1 \n- c(0,1,2,6,8,13,14,16)               # large positive\ny2 \n- c(.8,1,1.2,1.2,1.2,1.3,1.3,1.5)     # small positive\ny3 \n- c(1,0,-2,-2,-4,-5,-7,-8)            # big negative\ny4 \n- c(.5,0,-.5,-.5,-.5,-.5,-.6,0)       # small negative\ngender \n- c('M','F','F','F','F','F','F','F')\ndf \n- data.frame(dates,y1,y2,y3,y4,gender)\n\nres = FindTrends(df = df,\n                 datecol = 'dates',\n                 coltoaggregate = 'gender')\nres",
+            "title": "Trend Analysis"
+        },
+        {
+            "location": "/healthcare-statistics/trend-analysis/#trend-analysis-via-findtrends",
+            "text": "",
+            "title": "Trend Analysis via FindTrends"
+        },
+        {
+            "location": "/healthcare-statistics/trend-analysis/#what-is-this",
+            "text": "In healthcare one often wants to automatically detect trends occuring across many different measures at the same time. Further, one wants to be able to group by various categories and find trends among subsets of the patient population.   Here one can quickly look across 50+ measures for those that have experienced  notable trends according to Nelson rule 3 .",
+            "title": "What is this?"
+        },
+        {
+            "location": "/healthcare-statistics/trend-analysis/#why-is-it-helpful",
+            "text": "This  FindTrends  function allows one to quickly see if any numeric columns in a dataset have been trending downward or upward over six consecutive months, using automatic subgroupings (like on Gender, for example).",
+            "title": "Why is it helpful?"
+        },
+        {
+            "location": "/healthcare-statistics/trend-analysis/#so-how-do-we-do-it",
+            "text": "First, get some data organized (via SQL or Excel) that has the following.\n- A numeric column (like mortality rate) that could have a trend\n- A categorical column (like Gender) that we'll group by to check trends for Females and Males",
+            "title": "So, how do we do it?"
+        },
+        {
+            "location": "/healthcare-statistics/trend-analysis/#step-1-create-some-data-or-pull-it-from-sql-server",
+            "text": "dates  - c(as.Date( 2012-01-01 ),as.Date( 2012-01-02 ),as.Date( 2012-02-01 ),\n      as.Date( 2012-03-01 ),as.Date( 2012-04-01 ),as.Date( 2012-05-01 ),\n      as.Date( 2012-06-01 ),as.Date( 2012-06-02 ))\ny1  - c(0,1,2,6,8,13,14,16)               # large positive\ny2  - c(.8,1,1.2,1.2,1.2,1.3,1.3,1.5)     # small positive\ny3  - c(1,0,-2,-2,-4,-5,-7,-8)            # big negative\ny4  - c(.5,0,-.5,-.5,-.5,-.5,-.6,0)       # small negative\ngender  - c('M','F','F','F','F','F','F','F')\ndf  - data.frame(dates,y1,y2,y3,y4,gender)",
+            "title": "Step 1: Create some data or pull it from SQL Server"
+        },
+        {
+            "location": "/healthcare-statistics/trend-analysis/#step-2-find-trends-via-findtrends",
+            "text": "Return : A data frame containing the dimensional attribute (ie gender), the subset the data was grouped by (ie M/F), the measures that had trends (ie, mortality or readmission), and the ending month.    Arguments :   df : a data frame. This data contains both the (numeric) measure columns and (categorical) columns to group by.  datecol : a string. Column name for the date or date-time column in your data frame.  coltoaggregate : a string. Column name for the categorical column we'll group by.     res = FindTrends(df = df,\n                 datecol = 'dates',\n                 coltoaggregate = 'gender')\nres",
+            "title": "Step 2: Find trends via FindTrends"
+        },
+        {
+            "location": "/healthcare-statistics/trend-analysis/#full-example-code",
+            "text": "dates  - c(as.Date( 2012-01-01 ),as.Date( 2012-01-02 ),as.Date( 2012-02-01 ),\n      as.Date( 2012-03-01 ),as.Date( 2012-04-01 ),as.Date( 2012-05-01 ),\n      as.Date( 2012-06-01 ),as.Date( 2012-06-02 ))\ny1  - c(0,1,2,6,8,13,14,16)               # large positive\ny2  - c(.8,1,1.2,1.2,1.2,1.3,1.3,1.5)     # small positive\ny3  - c(1,0,-2,-2,-4,-5,-7,-8)            # big negative\ny4  - c(.5,0,-.5,-.5,-.5,-.5,-.6,0)       # small negative\ngender  - c('M','F','F','F','F','F','F','F')\ndf  - data.frame(dates,y1,y2,y3,y4,gender)\n\nres = FindTrends(df = df,\n                 datecol = 'dates',\n                 coltoaggregate = 'gender')\nres",
+            "title": "Full example code"
+        },
+        {
+            "location": "/healthcare-statistics/find-targeted-correlations/",
+            "text": "Find correlations with a specific variable via \nCalculateTargetedCorrelations\n\n\nWhat is this?\n\n\nWhen trying to understand the factors driving a particular processes, it can be helpful to view the \ncorrelations\n between several variables and your variable of interest. This function lets one quickly check the \ncorrelations\n between all numeric fields in a dataset and a specified column.\n\n\nWhy is it helpful?\n\n\nYou can quickly see how well other variables explain your variable of interest.\n\n\nSo, how do we do it?\n\n\n\n\nFirst, we'll load HCRTools, create a fake dataset on which to work, and look at it:\n\n\n\n\nlibrary(HCRTools)\n\ndf \n- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #\n- categorical coulmns are ignored\n\nhead(df)\n\n\n\n\n\n\nNext, we'll find the correlations between \n'c'\n and the other numeric columns in the data represented by \ndf\n.\n\n\n\n\nres \n- CalculateTargetedCorrelations(df,'c')\nres\n\n\n\n\nFunction specs for \nCalculateTargetedCorrelations\n\n\n\n\n\n\nReturn\n: a data frame of same length as input data frame, but three columns wide (column name, correlation, p-value).\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This dataset contains at least two numeric columns.\n\n\ntarget.col\n: a string. Column name of the variable of interest. Correlations of all other numeric columns are calculated against this column. \n\n\n\n\n\n\n\n\nWe use the \nPearson correlation coefficient\n.\nFor details on the p-value calculation, see \nhere\n\n\nFull example code\n\n\nlibrary(HCRTools)\n\ndf \n- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #\n- categorical coulmns are ignored\n\nhead(df)\n\nres \n- CalculateTargetedCorrelations(df,'c')\nres",
+            "title": "Find Targeted Correlations"
+        },
+        {
+            "location": "/healthcare-statistics/find-targeted-correlations/#find-correlations-with-a-specific-variable-via-calculatetargetedcorrelations",
+            "text": "",
+            "title": "Find correlations with a specific variable via CalculateTargetedCorrelations"
+        },
+        {
+            "location": "/healthcare-statistics/find-targeted-correlations/#what-is-this",
+            "text": "When trying to understand the factors driving a particular processes, it can be helpful to view the  correlations  between several variables and your variable of interest. This function lets one quickly check the  correlations  between all numeric fields in a dataset and a specified column.",
+            "title": "What is this?"
+        },
+        {
+            "location": "/healthcare-statistics/find-targeted-correlations/#why-is-it-helpful",
+            "text": "You can quickly see how well other variables explain your variable of interest.",
+            "title": "Why is it helpful?"
+        },
+        {
+            "location": "/healthcare-statistics/find-targeted-correlations/#so-how-do-we-do-it",
+            "text": "First, we'll load HCRTools, create a fake dataset on which to work, and look at it:   library(HCRTools)\n\ndf  - data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) # - categorical coulmns are ignored\n\nhead(df)   Next, we'll find the correlations between  'c'  and the other numeric columns in the data represented by  df .   res  - CalculateTargetedCorrelations(df,'c')\nres",
+            "title": "So, how do we do it?"
+        },
+        {
+            "location": "/healthcare-statistics/find-targeted-correlations/#function-specs-for-calculatetargetedcorrelations",
+            "text": "Return : a data frame of same length as input data frame, but three columns wide (column name, correlation, p-value).    Arguments :   df : a data frame. This dataset contains at least two numeric columns.  target.col : a string. Column name of the variable of interest. Correlations of all other numeric columns are calculated against this column.      We use the  Pearson correlation coefficient .\nFor details on the p-value calculation, see  here",
+            "title": "Function specs for CalculateTargetedCorrelations"
+        },
+        {
+            "location": "/healthcare-statistics/find-targeted-correlations/#full-example-code",
+            "text": "library(HCRTools)\n\ndf  - data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) # - categorical coulmns are ignored\n\nhead(df)\n\nres  - CalculateTargetedCorrelations(df,'c')\nres",
+            "title": "Full example code"
+        },
+        {
+            "location": "/healthcare-statistics/find-all-correlations/",
+            "text": "Find correlations with a specific variable via \nCalculateAllCorrelations\n\n\nWhat is this?\n\n\nIn healthcare (as in other fields) it's often helpful to understand the relationships between the variables in one's dataset. This provides that functionality by finding the \ncorrelations\n for all numeric columns in a particular dataset.\n\n\nWhy is it helpful?\n\n\nYou can quickly see the relationships present in your data.\n\n\nSo, how do we do it?\n\n\n\n\nFirst, we'll load HCRTools, create a fake dataset on which to work, and look at it:\n\n\n\n\nlibrary(HCRTools)\n\ndf \n- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #\n- is ignored\n\nhead(df)\n\n\n\n\n\n\nNext, we'll find the correlations between all numeric columns in the dataset represented by \ndf\n.\n\n\n\n\nres \n- CalculateAllCorrelations(df)\nres\n\n\n\n\nFunction specs for \nCalculateAllCorrelations\n\n\n\n\n\n\nReturn\n: a data frame of same length as input data frame, but three columns wide.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This dataset contains at least two numeric columns. \n\n\n\n\n\n\n\n\nWe use the \nPearson correlation coefficient\n.\n\n\nFull example code\n\n\nlibrary(HCRTools)\n\ndf \n- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #\n- is ignored\n\nhead(df)\n\nres \n- CalculateAllCorrelations(df)\nres",
+            "title": "Find All Correlations"
+        },
+        {
+            "location": "/healthcare-statistics/find-all-correlations/#find-correlations-with-a-specific-variable-via-calculateallcorrelations",
+            "text": "",
+            "title": "Find correlations with a specific variable via CalculateAllCorrelations"
+        },
+        {
+            "location": "/healthcare-statistics/find-all-correlations/#what-is-this",
+            "text": "In healthcare (as in other fields) it's often helpful to understand the relationships between the variables in one's dataset. This provides that functionality by finding the  correlations  for all numeric columns in a particular dataset.",
+            "title": "What is this?"
+        },
+        {
+            "location": "/healthcare-statistics/find-all-correlations/#why-is-it-helpful",
+            "text": "You can quickly see the relationships present in your data.",
+            "title": "Why is it helpful?"
+        },
+        {
+            "location": "/healthcare-statistics/find-all-correlations/#so-how-do-we-do-it",
+            "text": "First, we'll load HCRTools, create a fake dataset on which to work, and look at it:   library(HCRTools)\n\ndf  - data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) # - is ignored\n\nhead(df)   Next, we'll find the correlations between all numeric columns in the dataset represented by  df .   res  - CalculateAllCorrelations(df)\nres",
+            "title": "So, how do we do it?"
+        },
+        {
+            "location": "/healthcare-statistics/find-all-correlations/#function-specs-for-calculateallcorrelations",
+            "text": "Return : a data frame of same length as input data frame, but three columns wide.    Arguments :   df : a data frame. This dataset contains at least two numeric columns.      We use the  Pearson correlation coefficient .",
+            "title": "Function specs for CalculateAllCorrelations"
+        },
+        {
+            "location": "/healthcare-statistics/find-all-correlations/#full-example-code",
+            "text": "library(HCRTools)\n\ndf  - data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) # - is ignored\n\nhead(df)\n\nres  - CalculateAllCorrelations(df)\nres",
+            "title": "Full example code"
+        }
+    ]
+}
