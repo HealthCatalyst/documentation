@@ -4,7 +4,7 @@ This package will get you started with healthcare machine learning in R.
 
 ## What can you do with it?
 
-* Compare models based on your data.
+* Create and compare models based on your data.
 * Save and deploy a model.
 * Perform risk-adjusted comparisons.
 * Do trend analysis following [Nelson rules](https://en.wikipedia.org/wiki/Nelson_rules).
@@ -17,7 +17,6 @@ This package will get you started with healthcare machine learning in R.
 * Longitudinal machine learning via mixed models
 * Longitudinal imputation
 * Risk-adjusted comparisons
-* A focus on SQL Server
 
 ------------------
 
@@ -27,8 +26,8 @@ Work in the console of RStudio or RGui
 
 * Grab prerequisites
 ```{r}
-install.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lubridate',
-'pROC','R6','ranger','ROCR','RODBC'),repos = "https://cran.cnr.berkeley.edu/")
+install.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lme4','lubridate','pROC','R6','ranger','ROCR','RODBC'
+),repos = "https://cran.cnr.berkeley.edu/")
 ```
 
 * Install HCRTools

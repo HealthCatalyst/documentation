@@ -2,7 +2,7 @@
 
 ## Who is this project for?
 
-While data scientists in healthcare will likely find this project valuable, the audience HCTools targets are those BI developers, data architects, and SQL-based folks that would love to create appropriate and accurate models on their data. While packages like scikit-learn are certainly irreplaceable, we think that there is a set of data problems specific to healthcare that warrant new tools.
+While data scientists in healthcare will likely find this project valuable, the audience HCTools targets are those BI developers, data architects, and SQL developers that would love to create appropriate and accurate models with healthcare data. While existing machine learning packages are certainly irreplaceable, we think that there is a set of data problems specific to healthcare that warrant new tools.
 
 ## How does HCRTools focus on healthcare?
  
@@ -14,5 +14,5 @@ This project began in the data science group at Health Catalyst, a Salt Lake Cit
 
 ## Why was it open-sourced?
 
-We believe that everyone benefits when healthcare is made more efficient and outcomes are improved. Machine learning is surprisingly new to healthcare and we want to quickly take healthcare down the machine learning adoption path. We believe that making helpful, simple tools widely available is one small way to make US healthcare a little less kludgy. 
+We believe that everyone benefits when healthcare is made more efficient and outcomes are improved. Machine learning is surprisingly still fairly new to healthcare and we want to quickly take healthcare down the machine learning adoption path. We believe that making helpful, simple tools widely available is one small way to help healthcare organizations transform their data into actionable insight that can be used to improve outcomes.
 
