@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>None/</loc>
+     <loc>http://hctools.com/</loc>
      <lastmod>2016-10-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -12,35 +12,13 @@
     
         
     <url>
-     <loc>None/getting-started/where-do-i-begin/</loc>
+     <loc>http://hctools.com/getting-started/where-do-i-begin/</loc>
      <lastmod>2016-10-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/getting-started/FAQ/</loc>
-     <lastmod>2016-10-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>None/model-pre-processing/feature-eng-overview/</loc>
-     <lastmod>2016-10-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/model-pre-processing/longitudinal-imputation/</loc>
-     <lastmod>2016-10-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/model-pre-processing/seasonality-handling/</loc>
+     <loc>http://hctools.com/getting-started/FAQ/</loc>
      <lastmod>2016-10-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -50,13 +28,19 @@
     
         
     <url>
-     <loc>None/comparing-and-deploying/compare/</loc>
+     <loc>http://hctools.com/model-pre-processing/feature-eng-overview/</loc>
      <lastmod>2016-10-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/comparing-and-deploying/deploy/</loc>
+     <loc>http://hctools.com/model-pre-processing/longitudinal-imputation/</loc>
+     <lastmod>2016-10-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://hctools.com/model-pre-processing/seasonality-handling/</loc>
      <lastmod>2016-10-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -66,25 +50,41 @@
     
         
     <url>
-     <loc>None/healthcare-statistics/risk-adjusted-comparisons/</loc>
+     <loc>http://hctools.com/comparing-and-deploying/compare/</loc>
      <lastmod>2016-10-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/healthcare-statistics/trend-analysis/</loc>
+     <loc>http://hctools.com/comparing-and-deploying/deploy/</loc>
+     <lastmod>2016-10-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>http://hctools.com/healthcare-statistics/risk-adjusted-comparisons/</loc>
      <lastmod>2016-10-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/healthcare-statistics/find-targeted-correlations/</loc>
+     <loc>http://hctools.com/healthcare-statistics/trend-analysis/</loc>
      <lastmod>2016-10-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/healthcare-statistics/find-all-correlations/</loc>
+     <loc>http://hctools.com/healthcare-statistics/find-targeted-correlations/</loc>
+     <lastmod>2016-10-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://hctools.com/healthcare-statistics/find-all-correlations/</loc>
      <lastmod>2016-10-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
