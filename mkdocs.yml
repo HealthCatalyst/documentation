@@ -1,8 +1,10 @@
 site_name: HCRTools Documentation
+site_dir: HCRTools
 repo_url: https://github.com/HealthCatalystSLC/HCRTools
 repo_name: 'GitHub'
 theme: readthedocs
 docs_dir: 'templates'
+site_favicon: favicon.ico
 extra_css:
     - css/hcstyle.css
     - http://fonts.googleapis.com/css?family=Open+Sans

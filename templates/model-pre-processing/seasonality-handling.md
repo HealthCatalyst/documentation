@@ -6,7 +6,7 @@ In healthcare date-time stamp columns are common, but unfortunately machine lear
 
 ## Why is it helpful?
 
-One has to do some simple feature engineering in order to take advantage of potential seasonality effects in a dataset. This works simply by transforming a date-time column into multiple columns that represent MonthOfYear, WeekOfYear, DayOfMonth, DayOfWeek, etc.
+One has to do some simple feature engineering in order to take advantage of potential seasonality effects in a dataset. This works simply by transforming a date-time column into multiple columns that represent MonthOfYear, WeekOfYear, DayOfMonth, etc.
 
 ## So, how do we do it?
 

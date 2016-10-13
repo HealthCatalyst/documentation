@@ -26,8 +26,7 @@ Work in the console of RStudio or RGui
 
 * Grab prerequisites
 ```{r}
-install.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lme4','lubridate','pROC','R6','ranger','ROCR','RODBC'
-),repos = "https://cran.cnr.berkeley.edu/")
+install.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lme4','lubridate','pROC','R6','ranger','ROCR','RODBC'),repos = "https://cran.cnr.berkeley.edu/")
 ```
 
 * Install HCRTools

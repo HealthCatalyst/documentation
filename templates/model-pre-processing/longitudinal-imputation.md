@@ -29,7 +29,7 @@ df = data.frame(PersonID=c(1,1,2,2,3,3,3),
 head(df,n=7) # Looking at the raw data
 ```
 
-* Now let's do the imputation by calling the ``GroupedLOCF`` function. LOCF stands for last value carried forward
+* Now let's do the imputation by calling the ``GroupedLOCF`` function. LOCF stands for last observation carried forward
 
 ```{r}
 df.result = GroupedLOCF(df, 'PersonID')

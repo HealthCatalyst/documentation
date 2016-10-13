@@ -11,7 +11,8 @@
   <title>Seasonality Handling - HCRTools Documentation</title>
   
 
-  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <link rel="shortcut icon" href="../../favicon.ico">
+  
 
   
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
@@ -233,7 +234,7 @@
 <h2 id="what-is-this">What is this?</h2>
 <p>In healthcare date-time stamp columns are common, but unfortunately machine learning algorithms do not handle them well.</p>
 <h2 id="why-is-it-helpful">Why is it helpful?</h2>
-<p>One has to do some simple feature engineering in order to take advantage of potential seasonality effects in a dataset. This works simply by transforming a date-time column into multiple columns that represent MonthOfYear, WeekOfYear, DayOfMonth, DayOfWeek, etc.</p>
+<p>One has to do some simple feature engineering in order to take advantage of potential seasonality effects in a dataset. This works simply by transforming a date-time column into multiple columns that represent MonthOfYear, WeekOfYear, DayOfMonth, etc.</p>
 <h2 id="so-how-do-we-do-it">So, how do we do it?</h2>
 <ul>
 <li>First, we'll load HCRTools, create a fake dataset on which to work, and look at it:</li>
