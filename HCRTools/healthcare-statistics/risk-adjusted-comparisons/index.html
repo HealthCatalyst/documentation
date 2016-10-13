@@ -156,7 +156,7 @@
                 
                     <li><a class="toctree-l4" href="#so-how-do-we-do-it">So, how do we do it?</a></li>
                 
-                    <li><a class="toctree-l4" href="#step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via SelectData</a></li>
+                    <li><a class="toctree-l4" href="#step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via selectData</a></li>
                 
                     <li><a class="toctree-l4" href="#step-2-set-your-parameters-via-supervisedmodelparameters">Step 2: Set your parameters via SupervisedModelParameters</a></li>
                 
@@ -247,7 +247,7 @@
 <li>A groupby column, such as a HospitalUnit column, that'd have categories like GroupA, GroupB, etc
     This column could also be years or months. R will group the data by this column for the comparisons.</li>
 </ul>
-<h2 id="step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via <code>SelectData</code></h2>
+<h2 id="step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via <code>selectData</code></h2>
 <pre><code class="r">ptm &lt;- proc.time()
 library(HCRTools)
 
@@ -269,7 +269,7 @@ SELECT
 FROM [AdventureWorks2012].[HumanResources].[Employee]
 &quot;
 
-df &lt;- SelectData(connection.string, query)
+df &lt;- selectData(connection.string, query)
 head(df) # Look at the data you read in
 str(df)
 </code></pre>
@@ -291,11 +291,11 @@ str(df)
 </ul>
 </li>
 </ul>
-<pre><code class="r">p &lt;- SupervisedModelParameters$new()
+<pre><code class="r">p &lt;- SupervisedModelDevelopmentParams$new()
 p$df = df
-p$groupCol = 'Gender'
+p$groupCol = 'GenderFLG'
 p$impute = TRUE
-p$predictedCol = 'SalariedFlag'
+p$predictedCol = 'ThirtyDayReadmitFLG'
 p$debug = FALSE
 p$cores = 1
 </code></pre>
@@ -311,34 +311,36 @@ riskAdjComp$run()
 connection.string = &quot;
 driver={SQL Server};
 server=localhost;
-database=AdventureWorks2012;
+database=SAM;
 trusted_connection=true
 &quot;
 
 query = &quot;
 SELECT
-[OrganizationLevel]
-,[MaritalStatus]
-,[Gender]
-,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
-,[VacationHours]
-,[SickLeaveHours]
-FROM [AdventureWorks2012].[HumanResources].[Employee]
-WHERE OrganizationLevel &lt;&gt; 0
+ [PatientEncounterID]
+,[PatientID]
+,[SystolicBPNBR]
+,[LDLNBR]
+,[A1CNBR]
+,[GenderFLG]
+,[ThirtyDayReadmitFLG]
+,[InTestWindowFLG]
+FROM [SAM].[dbo].[DiabetesClinical]
 &quot;
 
-df &lt;- SelectData(connection.string, query)
+df &lt;- selectData(connection.string, query)
 
-p &lt;- SupervisedModelParameters$new()
+p &lt;- SupervisedModelDevelopmentParams$new()
 p$df = df
-p$groupCol = 'OrganizationLevel'
+p$groupCol = 'GenderFLG'
 p$impute = TRUE
-p$predictedCol = 'SalariedFlag'
+p$predictedCol = 'ThirtyDayReadmitFLG'
 p$debug = FALSE
 p$cores = 1
 
 riskAdjComp &lt;- RiskAdjustedComparisons$new(p)
 riskAdjComp$run()
+
 </code></pre>
               
             </div>

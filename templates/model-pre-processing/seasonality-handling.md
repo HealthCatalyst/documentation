@@ -1,4 +1,4 @@
-# Seasonality handling via ``ConvertDateTimeColToDummies``
+# Seasonality handling via ``convertDateTimeColToDummies``
 
 ## What is this?
 
@@ -13,13 +13,12 @@ One has to do some simple feature engineering in order to take advantage of pote
 * First, we'll load HCRTools, create a fake dataset on which to work, and look at it:
 
 ```{r}
-library(HCRTools)
-DTCol = c("2001-06-09 12:45:05","2002-01-29 09:30:05","2002-02-02 07:36:50",
+dtCol = c("2001-06-09 12:45:05","2002-01-29 09:30:05","2002-02-02 07:36:50",
           "2002-03-04 16:45:01","2002-11-13 20:00:10","2003-01-29 07:31:43",
           "2003-07-07 17:30:02","2003-09-28 01:03:20")
 y1 <- c(.5,1,3,6,8,13,14,1)
 y2 <- c(.8,1,1.2,1.2,1.2,1.3,1.3,1)
-df <- data.frame(DTCol,y1,y2)
+df <- data.frame(dtCol,y1,y2)
 
 head(df)
 ```
@@ -27,12 +26,12 @@ head(df)
 * Next, we'll create the extra date and time colums by calling the function and then we'll look at the transformed dataset
 
 ```{r}
-df.result <- ConvertDateTimeColToDummies(df, 'DTCol')
+df <- convertDateTimeColToDummies(df, 'dtCol')
 
-head(df.result)
+head(df)
 ```
 
-## Function specs for ``ConvertDateTimeColToDummies``
+## Function specs for ``convertDateTimeColToDummies``
 
 - __Return__: a data frame of same length, but greater width compared to the input data frame.
 
@@ -45,13 +44,13 @@ head(df.result)
 ## Full example code
 
 ```{r}
-library(HCRTools)
-DTCol = c("2001-06-09 12:45:05","2002-01-29 09:30:05","2002-02-02 07:36:50",
+dtCol = c("2001-06-09 12:45:05","2002-01-29 09:30:05","2002-02-02 07:36:50",
           "2002-03-04 16:45:01","2002-11-13 20:00:10","2003-01-29 07:31:43",
           "2003-07-07 17:30:02","2003-09-28 01:03:20")
 y1 <- c(.5,1,3,6,8,13,14,1)
 y2 <- c(.8,1,1.2,1.2,1.2,1.3,1.3,1)
-df <- data.frame(DTCol,y1,y2)
+df <- data.frame(dtCol,y1,y2)
 
-df <- ConvertDateTimeColToDummies(df, 'DTCol')
+df <- convertDateTimeColToDummies(df, 'dtCol')
+head(df)
 ```

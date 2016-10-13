@@ -1,4 +1,4 @@
-# Find correlations with a specific variable via ``CalculateTargetedCorrelations``
+# Find correlations with a specific variable via ``calculateTargetedCorrelations``
 
 ## What is this?
 
@@ -26,11 +26,11 @@ head(df)
 * Next, we'll find the correlations between `'c'` and the other numeric columns in the data represented by `df`.
 
 ```{r}
-res <- CalculateTargetedCorrelations(df,'c')
+res <- calculateTargetedCorrelations(df,'c')
 res
 ```
 
-## Function specs for ``CalculateTargetedCorrelations``
+## Function specs for ``calculateTargetedCorrelations``
 
 - __Return__: a data frame of same length as input data frame, but three columns wide (column name, correlation, p-value).
 
@@ -53,6 +53,6 @@ d=c('M','F','F','F','M','F')) #<- categorical coulmns are ignored
 
 head(df)
 
-res <- CalculateTargetedCorrelations(df,'c')
+res <- calculateTargetedCorrelations(df,'c')
 res
 ```

@@ -19,7 +19,7 @@ First, get some data organized (via SQL or Excel) that has the following:
 * A groupby column, such as a HospitalUnit column, that'd have categories like GroupA, GroupB, etc
     This column could also be years or months. R will group the data by this column for the comparisons.
 
-## Step 1: Pull in the data via ``SelectData``
+## Step 1: Pull in the data via ``selectData``
 
 ```{r}
 ptm <- proc.time()
@@ -43,7 +43,7 @@ SELECT
 FROM [AdventureWorks2012].[HumanResources].[Employee]
 "
 
-df <- SelectData(connection.string, query)
+df <- selectData(connection.string, query)
 head(df) # Look at the data you read in
 str(df)
 ```
@@ -61,11 +61,11 @@ str(df)
     - __cores__: an int, defaults to 4. Number of cores on machine to use for model training.
 
 ```{r}
-p <- SupervisedModelParameters$new()
+p <- SupervisedModelDevelopmentParams$new()
 p$df = df
-p$groupCol = 'Gender'
+p$groupCol = 'GenderFLG'
 p$impute = TRUE
-p$predictedCol = 'SalariedFlag'
+p$predictedCol = 'ThirtyDayReadmitFLG'
 p$debug = FALSE
 p$cores = 1
 ```
@@ -85,32 +85,34 @@ library(HCRTools)
 connection.string = "
 driver={SQL Server};
 server=localhost;
-database=AdventureWorks2012;
+database=SAM;
 trusted_connection=true
 "
 
 query = "
 SELECT
-[OrganizationLevel]
-,[MaritalStatus]
-,[Gender]
-,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
-,[VacationHours]
-,[SickLeaveHours]
-FROM [AdventureWorks2012].[HumanResources].[Employee]
-WHERE OrganizationLevel <> 0
+ [PatientEncounterID]
+,[PatientID]
+,[SystolicBPNBR]
+,[LDLNBR]
+,[A1CNBR]
+,[GenderFLG]
+,[ThirtyDayReadmitFLG]
+,[InTestWindowFLG]
+FROM [SAM].[dbo].[DiabetesClinical]
 "
 
-df <- SelectData(connection.string, query)
+df <- selectData(connection.string, query)
 
-p <- SupervisedModelParameters$new()
+p <- SupervisedModelDevelopmentParams$new()
 p$df = df
-p$groupCol = 'OrganizationLevel'
+p$groupCol = 'GenderFLG'
 p$impute = TRUE
-p$predictedCol = 'SalariedFlag'
+p$predictedCol = 'ThirtyDayReadmitFLG'
 p$debug = FALSE
 p$cores = 1
 
 riskAdjComp <- RiskAdjustedComparisons$new(p)
 riskAdjComp$run()
+
 ```

@@ -162,7 +162,7 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#find-correlations-with-a-specific-variable-via-calculatetargetedcorrelations">Find correlations with a specific variable via CalculateTargetedCorrelations</a></li>
+                <li class="toctree-l3"><a href="#find-correlations-with-a-specific-variable-via-calculatetargetedcorrelations">Find correlations with a specific variable via calculateTargetedCorrelations</a></li>
                 
                     <li><a class="toctree-l4" href="#what-is-this">What is this?</a></li>
                 
@@ -170,7 +170,7 @@
                 
                     <li><a class="toctree-l4" href="#so-how-do-we-do-it">So, how do we do it?</a></li>
                 
-                    <li><a class="toctree-l4" href="#function-specs-for-calculatetargetedcorrelations">Function specs for CalculateTargetedCorrelations</a></li>
+                    <li><a class="toctree-l4" href="#function-specs-for-calculatetargetedcorrelations">Function specs for calculateTargetedCorrelations</a></li>
                 
                     <li><a class="toctree-l4" href="#full-example-code">Full example code</a></li>
                 
@@ -230,7 +230,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="find-correlations-with-a-specific-variable-via-calculatetargetedcorrelations">Find correlations with a specific variable via <code>CalculateTargetedCorrelations</code></h1>
+                <h1 id="find-correlations-with-a-specific-variable-via-calculatetargetedcorrelations">Find correlations with a specific variable via <code>calculateTargetedCorrelations</code></h1>
 <h2 id="what-is-this">What is this?</h2>
 <p>When trying to understand the factors driving a particular processes, it can be helpful to view the <a href="https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient">correlations</a> between several variables and your variable of interest. This function lets one quickly check the <a href="https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient">correlations</a> between all numeric fields in a dataset and a specified column.</p>
 <h2 id="why-is-it-helpful">Why is it helpful?</h2>
@@ -252,11 +252,11 @@ head(df)
 <ul>
 <li>Next, we'll find the correlations between <code>'c'</code> and the other numeric columns in the data represented by <code>df</code>.</li>
 </ul>
-<pre><code class="r">res &lt;- CalculateTargetedCorrelations(df,'c')
+<pre><code class="r">res &lt;- calculateTargetedCorrelations(df,'c')
 res
 </code></pre>
 
-<h2 id="function-specs-for-calculatetargetedcorrelations">Function specs for <code>CalculateTargetedCorrelations</code></h2>
+<h2 id="function-specs-for-calculatetargetedcorrelations">Function specs for <code>calculateTargetedCorrelations</code></h2>
 <ul>
 <li>
 <p><strong>Return</strong>: a data frame of same length as input data frame, but three columns wide (column name, correlation, p-value).</p>
@@ -281,7 +281,7 @@ d=c('M','F','F','F','M','F')) #&lt;- categorical coulmns are ignored
 
 head(df)
 
-res &lt;- CalculateTargetedCorrelations(df,'c')
+res &lt;- calculateTargetedCorrelations(df,'c')
 res
 </code></pre>
               

@@ -20,7 +20,7 @@ Nope. You have to first order your data by a PersonID column and then by a date-
 
 ```{r}
 library(HCRTools)
-df = data.frame(PersonID=c(1,1,2,2,3,3,3),
+df = data.frame(personID=c(1,1,2,2,3,3,3),
                 wt=c(.5,NA,NA,NA,.3,.7,NA),
                 ht=c(NA,1,3,NA,4,NA,NA),
                 date=c('01/01/2015','01/15/2015','01/01/2015','01/15/2015',
@@ -29,16 +29,16 @@ df = data.frame(PersonID=c(1,1,2,2,3,3,3),
 head(df,n=7) # Looking at the raw data
 ```
 
-* Now let's do the imputation by calling the ``GroupedLOCF`` function. LOCF stands for last observation carried forward
+* Now let's do the imputation by calling the ``groupedLOCF`` function. LOCF stands for last observation carried forward
 
 ```{r}
-df.result = GroupedLOCF(df, 'PersonID')
+dfResult = groupedLOCF(df, 'PersonID')
 
 head(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)
 ```
 
 
-## Function specs for ``GroupedLOCF``
+## Function specs for ``groupedLOCF``
 
 - __Return__: a data frame of same shape as input data frame.
 
@@ -51,17 +51,17 @@ head(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)
 
 ```{r}
 library(HCRTools)
-df = data.frame(PersonID=c(1,1,2,2,3,3,3),
+df = data.frame(personID=c(1,1,2,2,3,3,3),
                 wt=c(.5,NA,NA,NA,.3,.7,NA),
                 ht=c(NA,1,3,NA,4,NA,NA),
                 date=c('01/01/2015','01/15/2015','01/01/2015','01/15/2015',
                        '01/01/2015','01/15/2015','01/30/2015'))
 
-head(df,n=7) # Looking at the raw data
+head(df,n=7)
 
-df.result = GroupedLOCF(df, 'PersonID')
+dfResult = groupedLOCF(df, 'PersonID')
 
-head(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)
+head(dfResult, n = 7)
 ```
 
 

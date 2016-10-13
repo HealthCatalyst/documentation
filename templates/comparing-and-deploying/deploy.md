@@ -181,11 +181,11 @@ p$cores = 1
 p$sqlConn = connection.string
 p$destSchemaTable = 'dbo.HCRDeployClassificationBASE'
 
-# If Lasso was more accurate in the [dev step](/comparing-and-deploying/compare)
+# If Lasso was more accurate in the dev step
 dL <- LassoDeployment$new(p)
 dL$deploy()
 
-# If Random Forest was more accurate in the [dev step](/comparing-and-deploying/compare)
+# If Random Forest was more accurate in the dev step
 # dL <- RandomForestDeployment$new(p)
 # dL$deploy()
 
