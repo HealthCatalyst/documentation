@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/hcstyle.css" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
   
   <script>
@@ -254,6 +256,7 @@
 <ul>
 <li>If you have lots of NULL cells and your data is longitudinal, you may want to try <a href="../../model-pre-processing/longitudinal-imputation">GroupedLOCF</a>.</li>
 <li>If you think the phenomenon you're trying to predict has a seasonal or diurnal component, you may need some <a href="../../model-pre-processing/seasonality-handling">feature engineering</a>.</li>
+<li>If your data is longitudinal, you may want to try the <code>LinearMixedModel</code> (detailed below).</li>
 </ul>
 <h2 id="step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via <code>SelectData</code></h2>
 <ul>
@@ -303,7 +306,7 @@ str(df)
 <p><strong>Arguments</strong>:</p>
 <ul>
 <li><strong>df</strong>: a data frame. The data your model is based on.</li>
-<li><strong>type</strong>: a string. This will either be 'CLASSIFICATION' or 'REGRESSION'.</li>
+<li><strong>type</strong>: a string. This will either be 'classification' or 'regression'.</li>
 <li><strong>impute</strong>: a boolean, defaults to FALSE. Whether to impute by replacing NULLs with column mean (for numeric columns) or column mode (for categorical columns).</li>
 <li><strong>grainCol</strong>: a string, defaults to None. Name of possible GrainID column in your dataset. If specified, this column will be removed, as it won't help the algorithm.</li>
 <li><strong>predictedCol</strong>: a string. Name of variable (or column) that you want to predict. </li>
@@ -314,7 +317,7 @@ str(df)
 </ul>
 <pre><code class="r">p &lt;- SupervisedModelParameters$new()
 p$df = df
-p$type = 'CLASSIFICATION'
+p$type = 'classification'
 p$impute = TRUE
 p$grainCol = ''
 p$predictedCol = 'SalariedFlag'
@@ -352,6 +355,7 @@ SELECT
 ,[VacationHours]
 ,[SickLeaveHours]
 FROM [AdventureWorks2012].[HumanResources].[Employee]
+--WHERE InTestWindow = 'N'
 &quot;
 
 df &lt;- SelectData(connection.string, query)

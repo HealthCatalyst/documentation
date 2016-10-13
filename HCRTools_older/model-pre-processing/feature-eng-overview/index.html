@@ -8,7 +8,7 @@
   
   
   
-  <title>FAQ - HCRTools Documentation</title>
+  <title>Feature engineering overview - HCRTools Documentation</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -19,15 +19,13 @@
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../../css/highlight.css">
-  <link href="../../css/hcstyle.css" rel="stylesheet">
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
   
   <script>
     // Current page data
-    var mkdocs_page_name = "FAQ";
-    var mkdocs_page_input_path = "getting-started\FAQ.md";
-    var mkdocs_page_url = "/getting-started/FAQ/";
+    var mkdocs_page_name = "Feature engineering overview";
+    var mkdocs_page_input_path = "model-pre-processing\feature-eng-overview.md";
+    var mkdocs_page_url = "/model-pre-processing/feature-eng-overview/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -70,29 +68,14 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../where-do-i-begin/">Where do I begin?</a>
+        <a class="" href="../../getting-started/where-do-i-begin/">Where do I begin?</a>
         
     </li>
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">FAQ</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#hcrtools-faq-frequently-asked-questions">HCRTools FAQ - Frequently Asked Questions</a></li>
-                
-                    <li><a class="toctree-l4" href="#who-is-this-project-for">Who is this project for?</a></li>
-                
-                    <li><a class="toctree-l4" href="#how-does-hcrtools-focus-on-healthcare">How does HCRTools focus on healthcare?</a></li>
-                
-                    <li><a class="toctree-l4" href="#who-started-this-project">Who started this project?</a></li>
-                
-                    <li><a class="toctree-l4" href="#why-was-it-open-sourced">Why was it open-sourced?</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/FAQ/">FAQ</a>
         
     </li>
 
@@ -106,22 +89,33 @@
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../../model-pre-processing/feature-eng-overview/">Feature engineering overview</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Feature engineering overview</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#overview-of-pre-processing-and-feature-engineering">Overview of pre-processing and feature engineering</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-is-feature-engineering">What is feature engineering?</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-can-hcrtools-help-me-prepare-data-prior-to-model-creation">How can HCRTools help me prepare data prior to model-creation?</a></li>
+                
+            
+            </ul>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../model-pre-processing/longitudinal-imputation/">Longitudinal Imputation</a>
+        <a class="" href="../longitudinal-imputation/">Longitudinal Imputation</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../model-pre-processing/seasonality-handling/">Seasonality Handling</a>
+        <a class="" href="../seasonality-handling/">Seasonality Handling</a>
         
     </li>
 
@@ -209,11 +203,11 @@
     
       
         
-          <li>Getting started &raquo;</li>
+          <li>Model Pre-processing &raquo;</li>
         
       
     
-    <li>FAQ</li>
+    <li>Feature engineering overview</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -227,15 +221,19 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="hcrtools-faq-frequently-asked-questions">HCRTools FAQ - Frequently Asked Questions</h1>
-<h2 id="who-is-this-project-for">Who is this project for?</h2>
-<p>While data scientists in healthcare will likely find this project valuable, the audience HCTools targets are those BI developers, data architects, and SQL developers that would love to create appropriate and accurate models with healthcare data. While existing machine learning packages are certainly irreplaceable, we think that there is a set of data problems specific to healthcare that warrant new tools.</p>
-<h2 id="how-does-hcrtools-focus-on-healthcare">How does HCRTools focus on healthcare?</h2>
-<p>HCTools differs from other machine learning packages in that it focuses on data issues specific to healthcare. This means that we pay attention to longitudinal questions, offer an easy way to do risk-adjusted comparisons, and provide easy connections and deployment to SQL Server.</p>
-<h2 id="who-started-this-project">Who started this project?</h2>
-<p>This project began in the data science group at Health Catalyst, a Salt Lake City-based company based focused on improving healthcare outcomes.</p>
-<h2 id="why-was-it-open-sourced">Why was it open-sourced?</h2>
-<p>We believe that everyone benefits when healthcare is made more efficient and outcomes are improved. Machine learning is surprisingly still fairly new to healthcare and we want to quickly take healthcare down the machine learning adoption path. We believe that making helpful, simple tools widely available is one small way to help healthcare organizations transform their data into actionable insight that can be used to improve outcomes.</p>
+                <h1 id="overview-of-pre-processing-and-feature-engineering">Overview of pre-processing and feature engineering</h1>
+<h2 id="what-is-feature-engineering">What is feature engineering?</h2>
+<p>From wikipedia: "Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work."</p>
+<p>In other words, while you might have great data, it has to be in a form that the algorithms can use to make a model.</p>
+<h2 id="how-can-hcrtools-help-me-prepare-data-prior-to-model-creation">How can HCRTools help me prepare data prior to model-creation?</h2>
+<ul>
+<li>
+<p>Via <a href="../../model-pre-processing/longitudinal-imputation">longitudinal imputation</a>. Think of this as a way to pull person-specific values forward in time.</p>
+</li>
+<li>
+<p>Via <a href="../../model-pre-processing/seasonality-handling">seasonality handling</a>. Think of this as a way to make a date-time column model-ready. </p>
+</li>
+</ul>
               
             </div>
           </div>
@@ -243,10 +241,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../model-pre-processing/feature-eng-overview/" class="btn btn-neutral float-right" title="Feature engineering overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../longitudinal-imputation/" class="btn btn-neutral float-right" title="Longitudinal Imputation">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../where-do-i-begin/" class="btn btn-neutral" title="Where do I begin?"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../getting-started/FAQ/" class="btn btn-neutral" title="FAQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -274,10 +272,10 @@
           <a href="https://github.com/HealthCatalystSLC/HCRTools" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../where-do-i-begin/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../getting-started/FAQ/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../model-pre-processing/feature-eng-overview/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../longitudinal-imputation/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
