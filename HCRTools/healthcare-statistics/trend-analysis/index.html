@@ -155,7 +155,7 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#trend-analysis-via-findtrends">Trend Analysis via FindTrends</a></li>
+                <li class="toctree-l3"><a href="#trend-analysis-via-findtrends">Trend Analysis via findTrends</a></li>
                 
                     <li><a class="toctree-l4" href="#what-is-this">What is this?</a></li>
                 
@@ -165,7 +165,7 @@
                 
                     <li><a class="toctree-l4" href="#step-1-create-some-data-or-pull-it-from-sql-server">Step 1: Create some data or pull it from SQL Server</a></li>
                 
-                    <li><a class="toctree-l4" href="#step-2-find-trends-via-findtrends">Step 2: Find trends via FindTrends</a></li>
+                    <li><a class="toctree-l4" href="#step-2-find-trends-via-findtrends">Step 2: Find trends via findTrends</a></li>
                 
                     <li><a class="toctree-l4" href="#full-example-code">Full example code</a></li>
                 
@@ -232,12 +232,12 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="trend-analysis-via-findtrends">Trend Analysis via <code>FindTrends</code></h1>
+                <h1 id="trend-analysis-via-findtrends">Trend Analysis via <code>findTrends</code></h1>
 <h2 id="what-is-this">What is this?</h2>
 <p>In healthcare one often wants to automatically detect trends occuring across many different measures at the same time. Further, one wants to be able to group by various categories and find trends among subsets of the patient population. </p>
 <p>Here one can quickly look across 50+ measures for those that have experienced <a href="https://en.wikipedia.org/wiki/Nelson_rules">notable trends according to Nelson rule 3</a>.</p>
 <h2 id="why-is-it-helpful">Why is it helpful?</h2>
-<p>This <code>FindTrends</code> function allows one to quickly see if any numeric columns in a dataset have been trending downward or upward over six consecutive months, using automatic subgroupings (like on Gender, for example).</p>
+<p>This <code>findTrends</code> function allows one to quickly see if any numeric columns in a dataset have been trending downward or upward over six consecutive months, using automatic subgroupings (like on Gender, for example).</p>
 <h2 id="so-how-do-we-do-it">So, how do we do it?</h2>
 <p>First, get some data organized (via SQL or Excel) that has the following.
 - A numeric column (like mortality rate) that could have a trend
@@ -254,7 +254,7 @@ gender &lt;- c('M','F','F','F','F','F','F','F')
 df &lt;- data.frame(dates,y1,y2,y3,y4,gender)
 </code></pre>
 
-<h2 id="step-2-find-trends-via-findtrends">Step 2: Find trends via <code>FindTrends</code></h2>
+<h2 id="step-2-find-trends-via-findtrends">Step 2: Find trends via <code>findTrends</code></h2>
 <ul>
 <li>
 <p><strong>Return</strong>: A data frame containing the dimensional attribute (ie gender), the subset the data was grouped by (ie M/F), the measures that had trends (ie, mortality or readmission), and the ending month.</p>
@@ -268,7 +268,7 @@ df &lt;- data.frame(dates,y1,y2,y3,y4,gender)
 </ul>
 </li>
 </ul>
-<pre><code class="r">res = FindTrends(df = df,
+<pre><code class="r">res = findTrends(df = df,
                  datecol = 'dates',
                  coltoaggregate = 'gender')
 res
@@ -285,7 +285,7 @@ y4 &lt;- c(.5,0,-.5,-.5,-.5,-.5,-.6,0)       # small negative
 gender &lt;- c('M','F','F','F','F','F','F','F')
 df &lt;- data.frame(dates,y1,y2,y3,y4,gender)
 
-res = FindTrends(df = df,
+res = findTrends(df = df,
                  datecol = 'dates',
                  coltoaggregate = 'gender')
 res
