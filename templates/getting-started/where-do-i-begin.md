@@ -13,3 +13,5 @@ That, of course, depends on what you want to accomplish:
 
 ## If you want to do risk-adjusted comparisons 
 * Look [here](/healthcare-statistics/risk-adjusted-comparisons) if you want to compare several hospitals or units in terms of risk-adjusted performance.
+
+## Of course, you can always check the FAQ [here](/getting-started/FAQ-and-contact)

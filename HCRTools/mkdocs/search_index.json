@@ -27,7 +27,7 @@
         },
         {
             "location": "/getting-started/where-do-i-begin/",
-            "text": "Where do I begin with HCRTools?\n\n\nThat, of course, depends on what you want to accomplish:\n\n\nIf you want create a model on your data via machine learning\n\n\n\n\nLook at the \npre-processing tools\n that might help your model. \n\n\nLook at the \nmodel development page\n to create and compare models.\n\n\nLook at the \ndeployment page\n to deploy model.\n\n\n\n\nIf you want to do general healthcare statistics\n\n\n\n\nLook \nhere\n to calculate cross-column correlations on your data.\n\n\nLook \nhere\n to perform trend analysis across your data following Nelson rules.\n\n\n\n\nIf you want to do risk-adjusted comparisons\n\n\n\n\nLook \nhere\n if you want to compare several hospitals or units in terms of risk-adjusted performance.",
+            "text": "Where do I begin with HCRTools?\n\n\nThat, of course, depends on what you want to accomplish:\n\n\nIf you want create a model on your data via machine learning\n\n\n\n\nLook at the \npre-processing tools\n that might help your model. \n\n\nLook at the \nmodel development page\n to create and compare models.\n\n\nLook at the \ndeployment page\n to deploy model.\n\n\n\n\nIf you want to do general healthcare statistics\n\n\n\n\nLook \nhere\n to calculate cross-column correlations on your data.\n\n\nLook \nhere\n to perform trend analysis across your data following Nelson rules.\n\n\n\n\nIf you want to do risk-adjusted comparisons\n\n\n\n\nLook \nhere\n if you want to compare several hospitals or units in terms of risk-adjusted performance.\n\n\n\n\nOf course, you can always check the FAQ \nhere",
             "title": "Where do I begin?"
         },
         {
@@ -51,37 +51,42 @@
             "title": "If you want to do risk-adjusted comparisons"
         },
         {
-            "location": "/getting-started/FAQ/",
+            "location": "/getting-started/where-do-i-begin/#of-course-you-can-always-check-the-faq-here",
+            "text": "",
+            "title": "Of course, you can always check the FAQ here"
+        },
+        {
+            "location": "/getting-started/FAQ-and-contact/",
             "text": "HCRTools FAQ - Frequently Asked Questions\n\n\nWho is this project for?\n\n\nWhile data scientists in healthcare will likely find this project valuable, the target audience for HCTools are those BI developers, data architects, and SQL developers that would love to create appropriate and accurate models with healthcare data. While existing machine learning packages are certainly irreplaceable, we think that there is a set of data problems specific to healthcare that warrant new tools.\n\n\nHow does HCRTools focus on healthcare?\n\n\nHCTools differs from other machine learning packages in that it focuses on data issues specific to healthcare. This means that we pay attention to longitudinal questions, offer an easy way to do risk-adjusted comparisons, and provide easy connections and deployment to databases.\n\n\nWho started this project?\n\n\nThis project began in the data science group at Health Catalyst, a Salt Lake City-based company based focused on improving healthcare outcomes.\n\n\nWhy was it open-sourced?\n\n\nWe believe that everyone benefits when healthcare is made more efficient and outcomes are improved. Machine learning is surprisingly still fairly new to healthcare and we want to quickly take healthcare down the machine learning adoption path. We believe that making helpful, simple tools widely available is one small way to help healthcare organizations transform their data into actionable insight that can be used to improve outcomes.\n\n\nHow can I contact the authors\n\n\nWe'd love to hear from you! We welcome complaints, suggestions, and contributions. \n\n\nTwitter: \n@levithatcher\n\nEmail:",
             "title": "FAQ"
         },
         {
-            "location": "/getting-started/FAQ/#hcrtools-faq-frequently-asked-questions",
+            "location": "/getting-started/FAQ-and-contact/#hcrtools-faq-frequently-asked-questions",
             "text": "",
             "title": "HCRTools FAQ - Frequently Asked Questions"
         },
         {
-            "location": "/getting-started/FAQ/#who-is-this-project-for",
+            "location": "/getting-started/FAQ-and-contact/#who-is-this-project-for",
             "text": "While data scientists in healthcare will likely find this project valuable, the target audience for HCTools are those BI developers, data architects, and SQL developers that would love to create appropriate and accurate models with healthcare data. While existing machine learning packages are certainly irreplaceable, we think that there is a set of data problems specific to healthcare that warrant new tools.",
             "title": "Who is this project for?"
         },
         {
-            "location": "/getting-started/FAQ/#how-does-hcrtools-focus-on-healthcare",
+            "location": "/getting-started/FAQ-and-contact/#how-does-hcrtools-focus-on-healthcare",
             "text": "HCTools differs from other machine learning packages in that it focuses on data issues specific to healthcare. This means that we pay attention to longitudinal questions, offer an easy way to do risk-adjusted comparisons, and provide easy connections and deployment to databases.",
             "title": "How does HCRTools focus on healthcare?"
         },
         {
-            "location": "/getting-started/FAQ/#who-started-this-project",
+            "location": "/getting-started/FAQ-and-contact/#who-started-this-project",
             "text": "This project began in the data science group at Health Catalyst, a Salt Lake City-based company based focused on improving healthcare outcomes.",
             "title": "Who started this project?"
         },
         {
-            "location": "/getting-started/FAQ/#why-was-it-open-sourced",
+            "location": "/getting-started/FAQ-and-contact/#why-was-it-open-sourced",
             "text": "We believe that everyone benefits when healthcare is made more efficient and outcomes are improved. Machine learning is surprisingly still fairly new to healthcare and we want to quickly take healthcare down the machine learning adoption path. We believe that making helpful, simple tools widely available is one small way to help healthcare organizations transform their data into actionable insight that can be used to improve outcomes.",
             "title": "Why was it open-sourced?"
         },
         {
-            "location": "/getting-started/FAQ/#how-can-i-contact-the-authors",
+            "location": "/getting-started/FAQ-and-contact/#how-can-i-contact-the-authors",
             "text": "We'd love to hear from you! We welcome complaints, suggestions, and contributions.   Twitter:  @levithatcher \nEmail:",
             "title": "How can I contact the authors"
         },

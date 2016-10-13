@@ -13,7 +13,7 @@ pages:
 - Home: index.md
 - Getting started:
   - Where do I begin?: getting-started/where-do-i-begin.md
-  - FAQ: getting-started/FAQ.md
+  - FAQ and Contact: getting-started/FAQ-and-contact.md
 - Model Pre-processing:
   - Feature engineering overview: model-pre-processing/feature-eng-overview.md
   - Longitudinal Imputation: model-pre-processing/longitudinal-imputation.md
