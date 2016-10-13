@@ -1,4 +1,4 @@
-# Create and compare models via ``Lasso``, ``RandomForest``, and ``LinearMixedModel``
+# Create and compare models via ``LassoDevelopment``, ``RandomForestDevelopment``, and ``LinearMixedModelDevelopment``
 
 # What is this?
 
@@ -17,9 +17,9 @@ Nope. It'll help if you can follow these guidelines:
 
 * If you have lots of NULL cells and your data is longitudinal, you may want to try [GroupedLOCF](/model-pre-processing/longitudinal-imputation).
 * If you think the phenomenon you're trying to predict has a seasonal or diurnal component, you may need some [feature engineering](/model-pre-processing/seasonality-handling).
-* If your data is longitudinal, you may want to try the ``LinearMixedModel`` (detailed below).
+* If your data is longitudinal, you may want to try the ``LinearMixedModelDevelopment`` (detailed below).
 
-## Step 1: Pull in the data via ``SelectData``
+## Step 1: Pull in the data via ``selectData``
 
 - __Return__: a data frame that represents your data.
 
@@ -30,31 +30,34 @@ Nope. It'll help if you can follow these guidelines:
 ```{r}
 ptm <- proc.time()
 library(HCRTools)
+library(RODBC)
 
 connection.string = "
 driver={SQL Server};
 server=localhost;
-database=AdventureWorks2012;
+database=SAM;
 trusted_connection=true
 "
 
 query = "
 SELECT
-[OrganizationLevel]
-,[MaritalStatus]
-,[Gender]
-,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
-,[VacationHours]
-,[SickLeaveHours]
-FROM [AdventureWorks2012].[HumanResources].[Employee]
+[PatientEncounterID]
+,[PatientID]
+,[SystolicBPNBR]
+,[LDLNBR]
+,[A1CNBR]
+,[GenderFLG]
+,[ThirtyDayReadmitFLG]
+,[InTestWindowFLG]
+FROM [SAM].[dbo].[DiabetesClinical]
+WHERE InTestWindowFLG = 'N'
 "
 
-df <- SelectData(connection.string, query)
+df <- selectData(connection.string, query)
 head(df)
-str(df)
 ```
 
-## Step 2: Set your parameters via ``SupervisedModelParameters``
+## Step 2: Set your parameters via ``SupervisedModelDevelopmentParams``
 
 - __Return__: an object representing your specific configuration.
 
@@ -68,25 +71,25 @@ str(df)
     - __cores__: an int, defaults to 4. Number of cores on machine to use for model training.
 
 ```{r}
-p <- SupervisedModelParameters$new()
+p <- SupervisedModelDevelopmentParams$new()
 p$df = df
 p$type = 'classification'
 p$impute = TRUE
-p$grainCol = ''
-p$predictedCol = 'SalariedFlag'
+p$grainCol = 'PatientEncounterID'
+p$predictedCol = 'ThirtyDayReadmitFLG'
 p$debug = FALSE
 p$cores = 1
 ```
 
-## Step 3: Create the models via the ``Lasso`` and ``RandomForest`` algorithms.
+## Step 3: Create the models via the ``LassoDevelopment`` and ``RandomForestDevelopment`` algorithms.
 
 ```{r}
 # Run Lasso
-lasso <- Lasso$new(p)
-lasso$run()
+Lasso <- LassoDevelopment$new(p)
+Lasso$run()
 
-# Run RandomForest
-rf <- RandomForest$new(p)
+# Run Random Forest
+rf <- RandomForestDevelopment$new(p)
 rf$run()
 ```
 
@@ -95,95 +98,109 @@ rf$run()
 ```{r}
 ptm <- proc.time()
 library(HCRTools)
+library(RODBC)
 
 connection.string = "
 driver={SQL Server};
 server=localhost;
-database=AdventureWorks2012;
+database=SAM;
 trusted_connection=true
 "
 
 query = "
 SELECT
- [OrganizationLevel]
-,[MaritalStatus]
-,[Gender]
-,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
-,[VacationHours]
-,[SickLeaveHours]
-FROM [AdventureWorks2012].[HumanResources].[Employee]
---WHERE InTestWindow = 'N'
+ [PatientEncounterID]
+,[PatientID]
+,[SystolicBPNBR]
+,[LDLNBR]
+,[A1CNBR]
+,[GenderFLG]
+,[ThirtyDayReadmitFLG]
+FROM [SAM].[dbo].[DiabetesClinical]
+WHERE InTestWindowFLG = 'N'
 "
 
-df <- SelectData(connection.string, query)
+df <- selectData(connection.string, query)
 head(df)
 
-set.seed(43)
-p <- SupervisedModelParameters$new()
+df$PatientID <- NULL
+
+set.seed(42)
+
+p <- SupervisedModelDevelopmentParams$new()
 p$df = df
 p$type = 'classification'
 p$impute = TRUE
-p$grainCol = ''
-p$predictedCol = 'SalariedFlag'
+p$grainCol = 'PatientEncounterID'
+p$predictedCol = 'ThirtyDayReadmitFLG'
 p$debug = FALSE
 p$cores = 1
 
 # Run Lasso
-lasso <- Lasso$new(p)
-lasso$run()
+Lasso <- LassoDevelopment$new(p)
+Lasso$run()
 
-# Run RandomForest
-rf <- RandomForest$new(p)
+# Run Random Forest
+rf <- RandomForestDevelopment$new(p)
 rf$run()
+
+# For a given true-positive rate, get false-pos rate and 0/1 cutoff
+Lasso$getCutOffs(tpr=.8)
 
 print(proc.time() - ptm)
 ```
 
-## ``Lasso`` Details
+## Full example code for mixed-model longitudinal work
 
-This version of Lasso is based on the Grouped Lasso alogrithm offered by the [grpreg package](https://cran.r-project.org/web/packages/grpreg/grpreg.pdf). We prefer simple models to complicated ones, so for tuning the lambda regularization parameter, we use the 1SE rule, which means that we take the model with fewest coefficients, which is also within one standard error of the best model. This way, we provide guidance as to which features (ie, columns) should be kept in the deployed model. 
+```{r}
+#### Example using SQL Server data ####
+# This example requires:
+#    1) That your local SQL Server has AdventureWorks2012 installed
 
-## ``RandomForest`` Details
+ptm <- proc.time()
+library(HCRTools)
 
-This version of random forest is based on the wonderful [ranger package](https://cran.r-project.org/web/packages/ranger/ranger.pdf).
+connection.string = "
+driver={SQL Server};
+server=localhost;
+database=SAM;
+trusted_connection=true
+"
 
-## ``LinearMixedModel`` Details
+query = "
+SELECT
+ [PatientEncounterID]
+,[PatientID]
+,[SystolicBPNBR]
+,[LDLNBR]
+,[A1CNBR]
+,[GenderFLG]
+,[ThirtyDayReadmitFLG]
+FROM [SAM].[dbo].[DiabetesClinical]
+"
 
-This mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets, and then scale up from there.
+df <- selectData(connection.string, query)
+head(df)
 
-Relevant example code:
 
-```
-p <- SupervisedModelParameters$new()
+set.seed(42)
+
+p <- SupervisedModelDevelopmentParams$new()
 p$df = df
 p$type = 'classification'
 p$impute = TRUE
-p$grainCol = 'PatientEncounterID' # This grain of the dataset (required)
-p$personCol = 'PatientID'         # This represents the person (required)
-p$predictedCol = 'HighA1C'
+p$grainCol = 'PatientEncounterID'
+p$personCol = 'PatientID'          # <- Specific to Mixed Models
+p$predictedCol = 'ThirtyDayReadmitFLG'
 p$debug = FALSE
 p$cores = 1
 
-lmm <- LinearMixedModel$new(p)
+# Create Mixed Model
+lmm <- LinearMixedModelDevelopment$new(p)
 lmm$run()
-```
 
-Note: sometimes it's helpful to order your query by the grainCol and/or the personCol. You might find higher accuracy by experimenting with these combinations.
+# For a given true-positive rate, get false-pos rate and 0/1 cutoff
+Lasso$getCutOffs(tpr=.8)
 
-## Associated helper method ``getCutOffs``
-
-- __Return__: Nothing. Prints fall-over probability (ie, cut point) and the false-positive rate associated with the input true-positive rate.
-
-- __Arguments__:
-    - __tpr__: numeric. The true-positive rate you want to gather information about.
-
-* After generating a model via the methods above, here's how ``getCutOffs`` is used, depending on which model you want to learn about:
-
-```{r}
-lasso$getCutOffs(tpr=0.8) or
-
-rf$getCutOffs(tpr=0.8) or
-
-lmm$getCutOffs(tpr=0.8)
-```
-
+print(proc.time() - ptm)
+``` 

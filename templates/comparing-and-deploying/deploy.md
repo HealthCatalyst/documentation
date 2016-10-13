@@ -26,7 +26,7 @@ CREATE TABLE [SAM].[dbo].[HCRDeployClassificationBASE] (
 [BindingID] [int] ,
 [BindingNM] [varchar] (255),
 [LastLoadDTS] [datetime2] (7),
-[GrainID] [decimal] (38, 0),
+[PatientEncounterID] [decimal] (38, 0),
 [PredictedProbNBR] [decimal] (38, 2),
 [Factor1TXT] [varchar] (255),
 [Factor2TXT] [varchar] (255),
@@ -37,7 +37,7 @@ CREATE TABLE [SAM].[dbo].[HCRDeployRegressionBASE] (
 [BindingID] [int],
 [BindingNM] [varchar] (255),
 [LastLoadDTS] [datetime2] (7),
-[GrainID] [decimal] (38, 0),
+[PatientEncounterID] [decimal] (38, 0),
 [PredictedValueNBR] [decimal] (38, 2),
 [Factor1TXT] [varchar] (255),
 [Factor2TXT] [varchar] (255),
@@ -52,9 +52,9 @@ Note these preprocessing steps should first be tested and found useful in the de
 * If you have lots of NULL values, you may want to turn on imputation via the `impute` argument (see below).
 * If you have lots of NULL cells and your data is longitudinal, you may want to try [GroupedLOCF](/model-pre-processing/longitudinal-imputation).
 * If you think the phenomenon you're trying to predict has a seasonal or diurnal component, you may need some [feature engineering](/model-pre-processing/seasonality-handling).
-* If your data is longitudinal, you may want to try the ``LinearMixedModel`` (detailed below).
+* If your data is longitudinal, you may want to try the ``LinearMixedModelDeployment`` (detailed below).
 
-## Step 1: Pull in the data via ``SelectData``
+## Step 1: Pull in the data via ``selectData``
 
 - __Return__: a data frame that represents your data.
 
@@ -68,7 +68,7 @@ library(HCRTools)
 connection.string = "
 driver={SQL Server};
 server=localhost;
-database=AdventureWorks2012;
+database=SAM;
 trusted_connection=true
 "
 
@@ -83,7 +83,7 @@ SELECT
 FROM [AdventureWorks2012].[HumanResources].[Employee]
 "
 
-df <- SelectData(connection.string, query)
+df <- selectData(connection.string, query)
 head(df)
 str(df)
 ```
@@ -120,7 +120,7 @@ p$sqlConn = connection.string
 p$destSchemaTable = 'dbo.HCRDeployClassificationBASE'
 ```
 
-## Step 3: Create the models via the ``DeployLasso`` and ``DeployRandomForest`` algorithms.
+## Step 3: Create the models via the ``DeployLasso`` or ``DeployRandomForest`` algorithms.
 
 ```{r}
 # Run Lasso (if that's what performed best in the develop step)
@@ -152,44 +152,55 @@ trusted_connection=true
 
 query = "
 SELECT
-[OrganizationLevel]
-,[MaritalStatus]
-,[Gender]
-,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
-,[VacationHours]
-,[SickLeaveHours]
-FROM [AdventureWorks2012].[HumanResources].[Employee]
+ [PatientEncounterID]
+,[PatientID]
+,[SystolicBPNBR]
+,[LDLNBR]
+,[A1CNBR]
+,[GenderFLG]
+,[ThirtyDayReadmitFLG]
+FROM [SAM].[dbo].[DiabetesClinical]
 "
 
-df <- SelectData(connection.string, query)
+df <- selectData(connection.string, query)
 head(df)
-str(df)
 
-p <- DeploySupervisedModelParameters$new()
-p$df = df
+# Remove unnecessary columns
+df$PatientID <- NULL
+
+p <- SupervisedModelDeploymentParams$new()
 p$type = 'classification'
+p$df = df
+p$grainCol = 'PatientEncounterID'
+p$testWindowCol = 'InTestWindowFLG'
+p$predictedCol = 'ThirtyDayReadmitFLG'
 p$impute = TRUE
-p$grainCol = 'GrainID'
-p$testWindowCol = 'InTestWindow'
-p$predictedCol = 'SalariedFlag'
 p$debug = FALSE
 p$useSavedModel = FALSE
 p$cores = 1
 p$sqlConn = connection.string
 p$destSchemaTable = 'dbo.HCRDeployClassificationBASE'
 
+# If Lasso was more accurate in the [dev step](/comparing-and-deploying/compare)
+dL <- LassoDeployment$new(p)
+dL$deploy()
+
+# If Random Forest was more accurate in the [dev step](/comparing-and-deploying/compare)
+# dL <- RandomForestDeployment$new(p)
+# dL$deploy()
+
 print(proc.time() - ptm)
 ```
 
-## ``Lasso`` Details
+## ``LassoDevelopment`` Details
 
 This version of Lasso is based on the Grouped Lasso alogrithm offered by the [grpreg package](https://cran.r-project.org/web/packages/grpreg/grpreg.pdf). We prefer simple models to complicated ones, so for tuning the lambda regularization parameter, we use the 1SE rule, which means that we take the model with fewest coefficients, which is also within one standard error of the best model. This way, we provide guidance as to which features (ie, columns) should be kept in the deployed model. 
 
-## ``RandomForest`` Details
+## ``RandomForestDevelopment`` Details
 
 This version of random forest is based on the wonderful [ranger package](https://cran.r-project.org/web/packages/ranger/ranger.pdf).
 
-## ``LinearMixedModel`` Details
+## ``LinearMixedModelDevelopment`` Details
 
 This mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets, and then scale up from there.
 
@@ -206,6 +217,6 @@ p$predictedCol = 'HighA1C'
 p$debug = FALSE
 p$cores = 1
 
-lmm <- LinearMixedModel$new(p)
-lmm$run()
+lMM <- LinearMixedModelDeployment$new(p)
+lMM$deploy()
 ```

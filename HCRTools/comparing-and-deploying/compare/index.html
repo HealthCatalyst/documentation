@@ -126,7 +126,7 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#create-and-compare-models-via-lasso-randomforest-and-linearmixedmodel">Create and compare models via Lasso, RandomForest, and LinearMixedModel</a></li>
+                <li class="toctree-l3"><a href="#create-and-compare-models-via-lassodevelopment-randomforestdevelopment-and-linearmixedmodeldevelopment">Create and compare models via LassoDevelopment, RandomForestDevelopment, and LinearMixedModelDevelopment</a></li>
                 
             
                 <li class="toctree-l3"><a href="#what-is-this">What is this?</a></li>
@@ -135,21 +135,15 @@
                 
                     <li><a class="toctree-l4" href="#how-can-i-improve-my-model-performance">How can I improve my model performance?</a></li>
                 
-                    <li><a class="toctree-l4" href="#step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via SelectData</a></li>
+                    <li><a class="toctree-l4" href="#step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via selectData</a></li>
                 
-                    <li><a class="toctree-l4" href="#step-2-set-your-parameters-via-supervisedmodelparameters">Step 2: Set your parameters via SupervisedModelParameters</a></li>
+                    <li><a class="toctree-l4" href="#step-2-set-your-parameters-via-supervisedmodeldevelopmentparams">Step 2: Set your parameters via SupervisedModelDevelopmentParams</a></li>
                 
-                    <li><a class="toctree-l4" href="#step-3-create-the-models-via-the-lasso-and-randomforest-algorithms">Step 3: Create the models via the Lasso and RandomForest algorithms.</a></li>
+                    <li><a class="toctree-l4" href="#step-3-create-the-models-via-the-lassodevelopment-and-randomforestdevelopment-algorithms">Step 3: Create the models via the LassoDevelopment and RandomForestDevelopment algorithms.</a></li>
                 
                     <li><a class="toctree-l4" href="#full-example-code">Full example code</a></li>
                 
-                    <li><a class="toctree-l4" href="#lasso-details">Lasso Details</a></li>
-                
-                    <li><a class="toctree-l4" href="#randomforest-details">RandomForest Details</a></li>
-                
-                    <li><a class="toctree-l4" href="#linearmixedmodel-details">LinearMixedModel Details</a></li>
-                
-                    <li><a class="toctree-l4" href="#associated-helper-method-getcutoffs">Associated helper method getCutOffs</a></li>
+                    <li><a class="toctree-l4" href="#full-example-code-for-mixed-model-longitudinal-work">Full example code for mixed-model longitudinal work</a></li>
                 
             
             </ul>
@@ -243,7 +237,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="create-and-compare-models-via-lasso-randomforest-and-linearmixedmodel">Create and compare models via <code>Lasso</code>, <code>RandomForest</code>, and <code>LinearMixedModel</code></h1>
+                <h1 id="create-and-compare-models-via-lassodevelopment-randomforestdevelopment-and-linearmixedmodeldevelopment">Create and compare models via <code>LassoDevelopment</code>, <code>RandomForestDevelopment</code>, and <code>LinearMixedModelDevelopment</code></h1>
 <h1 id="what-is-this">What is this?</h1>
 <p>These classes let one create and compare custom models on varied datasets.</p>
 <p>One can do both classification (ie, predict Y or N) as well as regression (ie, predict a numeric field).</p>
@@ -257,9 +251,9 @@
 <ul>
 <li>If you have lots of NULL cells and your data is longitudinal, you may want to try <a href="../../model-pre-processing/longitudinal-imputation">GroupedLOCF</a>.</li>
 <li>If you think the phenomenon you're trying to predict has a seasonal or diurnal component, you may need some <a href="../../model-pre-processing/seasonality-handling">feature engineering</a>.</li>
-<li>If your data is longitudinal, you may want to try the <code>LinearMixedModel</code> (detailed below).</li>
+<li>If your data is longitudinal, you may want to try the <code>LinearMixedModelDevelopment</code> (detailed below).</li>
 </ul>
-<h2 id="step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via <code>SelectData</code></h2>
+<h2 id="step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via <code>selectData</code></h2>
 <ul>
 <li>
 <p><strong>Return</strong>: a data frame that represents your data.</p>
@@ -274,31 +268,34 @@
 </ul>
 <pre><code class="r">ptm &lt;- proc.time()
 library(HCRTools)
+library(RODBC)
 
 connection.string = &quot;
 driver={SQL Server};
 server=localhost;
-database=AdventureWorks2012;
+database=SAM;
 trusted_connection=true
 &quot;
 
 query = &quot;
 SELECT
-[OrganizationLevel]
-,[MaritalStatus]
-,[Gender]
-,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
-,[VacationHours]
-,[SickLeaveHours]
-FROM [AdventureWorks2012].[HumanResources].[Employee]
+[PatientEncounterID]
+,[PatientID]
+,[SystolicBPNBR]
+,[LDLNBR]
+,[A1CNBR]
+,[GenderFLG]
+,[ThirtyDayReadmitFLG]
+,[InTestWindowFLG]
+FROM [SAM].[dbo].[DiabetesClinical]
+WHERE InTestWindowFLG = 'N'
 &quot;
 
-df &lt;- SelectData(connection.string, query)
+df &lt;- selectData(connection.string, query)
 head(df)
-str(df)
 </code></pre>
 
-<h2 id="step-2-set-your-parameters-via-supervisedmodelparameters">Step 2: Set your parameters via <code>SupervisedModelParameters</code></h2>
+<h2 id="step-2-set-your-parameters-via-supervisedmodeldevelopmentparams">Step 2: Set your parameters via <code>SupervisedModelDevelopmentParams</code></h2>
 <ul>
 <li>
 <p><strong>Return</strong>: an object representing your specific configuration.</p>
@@ -316,115 +313,132 @@ str(df)
 </ul>
 </li>
 </ul>
-<pre><code class="r">p &lt;- SupervisedModelParameters$new()
+<pre><code class="r">p &lt;- SupervisedModelDevelopmentParams$new()
 p$df = df
 p$type = 'classification'
 p$impute = TRUE
-p$grainCol = ''
-p$predictedCol = 'SalariedFlag'
+p$grainCol = 'PatientEncounterID'
+p$predictedCol = 'ThirtyDayReadmitFLG'
 p$debug = FALSE
 p$cores = 1
 </code></pre>
 
-<h2 id="step-3-create-the-models-via-the-lasso-and-randomforest-algorithms">Step 3: Create the models via the <code>Lasso</code> and <code>RandomForest</code> algorithms.</h2>
+<h2 id="step-3-create-the-models-via-the-lassodevelopment-and-randomforestdevelopment-algorithms">Step 3: Create the models via the <code>LassoDevelopment</code> and <code>RandomForestDevelopment</code> algorithms.</h2>
 <pre><code class="r"># Run Lasso
-lasso &lt;- Lasso$new(p)
-lasso$run()
+Lasso &lt;- LassoDevelopment$new(p)
+Lasso$run()
 
-# Run RandomForest
-rf &lt;- RandomForest$new(p)
+# Run Random Forest
+rf &lt;- RandomForestDevelopment$new(p)
 rf$run()
 </code></pre>
 
 <h2 id="full-example-code">Full example code</h2>
 <pre><code class="r">ptm &lt;- proc.time()
 library(HCRTools)
+library(RODBC)
 
 connection.string = &quot;
 driver={SQL Server};
 server=localhost;
-database=AdventureWorks2012;
+database=SAM;
 trusted_connection=true
 &quot;
 
 query = &quot;
 SELECT
- [OrganizationLevel]
-,[MaritalStatus]
-,[Gender]
-,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
-,[VacationHours]
-,[SickLeaveHours]
-FROM [AdventureWorks2012].[HumanResources].[Employee]
---WHERE InTestWindow = 'N'
+ [PatientEncounterID]
+,[PatientID]
+,[SystolicBPNBR]
+,[LDLNBR]
+,[A1CNBR]
+,[GenderFLG]
+,[ThirtyDayReadmitFLG]
+FROM [SAM].[dbo].[DiabetesClinical]
+WHERE InTestWindowFLG = 'N'
 &quot;
 
-df &lt;- SelectData(connection.string, query)
+df &lt;- selectData(connection.string, query)
 head(df)
 
-set.seed(43)
-p &lt;- SupervisedModelParameters$new()
+df$PatientID &lt;- NULL
+
+set.seed(42)
+
+p &lt;- SupervisedModelDevelopmentParams$new()
 p$df = df
 p$type = 'classification'
 p$impute = TRUE
-p$grainCol = ''
-p$predictedCol = 'SalariedFlag'
+p$grainCol = 'PatientEncounterID'
+p$predictedCol = 'ThirtyDayReadmitFLG'
 p$debug = FALSE
 p$cores = 1
 
 # Run Lasso
-lasso &lt;- Lasso$new(p)
-lasso$run()
+Lasso &lt;- LassoDevelopment$new(p)
+Lasso$run()
 
-# Run RandomForest
-rf &lt;- RandomForest$new(p)
+# Run Random Forest
+rf &lt;- RandomForestDevelopment$new(p)
 rf$run()
+
+# For a given true-positive rate, get false-pos rate and 0/1 cutoff
+Lasso$getCutOffs(tpr=.8)
 
 print(proc.time() - ptm)
 </code></pre>
 
-<h2 id="lasso-details"><code>Lasso</code> Details</h2>
-<p>This version of Lasso is based on the Grouped Lasso alogrithm offered by the <a href="https://cran.r-project.org/web/packages/grpreg/grpreg.pdf">grpreg package</a>. We prefer simple models to complicated ones, so for tuning the lambda regularization parameter, we use the 1SE rule, which means that we take the model with fewest coefficients, which is also within one standard error of the best model. This way, we provide guidance as to which features (ie, columns) should be kept in the deployed model. </p>
-<h2 id="randomforest-details"><code>RandomForest</code> Details</h2>
-<p>This version of random forest is based on the wonderful <a href="https://cran.r-project.org/web/packages/ranger/ranger.pdf">ranger package</a>.</p>
-<h2 id="linearmixedmodel-details"><code>LinearMixedModel</code> Details</h2>
-<p>This mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets, and then scale up from there.</p>
-<p>Relevant example code:</p>
-<pre><code>p &lt;- SupervisedModelParameters$new()
+<h2 id="full-example-code-for-mixed-model-longitudinal-work">Full example code for mixed-model longitudinal work</h2>
+<pre><code class="r">#### Example using SQL Server data ####
+# This example requires:
+#    1) That your local SQL Server has AdventureWorks2012 installed
+
+ptm &lt;- proc.time()
+library(HCRTools)
+
+connection.string = &quot;
+driver={SQL Server};
+server=localhost;
+database=SAM;
+trusted_connection=true
+&quot;
+
+query = &quot;
+SELECT
+ [PatientEncounterID]
+,[PatientID]
+,[SystolicBPNBR]
+,[LDLNBR]
+,[A1CNBR]
+,[GenderFLG]
+,[ThirtyDayReadmitFLG]
+FROM [SAM].[dbo].[DiabetesClinical]
+&quot;
+
+df &lt;- selectData(connection.string, query)
+head(df)
+
+
+set.seed(42)
+
+p &lt;- SupervisedModelDevelopmentParams$new()
 p$df = df
 p$type = 'classification'
 p$impute = TRUE
-p$grainCol = 'PatientEncounterID' # This grain of the dataset (required)
-p$personCol = 'PatientID'         # This represents the person (required)
-p$predictedCol = 'HighA1C'
+p$grainCol = 'PatientEncounterID'
+p$personCol = 'PatientID'          # &lt;- Specific to Mixed Models
+p$predictedCol = 'ThirtyDayReadmitFLG'
 p$debug = FALSE
 p$cores = 1
 
-lmm &lt;- LinearMixedModel$new(p)
+# Create Mixed Model
+lmm &lt;- LinearMixedModelDevelopment$new(p)
 lmm$run()
-</code></pre>
 
-<p>Note: sometimes it's helpful to order your query by the grainCol and/or the personCol. You might find higher accuracy by experimenting with these combinations.</p>
-<h2 id="associated-helper-method-getcutoffs">Associated helper method <code>getCutOffs</code></h2>
-<ul>
-<li>
-<p><strong>Return</strong>: Nothing. Prints fall-over probability (ie, cut point) and the false-positive rate associated with the input true-positive rate.</p>
-</li>
-<li>
-<p><strong>Arguments</strong>:</p>
-<ul>
-<li><strong>tpr</strong>: numeric. The true-positive rate you want to gather information about.</li>
-</ul>
-</li>
-<li>
-<p>After generating a model via the methods above, here's how <code>getCutOffs</code> is used, depending on which model you want to learn about:</p>
-</li>
-</ul>
-<pre><code class="r">lasso$getCutOffs(tpr=0.8) or
+# For a given true-positive rate, get false-pos rate and 0/1 cutoff
+Lasso$getCutOffs(tpr=.8)
 
-rf$getCutOffs(tpr=0.8) or
-
-lmm$getCutOffs(tpr=0.8)
+print(proc.time() - ptm)
 </code></pre>
               
             </div>
