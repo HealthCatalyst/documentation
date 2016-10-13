@@ -1,4 +1,4 @@
-# Trend Analysis via ``FindTrends``
+# Trend Analysis via ``findTrends``
 
 ## What is this?
 
@@ -8,7 +8,7 @@ Here one can quickly look across 50+ measures for those that have experienced [n
 
 ## Why is it helpful?
 
-This ``FindTrends`` function allows one to quickly see if any numeric columns in a dataset have been trending downward or upward over six consecutive months, using automatic subgroupings (like on Gender, for example).
+This ``findTrends`` function allows one to quickly see if any numeric columns in a dataset have been trending downward or upward over six consecutive months, using automatic subgroupings (like on Gender, for example).
 
 ## So, how do we do it?
 
@@ -30,7 +30,7 @@ gender <- c('M','F','F','F','F','F','F','F')
 df <- data.frame(dates,y1,y2,y3,y4,gender)
 ```
 
-## Step 2: Find trends via ``FindTrends``
+## Step 2: Find trends via ``findTrends``
 
 - __Return__: A data frame containing the dimensional attribute (ie gender), the subset the data was grouped by (ie M/F), the measures that had trends (ie, mortality or readmission), and the ending month.
 
@@ -40,7 +40,7 @@ df <- data.frame(dates,y1,y2,y3,y4,gender)
     - __coltoaggregate__: a string. Column name for the categorical column we'll group by.
 
 ```{r}
-res = FindTrends(df = df,
+res = findTrends(df = df,
                  datecol = 'dates',
                  coltoaggregate = 'gender')
 res
@@ -59,7 +59,7 @@ y4 <- c(.5,0,-.5,-.5,-.5,-.5,-.6,0)       # small negative
 gender <- c('M','F','F','F','F','F','F','F')
 df <- data.frame(dates,y1,y2,y3,y4,gender)
 
-res = FindTrends(df = df,
+res = findTrends(df = df,
                  datecol = 'dates',
                  coltoaggregate = 'gender')
 res
