@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Risk-adjusted Comparisons - HCRTools Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/hcstyle.css" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Risk-adjusted Comparisons";
+    var mkdocs_page_input_path = "healthcare-statistics\risk-adjusted-comparisons.md";
+    var mkdocs_page_url = "/healthcare-statistics/risk-adjusted-comparisons/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HCRTools Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Getting started</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/where-do-i-begin/">Where do I begin?</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/FAQ/">FAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Model Pre-processing</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../model-pre-processing/feature-eng-overview/">Feature engineering overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../model-pre-processing/longitudinal-imputation/">Longitudinal Imputation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../model-pre-processing/seasonality-handling/">Seasonality Handling</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Comparing and Deploying Models</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../comparing-and-deploying/compare/">Develop and Compare</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../comparing-and-deploying/deploy/">Deploying a Best Model</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Healthcare Statistics</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Risk-adjusted Comparisons</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#risk-adjusted-comparisons-via-riskadjustedcomparisons">Risk-adjusted comparisons via RiskAdjustedComparisons</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-is-this">What is this?</a></li>
+                
+                    <li><a class="toctree-l4" href="#why-is-it-helpful">Why is it helpful?</a></li>
+                
+                    <li><a class="toctree-l4" href="#so-how-do-we-do-it">So, how do we do it?</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via SelectData</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-2-set-your-parameters-via-supervisedmodelparameters">Step 2: Set your parameters via SupervisedModelParameters</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-3-make-the-risk-adjusted-comparison-via-riskadjustedcomparisons">Step 3: Make the risk-adjusted comparison via RiskAdjustedComparisons.</a></li>
+                
+                    <li><a class="toctree-l4" href="#full-example-code">Full example code</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../trend-analysis/">Trend Analysis</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../find-targeted-correlations/">Find Targeted Correlations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../find-all-correlations/">Find All Correlations</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HCRTools Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Healthcare Statistics &raquo;</li>
+        
+      
+    
+    <li>Risk-adjusted Comparisons</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/HealthCatalystSLC/HCRTools" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="risk-adjusted-comparisons-via-riskadjustedcomparisons">Risk-adjusted comparisons via <code>RiskAdjustedComparisons</code></h1>
+<h2 id="what-is-this">What is this?</h2>
+<p>In healthcare one often wants to compare the performance of two or more groups, or compare the performance of one group from year to year. What makes this difficult is that department heads often say, "Yeah our mortality rate was high, but we have sicker patients than those other guys."</p>
+<p>Risk-adjusted comparisons are thus important because they let you compare two healthcare groups on a particular measure (like mortality rate), adjusting for the health of the patients.</p>
+<h2 id="why-is-it-helpful">Why is it helpful?</h2>
+<p>This functionality helps because it allows you to make apples to apples comparisons across groups or units of time.</p>
+<h2 id="so-how-do-we-do-it">So, how do we do it?</h2>
+<p>First, get some data organized (via SQL or Excel) that has the following:</p>
+<ul>
+<li>A measure column, such as mortality rate or readmission rate</li>
+<li>A groupby column, such as a HospitalUnit column, that'd have categories like GroupA, GroupB, etc
+    This column could also be years or months. R will group the data by this column for the comparisons.</li>
+</ul>
+<h2 id="step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via <code>SelectData</code></h2>
+<pre><code class="r">ptm &lt;- proc.time()
+library(HCRTools)
+
+connection.string = &quot;
+driver={SQL Server};
+server=localhost;
+database=AdventureWorks2012;
+trusted_connection=true
+&quot;
+
+query = &quot;
+SELECT
+[OrganizationLevel]
+,[MaritalStatus]
+,[Gender]
+,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
+,[VacationHours]
+,[SickLeaveHours]
+FROM [AdventureWorks2012].[HumanResources].[Employee]
+&quot;
+
+df &lt;- SelectData(connection.string, query)
+head(df) # Look at the data you read in
+str(df)
+</code></pre>
+
+<h2 id="step-2-set-your-parameters-via-supervisedmodelparameters">Step 2: Set your parameters via <code>SupervisedModelParameters</code></h2>
+<ul>
+<li>
+<p><strong>Return</strong>: an object representing your specific configuration.</p>
+</li>
+<li>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><strong>df</strong>: a data frame. The data your model is based on.</li>
+<li><strong>groupCol</strong>: a string. R will group your data by this coulmn for the comparison. Could be a list of units in the hospital. Years or months would also work.</li>
+<li><strong>impute</strong>: a boolean, defaults to FALSE. Whether to impute by replacing NULLs with column mean (for numeric columns) or column mode (for categorical columns).</li>
+<li><strong>predictedCol</strong>: a string. Name of variable (or column) that you want to compare the groups by. This could be mortality or readmission, for example.</li>
+<li><strong>debug</strong>: a boolean, defaults to FALSE. If TRUE, console output when comparing models is verbose for easier debugging.</li>
+<li><strong>cores</strong>: an int, defaults to 4. Number of cores on machine to use for model training.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="r">p &lt;- SupervisedModelParameters$new()
+p$df = df
+p$groupCol = 'Gender'
+p$impute = TRUE
+p$predictedCol = 'SalariedFlag'
+p$debug = FALSE
+p$cores = 1
+</code></pre>
+
+<h2 id="step-3-make-the-risk-adjusted-comparison-via-riskadjustedcomparisons">Step 3: Make the risk-adjusted comparison via <code>RiskAdjustedComparisons</code>.</h2>
+<pre><code class="r">riskAdjComp &lt;- RiskAdjustedComparisons$new(p)
+riskAdjComp$run()
+</code></pre>
+
+<h2 id="full-example-code">Full example code</h2>
+<pre><code class="r">library(HCRTools)
+
+connection.string = &quot;
+driver={SQL Server};
+server=localhost;
+database=AdventureWorks2012;
+trusted_connection=true
+&quot;
+
+query = &quot;
+SELECT
+[OrganizationLevel]
+,[MaritalStatus]
+,[Gender]
+,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
+,[VacationHours]
+,[SickLeaveHours]
+FROM [AdventureWorks2012].[HumanResources].[Employee]
+WHERE OrganizationLevel &lt;&gt; 0
+&quot;
+
+df &lt;- SelectData(connection.string, query)
+
+p &lt;- SupervisedModelParameters$new()
+p$df = df
+p$groupCol = 'OrganizationLevel'
+p$impute = TRUE
+p$predictedCol = 'SalariedFlag'
+p$debug = FALSE
+p$cores = 1
+
+riskAdjComp &lt;- RiskAdjustedComparisons$new(p)
+riskAdjComp$run()
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../trend-analysis/" class="btn btn-neutral float-right" title="Trend Analysis">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../comparing-and-deploying/deploy/" class="btn btn-neutral" title="Deploying a Best Model"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/HealthCatalystSLC/HCRTools" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../comparing-and-deploying/deploy/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../trend-analysis/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

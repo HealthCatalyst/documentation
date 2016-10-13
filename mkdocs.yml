@@ -3,6 +3,7 @@ repo_url: https://github.com/HealthCatalystSLC/HCRTools
 repo_name: 'GitHub'
 theme: readthedocs
 docs_dir: 'templates'
+baseurl: /documentation
 extra_css:
     - css/hcstyle.css
     - http://fonts.googleapis.com/css?family=Open+Sans

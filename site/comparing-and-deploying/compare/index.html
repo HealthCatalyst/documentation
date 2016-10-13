@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Develop and Compare - HCRTools Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/hcstyle.css" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Develop and Compare";
+    var mkdocs_page_input_path = "comparing-and-deploying\compare.md";
+    var mkdocs_page_url = "/comparing-and-deploying/compare/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HCRTools Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Getting started</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/where-do-i-begin/">Where do I begin?</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/FAQ/">FAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Model Pre-processing</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../model-pre-processing/feature-eng-overview/">Feature engineering overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../model-pre-processing/longitudinal-imputation/">Longitudinal Imputation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../model-pre-processing/seasonality-handling/">Seasonality Handling</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Comparing and Deploying Models</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Develop and Compare</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#create-and-compare-models-via-lasso-randomforest-and-linearmixedmodel">Create and compare models via Lasso, RandomForest, and LinearMixedModel</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#what-is-this">What is this?</a></li>
+                
+                    <li><a class="toctree-l4" href="#is-any-dataset-ready-for-model-creation">Is any dataset ready for model creation?</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-can-i-improve-my-model-performance">How can I improve my model performance?</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via SelectData</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-2-set-your-parameters-via-supervisedmodelparameters">Step 2: Set your parameters via SupervisedModelParameters</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-3-create-the-models-via-the-lasso-and-randomforest-algorithms">Step 3: Create the models via the Lasso and RandomForest algorithms.</a></li>
+                
+                    <li><a class="toctree-l4" href="#full-example-code">Full example code</a></li>
+                
+                    <li><a class="toctree-l4" href="#lasso-details">Lasso Details</a></li>
+                
+                    <li><a class="toctree-l4" href="#randomforest-details">RandomForest Details</a></li>
+                
+                    <li><a class="toctree-l4" href="#linearmixedmodel-details">LinearMixedModel Details</a></li>
+                
+                    <li><a class="toctree-l4" href="#associated-helper-method-getcutoffs">Associated helper method getCutOffs</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../deploy/">Deploying a Best Model</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Healthcare Statistics</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../healthcare-statistics/risk-adjusted-comparisons/">Risk-adjusted Comparisons</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../healthcare-statistics/trend-analysis/">Trend Analysis</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../healthcare-statistics/find-targeted-correlations/">Find Targeted Correlations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../healthcare-statistics/find-all-correlations/">Find All Correlations</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HCRTools Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Comparing and Deploying Models &raquo;</li>
+        
+      
+    
+    <li>Develop and Compare</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/HealthCatalystSLC/HCRTools" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="create-and-compare-models-via-lasso-randomforest-and-linearmixedmodel">Create and compare models via <code>Lasso</code>, <code>RandomForest</code>, and <code>LinearMixedModel</code></h1>
+<h1 id="what-is-this">What is this?</h1>
+<p>These classes let one create and compare custom models on varied datasets.</p>
+<p>One can do both classification (ie, predict Y or N) as well as regression (ie, predict a numeric field).</p>
+<h2 id="is-any-dataset-ready-for-model-creation">Is any dataset ready for model creation?</h2>
+<p>Nope. It'll help if you can follow these guidelines:</p>
+<ul>
+<li>Don't use 0 or 1 for the independent variable when doing classification. Use Y/N instead. The IIF function in T-SQL may help here.</li>
+<li>Don't pull in test data in this step. In other words, to compare models, we don't need to worry about those rows that need a prediction quite yet.</li>
+</ul>
+<h2 id="how-can-i-improve-my-model-performance">How can I improve my model performance?</h2>
+<ul>
+<li>If you have lots of NULL cells and your data is longitudinal, you may want to try <a href="../../model-pre-processing/longitudinal-imputation">GroupedLOCF</a>.</li>
+<li>If you think the phenomenon you're trying to predict has a seasonal or diurnal component, you may need some <a href="../../model-pre-processing/seasonality-handling">feature engineering</a>.</li>
+<li>If your data is longitudinal, you may want to try the <code>LinearMixedModel</code> (detailed below).</li>
+</ul>
+<h2 id="step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via <code>SelectData</code></h2>
+<ul>
+<li>
+<p><strong>Return</strong>: a data frame that represents your data.</p>
+</li>
+<li>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><strong>server</strong>: a server name. You'll pull data from this server.</li>
+<li><strong>database</strong>: a database name. You'll pull data from this database.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="r">ptm &lt;- proc.time()
+library(HCRTools)
+
+connection.string = &quot;
+driver={SQL Server};
+server=localhost;
+database=AdventureWorks2012;
+trusted_connection=true
+&quot;
+
+query = &quot;
+SELECT
+[OrganizationLevel]
+,[MaritalStatus]
+,[Gender]
+,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
+,[VacationHours]
+,[SickLeaveHours]
+FROM [AdventureWorks2012].[HumanResources].[Employee]
+&quot;
+
+df &lt;- SelectData(connection.string, query)
+head(df)
+str(df)
+</code></pre>
+
+<h2 id="step-2-set-your-parameters-via-supervisedmodelparameters">Step 2: Set your parameters via <code>SupervisedModelParameters</code></h2>
+<ul>
+<li>
+<p><strong>Return</strong>: an object representing your specific configuration.</p>
+</li>
+<li>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><strong>df</strong>: a data frame. The data your model is based on.</li>
+<li><strong>type</strong>: a string. This will either be 'classification' or 'regression'.</li>
+<li><strong>impute</strong>: a boolean, defaults to FALSE. Whether to impute by replacing NULLs with column mean (for numeric columns) or column mode (for categorical columns).</li>
+<li><strong>grainCol</strong>: a string, defaults to None. Name of possible GrainID column in your dataset. If specified, this column will be removed, as it won't help the algorithm.</li>
+<li><strong>predictedCol</strong>: a string. Name of variable (or column) that you want to predict. </li>
+<li><strong>debug</strong>: a boolean, defaults to FALSE. If TRUE, console output when comparing models is verbose for easier debugging.</li>
+<li><strong>cores</strong>: an int, defaults to 4. Number of cores on machine to use for model training.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="r">p &lt;- SupervisedModelParameters$new()
+p$df = df
+p$type = 'classification'
+p$impute = TRUE
+p$grainCol = ''
+p$predictedCol = 'SalariedFlag'
+p$debug = FALSE
+p$cores = 1
+</code></pre>
+
+<h2 id="step-3-create-the-models-via-the-lasso-and-randomforest-algorithms">Step 3: Create the models via the <code>Lasso</code> and <code>RandomForest</code> algorithms.</h2>
+<pre><code class="r"># Run Lasso
+lasso &lt;- Lasso$new(p)
+lasso$run()
+
+# Run RandomForest
+rf &lt;- RandomForest$new(p)
+rf$run()
+</code></pre>
+
+<h2 id="full-example-code">Full example code</h2>
+<pre><code class="r">ptm &lt;- proc.time()
+library(HCRTools)
+
+connection.string = &quot;
+driver={SQL Server};
+server=localhost;
+database=AdventureWorks2012;
+trusted_connection=true
+&quot;
+
+query = &quot;
+SELECT
+ [OrganizationLevel]
+,[MaritalStatus]
+,[Gender]
+,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
+,[VacationHours]
+,[SickLeaveHours]
+FROM [AdventureWorks2012].[HumanResources].[Employee]
+--WHERE InTestWindow = 'N'
+&quot;
+
+df &lt;- SelectData(connection.string, query)
+head(df)
+
+set.seed(43)
+p &lt;- SupervisedModelParameters$new()
+p$df = df
+p$type = 'classification'
+p$impute = TRUE
+p$grainCol = ''
+p$predictedCol = 'SalariedFlag'
+p$debug = FALSE
+p$cores = 1
+
+# Run Lasso
+lasso &lt;- Lasso$new(p)
+lasso$run()
+
+# Run RandomForest
+rf &lt;- RandomForest$new(p)
+rf$run()
+
+print(proc.time() - ptm)
+</code></pre>
+
+<h2 id="lasso-details"><code>Lasso</code> Details</h2>
+<p>This version of Lasso is based on the Grouped Lasso alogrithm offered by the <a href="https://cran.r-project.org/web/packages/grpreg/grpreg.pdf">grpreg package</a>. We prefer simple models to complicated ones, so for tuning the lambda regularization parameter, we use the 1SE rule, which means that we take the model with fewest coefficients, which is also within one standard error of the best model. This way, we provide guidance as to which features (ie, columns) should be kept in the deployed model. </p>
+<h2 id="randomforest-details"><code>RandomForest</code> Details</h2>
+<p>This version of random forest is based on the wonderful <a href="https://cran.r-project.org/web/packages/ranger/ranger.pdf">ranger package</a>.</p>
+<h2 id="linearmixedmodel-details"><code>LinearMixedModel</code> Details</h2>
+<p>This mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets, and then scale up from there.</p>
+<p>Relevant example code:</p>
+<pre><code>p &lt;- SupervisedModelParameters$new()
+p$df = df
+p$type = 'classification'
+p$impute = TRUE
+p$grainCol = 'PatientEncounterID' # This grain of the dataset (required)
+p$personCol = 'PatientID'         # This represents the person (required)
+p$predictedCol = 'HighA1C'
+p$debug = FALSE
+p$cores = 1
+
+lmm &lt;- LinearMixedModel$new(p)
+lmm$run()
+</code></pre>
+
+<p>Note: sometimes it's helpful to order your query by the grainCol and/or the personCol. You might find higher accuracy by experimenting with these combinations.</p>
+<h2 id="associated-helper-method-getcutoffs">Associated helper method <code>getCutOffs</code></h2>
+<ul>
+<li>
+<p><strong>Return</strong>: Nothing. Prints fall-over probability (ie, cut point) and the false-positive rate associated with the input true-positive rate.</p>
+</li>
+<li>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><strong>tpr</strong>: numeric. The true-positive rate you want to gather information about.</li>
+</ul>
+</li>
+<li>
+<p>After generating a model via the methods above, here's how <code>getCutOffs</code> is used, depending on which model you want to learn about:</p>
+</li>
+</ul>
+<pre><code class="r">lasso$getCutOffs(tpr=0.8) or
+
+rf$getCutOffs(tpr=0.8) or
+
+lmm$getCutOffs(tpr=0.8)
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../deploy/" class="btn btn-neutral float-right" title="Deploying a Best Model">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../model-pre-processing/seasonality-handling/" class="btn btn-neutral" title="Seasonality Handling"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/HealthCatalystSLC/HCRTools" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../model-pre-processing/seasonality-handling/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../deploy/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
