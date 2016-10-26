@@ -75,6 +75,7 @@ trusted_connection=true
 query = "
 SELECT
 [OrganizationLevel]
+,[InTestWindowFLG]
 ,[MaritalStatus]
 ,[Gender]
 ,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag

@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-85609357-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 <head>
 
     <meta charset="utf-8">
@@ -18,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>HC Tools</title>
+    <title>healthcare.ai</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="splashvendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,8 +19,6 @@
 
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-    <link rel="icon" href="/templates/favicon.ico" type="image/icon">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,7 +40,7 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <div class="navbar-brand"><img src="splashimg/HCToolsLogo.png" width="103" height="24" alt="HCTools Logo"/></div>
+                <div class="navbar-brand"><img src="splashimg/healthcareAI.svg" width="207" height="30" alt="HCTools Logo"/></div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -83,11 +72,11 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>HCTools is Open Source Software<br>streamlining healthcare machine learning</h1>
+                        <h1>healthcare.ai is open source software<br>streamlining healthcare machine learning</h1>
                         <span class="subheading">
                         	<a href="./HCRTools/index.html">
-                            <button type="button" class="btn btn-default"><img src="splashimg/rLang.png" width="70" height="45" alt="R Language Icon"/>HC R Tools</button></a>
-                            <button title="Coming soon!" type="button" class="btn btn-default"><img src="splashimg/python.png" width="70" height="45" alt="Python Language Icon"/>HC Py Tools</button>
+                            <button type="button" class="btn btn-default"><img src="splashimg/rLang.png" width="70" height="45" alt="R Language Icon"/>R Package</button></a>
+                            <button title="Coming soon!" type="button" class="btn btn-default"><img src="splashimg/python.png" width="70" height="45" alt="Python Language Icon"/>Python Package</button>
                         </span>
                     </div>
                 </div>
@@ -101,10 +90,10 @@
           <div class="col-sm-offset-1 col-sm-5">
             <div class="post-preview">
                 <h2 class="post-title">
-                    <a name="about">About HCTools</a>
+                    <a name="about">About healthcare.ai</a>
                 </h2>
                 <h3 class="post-subtitle">
-HCTools is designed to streamline healthcare machine learning. It does this by including functionality specific to healthcare, as well as simplifying the workflow of creating and deploying models. We believe that machine learning is too helpful and important to be handled solely by full-time data scientists. This package is a humble attempt at machine learning democratization in a realm that needs it most—healthcare.
+The healthcare.ai packages are designed to streamline healthcare machine learning. It does this by including functionality specific to healthcare, as well as simplifying the workflow of creating and deploying models. We believe that machine learning is too helpful and important to be handled solely by full-time data scientists. These packages are a humble attempt at machine learning democratization in a realm that needs it most—healthcare. 
                 </h3>
             </div>
           </div>
@@ -114,10 +103,10 @@ HCTools is designed to streamline healthcare machine learning. It does this by i
           <div class="col-sm-offset-1 col-sm-10">
             <div class="post-preview">
                     <h2 class="post-title">
-                        <a name="healthcare">How does HCTools focus on healthcare?</a>
+                        <a name="healthcare">How does healthcare.ai focus on healthcare?</a>
                     </h2>
                     <h3 class="post-subtitle">
-The two packages that comprise HCTools differ from other machine learning packages in that they focus on data issues specific to healthcare. This means that we pay attention to longitudinal questions, offer an easy way to do risk-adjusted comparisons, and provide easy connections and deployment to databases.
+The two packages that comprise healthcare.ai differ from other machine learning packages in that they focus on data issues specific to healthcare. This means that we pay attention to longitudinal questions, offer an easy way to do risk-adjusted comparisons, and provide easy connections and deployment to databases. 
                     </h3>
             </div>
           </div>
@@ -127,17 +116,58 @@ The two packages that comprise HCTools differ from other machine learning packag
                 	What does it do?
                 </h2>
                 <h3 class="post-subtitle">
-HCTools provides an easy way to create models on your data. This includes linear and random forest models, ways to handle missing data, guidance on feature selection, proper performance metrics, and easy database connections.
+Both healthcare.ai packages provide an easy way to create models on your data. This includes linear and random forest models, ways to handle missing data, guidance on feature selection, proper performance metrics, and easy database connections. 
                 </h3>
+            <!--
+   		  			<h2 class="post-title">
+                        <a name="healthcare">Current Package Benchmarking</a>
+                    </h2>
+                    <div class="benchmarks">
+                    <table class="table table-striped">
+                      <tbody>
+                        <thead>
+                          <th>&nbsp;</th>
+                          <th>HC R Tools (Training Model)</th>
+                          <th>HC Py Tools (Training Model)</th>
+                          <th>HC Py Tools (Saved Model)</th>
+                        </thead>
+                        <tr>
+                          <th>10k rows</th>
+                          <td>10 seconds</td>
+                          <td>2 seconds</td>
+                          <td>0.7 seconds</td>
+                        </tr>
+                        <tr>
+                          <th>100k rows</th>
+                          <td>55 seconds</td>
+                          <td>8 seconds</td>
+                          <td>1.7 seconds</td>
+                        </tr>
+                        <tr>
+                          <th>1M rows</th>
+                          <td>11 min</td>
+                          <td>102 seconds</td>
+                          <td>10 seconds</td>
+                        </tr>
+                        <tr>
+                          <th>10M rows</th>
+                          <td>4 hours 21 min</td>
+                          <td>10 minutes</td>
+                          <td>94 seconds</td>
+                        </tr>
+                      </tbody>
+                    </table>  
+                    </div>
+            -->
           	</div>  
           </div>
           <div class="col-sm-offset-1 col-sm-5">
             <div class="post-preview">
                     <h2 class="post-title">
-                        <a name="who">Who is HCTools designed for?</a>
+                        <a name="who">Who is healthcare.ai designed for?</a>
                     </h2>
                     <h3 class="post-subtitle">
-While data scientists in healthcare will likely find this project valuable, the audience HCTools targets are those BI developers, data architects, and SQL developers that would love to create appropriate and accurate models with healthcare data. While existing machine learning packages are certainly irreplaceable, we think that there is a set of data problems specific to healthcare that warrant new tools.
+While data scientists in healthcare will likely find this project valuable, the audience healthcare.ai targets are those BI developers, data architects, and SQL developers that would love to create appropriate and accurate models with healthcare data. While existing machine learning packages are certainly irreplaceable, we think that there is a set of data problems specific to healthcare that warrant new tools. 
                     </h3>
             </div>
           </div>
