@@ -1,5 +1,5 @@
 site_name: HCRTools Docs
-site_dir: HCRTools
+site_dir: R
 repo_url: https://github.com/HealthCatalystSLC/HCRTools
 repo_name: 'GitHub'
 theme: readthedocs
