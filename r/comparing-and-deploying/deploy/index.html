@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Deploying a Best Model - HCRTools Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/hcstyle.css" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Deploying a Best Model";
+    var mkdocs_page_input_path = "comparing-and-deploying\deploy.md";
+    var mkdocs_page_url = "/comparing-and-deploying/deploy/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HCRTools Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Getting started</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/where-do-i-begin/">Where do I begin?</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/FAQ-and-contact/">FAQ and Contact</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Model Pre-processing</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../model-pre-processing/feature-eng-overview/">Feature engineering overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../model-pre-processing/longitudinal-imputation/">Longitudinal Imputation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../model-pre-processing/seasonality-handling/">Seasonality Handling</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Comparing and Deploying Models</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../compare/">Develop and Compare</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Deploying a Best Model</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#save-and-deploy-models-via-deploylasso-deployrandomforest-or-deploylinearmixedmodel">Save and deploy models via DeployLasso, DeployRandomForest, or DeployLinearMixedModel</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#what-is-this">What is this?</a></li>
+                
+                    <li><a class="toctree-l4" href="#is-any-dataset-ready-for-model-creation-and-deployment">Is any dataset ready for model creation and deployment?</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-can-i-improve-my-model-performance">How can I improve my model performance?</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via selectData</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-2-set-your-parameters-via-supervisedmodelparameters">Step 2: Set your parameters via SupervisedModelParameters</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-3-create-the-models-via-the-deploylasso-or-deployrandomforest-algorithms">Step 3: Create the models via the DeployLasso or DeployRandomForest algorithms.</a></li>
+                
+                    <li><a class="toctree-l4" href="#full-example-code">Full example code</a></li>
+                
+                    <li><a class="toctree-l4" href="#lassodevelopment-details">LassoDevelopment Details</a></li>
+                
+                    <li><a class="toctree-l4" href="#randomforestdevelopment-details">RandomForestDevelopment Details</a></li>
+                
+                    <li><a class="toctree-l4" href="#linearmixedmodeldevelopment-details">LinearMixedModelDevelopment Details</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Healthcare Statistics</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../healthcare-statistics/risk-adjusted-comparisons/">Risk-adjusted Comparisons</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../healthcare-statistics/trend-analysis/">Trend Analysis</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../healthcare-statistics/find-targeted-correlations/">Find Targeted Correlations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../healthcare-statistics/find-all-correlations/">Find All Correlations</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HCRTools Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Comparing and Deploying Models &raquo;</li>
+        
+      
+    
+    <li>Deploying a Best Model</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/HealthCatalystSLC/HCRTools" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="save-and-deploy-models-via-deploylasso-deployrandomforest-or-deploylinearmixedmodel">Save and deploy models via <code>DeployLasso</code>, <code>DeployRandomForest</code>, or <code>DeployLinearMixedModel</code></h1>
+<h1 id="what-is-this">What is this?</h1>
+<p>These classes let one save and deploy custom models on varied datasets via the following workflow: </p>
+<ol>
+<li>Using the model development functions LINK!, you found a model that performs well. </li>
+<li>Now, you train and save model on your entire dataset (with the <code>useSavedModel</code> argument set to FALSE). </li>
+<li>Next, flip the <code>useSavedModel</code> argument to TRUE and rerun the script however often you need to generate new predictions. <ul>
+<li>Now that you're using a saved model, you're just running new people/encounters against the saved model to generate predictions.  </li>
+</ul>
+</li>
+<li>Retrain the model whenever significant changes occur with the data (perhaps quarterly) by flipping the <code>useSavedModel</code> to FALSE and go to step 3. </li>
+</ol>
+<p>One can do both classification (ie, predict Y or N) as well as regression (ie, predict a numeric field).</p>
+<h2 id="is-any-dataset-ready-for-model-creation-and-deployment">Is any dataset ready for model creation and deployment?</h2>
+<p>Nope. It'll help if you can follow these guidelines:</p>
+<ul>
+<li>Don't use 0 or 1 for the independent variable when doing classification. Use Y/N instead. The IIF function in T-SQL may help here.</li>
+<li>Create a column thath as <code>Y</code> for those rows in the training set and <code>N</code> for those rows in the test set. Think of the test set as those people or enounters that need a prediction. This column can be called InTestWindow. </li>
+<li>Unlike the develop step ADD LINK TO DEV (which you should have already completed), you should now pull in both training and test rows in your query. </li>
+<li>One has to create a table to receive the predicted values. You can work in SSMS (or SAMD, for those using Health Catalyst products):<ul>
+<li>Create these tables when doing classification or regression, respectively:</li>
+</ul>
+</li>
+</ul>
+<pre><code class="SQL">CREATE TABLE [SAM].[dbo].[HCRDeployClassificationBASE] (
+[BindingID] [int] ,
+[BindingNM] [varchar] (255),
+[LastLoadDTS] [datetime2] (7),
+[PatientEncounterID] [decimal] (38, 0),
+[PredictedProbNBR] [decimal] (38, 2),
+[Factor1TXT] [varchar] (255),
+[Factor2TXT] [varchar] (255),
+[Factor3TXT] [varchar] (255)
+)
+
+CREATE TABLE [SAM].[dbo].[HCRDeployRegressionBASE] (
+[BindingID] [int],
+[BindingNM] [varchar] (255),
+[LastLoadDTS] [datetime2] (7),
+[PatientEncounterID] [decimal] (38, 0),
+[PredictedValueNBR] [decimal] (38, 2),
+[Factor1TXT] [varchar] (255),
+[Factor2TXT] [varchar] (255),
+[Factor3TXT] [varchar] (255)
+)
+</code></pre>
+
+<h2 id="how-can-i-improve-my-model-performance">How can I improve my model performance?</h2>
+<p>Note these preprocessing steps should first be tested and found useful in the develop step. ADD LINK to DEV!</p>
+<ul>
+<li>If you have lots of NULL values, you may want to turn on imputation via the <code>impute</code> argument (see below).</li>
+<li>If you have lots of NULL cells and your data is longitudinal, you may want to try <a href="../../model-pre-processing/longitudinal-imputation">GroupedLOCF</a>.</li>
+<li>If you think the phenomenon you're trying to predict has a seasonal or diurnal component, you may need some <a href="../../model-pre-processing/seasonality-handling">feature engineering</a>.</li>
+<li>If your data is longitudinal, you may want to try the <code>LinearMixedModelDeployment</code> (detailed below).</li>
+</ul>
+<h2 id="step-1-pull-in-the-data-via-selectdata">Step 1: Pull in the data via <code>selectData</code></h2>
+<ul>
+<li>
+<p><strong>Return</strong>: a data frame that represents your data.</p>
+</li>
+<li>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><strong>server</strong>: a server name. You'll pull data from this server.</li>
+<li><strong>database</strong>: a database name. You'll pull data from this database.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="r">library(HCRTools)
+
+connection.string = &quot;
+driver={SQL Server};
+server=localhost;
+database=SAM;
+trusted_connection=true
+&quot;
+
+query = &quot;
+SELECT
+[OrganizationLevel]
+,[InTestWindowFLG]
+,[MaritalStatus]
+,[Gender]
+,IIF([SalariedFlag]=0,'N','Y') AS SalariedFlag
+,[VacationHours]
+,[SickLeaveHours]
+FROM [AdventureWorks2012].[HumanResources].[Employee]
+&quot;
+
+df &lt;- selectData(connection.string, query)
+head(df)
+str(df)
+</code></pre>
+
+<h2 id="step-2-set-your-parameters-via-supervisedmodelparameters">Step 2: Set your parameters via <code>SupervisedModelParameters</code></h2>
+<ul>
+<li>
+<p><strong>Return</strong>: an object representing your specific configuration.</p>
+</li>
+<li>
+<p><strong>Arguments</strong>:</p>
+<ul>
+<li><strong>df</strong>: a data frame. The data your model is based on.</li>
+<li><strong>type</strong>: a string. This will either be 'classification' or 'regression'.</li>
+<li><strong>impute</strong>: a boolean, defaults to FALSE. Whether to impute by replacing NULLs with column mean (for numeric columns) or column mode (for categorical columns).</li>
+<li><strong>grainCol</strong>: a string, defaults to None. Name of possible GrainID column in your dataset. If specified, this column will be removed, as it won't help the algorithm.</li>
+<li><strong>testWindowCol</strong>: a string. Name of utility column used to indicate whether rows are in train or test set. Recall that test set receives predictions.</li>
+<li><strong>predictedCol</strong>: a string. Name of variable (or column) that you want to predict. </li>
+<li><strong>debug</strong>: a boolean, defaults to FALSE. If TRUE, console output when comparing models is verbose for easier debugging.</li>
+<li><strong>useSavedModel</strong>: a boolean, defaults to FALSE. If TRUE, use the model that has been saved to disk in the current working directory (WD). If FALSE, save a new model to disk in the current WD. Use <code>getwd()</code> in the console to check WD.</li>
+<li><strong>cores</strong>: an int, defaults to 4. Number of cores on machine to use for model training.</li>
+<li><strong>sqlConn</strong>: a string. Specifies the driver, server, database, and whether you're using a trusted connection (which is preferred).</li>
+<li><strong>destSchemaTable</strong> : a string. Denotes the output schema and table (separated by a period) where the predictions should be pushed.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="r">p &lt;- DeploySupervisedModelParameters$new()
+p$df = df
+p$type = 'classification'
+p$impute = TRUE
+p$grainCol = 'GrainID'
+p$testWindowCol = 'InTestWindow'
+p$predictedCol = 'SalariedFlag'
+p$debug = FALSE
+p$useSavedModel = FALSE
+p$cores = 1
+p$sqlConn = connection.string
+p$destSchemaTable = 'dbo.HCRDeployClassificationBASE'
+</code></pre>
+
+<h2 id="step-3-create-the-models-via-the-deploylasso-or-deployrandomforest-algorithms">Step 3: Create the models via the <code>DeployLasso</code> or <code>DeployRandomForest</code> algorithms.</h2>
+<pre><code class="r"># Run Lasso (if that's what performed best in the develop step)
+lasso &lt;- DeployLasso$new(p)
+lasso$deploy()
+
+# Or run RandomForest (if that's what performed best in the develop step)
+rf &lt;- DeployRandomForest$new(p)
+rf$deploy()
+
+# Or run Linear Mixed Model (if that's what performed best in the develop step)
+
+p$personCol = 'PatientID' # Change to your PatientID col
+dLMM &lt;- DeployLinearMixedModel$new(p)
+dLMM$deploy()
+</code></pre>
+
+<h2 id="full-example-code">Full example code</h2>
+<pre><code class="r">ptm &lt;- proc.time()
+library(HCRTools)
+
+connection.string = &quot;
+driver={SQL Server};
+server=localhost;
+database=AdventureWorks2012;
+trusted_connection=true
+&quot;
+
+query = &quot;
+SELECT
+ [PatientEncounterID]
+,[PatientID]
+,[SystolicBPNBR]
+,[LDLNBR]
+,[A1CNBR]
+,[GenderFLG]
+,[ThirtyDayReadmitFLG]
+FROM [SAM].[dbo].[DiabetesClinical]
+&quot;
+
+df &lt;- selectData(connection.string, query)
+head(df)
+
+# Remove unnecessary columns
+df$PatientID &lt;- NULL
+
+p &lt;- SupervisedModelDeploymentParams$new()
+p$type = 'classification'
+p$df = df
+p$grainCol = 'PatientEncounterID'
+p$testWindowCol = 'InTestWindowFLG'
+p$predictedCol = 'ThirtyDayReadmitFLG'
+p$impute = TRUE
+p$debug = FALSE
+p$useSavedModel = FALSE
+p$cores = 1
+p$sqlConn = connection.string
+p$destSchemaTable = 'dbo.HCRDeployClassificationBASE'
+
+# If Lasso was more accurate in the dev step
+dL &lt;- LassoDeployment$new(p)
+dL$deploy()
+
+# If Random Forest was more accurate in the dev step
+# dL &lt;- RandomForestDeployment$new(p)
+# dL$deploy()
+
+print(proc.time() - ptm)
+</code></pre>
+
+<h2 id="lassodevelopment-details"><code>LassoDevelopment</code> Details</h2>
+<p>This version of Lasso is based on the Grouped Lasso alogrithm offered by the <a href="https://cran.r-project.org/web/packages/grpreg/grpreg.pdf">grpreg package</a>. We prefer simple models to complicated ones, so for tuning the lambda regularization parameter, we use the 1SE rule, which means that we take the model with fewest coefficients, which is also within one standard error of the best model. This way, we provide guidance as to which features (ie, columns) should be kept in the deployed model. </p>
+<h2 id="randomforestdevelopment-details"><code>RandomForestDevelopment</code> Details</h2>
+<p>This version of random forest is based on the wonderful <a href="https://cran.r-project.org/web/packages/ranger/ranger.pdf">ranger package</a>.</p>
+<h2 id="linearmixedmodeldevelopment-details"><code>LinearMixedModelDevelopment</code> Details</h2>
+<p>This mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets, and then scale up from there.</p>
+<p>Relevant example code:</p>
+<pre><code>p &lt;- SupervisedModelParameters$new()
+p$df = df
+p$type = 'classification'
+p$impute = TRUE
+p$grainCol = 'PatientEncounterID' # This grain of the dataset (required)
+p$personCol = 'PatientID'         # This represents the person (required)
+p$predictedCol = 'HighA1C'
+p$debug = FALSE
+p$cores = 1
+
+lMM &lt;- LinearMixedModelDeployment$new(p)
+lMM$deploy()
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../healthcare-statistics/risk-adjusted-comparisons/" class="btn btn-neutral float-right" title="Risk-adjusted Comparisons">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../compare/" class="btn btn-neutral" title="Develop and Compare"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/HealthCatalystSLC/HCRTools" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../compare/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../healthcare-statistics/risk-adjusted-comparisons/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

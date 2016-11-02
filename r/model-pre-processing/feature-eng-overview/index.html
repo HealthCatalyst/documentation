@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Feature engineering overview - HCRTools Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/hcstyle.css" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Feature engineering overview";
+    var mkdocs_page_input_path = "model-pre-processing\feature-eng-overview.md";
+    var mkdocs_page_url = "/model-pre-processing/feature-eng-overview/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HCRTools Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Getting started</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/where-do-i-begin/">Where do I begin?</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/FAQ-and-contact/">FAQ and Contact</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Model Pre-processing</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Feature engineering overview</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#overview-of-pre-processing-and-feature-engineering">Overview of pre-processing and feature engineering</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-is-feature-engineering">What is feature engineering?</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-can-hcrtools-help-me-prepare-data-prior-to-model-creation">How can HCRTools help me prepare data prior to model-creation?</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../longitudinal-imputation/">Longitudinal Imputation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../seasonality-handling/">Seasonality Handling</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Comparing and Deploying Models</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../comparing-and-deploying/compare/">Develop and Compare</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../comparing-and-deploying/deploy/">Deploying a Best Model</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Healthcare Statistics</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../healthcare-statistics/risk-adjusted-comparisons/">Risk-adjusted Comparisons</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../healthcare-statistics/trend-analysis/">Trend Analysis</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../healthcare-statistics/find-targeted-correlations/">Find Targeted Correlations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../healthcare-statistics/find-all-correlations/">Find All Correlations</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HCRTools Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Model Pre-processing &raquo;</li>
+        
+      
+    
+    <li>Feature engineering overview</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/HealthCatalystSLC/HCRTools" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="overview-of-pre-processing-and-feature-engineering">Overview of pre-processing and feature engineering</h1>
+<h2 id="what-is-feature-engineering">What is feature engineering?</h2>
+<p>From wikipedia: "Feature engineering is the process of using domain knowledge of the data to create features that make machine learning algorithms work."</p>
+<p>In other words, while you might have great data, it has to be in a form that the algorithms can use to make a model.</p>
+<h2 id="how-can-hcrtools-help-me-prepare-data-prior-to-model-creation">How can HCRTools help me prepare data prior to model-creation?</h2>
+<ul>
+<li>
+<p>Via <a href="../../model-pre-processing/longitudinal-imputation">longitudinal imputation</a>. Think of this as a way to pull person-specific values forward in time.</p>
+</li>
+<li>
+<p>Via <a href="../../model-pre-processing/seasonality-handling">seasonality handling</a>. Think of this as a way to make a date-time column model-ready. </p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../longitudinal-imputation/" class="btn btn-neutral float-right" title="Longitudinal Imputation">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../getting-started/FAQ-and-contact/" class="btn btn-neutral" title="FAQ and Contact"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/HealthCatalystSLC/HCRTools" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../getting-started/FAQ-and-contact/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../longitudinal-imputation/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
