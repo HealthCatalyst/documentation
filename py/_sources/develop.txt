@@ -1,7 +1,8 @@
 Developing and comparing models
 -------------------------------
 
-What is ``DevelopSupervisedModel``?
+What is ``DevelopSupervisedModel``? `Notebook`_
+.. _Notebook: 
 #############
 
 - This class let's one create and compare custom models on diverse datasets.
@@ -42,7 +43,8 @@ For SQL:
     df.replace(['None'],[None],inplace=True)
 
 For CSV:
-::
+::  
+    # Note, directory may be this: C:/Program Files/Anaconda3/Lib/site-packages/healthcareai/tests/fixtures
     df = pd.read_csv('healthcareai/tests/fixtures/HCPyDiabetesClinical.csv',
                      na_values=['None'])
 
@@ -124,6 +126,7 @@ Note: you can run (out-of-the-box) from the healthcareai-py folder:
       t0 = time.time()
 
       # CSV snippet for reading data into dataframe
+      # Note, directory may be this: C:/Program Files/Anaconda3/Lib/site-packages/healthcareai/tests/fixtures
       df = pd.read_csv('healthcareai/tests/fixtures/HCPyDiabetesClinical.csv',
                       na_values=['None'])
 

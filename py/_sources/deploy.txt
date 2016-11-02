@@ -122,8 +122,6 @@ Example code:
 Full example code
 #################
 
-Note: this code is in the Example2.py file healthcareai-py folder:
-
 :: 
    from healthcareai import DeploySupervisedModel
    import pandas as pd
