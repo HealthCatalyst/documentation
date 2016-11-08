@@ -28,11 +28,12 @@
   
 
   
+    <link rel="stylesheet" href="_static/css/hcstyle.css" type="text/css" />
+  
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans" type="text/css" />
+  
 
   
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="healthcareai 0.1.7 documentation" href="index.html"/>
         <link rel="next" title="Deploying and saving a model" href="deploy.html"/>
         <link rel="prev" title="Frequently asked questions" href="FAQ.html"/> 
@@ -182,8 +183,7 @@
 </pre></div>
 </div>
 <p>For CSV:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Note, directory may be this: C:/Program Files/Anaconda3/Lib/site-packages/healthcareai/tests/fixtures</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;healthcareai/tests/fixtures/HCPyDiabetesClinical.csv&#39;</span><span class="p">,</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;healthcareai/tests/fixtures/HCPyDiabetesClinical.csv&#39;</span><span class="p">,</span>
                  <span class="n">na_values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;None&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -282,7 +282,6 @@
     <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
     <span class="c1"># CSV snippet for reading data into dataframe</span>
-    <span class="c1"># Note, directory may be this: C:/Program Files/Anaconda3/Lib/site-packages/healthcareai/tests/fixtures</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;healthcareai/tests/fixtures/HCPyDiabetesClinical.csv&#39;</span><span class="p">,</span>
                     <span class="n">na_values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;None&#39;</span><span class="p">])</span>
 
