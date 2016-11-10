@@ -21,10 +21,12 @@ How to install
 
 Windows
 
- - Download and install 64-bit python 3.5 from `here`_
- - ``pip install --upgrade https://github.com/HealthCatalystSLC/healthcareai-py/zipball/master``
+ - If you haven't, install 64-bit Python 3.5 via `the Anaconda distribution`_
+ - Open Spyder (which installed with Anaconda)
+ - Run ``conda install pyodbc``
+ - Run ``pip install https://github.com/HealthCatalystSLC/healthcareai-py/zipball/master``
 
-.. _here: https://www.continuum.io/downloads
+ .. _the Anaconda distribution: https://www.continuum.io/downloads
 
 Non-Windows
 
@@ -36,6 +38,13 @@ Non-Windows
 
 .. _here: https://www.continuum.io/downloads
 .. _docker: https://docs.docker.com/engine/installation/
+
+How to help
+===========
+
+Check out our github `repo`_
+
+.. _repo: https://github.com/HealthCatalystSLC/healthcareai-py/blob/master/README.rst
 
 
 .. toctree::
