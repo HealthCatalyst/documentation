@@ -1,7 +1,5 @@
 site_name: healthcareai docs
 site_dir: r
-repo_url: https://github.com/HealthCatalystSLC/healthcareai-r
-repo_name: 'GitHub'
 theme: readthedocs
 docs_dir: 'templates'
 site_favicon: favicon.ico
@@ -27,3 +25,4 @@ pages:
   - Find Targeted Correlations: healthcare-statistics/find-targeted-correlations.md
   - Find All Correlations: healthcare-statistics/find-all-correlations.md
 
+copyright: Copyright &copy; 2016, <a href="https://www.healthcatalyst.com/">Health Catalyst</a>

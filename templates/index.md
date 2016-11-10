@@ -40,3 +40,9 @@ devtools::install_github(repo='HealthCatalystSLC/healthcareai-r')
 library(healthcareai)
 ?healthcareai
 ```
+
+------------------
+
+## How to help
+
+Check out our github [repo](https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/README.md).
