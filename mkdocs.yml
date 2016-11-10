@@ -1,6 +1,6 @@
-site_name: HCRTools Docs
+site_name: healthcareai docs
 site_dir: r
-repo_url: https://github.com/HealthCatalystSLC/HCRTools
+repo_url: https://github.com/HealthCatalystSLC/healthcareai-r
 repo_name: 'GitHub'
 theme: readthedocs
 docs_dir: 'templates'
