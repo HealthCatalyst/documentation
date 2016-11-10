@@ -1,10 +1,10 @@
-# HCRTools FAQ - Frequently Asked Questions
+# healthcareai FAQ - Frequently Asked Questions
 
 ## Who is this project for?
 
 While data scientists in healthcare will likely find this project valuable, the target audience for HCTools are those BI developers, data architects, and SQL developers that would love to create appropriate and accurate models with healthcare data. While existing machine learning packages are certainly irreplaceable, we think that there is a set of data problems specific to healthcare that warrant new tools.
 
-## How does HCRTools focus on healthcare?
+## How does healthcareai focus on healthcare?
  
 HCTools differs from other machine learning packages in that it focuses on data issues specific to healthcare. This means that we pay attention to longitudinal questions, offer an easy way to do risk-adjusted comparisons, and provide easy connections and deployment to databases.
 

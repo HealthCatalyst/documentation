@@ -1,4 +1,4 @@
-# Welcome to HCRTools
+# Welcome to healthcareai
 
 This package will get you started with healthcare machine learning in R.
 
@@ -29,14 +29,14 @@ Work in the console of RStudio or RGui
 install.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lme4','lubridate','pROC','R6','ranger','ROCR','RODBC'),repos = "https://cran.cnr.berkeley.edu/")
 ```
 
-* Install HCRTools
+* Install healthcareai
 ```{r}
 library(devtools)
-devtools::install_github(repo='HealthCatalystSLC/HCRTools')
+devtools::install_github(repo='HealthCatalystSLC/healthcareai-r')
 ```
 
 * Load the package and read the built-in docs
 ```{r}
-library(HCRTools)
-?HCRTools
+library(healthcareai)
+?healthcareai
 ```

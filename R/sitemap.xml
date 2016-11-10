@@ -3,8 +3,8 @@
 
     
     <url>
-     <loc>None/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <loc>/</loc>
+     <lastmod>2016-11-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,36 +12,14 @@
     
         
     <url>
-     <loc>None/getting-started/where-do-i-begin/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <loc>/getting-started/where-do-i-begin/</loc>
+     <lastmod>2016-11-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/getting-started/FAQ-and-contact/</loc>
-     <lastmod>2016-10-31</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>None/model-pre-processing/feature-eng-overview/</loc>
-     <lastmod>2016-10-31</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/model-pre-processing/longitudinal-imputation/</loc>
-     <lastmod>2016-10-31</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/model-pre-processing/seasonality-handling/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <loc>/getting-started/FAQ-and-contact/</loc>
+     <lastmod>2016-11-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -50,14 +28,20 @@
     
         
     <url>
-     <loc>None/comparing-and-deploying/compare/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <loc>/model-pre-processing/feature-eng-overview/</loc>
+     <lastmod>2016-11-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/comparing-and-deploying/deploy/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <loc>/model-pre-processing/longitudinal-imputation/</loc>
+     <lastmod>2016-11-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/model-pre-processing/seasonality-handling/</loc>
+     <lastmod>2016-11-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -66,26 +50,42 @@
     
         
     <url>
-     <loc>None/healthcare-statistics/risk-adjusted-comparisons/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <loc>/comparing-and-deploying/compare/</loc>
+     <lastmod>2016-11-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/healthcare-statistics/trend-analysis/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <loc>/comparing-and-deploying/deploy/</loc>
+     <lastmod>2016-11-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/healthcare-statistics/risk-adjusted-comparisons/</loc>
+     <lastmod>2016-11-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/healthcare-statistics/find-targeted-correlations/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <loc>/healthcare-statistics/trend-analysis/</loc>
+     <lastmod>2016-11-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/healthcare-statistics/find-all-correlations/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <loc>/healthcare-statistics/find-targeted-correlations/</loc>
+     <lastmod>2016-11-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/healthcare-statistics/find-all-correlations/</loc>
+     <lastmod>2016-11-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

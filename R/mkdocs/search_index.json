@@ -2,13 +2,13 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome to HCRTools\n\n\nThis package will get you started with healthcare machine learning in R.\n\n\nWhat can you do with it?\n\n\n\n\nCreate and compare models based on your data.\n\n\nSave and deploy a model.\n\n\nPerform risk-adjusted comparisons.\n\n\nDo trend analysis following \nNelson rules\n.\n\n\nImprove sparse data via longitudinal imputation.\n\n\n\n\n\n\nHow is it specific to healthcare?\n\n\n\n\nLongitudinal machine learning via mixed models\n\n\nLongitudinal imputation\n\n\nRisk-adjusted comparisons\n\n\n\n\n\n\nHow to install\n\n\nWork in the console of RStudio or RGui\n\n\n\n\nGrab prerequisites\n\n\n\n\ninstall.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lme4','lubridate','pROC','R6','ranger','ROCR','RODBC'),repos = \"https://cran.cnr.berkeley.edu/\")\n\n\n\n\n\n\nInstall HCRTools\n\n\n\n\nlibrary(devtools)\ndevtools::install_github(repo='HealthCatalystSLC/HCRTools')\n\n\n\n\n\n\nLoad the package and read the built-in docs\n\n\n\n\nlibrary(HCRTools)\n?HCRTools",
+            "text": "Welcome to healthcareai\n\n\nThis package will get you started with healthcare machine learning in R.\n\n\nWhat can you do with it?\n\n\n\n\nCreate and compare models based on your data.\n\n\nSave and deploy a model.\n\n\nPerform risk-adjusted comparisons.\n\n\nDo trend analysis following \nNelson rules\n.\n\n\nImprove sparse data via longitudinal imputation.\n\n\n\n\n\n\nHow is it specific to healthcare?\n\n\n\n\nLongitudinal machine learning via mixed models\n\n\nLongitudinal imputation\n\n\nRisk-adjusted comparisons\n\n\n\n\n\n\nHow to install\n\n\nWork in the console of RStudio or RGui\n\n\n\n\nGrab prerequisites\n\n\n\n\ninstall.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lme4','lubridate','pROC','R6','ranger','ROCR','RODBC'),repos = \"https://cran.cnr.berkeley.edu/\")\n\n\n\n\n\n\nInstall healthcareai\n\n\n\n\nlibrary(devtools)\ndevtools::install_github(repo='HealthCatalystSLC/healthcareai-r')\n\n\n\n\n\n\nLoad the package and read the built-in docs\n\n\n\n\nlibrary(healthcareai)\n?healthcareai",
             "title": "Home"
         },
         {
-            "location": "/#welcome-to-hcrtools",
+            "location": "/#welcome-to-healthcareai",
             "text": "This package will get you started with healthcare machine learning in R.",
-            "title": "Welcome to HCRTools"
+            "title": "Welcome to healthcareai"
         },
         {
             "location": "/#what-can-you-do-with-it",
@@ -22,18 +22,18 @@
         },
         {
             "location": "/#how-to-install",
-            "text": "Work in the console of RStudio or RGui   Grab prerequisites   install.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lme4','lubridate','pROC','R6','ranger','ROCR','RODBC'),repos = \"https://cran.cnr.berkeley.edu/\")   Install HCRTools   library(devtools)\ndevtools::install_github(repo='HealthCatalystSLC/HCRTools')   Load the package and read the built-in docs   library(HCRTools)\n?HCRTools",
+            "text": "Work in the console of RStudio or RGui   Grab prerequisites   install.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lme4','lubridate','pROC','R6','ranger','ROCR','RODBC'),repos = \"https://cran.cnr.berkeley.edu/\")   Install healthcareai   library(devtools)\ndevtools::install_github(repo='HealthCatalystSLC/healthcareai-r')   Load the package and read the built-in docs   library(healthcareai)\n?healthcareai",
             "title": "How to install"
         },
         {
             "location": "/getting-started/where-do-i-begin/",
-            "text": "Where do I begin with HCRTools?\n\n\nThat, of course, depends on what you want to accomplish:\n\n\nIf you want create a model on your data via machine learning\n\n\n\n\nLook at the \npre-processing tools\n that might help your model. \n\n\nLook at the \nmodel development page\n to create and compare models.\n\n\nLook at the \ndeployment page\n to deploy model.\n\n\n\n\nIf you want to do general healthcare statistics\n\n\n\n\nLook \nhere\n to calculate cross-column correlations on your data.\n\n\nLook \nhere\n to perform trend analysis across your data following Nelson rules.\n\n\n\n\nIf you want to do risk-adjusted comparisons\n\n\n\n\nLook \nhere\n if you want to compare several hospitals or units in terms of risk-adjusted performance.\n\n\n\n\nOf course, you can always check the FAQ \nhere",
+            "text": "Where do I begin with healthcareai?\n\n\nThat, of course, depends on what you want to accomplish:\n\n\nIf you want create a model on your data via machine learning\n\n\n\n\nLook at the \npre-processing tools\n that might help your model. \n\n\nLook at the \nmodel development page\n to create and compare models.\n\n\nLook at the \ndeployment page\n to deploy model.\n\n\n\n\nIf you want to do general healthcare statistics\n\n\n\n\nLook \nhere\n to calculate cross-column correlations on your data.\n\n\nLook \nhere\n to perform trend analysis across your data following Nelson rules.\n\n\n\n\nIf you want to do risk-adjusted comparisons\n\n\n\n\nLook \nhere\n if you want to compare several hospitals or units in terms of risk-adjusted performance.\n\n\n\n\nOf course, you can always check the FAQ \nhere",
             "title": "Where do I begin?"
         },
         {
-            "location": "/getting-started/where-do-i-begin/#where-do-i-begin-with-hcrtools",
+            "location": "/getting-started/where-do-i-begin/#where-do-i-begin-with-healthcareai",
             "text": "That, of course, depends on what you want to accomplish:",
-            "title": "Where do I begin with HCRTools?"
+            "title": "Where do I begin with healthcareai?"
         },
         {
             "location": "/getting-started/where-do-i-begin/#if-you-want-create-a-model-on-your-data-via-machine-learning",
@@ -57,13 +57,13 @@
         },
         {
             "location": "/getting-started/FAQ-and-contact/",
-            "text": "HCRTools FAQ - Frequently Asked Questions\n\n\nWho is this project for?\n\n\nWhile data scientists in healthcare will likely find this project valuable, the target audience for HCTools are those BI developers, data architects, and SQL developers that would love to create appropriate and accurate models with healthcare data. While existing machine learning packages are certainly irreplaceable, we think that there is a set of data problems specific to healthcare that warrant new tools.\n\n\nHow does HCRTools focus on healthcare?\n\n\nHCTools differs from other machine learning packages in that it focuses on data issues specific to healthcare. This means that we pay attention to longitudinal questions, offer an easy way to do risk-adjusted comparisons, and provide easy connections and deployment to databases.\n\n\nWho started this project?\n\n\nThis project began in the data science group at Health Catalyst, a Salt Lake City-based company based focused on improving healthcare outcomes.\n\n\nWhy was it open-sourced?\n\n\nWe believe that everyone benefits when healthcare is made more efficient and outcomes are improved. Machine learning is surprisingly still fairly new to healthcare and we want to quickly take healthcare down the machine learning adoption path. We believe that making helpful, simple tools widely available is one small way to help healthcare organizations transform their data into actionable insight that can be used to improve outcomes.\n\n\nHow can I contact the authors\n\n\nWe'd love to hear from you! We welcome complaints, suggestions, and contributions. \n\n\nTwitter: \n@levithatcher\n\nEmail: \nlevi.thatcher@healthcatalyst.com",
+            "text": "healthcareai FAQ - Frequently Asked Questions\n\n\nWho is this project for?\n\n\nWhile data scientists in healthcare will likely find this project valuable, the target audience for HCTools are those BI developers, data architects, and SQL developers that would love to create appropriate and accurate models with healthcare data. While existing machine learning packages are certainly irreplaceable, we think that there is a set of data problems specific to healthcare that warrant new tools.\n\n\nHow does healthcareai focus on healthcare?\n\n\nHCTools differs from other machine learning packages in that it focuses on data issues specific to healthcare. This means that we pay attention to longitudinal questions, offer an easy way to do risk-adjusted comparisons, and provide easy connections and deployment to databases.\n\n\nWho started this project?\n\n\nThis project began in the data science group at Health Catalyst, a Salt Lake City-based company based focused on improving healthcare outcomes.\n\n\nWhy was it open-sourced?\n\n\nWe believe that everyone benefits when healthcare is made more efficient and outcomes are improved. Machine learning is surprisingly still fairly new to healthcare and we want to quickly take healthcare down the machine learning adoption path. We believe that making helpful, simple tools widely available is one small way to help healthcare organizations transform their data into actionable insight that can be used to improve outcomes.\n\n\nHow can I contact the authors\n\n\nWe'd love to hear from you! We welcome complaints, suggestions, and contributions. \n\n\nTwitter: \n@levithatcher\n\nEmail: \nlevi.thatcher@healthcatalyst.com",
             "title": "FAQ and Contact"
         },
         {
-            "location": "/getting-started/FAQ-and-contact/#hcrtools-faq-frequently-asked-questions",
+            "location": "/getting-started/FAQ-and-contact/#healthcareai-faq-frequently-asked-questions",
             "text": "",
-            "title": "HCRTools FAQ - Frequently Asked Questions"
+            "title": "healthcareai FAQ - Frequently Asked Questions"
         },
         {
             "location": "/getting-started/FAQ-and-contact/#who-is-this-project-for",
@@ -71,9 +71,9 @@
             "title": "Who is this project for?"
         },
         {
-            "location": "/getting-started/FAQ-and-contact/#how-does-hcrtools-focus-on-healthcare",
+            "location": "/getting-started/FAQ-and-contact/#how-does-healthcareai-focus-on-healthcare",
             "text": "HCTools differs from other machine learning packages in that it focuses on data issues specific to healthcare. This means that we pay attention to longitudinal questions, offer an easy way to do risk-adjusted comparisons, and provide easy connections and deployment to databases.",
-            "title": "How does HCRTools focus on healthcare?"
+            "title": "How does healthcareai focus on healthcare?"
         },
         {
             "location": "/getting-started/FAQ-and-contact/#who-started-this-project",
@@ -112,7 +112,7 @@
         },
         {
             "location": "/model-pre-processing/longitudinal-imputation/",
-            "text": "Longitudinal Imputation via \nGroupedLOCF\n\n\nWhat is this?\n\n\nIn healthcare one often works with datasets that have multiple rows for a single person, over time. This is called longitudinal data.\n\n\nIf you want to fill in some of the NULLs in such a dataset, HCRTools lets implement the \nlast observation carried forward\n technique. In other words, Joe's weight from a year ago (which was his last weight data point) can be pulled forward to Joe's rows corresponding to last week or last month.\n\n\nWhy is it helpful?\n\n\nThis may help make your models more accurate, or help fill in your data for disparate calculations/visualizations.\n\n\nIs any longitudinal dataset ready for HCRTools to work on it?\n\n\nNope. You have to first order your data by a PersonID column and then by a date-time column (with time going down the rows).\n\n\nSo, how do we do it?\n\n\n\n\nFirst, we'll load HCRTools and create a fake dataset in R (that you can play with)\n\n\n\n\nlibrary(HCRTools)\ndf = data.frame(personID=c(1,1,2,2,3,3,3),\n                wt=c(.5,NA,NA,NA,.3,.7,NA),\n                ht=c(NA,1,3,NA,4,NA,NA),\n                date=c('01/01/2015','01/15/2015','01/01/2015','01/15/2015',\n                       '01/01/2015','01/15/2015','01/30/2015'))\n\nhead(df,n=7) # Looking at the raw data\n\n\n\n\n\n\nNow let's do the imputation by calling the \ngroupedLOCF\n function. LOCF stands for last observation carried forward\n\n\n\n\ndfResult = groupedLOCF(df, 'PersonID')\n\nhead(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)\n\n\n\n\nFunction specs for \ngroupedLOCF\n\n\n\n\n\n\nReturn\n: a data frame of same shape as input data frame.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This data contains NULLs or NAs.\n\n\nid\n: a string. Column name for the PersonID column in your data frame.\n\n\n\n\n\n\n\n\nFull example code\n\n\nlibrary(HCRTools)\ndf = data.frame(personID=c(1,1,2,2,3,3,3),\n                wt=c(.5,NA,NA,NA,.3,.7,NA),\n                ht=c(NA,1,3,NA,4,NA,NA),\n                date=c('01/01/2015','01/15/2015','01/01/2015','01/15/2015',\n                       '01/01/2015','01/15/2015','01/30/2015'))\n\nhead(df,n=7)\n\ndfResult = groupedLOCF(df, 'PersonID')\n\nhead(dfResult, n = 7)",
+            "text": "Longitudinal Imputation via \nGroupedLOCF\n\n\nWhat is this?\n\n\nIn healthcare one often works with datasets that have multiple rows for a single person, over time. This is called longitudinal data.\n\n\nIf you want to fill in some of the NULLs in such a dataset, healthcareai lets implement the \nlast observation carried forward\n technique. In other words, Joe's weight from a year ago (which was his last weight data point) can be pulled forward to Joe's rows corresponding to last week or last month.\n\n\nWhy is it helpful?\n\n\nThis may help make your models more accurate, or help fill in your data for disparate calculations/visualizations.\n\n\nIs any longitudinal dataset ready for healthcareai to work on it?\n\n\nNope. You have to first order your data by a PersonID column and then by a date-time column (with time going down the rows).\n\n\nSo, how do we do it?\n\n\n\n\nFirst, we'll load healthcareai and create a fake dataset in R (that you can play with)\n\n\n\n\nlibrary(healthcareai)\ndf = data.frame(personID=c(1,1,2,2,3,3,3),\n                wt=c(.5,NA,NA,NA,.3,.7,NA),\n                ht=c(NA,1,3,NA,4,NA,NA),\n                date=c('01/01/2015','01/15/2015','01/01/2015','01/15/2015',\n                       '01/01/2015','01/15/2015','01/30/2015'))\n\nhead(df,n=7) # Looking at the raw data\n\n\n\n\n\n\nNow let's do the imputation by calling the \ngroupedLOCF\n function. LOCF stands for last observation carried forward\n\n\n\n\ndfResult = groupedLOCF(df, 'PersonID')\n\nhead(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)\n\n\n\n\nFunction specs for \ngroupedLOCF\n\n\n\n\n\n\nReturn\n: a data frame of same shape as input data frame.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This data contains NULLs or NAs.\n\n\nid\n: a string. Column name for the PersonID column in your data frame.\n\n\n\n\n\n\n\n\nFull example code\n\n\nlibrary(healthcareai)\ndf = data.frame(personID=c(1,1,2,2,3,3,3),\n                wt=c(.5,NA,NA,NA,.3,.7,NA),\n                ht=c(NA,1,3,NA,4,NA,NA),\n                date=c('01/01/2015','01/15/2015','01/01/2015','01/15/2015',\n                       '01/01/2015','01/15/2015','01/30/2015'))\n\nhead(df,n=7)\n\ndfResult = groupedLOCF(df, 'PersonID')\n\nhead(dfResult, n = 7)",
             "title": "Longitudinal Imputation"
         },
         {
@@ -122,7 +122,7 @@
         },
         {
             "location": "/model-pre-processing/longitudinal-imputation/#what-is-this",
-            "text": "In healthcare one often works with datasets that have multiple rows for a single person, over time. This is called longitudinal data.  If you want to fill in some of the NULLs in such a dataset, HCRTools lets implement the  last observation carried forward  technique. In other words, Joe's weight from a year ago (which was his last weight data point) can be pulled forward to Joe's rows corresponding to last week or last month.",
+            "text": "In healthcare one often works with datasets that have multiple rows for a single person, over time. This is called longitudinal data.  If you want to fill in some of the NULLs in such a dataset, healthcareai lets implement the  last observation carried forward  technique. In other words, Joe's weight from a year ago (which was his last weight data point) can be pulled forward to Joe's rows corresponding to last week or last month.",
             "title": "What is this?"
         },
         {
@@ -131,13 +131,13 @@
             "title": "Why is it helpful?"
         },
         {
-            "location": "/model-pre-processing/longitudinal-imputation/#is-any-longitudinal-dataset-ready-for-hcrtools-to-work-on-it",
+            "location": "/model-pre-processing/longitudinal-imputation/#is-any-longitudinal-dataset-ready-for-healthcareai-to-work-on-it",
             "text": "Nope. You have to first order your data by a PersonID column and then by a date-time column (with time going down the rows).",
-            "title": "Is any longitudinal dataset ready for HCRTools to work on it?"
+            "title": "Is any longitudinal dataset ready for healthcareai to work on it?"
         },
         {
             "location": "/model-pre-processing/longitudinal-imputation/#so-how-do-we-do-it",
-            "text": "First, we'll load HCRTools and create a fake dataset in R (that you can play with)   library(HCRTools)\ndf = data.frame(personID=c(1,1,2,2,3,3,3),\n                wt=c(.5,NA,NA,NA,.3,.7,NA),\n                ht=c(NA,1,3,NA,4,NA,NA),\n                date=c('01/01/2015','01/15/2015','01/01/2015','01/15/2015',\n                       '01/01/2015','01/15/2015','01/30/2015'))\n\nhead(df,n=7) # Looking at the raw data   Now let's do the imputation by calling the  groupedLOCF  function. LOCF stands for last observation carried forward   dfResult = groupedLOCF(df, 'PersonID')\n\nhead(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)",
+            "text": "First, we'll load healthcareai and create a fake dataset in R (that you can play with)   library(healthcareai)\ndf = data.frame(personID=c(1,1,2,2,3,3,3),\n                wt=c(.5,NA,NA,NA,.3,.7,NA),\n                ht=c(NA,1,3,NA,4,NA,NA),\n                date=c('01/01/2015','01/15/2015','01/01/2015','01/15/2015',\n                       '01/01/2015','01/15/2015','01/30/2015'))\n\nhead(df,n=7) # Looking at the raw data   Now let's do the imputation by calling the  groupedLOCF  function. LOCF stands for last observation carried forward   dfResult = groupedLOCF(df, 'PersonID')\n\nhead(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)",
             "title": "So, how do we do it?"
         },
         {
@@ -147,7 +147,7 @@
         },
         {
             "location": "/model-pre-processing/longitudinal-imputation/#full-example-code",
-            "text": "library(HCRTools)\ndf = data.frame(personID=c(1,1,2,2,3,3,3),\n                wt=c(.5,NA,NA,NA,.3,.7,NA),\n                ht=c(NA,1,3,NA,4,NA,NA),\n                date=c('01/01/2015','01/15/2015','01/01/2015','01/15/2015',\n                       '01/01/2015','01/15/2015','01/30/2015'))\n\nhead(df,n=7)\n\ndfResult = groupedLOCF(df, 'PersonID')\n\nhead(dfResult, n = 7)",
+            "text": "library(healthcareai)\ndf = data.frame(personID=c(1,1,2,2,3,3,3),\n                wt=c(.5,NA,NA,NA,.3,.7,NA),\n                ht=c(NA,1,3,NA,4,NA,NA),\n                date=c('01/01/2015','01/15/2015','01/01/2015','01/15/2015',\n                       '01/01/2015','01/15/2015','01/30/2015'))\n\nhead(df,n=7)\n\ndfResult = groupedLOCF(df, 'PersonID')\n\nhead(dfResult, n = 7)",
             "title": "Full example code"
         },
         {
@@ -417,7 +417,7 @@
         },
         {
             "location": "/healthcare-statistics/find-all-correlations/",
-            "text": "Find correlations with a specific variable via \nCalculateAllCorrelations\n\n\nWhat is this?\n\n\nIn healthcare (as in other fields) it's often helpful to understand the relationships between the variables in one's dataset. This provides that functionality by finding the \ncorrelations\n for all numeric columns in a particular dataset.\n\n\nWhy is it helpful?\n\n\nYou can quickly see the relationships present in your data.\n\n\nSo, how do we do it?\n\n\n\n\nFirst, we'll load HCRTools, create a fake dataset on which to work, and look at it:\n\n\n\n\nlibrary(HCRTools)\n\ndf <- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #<- is ignored\n\nhead(df)\n\n\n\n\n\n\nNext, we'll find the correlations between all numeric columns in the dataset represented by \ndf\n.\n\n\n\n\nres <- CalculateAllCorrelations(df)\nres\n\n\n\n\nFunction specs for \nCalculateAllCorrelations\n\n\n\n\n\n\nReturn\n: a data frame of same length as input data frame, but three columns wide.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This dataset contains at least two numeric columns. \n\n\n\n\n\n\n\n\nWe use the \nPearson correlation coefficient\n.\n\n\nFull example code\n\n\nlibrary(HCRTools)\n\ndf <- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #<- is ignored\n\nhead(df)\n\nres <- CalculateAllCorrelations(df)\nres",
+            "text": "Find correlations with a specific variable via \nCalculateAllCorrelations\n\n\nWhat is this?\n\n\nIn healthcare (as in other fields) it's often helpful to understand the relationships between the variables in one's dataset. This provides that functionality by finding the \ncorrelations\n for all numeric columns in a particular dataset.\n\n\nWhy is it helpful?\n\n\nYou can quickly see the relationships present in your data.\n\n\nSo, how do we do it?\n\n\n\n\nFirst, we'll load healthcareai, create a fake dataset on which to work, and look at it:\n\n\n\n\nlibrary(healthcareai)\n\ndf <- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #<- is ignored\n\nhead(df)\n\n\n\n\n\n\nNext, we'll find the correlations between all numeric columns in the dataset represented by \ndf\n.\n\n\n\n\nres <- CalculateAllCorrelations(df)\nres\n\n\n\n\nFunction specs for \nCalculateAllCorrelations\n\n\n\n\n\n\nReturn\n: a data frame of same length as input data frame, but three columns wide.\n\n\n\n\n\n\nArguments\n:\n\n\n\n\ndf\n: a data frame. This dataset contains at least two numeric columns. \n\n\n\n\n\n\n\n\nWe use the \nPearson correlation coefficient\n.\n\n\nFull example code\n\n\nlibrary(healthcareai)\n\ndf <- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #<- is ignored\n\nhead(df)\n\nres <- CalculateAllCorrelations(df)\nres",
             "title": "Find All Correlations"
         },
         {
@@ -437,7 +437,7 @@
         },
         {
             "location": "/healthcare-statistics/find-all-correlations/#so-how-do-we-do-it",
-            "text": "First, we'll load HCRTools, create a fake dataset on which to work, and look at it:   library(HCRTools)\n\ndf <- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #<- is ignored\n\nhead(df)   Next, we'll find the correlations between all numeric columns in the dataset represented by  df .   res <- CalculateAllCorrelations(df)\nres",
+            "text": "First, we'll load healthcareai, create a fake dataset on which to work, and look at it:   library(healthcareai)\n\ndf <- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #<- is ignored\n\nhead(df)   Next, we'll find the correlations between all numeric columns in the dataset represented by  df .   res <- CalculateAllCorrelations(df)\nres",
             "title": "So, how do we do it?"
         },
         {
@@ -447,7 +447,7 @@
         },
         {
             "location": "/healthcare-statistics/find-all-correlations/#full-example-code",
-            "text": "library(HCRTools)\n\ndf <- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #<- is ignored\n\nhead(df)\n\nres <- CalculateAllCorrelations(df)\nres",
+            "text": "library(healthcareai)\n\ndf <- data.frame(a=c(1,2,3,4,5,6),\nb=c(6,5,4,3,2,1),\nc=c(3,4,2,1,3,5),\nd=c('M','F','F','F','M','F')) #<- is ignored\n\nhead(df)\n\nres <- CalculateAllCorrelations(df)\nres",
             "title": "Full example code"
         }
     ]

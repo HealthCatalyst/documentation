@@ -1,4 +1,4 @@
-# Where do I begin with HCRTools?
+# Where do I begin with healthcareai?
 
 That, of course, depends on what you want to accomplish:
 

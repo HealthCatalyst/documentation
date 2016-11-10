@@ -7,14 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  
-  <title>Find All Correlations - HCRTools Docs</title>
-  
-
   <link rel="shortcut icon" href="../../favicon.ico">
   
-
-  
+  <title>Find All Correlations - HCRTools Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -22,20 +17,17 @@
   <link rel="stylesheet" href="../../css/highlight.css">
   <link href="../../css/hcstyle.css" rel="stylesheet">
   <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
   
   <script>
     // Current page data
     var mkdocs_page_name = "Find All Correlations";
-    var mkdocs_page_input_path = "healthcare-statistics\find-all-correlations.md";
+    var mkdocs_page_input_path = "healthcare-statistics\\find-all-correlations.md";
     var mkdocs_page_url = "/healthcare-statistics/find-all-correlations/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
   <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  <script src="../../js/theme.js"></script> 
-
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
   
 </head>
 
@@ -55,7 +47,7 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
+	<ul class="current">
           
             <li>
     <li class="toctree-l1 ">
@@ -219,9 +211,8 @@
     <li>Find All Correlations</li>
     <li class="wy-breadcrumbs-aside">
       
-        
-          <a href="https://github.com/HealthCatalystSLC/HCRTools" class="icon icon-github"> Edit on GitHub</a>
-        
+        <a href="https://github.com/HealthCatalystSLC/HCRTools/edit/master/docs/healthcare-statistics\find-all-correlations.md"
+          class="icon icon-github"> Edit on GitHub</a>
       
     </li>
   </ul>
@@ -237,9 +228,9 @@
 <p>You can quickly see the relationships present in your data.</p>
 <h2 id="so-how-do-we-do-it">So, how do we do it?</h2>
 <ul>
-<li>First, we'll load HCRTools, create a fake dataset on which to work, and look at it:</li>
+<li>First, we'll load healthcareai, create a fake dataset on which to work, and look at it:</li>
 </ul>
-<pre><code class="r">library(HCRTools)
+<pre><code class="r">library(healthcareai)
 
 df &lt;- data.frame(a=c(1,2,3,4,5,6),
 b=c(6,5,4,3,2,1),
@@ -270,7 +261,7 @@ res
 </ul>
 <p>We use the <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/cor.html">Pearson correlation coefficient</a>.</p>
 <h2 id="full-example-code">Full example code</h2>
-<pre><code class="r">library(HCRTools)
+<pre><code class="r">library(healthcareai)
 
 df &lt;- data.frame(a=c(1,2,3,4,5,6),
 b=c(6,5,4,3,2,1),
@@ -309,10 +300,10 @@ res
       </div>
 
     </section>
-
+    
   </div>
 
-<div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
           <a href="https://github.com/HealthCatalystSLC/HCRTools" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
@@ -323,6 +314,7 @@ res
       
     </span>
 </div>
+    <script src="../../js/theme.js"></script>
 
 </body>
 </html>

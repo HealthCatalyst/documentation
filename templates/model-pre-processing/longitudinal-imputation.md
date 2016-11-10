@@ -4,22 +4,22 @@
 
 In healthcare one often works with datasets that have multiple rows for a single person, over time. This is called longitudinal data.
 
-If you want to fill in some of the NULLs in such a dataset, HCRTools lets implement the [last observation carried forward](https://en.wikipedia.org/wiki/Imputation_(statistics)#Single_imputation) technique. In other words, Joe's weight from a year ago (which was his last weight data point) can be pulled forward to Joe's rows corresponding to last week or last month.
+If you want to fill in some of the NULLs in such a dataset, healthcareai lets implement the [last observation carried forward](https://en.wikipedia.org/wiki/Imputation_(statistics)#Single_imputation) technique. In other words, Joe's weight from a year ago (which was his last weight data point) can be pulled forward to Joe's rows corresponding to last week or last month.
 
 ## Why is it helpful?
 
 This may help make your models more accurate, or help fill in your data for disparate calculations/visualizations.
 
-## Is any longitudinal dataset ready for HCRTools to work on it?
+## Is any longitudinal dataset ready for healthcareai to work on it?
 
 Nope. You have to first order your data by a PersonID column and then by a date-time column (with time going down the rows).
 
 ## So, how do we do it?
 
-* First, we'll load HCRTools and create a fake dataset in R (that you can play with)
+* First, we'll load healthcareai and create a fake dataset in R (that you can play with)
 
 ```{r}
-library(HCRTools)
+library(healthcareai)
 df = data.frame(personID=c(1,1,2,2,3,3,3),
                 wt=c(.5,NA,NA,NA,.3,.7,NA),
                 ht=c(NA,1,3,NA,4,NA,NA),
@@ -50,7 +50,7 @@ head(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)
 ## Full example code
 
 ```{r}
-library(HCRTools)
+library(healthcareai)
 df = data.frame(personID=c(1,1,2,2,3,3,3),
                 wt=c(.5,NA,NA,NA,.3,.7,NA),
                 ht=c(NA,1,3,NA,4,NA,NA),
