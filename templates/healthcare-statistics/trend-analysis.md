@@ -19,6 +19,7 @@ First, get some data organized (via SQL or Excel) that has the following.
 ## Step 1: Create some data or pull it from SQL Server
 
 ```{r}
+library(healthcareai)
 dates <- c(as.Date("2012-01-01"),as.Date("2012-01-02"),as.Date("2012-02-01"),
       as.Date("2012-03-01"),as.Date("2012-04-01"),as.Date("2012-05-01"),
       as.Date("2012-06-01"),as.Date("2012-06-02"))
@@ -49,6 +50,7 @@ res
 ## Full example code
 
 ```{r}
+library(healthcareai)
 dates <- c(as.Date("2012-01-01"),as.Date("2012-01-02"),as.Date("2012-02-01"),
       as.Date("2012-03-01"),as.Date("2012-04-01"),as.Date("2012-05-01"),
       as.Date("2012-06-01"),as.Date("2012-06-02"))

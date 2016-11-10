@@ -23,7 +23,7 @@ First, get some data organized (via SQL or Excel) that has the following:
 
 ```{r}
 ptm <- proc.time()
-library(HCRTools)
+library(healthcareai)
 
 connection.string = "
 driver={SQL Server};
@@ -80,7 +80,7 @@ riskAdjComp$run()
 ## Full example code
 
 ```{r}
-library(HCRTools)
+library(healthcareai)
 
 connection.string = "
 driver={SQL Server};

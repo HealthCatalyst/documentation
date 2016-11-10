@@ -6,7 +6,7 @@ From wikipedia: "Feature engineering is the process of using domain knowledge of
 
 In other words, while you might have great data, it has to be in a form that the algorithms can use to make a model.
 
-## How can HCRTools help me prepare data prior to model-creation?
+## How can healthcareai help me prepare data prior to model-creation?
 
 * Via [longitudinal imputation](/model-pre-processing/longitudinal-imputation). Think of this as a way to pull person-specific values forward in time.
 

@@ -10,7 +10,7 @@ One has to do some simple feature engineering in order to take advantage of pote
 
 ## So, how do we do it?
 
-* First, we'll load HCRTools, create a fake dataset on which to work, and look at it:
+* First, we'll load healthcareai, create a fake dataset on which to work, and look at it:
 
 ```{r}
 dtCol = c("2001-06-09 12:45:05","2002-01-29 09:30:05","2002-02-02 07:36:50",

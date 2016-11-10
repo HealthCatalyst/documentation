@@ -10,10 +10,10 @@ You can quickly see how well other variables explain your variable of interest.
 
 ## So, how do we do it?
 
-* First, we'll load HCRTools, create a fake dataset on which to work, and look at it:
+* First, we'll load healthcareai, create a fake dataset on which to work, and look at it:
 
 ```{r}
-library(HCRTools)
+library(healthcareai)
 
 df <- data.frame(a=c(1,2,3,4,5,6),
 b=c(6,5,4,3,2,1),
@@ -44,7 +44,7 @@ For details on the p-value calculation, see [here](https://stat.ethz.ch/R-manual
 ## Full example code
 
 ```{r}
-library(HCRTools)
+library(healthcareai)
 
 df <- data.frame(a=c(1,2,3,4,5,6),
 b=c(6,5,4,3,2,1),

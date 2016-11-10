@@ -29,7 +29,7 @@ Nope. It'll help if you can follow these guidelines:
 
 ```{r}
 ptm <- proc.time()
-library(HCRTools)
+library(healthcareai)
 library(RODBC)
 
 connection.string = "
@@ -97,7 +97,7 @@ rf$run()
 
 ```{r}
 ptm <- proc.time()
-library(HCRTools)
+library(healthcareai)
 library(RODBC)
 
 connection.string = "
@@ -158,7 +158,7 @@ print(proc.time() - ptm)
 #    1) That your local SQL Server has AdventureWorks2012 installed
 
 ptm <- proc.time()
-library(HCRTools)
+library(healthcareai)
 
 connection.string = "
 driver={SQL Server};

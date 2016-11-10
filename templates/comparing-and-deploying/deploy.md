@@ -63,7 +63,7 @@ Note these preprocessing steps should first be tested and found useful in the de
     - __database__: a database name. You'll pull data from this database.
 
 ```{r}
-library(HCRTools)
+library(healthcareai)
 
 connection.string = "
 driver={SQL Server};
@@ -142,7 +142,7 @@ dLMM$deploy()
 
 ```{r}
 ptm <- proc.time()
-library(HCRTools)
+library(healthcareai)
 
 connection.string = "
 driver={SQL Server};

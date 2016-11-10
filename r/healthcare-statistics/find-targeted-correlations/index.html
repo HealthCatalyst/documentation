@@ -225,9 +225,9 @@
 <p>You can quickly see how well other variables explain your variable of interest.</p>
 <h2 id="so-how-do-we-do-it">So, how do we do it?</h2>
 <ul>
-<li>First, we'll load HCRTools, create a fake dataset on which to work, and look at it:</li>
+<li>First, we'll load healthcareai, create a fake dataset on which to work, and look at it:</li>
 </ul>
-<pre><code class="r">library(HCRTools)
+<pre><code class="r">library(healthcareai)
 
 df &lt;- data.frame(a=c(1,2,3,4,5,6),
 b=c(6,5,4,3,2,1),
@@ -260,7 +260,7 @@ res
 <p>We use the <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/cor.html">Pearson correlation coefficient</a>.
 For details on the p-value calculation, see <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/cor.test.html">here</a></p>
 <h2 id="full-example-code">Full example code</h2>
-<pre><code class="r">library(HCRTools)
+<pre><code class="r">library(healthcareai)
 
 df &lt;- data.frame(a=c(1,2,3,4,5,6),
 b=c(6,5,4,3,2,1),

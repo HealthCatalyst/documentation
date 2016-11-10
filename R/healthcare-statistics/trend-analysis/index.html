@@ -231,7 +231,8 @@
 - A numeric column (like mortality rate) that could have a trend
 - A categorical column (like Gender) that we'll group by to check trends for Females and Males</p>
 <h2 id="step-1-create-some-data-or-pull-it-from-sql-server">Step 1: Create some data or pull it from SQL Server</h2>
-<pre><code class="r">dates &lt;- c(as.Date(&quot;2012-01-01&quot;),as.Date(&quot;2012-01-02&quot;),as.Date(&quot;2012-02-01&quot;),
+<pre><code class="r">library(healthcareai)
+dates &lt;- c(as.Date(&quot;2012-01-01&quot;),as.Date(&quot;2012-01-02&quot;),as.Date(&quot;2012-02-01&quot;),
       as.Date(&quot;2012-03-01&quot;),as.Date(&quot;2012-04-01&quot;),as.Date(&quot;2012-05-01&quot;),
       as.Date(&quot;2012-06-01&quot;),as.Date(&quot;2012-06-02&quot;))
 y1 &lt;- c(0,1,2,6,8,13,14,16)               # large positive
@@ -263,7 +264,8 @@ res
 </code></pre>
 
 <h2 id="full-example-code">Full example code</h2>
-<pre><code class="r">dates &lt;- c(as.Date(&quot;2012-01-01&quot;),as.Date(&quot;2012-01-02&quot;),as.Date(&quot;2012-02-01&quot;),
+<pre><code class="r">library(healthcareai)
+dates &lt;- c(as.Date(&quot;2012-01-01&quot;),as.Date(&quot;2012-01-02&quot;),as.Date(&quot;2012-02-01&quot;),
       as.Date(&quot;2012-03-01&quot;),as.Date(&quot;2012-04-01&quot;),as.Date(&quot;2012-05-01&quot;),
       as.Date(&quot;2012-06-01&quot;),as.Date(&quot;2012-06-02&quot;))
 y1 &lt;- c(0,1,2,6,8,13,14,16)               # large positive
