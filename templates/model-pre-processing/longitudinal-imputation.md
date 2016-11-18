@@ -32,9 +32,9 @@ head(df,n=7) # Looking at the raw data
 * Now let's do the imputation by calling the ``groupedLOCF`` function. LOCF stands for last observation carried forward
 
 ```{r}
-dfResult = groupedLOCF(df, 'PersonID')
+dfResult = groupedLOCF(df, 'personID')
 
-head(df.result,n=7) # Looking at the data that now has fewer NULLs (or NAs)
+head(dfResult,n=7) # Looking at the data that now has fewer NULLs (or NAs)
 ```
 
 
@@ -59,7 +59,7 @@ df = data.frame(personID=c(1,1,2,2,3,3,3),
 
 head(df,n=7)
 
-dfResult = groupedLOCF(df, 'PersonID')
+dfResult = groupedLOCF(df, 'personID')
 
 head(dfResult, n = 7)
 ```
