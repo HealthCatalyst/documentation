@@ -42,8 +42,8 @@ df <- data.frame(dates,y1,y2,y3,y4,gender)
 
 ```{r}
 res = findTrends(df = df,
-                 datecol = 'dates',
-                 coltoaggregate = 'gender')
+                 dateCol = 'dates',
+                 groupbyCol = 'gender')
 res
 ```
 
@@ -62,7 +62,7 @@ gender <- c('M','F','F','F','F','F','F','F')
 df <- data.frame(dates,y1,y2,y3,y4,gender)
 
 res = findTrends(df = df,
-                 datecol = 'dates',
-                 coltoaggregate = 'gender')
+                 dateCol = 'dates',
+                 groupbyCol = 'gender')
 res
 ```
