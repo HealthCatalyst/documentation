@@ -1,13 +1,16 @@
 Developing and comparing models
 -------------------------------
 
-What is ``DevelopSupervisedModel``? `Notebook`_
-.. _Notebook: 
-#############
+What is ``DevelopSupervisedModel``?
+###################################
 
 - This class let's one create and compare custom models on diverse datasets.
 
 - One can do both classification (ie, predict Y/N) as well as regression (ie, predict a numeric field).
+
+- To jump straight to an example notebook, see `here`_
+
+.. _here: https://github.com/HealthCatalystSLC/healthcareai-py/blob/master/notebooks/HCPyToolsExample1.ipynb
 
 Am I ready for model creation?
 ##############################
@@ -25,7 +28,9 @@ Step 1: Pull in the data
 ########################
 
 For SQL:
-::
+
+.. code-block:: python
+
    import pyodbc
    cnxn = pyodbc.connect("""SERVER=localhost;
                            DRIVER={SQL Server Native Client 11.0};
@@ -33,8 +38,7 @@ For SQL:
                            autocommit=True""")
 
     df = pd.read_sql(
-        sql="""SELECT
-               *
+        sql="""SELECT *
                FROM [SAM].[dbo].[HCPyDiabetesClinical]""",
         con=cnxn)
 
@@ -43,7 +47,9 @@ For SQL:
     df.replace(['None'],[None],inplace=True)
 
 For CSV:
-::
+
+.. code-block:: python
+
     df = pd.read_csv('healthcareai/tests/fixtures/HCPyDiabetesClinical.csv',
                      na_values=['None'])
 
@@ -63,7 +69,9 @@ The ``DevelopSupervisedModel`` class cleans and prepares the data before model c
     - **debug**: a boolean, defaults to False. If TRUE, console output when comparing models is verbose for easier debugging.
 
 Example code:
-::
+
+.. code-block:: python
+
    o = DevelopSupervisedModel(modeltype='classification',
                               df=df,
                               predictedcol='ThirtyDayReadmitFLG',
@@ -73,10 +81,12 @@ Example code:
 
 
 Step 3: Create and compare models
-#########################
+#################################
 
 Example code:
-::
+
+.. code-block:: python
+
    # Run the linear model
    o.linear(cores=1)
 
@@ -85,7 +95,7 @@ Example code:
 
 
 Go further using utility methods
-##################################
+################################
 
 The ``plot_rffeature_importance`` method plots the input columns in order of importance to the model.  
 
@@ -94,7 +104,9 @@ The ``plot_rffeature_importance`` method plots the input columns in order of imp
     - **save**: a boolean, defaults to False. If True, the plot is saved to the location displayed in the console.
 
 Example code:
-::
+
+.. code-block:: sql
+
    # Look at the feature importance rankings
    o.plot_rffeature_importance(save=False)
 
@@ -106,7 +118,9 @@ The ``plot_roc`` method plots the AU_ROC chart, for easier model comparison.
     - **debug**: a boolean. If True, console output is verbose for easier debugging.
 
 Example code:
-::
+
+.. code-block:: python
+
    # Create ROC plot to compare the two models
    o.plot_roc(debug=False,
               save=False)
@@ -115,7 +129,9 @@ Full example code
 #################
 
 Note: you can run (out-of-the-box) from the healthcareai-py folder:
-::
+
+.. code-block:: python
+
   from healthcareai import DevelopSupervisedModel
   import pandas as pd
   import time
@@ -136,8 +152,7 @@ Note: you can run (out-of-the-box) from the healthcareai-py folder:
                               autocommit=True""")
 
       df = pd.read_sql(
-          sql="""SELECT
-              *
+          sql="""SELECT *
               FROM [SAM].[dbo].[HCPyDiabetesClinical]
               -- In this step, just grab rows that have a target
               WHERE ThirtyDayReadmitFLG is not null""",

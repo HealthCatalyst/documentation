@@ -2,7 +2,7 @@ Deploying and saving a model
 ----------------------------
 
 What is ``DeploySupervisedModel``?
-#############
+##################################
 
 - This class lets one save a model (for recurrent use) and push predictions to a database
 - One can do both classification (ie, predict Y/N) as well as regression (ie, predict a numeric field).
@@ -48,7 +48,9 @@ Step 1: Pull in the data
 ########################
 
 For SQL:
-::
+
+.. code-block:: python
+
    import pyodbc
    cnxn = pyodbc.connect("""SERVER=localhost;
                            DRIVER={SQL Server Native Client 11.0};
@@ -66,9 +68,11 @@ For SQL:
     df.replace(['None'],[None],inplace=True)
 
 For CSV:
-::
-    df = pd.read_csv('healthcareai/tests/fixtures/HCPyDiabetesClinical.csv',
-                     na_values=['None'])
+
+.. code-block:: python
+
+   df = pd.read_csv('healthcareai/tests/fixtures/HCPyDiabetesClinical.csv',
+                    na_values=['None'])
 
 Step 2: Set your data-prep parameters
 #####################################
@@ -86,7 +90,9 @@ The ``DeploySupervisedModel`` cleans and prepares the data prior to model creati
     - **windowcol**: a string. Which column in the dataset denotes which rows are test ('Y') or training ('N'). 
 
 Example code:
-::
+
+.. code-block:: python
+
    p = DeploySupervisedModel(modeltype='regression',
                              df=df,
                              graincol='PatientEncounterID',
@@ -110,7 +116,9 @@ The ``deploy`` creates the model and method makes predictions that are pushed to
     - **debug**: a boolean, defaults to False. If TRUE, console output when comparing models is verbose for easier debugging.
 
 Example code:
-::
+
+.. code-block:: python
+
    p.deploy(method='rf',
             cores=2,
             server='localhost',
@@ -122,7 +130,8 @@ Example code:
 Full example code
 #################
 
-:: 
+.. code-block:: python
+
    from healthcareai import DeploySupervisedModel
    import pandas as pd
    import time
@@ -145,8 +154,7 @@ Full example code
        #                          autocommit=True""")
        #
        # df = pd.read_sql(
-       #     sql="""SELECT
-       #            *
+       #     sql="""SELECT *
        #            FROM [SAM].[dbo].[HCPyDiabetesClinical]""",
        #     con=cnxn)
        #
