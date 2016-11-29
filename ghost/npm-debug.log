@@ -1,0 +1,35 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'start' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.1
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle ghost@0.11.3~prestart: ghost@0.11.3
+6 silly lifecycle ghost@0.11.3~prestart: no script for prestart, continuing
+7 info lifecycle ghost@0.11.3~start: ghost@0.11.3
+8 verbose lifecycle ghost@0.11.3~start: unsafe-perm in lifecycle true
+9 verbose lifecycle ghost@0.11.3~start: PATH: c:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;c:\Source\DataScience\documentation\ghost\node_modules\.bin;c:\Users\levi.thatcher\bin;.;C:\Program Files (x86)\Git\local\bin;C:\Program Files (x86)\Git\mingw\bin;C:\Program Files (x86)\Git\bin;c:\ProgramData\Oracle\Java\javapath;c:\Program Files (x86)\Intel\iCLS Client\;c:\Program Files\Intel\iCLS Client\;c:\oraclexe\app\oracle\product\11.2.0\server\bin;.;c:\Python34\Lib\site-packages\PyQt4;c:\WINDOWS\system32;c:\WINDOWS;c:\WINDOWS\System32\Wbem;c:\WINDOWS\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;c:\Program Files\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;c:\Program Files (x86)\Microsoft Team Foundation Server 2015 Power Tools\;c:\Program Files (x86)\Microsoft Team Foundation Server 2013 Power Tools\Best Practices Analyzer\;c:\Program Files (x86)\Microsoft SDKs\TypeScript\;c:\Program Files\Microsoft SQL Server\110\DTS\Binn\;c:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;c:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;c:\Program Files\Microsoft SQL Server\120\Tools\Binn\;c:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\PrivateAssemblies\;c:\WINDOWS\idmu\common;c:\Program Files (x86)\gdalwin32-1.5\bin\;c:\Python27\Scripts\;c:\Program Files (x86)\Vim\vim74;c:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;c:\Program Files\Git\cmd;c:\Users\levi.thatcher\AppData\Local\Pandoc;c:\Program Files\010 Editor;c:\Program Files\Microsoft\Web Platform Installer\;c:\Program Files\Microsoft SQL Server\130\Tools\Binn\;c:\Program Files (x86)\MiKTeX 2.9\miktex\bin\;c:\Program Files\Intel\Intel(R) Management Engine Components\DAL;c:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;c:\Program Files\Intel\Intel(R) Management Engine Components\IPT;c:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;c:\Program Files (x86)\WebEx\Productivity Tools;c:\Program Files\nodejs\;c:\Users\levi.thatcher\AppData\Local\Continuum\Anaconda3;c:\Users\levi.thatcher\AppData\Local\Continuum\Anaconda3\Scripts;c:\Users\levi.thatcher\AppData\Local\Continuum\Anaconda3\Library\bin;c:\Python35\Scripts\;c:\Python35\;c:\Python35;c:\Program Files (x86)\Sophos\Sophos SSL VPN Client\bin;c:\Program Files\d3-master\d3-master;c:\Program Files\SysinternalsSuite;c:\Program Files (x86)\PuTTY;c:\Users\levi.thatcher\Downloads\paping_1.5.5_x86_windows;c:\Users\levi.thatcher\Documents;c:\Windows\System32;c:\Program Files\R\R-3.2.2\bin;c:\ProgramData\Microsoft\Windows\Start Menu\Programs\7-Zip;c:\Users\levi.thatcher\AppData\Local\Pandoc\;c:\Program Files\R\R-3.2.3\bin;c:\Users\levi.thatcher\AppData\Local\Programs\MiKTeX 2.9\miktex\bin\x64\;c:\Program Files;c:\Program Files (x86)\Nmap;c:\Program Files\R\R-3.2.4revised\bin;c:\Program Files (x86)\MiKTeX 2.9\miktex\bin;c:\Program Files\R\R-3.3.1\bin;c:\Program Files (x86)\Microsoft VS Code\bin;c:\Users\levi.thatcher\AppData\Roaming\npm;c:\Program Files\Wget
+10 verbose lifecycle ghost@0.11.3~start: CWD: c:\Source\DataScience\documentation\ghost
+11 silly lifecycle ghost@0.11.3~start: Args: [ '/d /s /c', 'node index' ]
+12 verbose stack Error: kill ENOSYS
+12 verbose stack     at exports._errnoException (util.js:1026:11)
+12 verbose stack     at process.kill (internal/process.js:172:13)
+12 verbose stack     at process.listener (c:\Program Files\nodejs\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
+12 verbose stack     at emitNone (events.js:91:20)
+12 verbose stack     at process.emit (events.js:185:7)
+12 verbose stack     at processEmit (c:\Program Files\nodejs\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at processEmit (c:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at Signal.wrap.onsignal (internal/process.js:199:44)
+13 verbose cwd c:\Source\DataScience\documentation\ghost
+14 error Windows_NT 10.0.10586
+15 error argv "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+16 error node v6.9.1
+17 error npm  v3.10.8
+18 error code ENOSYS
+19 error errno ENOSYS
+20 error syscall kill
+21 error kill ENOSYS
+22 error If you need help, you may report this error at:
+22 error     <https://github.com/npm/npm/issues>
+23 verbose exit [ 1, true ]

@@ -6,9 +6,9 @@
 
 # 2) Install the packages in dev-requirements.txt
 
-cd ../healthcareai-py
+#cd ../healthcareai-py
 
-sphinx-build -b html docs py
+#sphinx-build -b html docs py
 
 cp -rf py ../documentation
 
