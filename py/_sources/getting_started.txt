@@ -12,7 +12,7 @@ What can you do with this package?
 How to install 
 ==============
 
-Windows
+**Windows**
 
  - If you haven't, install 64-bit Python 3.5 via `the Anaconda distribution`_
  - Open Spyder (which installed with Anaconda)
@@ -24,7 +24,7 @@ Note: if you want a particular feature on the bleeding edge, run
 
  .. _the Anaconda distribution: https://www.continuum.io/downloads
 
-Non-Windows
+**Non-Windows**
 
  - Download and install python 3.5 64-bit version from `here`_
  - Download `docker`_
