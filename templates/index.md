@@ -1,4 +1,4 @@
-# Welcome to healthcareai
+# Welcome to healthcare.ai
 
 This package will get you started with healthcare machine learning in R.
 

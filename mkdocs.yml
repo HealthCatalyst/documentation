@@ -1,4 +1,4 @@
-site_name: healthcareai docs
+site_name: healthcare.ai docs
 site_dir: r
 theme: readthedocs
 docs_dir: 'templates'

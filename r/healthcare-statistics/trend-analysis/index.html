@@ -9,7 +9,7 @@
   
   <link rel="shortcut icon" href="../../favicon.ico">
   
-  <title>Trend Analysis - healthcareai docs</title>
+  <title>Trend Analysis - healthcare.ai docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -38,7 +38,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> healthcareai docs</a>
+        <a href="../.." class="icon icon-home"> healthcare.ai docs</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -194,7 +194,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">healthcareai docs</a>
+        <a href="../..">healthcare.ai docs</a>
       </nav>
 
       
@@ -258,8 +258,8 @@ df &lt;- data.frame(dates,y1,y2,y3,y4,gender)
 </li>
 </ul>
 <pre><code class="r">res = findTrends(df = df,
-                 datecol = 'dates',
-                 coltoaggregate = 'gender')
+                 dateCol = 'dates',
+                 groupbyCol = 'gender')
 res
 </code></pre>
 
@@ -276,8 +276,8 @@ gender &lt;- c('M','F','F','F','F','F','F','F')
 df &lt;- data.frame(dates,y1,y2,y3,y4,gender)
 
 res = findTrends(df = df,
-                 datecol = 'dates',
-                 coltoaggregate = 'gender')
+                 dateCol = 'dates',
+                 groupbyCol = 'gender')
 res
 </code></pre>
               
