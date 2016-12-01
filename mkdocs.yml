@@ -3,6 +3,7 @@ site_dir: r
 theme: readthedocs
 docs_dir: 'templates'
 site_favicon: favicon.ico
+google_analytics: ['UA-85609357-1', 'healthcare.ai/r']
 extra_css:
     - css/hcstyle.css
     - http://fonts.googleapis.com/css?family=Open+Sans
