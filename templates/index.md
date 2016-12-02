@@ -24,7 +24,7 @@ This package will get you started with healthcare machine learning in R.
 
 * If you haven't, install [R](https://cran.cnr.berkeley.edu) and [RStudio](https://www.rstudio.com/products/rstudio/download)
 
-* Grab prerequisites via the console of RStudio or (preferably) RGui
+* Grab prerequisites via the console of RGui or (preferably) RStudio
 ```{r}
 install.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lme4','lubridate','pROC','R6','ranger','ROCR','RODBC'),repos = "https://cran.cnr.berkeley.edu/")
 ```
