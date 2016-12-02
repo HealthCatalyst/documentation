@@ -26,7 +26,7 @@ head(df)
 * Next, we'll find the correlations between all numeric columns in the dataset represented by `df`.
 
 ```{r}
-res <- CalculateAllCorrelations(df)
+res <- calculateAllCorrelations(df)
 res
 ```
 
@@ -51,6 +51,6 @@ d=c('M','F','F','F','M','F')) #<- is ignored
 
 head(df)
 
-res <- CalculateAllCorrelations(df)
+res <- calculateAllCorrelations(df)
 res
 ```

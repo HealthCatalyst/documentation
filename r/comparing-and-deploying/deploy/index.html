@@ -243,7 +243,7 @@
 <h1 id="what-is-this">What is this?</h1>
 <p>These classes let one save and deploy custom models on varied datasets via the following workflow: </p>
 <ol>
-<li>Using the model development functions LINK!, you found a model that performs well. </li>
+<li>Using the model <a href="../compare/">development</a> functions, you found a model that performs well. </li>
 <li>Now, you train and save model on your entire dataset (with the <code>useSavedModel</code> argument set to FALSE). </li>
 <li>Next, flip the <code>useSavedModel</code> argument to TRUE and rerun the script however often you need to generate new predictions. <ul>
 <li>Now that you're using a saved model, you're just running new people/encounters against the saved model to generate predictions.  </li>
@@ -257,7 +257,7 @@
 <ul>
 <li>Don't use 0 or 1 for the independent variable when doing classification. Use Y/N instead. The IIF function in T-SQL may help here.</li>
 <li>Create a column thath as <code>Y</code> for those rows in the training set and <code>N</code> for those rows in the test set. Think of the test set as those people or enounters that need a prediction. This column can be called InTestWindow. </li>
-<li>Unlike the develop step ADD LINK TO DEV (which you should have already completed), you should now pull in both training and test rows in your query. </li>
+<li>Unlike the <a href="../compare/">development step</a> (which you should have already completed), you should now pull in both training and test rows in your query. </li>
 <li>One has to create a table to receive the predicted values. You can work in SSMS (or SAMD, for those using Health Catalyst products):<ul>
 <li>Create these tables when doing classification or regression, respectively:</li>
 </ul>
@@ -287,7 +287,7 @@ CREATE TABLE [SAM].[dbo].[HCRDeployRegressionBASE] (
 </code></pre>
 
 <h2 id="how-can-i-improve-my-model-performance">How can I improve my model performance?</h2>
-<p>Note these preprocessing steps should first be tested and found useful in the develop step. ADD LINK to DEV!</p>
+<p>Note these preprocessing steps should first be tested and found useful in the <a href="../compare/">development step</a>.</p>
 <ul>
 <li>If you have lots of NULL values, you may want to turn on imputation via the <code>impute</code> argument (see below).</li>
 <li>If you have lots of NULL cells and your data is longitudinal, you may want to try <a href="../../model-pre-processing/longitudinal-imputation">GroupedLOCF</a>.</li>
@@ -331,6 +331,11 @@ FROM [AdventureWorks2012].[HumanResources].[Employee]
 df &lt;- selectData(connection.string, query)
 head(df)
 str(df)
+</code></pre>
+
+<p>Note: if you want a CSV example (ie, an example that you can run as-is), see the built-in docs:</p>
+<pre><code class="r">library(healthcareai)
+?healthcareai
 </code></pre>
 
 <h2 id="step-2-set-your-parameters-via-supervisedmodelparameters">Step 2: Set your parameters via <code>SupervisedModelParameters</code></h2>
@@ -457,6 +462,11 @@ p$cores = 1
 
 lMM &lt;- LinearMixedModelDeployment$new(p)
 lMM$deploy()
+</code></pre>
+
+<p>Note: if you want a CSV example (ie, an example that you can run as-is), see the built-in docs:</p>
+<pre><code class="r">library(healthcareai)
+?healthcareai
 </code></pre>
               
             </div>

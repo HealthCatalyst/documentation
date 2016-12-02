@@ -4,7 +4,7 @@
 
 These classes let one create and compare custom models on varied datasets.
 
-One can do both classification (ie, predict Y or N) as well as regression (ie, predict a numeric field).
+One can do both classification (ie, predict Y or N) as well as regression (ie, predict a numeric field, like cost).
 
 ## Is any dataset ready for model creation?
 
@@ -55,6 +55,12 @@ WHERE InTestWindowFLG = 'N'
 
 df <- selectData(connection.string, query)
 head(df)
+```
+
+Note: if you want a CSV example (ie, an example that you can run as-is), see the built-in docs:
+```{r}
+library(healthcareai)
+?healthcareai
 ```
 
 ## Step 2: Set your parameters via ``SupervisedModelDevelopmentParams``
@@ -153,10 +159,7 @@ print(proc.time() - ptm)
 ## Full example code for mixed-model longitudinal work
 
 ```{r}
-#### Example using SQL Server data ####
-# This example requires:
-#    1) That your local SQL Server has AdventureWorks2012 installed
-
+# Example using SQL Server
 ptm <- proc.time()
 library(healthcareai)
 
@@ -204,3 +207,9 @@ Lasso$getCutOffs(tpr=.8)
 
 print(proc.time() - ptm)
 ``` 
+
+Note: if you want a CSV example (ie, an example that you can run as-is), see the built-in docs:
+```{r}
+library(healthcareai)
+?healthcareai
+```

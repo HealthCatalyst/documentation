@@ -4,7 +4,7 @@
 
 These classes let one save and deploy custom models on varied datasets via the following workflow: 
 
-1. Using the model development functions LINK!, you found a model that performs well. 
+1. Using the model [development](compare.md) functions, you found a model that performs well. 
 2. Now, you train and save model on your entire dataset (with the `useSavedModel` argument set to FALSE). 
 3. Next, flip the `useSavedModel` argument to TRUE and rerun the script however often you need to generate new predictions. 
     - Now that you're using a saved model, you're just running new people/encounters against the saved model to generate predictions.  
@@ -18,7 +18,7 @@ Nope. It'll help if you can follow these guidelines:
 
 * Don't use 0 or 1 for the independent variable when doing classification. Use Y/N instead. The IIF function in T-SQL may help here.
 * Create a column thath as `Y` for those rows in the training set and `N` for those rows in the test set. Think of the test set as those people or enounters that need a prediction. This column can be called InTestWindow. 
-* Unlike the develop step ADD LINK TO DEV (which you should have already completed), you should now pull in both training and test rows in your query. 
+* Unlike the [development step](compare.md) (which you should have already completed), you should now pull in both training and test rows in your query. 
 * One has to create a table to receive the predicted values. You can work in SSMS (or SAMD, for those using Health Catalyst products):
     - Create these tables when doing classification or regression, respectively:
 ```{SQL}
@@ -47,7 +47,7 @@ CREATE TABLE [SAM].[dbo].[HCRDeployRegressionBASE] (
 
 ## How can I improve my model performance? 
 
-Note these preprocessing steps should first be tested and found useful in the develop step. ADD LINK to DEV!
+Note these preprocessing steps should first be tested and found useful in the [development step](compare.md).
 
 * If you have lots of NULL values, you may want to turn on imputation via the `impute` argument (see below).
 * If you have lots of NULL cells and your data is longitudinal, you may want to try [GroupedLOCF](/model-pre-processing/longitudinal-imputation).
@@ -87,6 +87,12 @@ FROM [AdventureWorks2012].[HumanResources].[Employee]
 df <- selectData(connection.string, query)
 head(df)
 str(df)
+```
+
+Note: if you want a CSV example (ie, an example that you can run as-is), see the built-in docs:
+```{r}
+library(healthcareai)
+?healthcareai
 ```
 
 ## Step 2: Set your parameters via ``SupervisedModelParameters``
@@ -220,4 +226,10 @@ p$cores = 1
 
 lMM <- LinearMixedModelDeployment$new(p)
 lMM$deploy()
+```
+
+Note: if you want a CSV example (ie, an example that you can run as-is), see the built-in docs:
+```{r}
+library(healthcareai)
+?healthcareai
 ```

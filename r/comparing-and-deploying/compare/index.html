@@ -238,7 +238,7 @@
                 <h1 id="create-and-compare-models-via-lassodevelopment-randomforestdevelopment-and-linearmixedmodeldevelopment">Create and compare models via <code>LassoDevelopment</code>, <code>RandomForestDevelopment</code>, and <code>LinearMixedModelDevelopment</code></h1>
 <h1 id="what-is-this">What is this?</h1>
 <p>These classes let one create and compare custom models on varied datasets.</p>
-<p>One can do both classification (ie, predict Y or N) as well as regression (ie, predict a numeric field).</p>
+<p>One can do both classification (ie, predict Y or N) as well as regression (ie, predict a numeric field, like cost).</p>
 <h2 id="is-any-dataset-ready-for-model-creation">Is any dataset ready for model creation?</h2>
 <p>Nope. It'll help if you can follow these guidelines:</p>
 <ul>
@@ -291,6 +291,11 @@ WHERE InTestWindowFLG = 'N'
 
 df &lt;- selectData(connection.string, query)
 head(df)
+</code></pre>
+
+<p>Note: if you want a CSV example (ie, an example that you can run as-is), see the built-in docs:</p>
+<pre><code class="r">library(healthcareai)
+?healthcareai
 </code></pre>
 
 <h2 id="step-2-set-your-parameters-via-supervisedmodeldevelopmentparams">Step 2: Set your parameters via <code>SupervisedModelDevelopmentParams</code></h2>
@@ -387,10 +392,7 @@ print(proc.time() - ptm)
 </code></pre>
 
 <h2 id="full-example-code-for-mixed-model-longitudinal-work">Full example code for mixed-model longitudinal work</h2>
-<pre><code class="r">#### Example using SQL Server data ####
-# This example requires:
-#    1) That your local SQL Server has AdventureWorks2012 installed
-
+<pre><code class="r"># Example using SQL Server
 ptm &lt;- proc.time()
 library(healthcareai)
 
@@ -437,6 +439,11 @@ lmm$run()
 Lasso$getCutOffs(tpr=.8)
 
 print(proc.time() - ptm)
+</code></pre>
+
+<p>Note: if you want a CSV example (ie, an example that you can run as-is), see the built-in docs:</p>
+<pre><code class="r">library(healthcareai)
+?healthcareai
 </code></pre>
               
             </div>
