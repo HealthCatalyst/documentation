@@ -1,0 +1,1 @@
+require('should').use(require('./http'));

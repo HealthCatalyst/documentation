@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for nock/tests/test_common.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">nock/tests</a> test_common.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>80/80</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>14/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>80/80</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+var common  = require('../lib/common')
+  , tap     = require('tap')
+  , matchBody = require('../lib/match_body');
+&nbsp;
+tap.test('matchBody ignores new line characters from strings', function(t) {
+  var str1 = "something //here is something more \n";
+  var str2 = "something //here is something more \n\r";
+  var matched = matchBody(str1, str2);
+  t.true(matched);
+  t.end()
+});
+&nbsp;
+tap.test('matchBody should not throw, when headers come node-fetch style as array', function(t) {
+  var testThis = {
+    headers: {
+      'Content-Type': ["multipart/form-data;"]
+    }
+  }
+  matchBody.call(testThis, {}, "test");
+  t.end()
+});
+&nbsp;
+tap.test('matchBody should not ignore new line characters from strings when Content-Type contains \'multipart\'', function(t) {
+  var str1 = "something //here is something more \nHello";
+  var str2 = "something //here is something more \nHello";
+  var testThis = {
+    headers: {
+      'Content-Type': "multipart/form-data;"
+    }
+  }
+  var matched = matchBody.call(testThis, function (body) {
+    return body === str1;
+  }, str2);
+  t.true(matched);
+  t.end()
+});
+&nbsp;
+tap.test('matchBody should not ignore new line characters from strings when Content-Type contains \'multipart\' (arrays come node-fetch style as array)', function(t) {
+  var str1 = "something //here is something more \nHello";
+  var str2 = "something //here is something more \nHello";
+  var testThis = {
+    headers: {
+      'Content-Type': ["multipart/form-data;"]
+    }
+  }
+  var matched = matchBody.call(testThis, function (body) {
+    return body === str1;
+  }, str2);
+  t.true(matched);
+  t.end()
+});
+&nbsp;
+tap.test('matchBody uses strict equality for deep comparisons', function(t) {
+  var spec = { number: 1 };
+  var body = '{"number": "1"}';
+  var matched = matchBody(spec, body);
+  t.false(matched);
+  t.end()
+});
+&nbsp;
+tap.test('isBinaryBuffer works', function(t) {
+&nbsp;
+  //  Returns false for non-buffers.
+  t.false(common.isBinaryBuffer());
+  t.false(common.isBinaryBuffer(''));
+&nbsp;
+  //  Returns true for binary buffers.
+  t.true(common.isBinaryBuffer(new Buffer('8001', 'hex')));
+&nbsp;
+  //  Returns false for buffers containing strings.
+  t.false(common.isBinaryBuffer(new Buffer('8001', 'utf8')));
+&nbsp;
+  t.end();
+&nbsp;
+});
+&nbsp;
+tap.test('headersFieldNamesToLowerCase works', function(t) {
+&nbsp;
+  var headers = {
+    'HoSt': 'example.com',
+    'Content-typE': 'plain/text'
+  };
+&nbsp;
+  var lowerCaseHeaders = common.headersFieldNamesToLowerCase(headers);
+&nbsp;
+  t.equal(headers.HoSt, lowerCaseHeaders.host);
+  t.equal(headers['Content-typE'], lowerCaseHeaders['content-type']);
+  t.end();
+&nbsp;
+});
+&nbsp;
+tap.test('headersFieldNamesToLowerCase throws on conflicting keys', function(t) {
+&nbsp;
+  var headers = {
+    'HoSt': 'example.com',
+    'HOST': 'example.com'
+  };
+&nbsp;
+  try {
+    common.headersFieldNamesToLowerCase(headers);
+  } catch(e) {
+    t.equal(e.toString(), 'Error: Failed to convert header keys to lower case due to field name conflict: host');
+    t.end();
+  }
+&nbsp;
+});
+&nbsp;
+tap.test('headersFieldsArrayToLowerCase works on arrays', function (t) {
+  var headers = ['HoSt', 'Content-typE'];
+&nbsp;
+  var lowerCaseHeaders = common.headersFieldsArrayToLowerCase(headers);
+&nbsp;
+  // Order doesn't matter.
+  lowerCaseHeaders.sort();
+&nbsp;
+  t.deepEqual(lowerCaseHeaders, ['content-type', 'host']);
+  t.end();
+});
+&nbsp;
+tap.test('headersFieldsArrayToLowerCase deduplicates arrays', function (t) {
+  var headers = ['hosT', 'HoSt', 'Content-typE', 'conTenT-tYpe'];
+&nbsp;
+  var lowerCaseHeaders = common.headersFieldsArrayToLowerCase(headers);
+&nbsp;
+  // Order doesn't matter.
+  lowerCaseHeaders.sort();
+&nbsp;
+  t.deepEqual(lowerCaseHeaders, ['content-type', 'host']);
+  t.end();
+});
+&nbsp;
+tap.test('deleteHeadersField deletes fields with case-insensitive field names', function(t) {
+&nbsp;
+  var headers = {
+    HoSt: 'example.com',
+    'Content-typE': 'plain/text'
+  };
+&nbsp;
+  t.true(headers.HoSt);
+  t.true(headers['Content-typE']);
+&nbsp;
+  common.deleteHeadersField(headers, 'HOST');
+  common.deleteHeadersField(headers, 'CONTENT-TYPE');
+&nbsp;
+  t.false(headers.HoSt);
+  t.false(headers['Content-typE']);
+  t.end();
+&nbsp;
+});
+&nbsp;
+tap.test('matchStringOrRegexp', function (t) {
+  t.true(common.matchStringOrRegexp('to match', 'to match'), 'true if pattern is string and target matches');
+  t.false(common.matchStringOrRegexp('to match', 'not to match'), 'false if pattern is string and target doesn\'t match');
+&nbsp;
+  t.ok(common.matchStringOrRegexp('to match', /match/), 'match if pattern is regex and target matches');
+  t.false(common.matchStringOrRegexp('to match', /not/), 'false if pattern is regex and target doesn\'t match');
+  t.end();
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Oct 10 2016 17:01:16 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
