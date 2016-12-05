@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Why R and Python?</title>
+    <title>Benefits of machine learning in healthcare</title>
     <meta name="description" content="">
 
     <meta name="HandheldFriendly" content="True">
@@ -20,15 +20,15 @@
     
     <meta property="og:site_name" content="healthcare.ai">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Why R and Python?">
-    <meta property="og:description" content="As time goes on, this blog will touch on many of the technical choices made at Health Catalyst. It will mostly focus on data science. If there's a particular topic that interests, contact us! Some posts will be short, while others will be in-depth. The tone will be informal, with">
-    <meta property="og:url" content="http://localhost:2368/2016/12/02/why-r-and-python/">
-    <meta property="article:published_time" content="2016-12-02T16:10:37.000Z">
-    <meta property="article:modified_time" content="2016-12-04T20:38:28.000Z">
+    <meta property="og:title" content="Benefits of machine learning in healthcare">
+    <meta property="og:description" content="If you're in technology, you have likely heard about machine learning by now, but you may be wondering how it would work in healthcare. Where's the low-hanging fruit? And how could it help my clinical team? As always, we'll be practical in our discussion. Throughout healthcare, and many other industries,">
+    <meta property="og:url" content="http://localhost:2368/2016/12/05/benefits-of-machine-learning-in-healthcare/">
+    <meta property="article:published_time" content="2016-12-05T16:02:23.000Z">
+    <meta property="article:modified_time" content="2016-12-05T16:02:23.000Z">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Why R and Python?">
-    <meta name="twitter:description" content="As time goes on, this blog will touch on many of the technical choices made at Health Catalyst. It will mostly focus on data science. If there's a particular topic that interests, contact us! Some posts will be short, while others will be in-depth. The tone will be informal, with">
-    <meta name="twitter:url" content="http://localhost:2368/2016/12/02/why-r-and-python/">
+    <meta name="twitter:title" content="Benefits of machine learning in healthcare">
+    <meta name="twitter:description" content="If you're in technology, you have likely heard about machine learning by now, but you may be wondering how it would work in healthcare. Where's the low-hanging fruit? And how could it help my clinical team? As always, we'll be practical in our discussion. Throughout healthcare, and many other industries,">
+    <meta name="twitter:url" content="http://localhost:2368/2016/12/05/benefits-of-machine-learning-in-healthcare/">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Levi Thatcher">
     <meta name="twitter:creator" content="@levithatcher">
@@ -51,11 +51,11 @@
         ],
         "description": "Levi worked on hurricane models in grad school and is now happy using machine learning to improve healthcare (which is about as complicated as a hurricane)."
     },
-    "headline": "Why R and Python?",
-    "url": "http://localhost:2368/2016/12/02/why-r-and-python/",
-    "datePublished": "2016-12-02T16:10:37.000Z",
-    "dateModified": "2016-12-04T20:38:28.000Z",
-    "description": "As time goes on, this blog will touch on many of the technical choices made at Health Catalyst. It will mostly focus on data science. If there&#x27;s a particular topic that interests, contact us! Some posts will be short, while others will be in-depth. The tone will be informal, with",
+    "headline": "Benefits of machine learning in healthcare",
+    "url": "http://localhost:2368/2016/12/05/benefits-of-machine-learning-in-healthcare/",
+    "datePublished": "2016-12-05T16:02:23.000Z",
+    "dateModified": "2016-12-05T16:02:23.000Z",
+    "description": "If you&#x27;re in technology, you have likely heard about machine learning by now, but you may be wondering how it would work in healthcare. Where&#x27;s the low-hanging fruit? And how could it help my clinical team? As always, we&#x27;ll be practical in our discussion. Throughout healthcare, and many other industries,",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368"
@@ -163,34 +163,26 @@
     <article class="post">
 
         <header class="post-header">
-            <h1 class="post-title">Why R and Python?</h1>
+            <h1 class="post-title">Benefits of machine learning in healthcare</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2016-12-02">02 December 2016</time> 
+                <time class="post-date" datetime="2016-12-05">05 December 2016</time> 
             </section>
         </header>
 
         <section class="post-content">
-            <p>As time goes on, this blog will touch on many of the technical choices made at Health Catalyst. It will mostly focus on data science. If there's a particular topic that interests, <a href="http://healthcare.ai/contact.html">contact us</a>! Some posts will be short, while others will be in-depth. The tone will be informal, with a focus on content and frequent posts (twice per-week) rather than polish. When we talk about doing things with data, we'll post the code, so you can follow along.</p>
+            <p>If you're in technology, you have likely heard about machine learning by now, but you may be wondering how it would work in healthcare. Where's the low-hanging fruit? And how could it help my clinical team?</p>
 
-<p>When doing healthcare machine learning, why'd we choice R and Python? To be honest, this decision wasn't that complicated. Of course, there are a lot of fantastic statistical tools available today besides just R and Python: Matlab, SAS, Stata, SPSS, and others. While languages like Java, C++, and C# are great, they're <a href="https://en.wikipedia.org/wiki/Compiled_language">compiled</a>, which makes them difficult to use for data analysis. We had just a few criteria when narrowing down the list.</p>
+<p>As always, we'll be practical in our discussion. Throughout healthcare, and many other industries, there are heuristics (or rules of thumb) that help people make decisions. A popular example in healthcare is the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2845681/">LACE index</a>, which provides a likelihood of patient 30-day readmission risk. You might have also heard of similar tools like the <a href="http://jamanetwork.com/journals/jama/fullarticle/194262">SOFA Score</a>, <a href="http://www.nejm.org/doi/full/10.1056/NEJM200102153440701#t=article">Apgar Score</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2999700/">PRISM Score</a>, and the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2999700/">PIM Score</a>. </p>
 
-<p>1) Was it open-source? <br>
-2) Could it do breadth and depth? <br>
-3) Did it have wide support?</p>
+<p>Like most of these scores, the LACE <a href="http://www.besler.com/lace-risk-score/">calculation</a> is fairly simple. It's based on length of stay, acuity of the admission, patient comorbities, and ED visits within the last six months. In each of these categories, points are assigned--a length of stay of three days equals three points, for example. Then the points from each categories are added up to form the LACE index.</p>
 
-<p>We wanted something open-source, because free is obviously great, but also because we wanted to be able to contribute to the same community.  Data literacy is important to getting started in most professional careers, and it's fantastic how free tools have democratized entry into many fields over the last decade--we want to support that.</p>
+<p>It's simple and indicative of how healthcare has worked for the last 20-30 years. First, there's a national study, which eventually leads to guidelines and a simple calculation to help prioritize which patients are most at risk of <em>something</em>. </p>
 
-<p>R and Python are the obvious open-source options when playing with data, but how are they on breadth and depth as well as community support? Actually pretty fantastic. Python is often known as the Swiss Army knife of programming languages--it can do machine learning, web development, web scraping, desktop applications, etc. It also does these things <em>well</em>. </p>
+<p>So what's wrong with that? Well, the guidelines can only be <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2845681/">narrowly applied</a> and even then <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4670852/">don't give impressive results</a>. Think of it--LACE was developed from patients seen in Ontario from 2004-2008. Do <em>your</em> patient demographics closely match those in Ontario? Or, do your patient demographics even match your same set from ten years ago? Perhaps not. Another issue is applicability--since LACE requires the patient's length of stay, the score is only available upon discharge. What if you want a risk score early during their stay?</p>
 
-<p>While R is more narrowly focused on statistics, it is also great at several things. First, it offers well-documented algorithms and tools for <em>whatever</em> you want to do in statistics. It has fantastic visualizations software (better than Python, it could be argued), and is great at professional document generation for both reports and data education.</p>
+<p>These are a some of the reasons that machine learning is fantastic. First it learns the important relationships in your data on past patients and their outcomes. This means that the model is customized on <em>your</em> data from the last few years--you don't have to rely on scores made on other populations, 10-20 years ago. In addition, machine learning allows one to create a model based on whatever data is available when you need a risk score (ie, upon admission rather than discharge).</p>
 
-<p>In terms of support, here's a plot* showing the popularity of each of these languages over time on <a href="http://stackoverflow.com/">Stack Overflow</a>, a popular Q and A site:</p>
-
-<p><img src="../../../../content/images/2016/12/LanguageComparisonOverTime.png" alt=""></p>
-
-<p>While there are many other options for doing statistics in healthcare, R and Python are among the very best, and we're excited to use them to improve patient care.</p>
-
-<p>*We obtained data using <a href="https://data.stackexchange.com/stackoverflow/query/589066/language-trends-questions-per-tag-per-month">this tool</a>; we <a href="https://gist.github.com/levithatcher/130ee5d6586839ceeb3975e0afee9b65">plotted using R</a>.</p>
+<p>In summary, what does this customized model provide? Accurate risk scores, enabling confident and precise resource allocation, leading to lower costs and improved outcomes.</p>
         </section>
 
         <footer class="post-footer">
@@ -210,13 +202,13 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Why%20R%20and%20Python%3F&amp;url=http://localhost:2368/2016/12/02/why-r-and-python/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Benefits%20of%20machine%20learning%20in%20healthcare&amp;url=http://localhost:2368/2016/12/05/benefits-of-machine-learning-in-healthcare/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/2016/12/02/why-r-and-python/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/2016/12/05/benefits-of-machine-learning-in-healthcare/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/2016/12/02/why-r-and-python/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/2016/12/05/benefits-of-machine-learning-in-healthcare/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
             </section>
@@ -228,16 +220,10 @@
 </main>
 
 <aside class="read-next">
-    <a class="read-next-story no-cover" href="../../05/benefits-of-machine-learning-in-healthcare/">
+    <a class="read-next-story prev no-cover" href="../../02/why-r-and-python/">
         <section class="post">
-            <h2>Benefits of machine learning in healthcare</h2>
-            <p>If you're in technology, you have likely heard about machine learning by now, but you may be wondering how…</p>
-        </section>
-    </a>
-    <a class="read-next-story prev no-cover" href="../../01/welcome-to-healthcare-ai/">
-        <section class="post">
-            <h2>Welcome to healthcare.ai</h2>
-            <p>Health Catalyst’s data science team is excited to present healthcare.ai. This ambitious new project offers healthcare-specific machine…</p>
+            <h2>Why R and Python?</h2>
+            <p>As time goes on, this blog will touch on many of the technical choices made at Health Catalyst. It…</p>
         </section>
     </a>
 </aside>
