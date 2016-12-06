@@ -376,18 +376,18 @@ p$destSchemaTable = 'dbo.HCRDeployClassificationBASE'
 
 <h2 id="step-3-create-the-models-via-the-deploylasso-or-deployrandomforest-algorithms">Step 3: Create the models via the <code>DeployLasso</code> or <code>DeployRandomForest</code> algorithms.</h2>
 <pre><code class="r"># Run Lasso (if that's what performed best in the develop step)
-lasso &lt;- DeployLasso$new(p)
-lasso$deploy()
+dL &lt;- LassoDeployment$new(p)
+dL$deploy()
 
 # Or run RandomForest (if that's what performed best in the develop step)
-rf &lt;- DeployRandomForest$new(p)
-rf$deploy()
+dL &lt;- RandomForestDeployment$new(p)
+dL$deploy()
 
 # Or run Linear Mixed Model (if that's what performed best in the develop step)
 
 p$personCol = 'PatientID' # Change to your PatientID col
-dLMM &lt;- DeployLinearMixedModel$new(p)
-dLMM$deploy()
+lMM &lt;- LinearMixedModelDeployment$new(p)
+lMM$deploy()
 </code></pre>
 
 <h2 id="full-example-code">Full example code</h2>
@@ -437,8 +437,8 @@ dL &lt;- LassoDeployment$new(p)
 dL$deploy()
 
 # If Random Forest was more accurate in the dev step
-# dL &lt;- RandomForestDeployment$new(p)
-# dL$deploy()
+#dL &lt;- RandomForestDeployment$new(p)
+#dL$deploy()
 
 print(proc.time() - ptm)
 </code></pre>

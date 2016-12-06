@@ -131,18 +131,18 @@ p$destSchemaTable = 'dbo.HCRDeployClassificationBASE'
 
 ```{r}
 # Run Lasso (if that's what performed best in the develop step)
-lasso <- DeployLasso$new(p)
-lasso$deploy()
+dL <- LassoDeployment$new(p)
+dL$deploy()
 
 # Or run RandomForest (if that's what performed best in the develop step)
-rf <- DeployRandomForest$new(p)
-rf$deploy()
+dL <- RandomForestDeployment$new(p)
+dL$deploy()
 
 # Or run Linear Mixed Model (if that's what performed best in the develop step)
 
 p$personCol = 'PatientID' # Change to your PatientID col
-dLMM <- DeployLinearMixedModel$new(p)
-dLMM$deploy()
+lMM <- LinearMixedModelDeployment$new(p)
+lMM$deploy()
 ```
 ## Full example code
 
@@ -193,8 +193,8 @@ dL <- LassoDeployment$new(p)
 dL$deploy()
 
 # If Random Forest was more accurate in the dev step
-# dL <- RandomForestDeployment$new(p)
-# dL$deploy()
+#dL <- RandomForestDeployment$new(p)
+#dL$deploy()
 
 print(proc.time() - ptm)
 ```
