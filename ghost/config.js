@@ -22,8 +22,8 @@ config = {
         },
 
         server: {
-            host: '127.0.0.1',
-            port: '2368'
+            host: 'http://healthcare.ai/blog',
+            port: '80'
         }
     },
 
