@@ -99,6 +99,14 @@ rf <- RandomForestDevelopment$new(p)
 rf$run()
 ```
 
+## ``LassoDevelopment`` Details
+
+This version of Lasso is based on the Grouped Lasso alogrithm offered by the [grpreg package](https://cran.r-project.org/web/packages/grpreg/grpreg.pdf). We prefer simple models to complicated ones, so for tuning the lambda regularization parameter, we use the 1SE rule, which means that we take the model with fewest coefficients, which is also within one standard error of the best model. This way, we provide guidance as to which features (ie, columns) should be kept in the deployed model. 
+
+## ``RandomForestDevelopment`` Details
+
+This version of random forest is based on the wonderful [ranger package](https://cran.r-project.org/web/packages/ranger/ranger.pdf).
+
 ## Full example code
 
 ```{r}
@@ -155,6 +163,10 @@ Lasso$getCutOffs(tpr=.8)
 
 print(proc.time() - ptm)
 ```
+
+## ``LinearMixedModelDevelopment`` Details
+
+This mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets, and then scale up from there.
 
 ## Full example code for mixed-model longitudinal work
 

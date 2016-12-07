@@ -152,12 +152,6 @@
                 
                     <li><a class="toctree-l4" href="#full-example-code">Full example code</a></li>
                 
-                    <li><a class="toctree-l4" href="#lassodevelopment-details">LassoDevelopment Details</a></li>
-                
-                    <li><a class="toctree-l4" href="#randomforestdevelopment-details">RandomForestDevelopment Details</a></li>
-                
-                    <li><a class="toctree-l4" href="#linearmixedmodeldevelopment-details">LinearMixedModelDevelopment Details</a></li>
-                
             
             </ul>
         
@@ -443,12 +437,6 @@ dL$deploy()
 print(proc.time() - ptm)
 </code></pre>
 
-<h2 id="lassodevelopment-details"><code>LassoDevelopment</code> Details</h2>
-<p>This version of Lasso is based on the Grouped Lasso alogrithm offered by the <a href="https://cran.r-project.org/web/packages/grpreg/grpreg.pdf">grpreg package</a>. We prefer simple models to complicated ones, so for tuning the lambda regularization parameter, we use the 1SE rule, which means that we take the model with fewest coefficients, which is also within one standard error of the best model. This way, we provide guidance as to which features (ie, columns) should be kept in the deployed model. </p>
-<h2 id="randomforestdevelopment-details"><code>RandomForestDevelopment</code> Details</h2>
-<p>This version of random forest is based on the wonderful <a href="https://cran.r-project.org/web/packages/ranger/ranger.pdf">ranger package</a>.</p>
-<h2 id="linearmixedmodeldevelopment-details"><code>LinearMixedModelDevelopment</code> Details</h2>
-<p>This mixed model is designed for longitudinal datasets (ie, those that typically have more than one row per-person). The method is based on the lme4 package. It's not as computationally efficient as the random forest algorithm, so it's best to compare against the other algorithms on smaller datasets, and then scale up from there.</p>
 <p>Relevant example code:</p>
 <pre><code>p &lt;- SupervisedModelParameters$new()
 p$df = df
