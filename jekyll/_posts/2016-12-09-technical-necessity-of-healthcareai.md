@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Technical perks of healthcare.ai"
+title:  "Technical necessity of healthcare.ai"
 date:   2016-12-09 07:47:05 -0700
 tags: overview
 categories: blog
