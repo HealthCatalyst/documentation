@@ -1,85 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>Benefits of machine learning in healthcare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
+    <meta name="author" content="">
 
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>healthcare.ai</title>
 
-    <link rel="shortcut icon" href="../../../../favicon.ico">
-
-    <link rel="stylesheet" type="text/css" href="http://localhost:2368/assets/css/screen.css?v=b1234655d4">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
-
-    <link rel="canonical" href="index.html">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="amphtml" href="amp/index.html">
     
-    <meta property="og:site_name" content="healthcare.ai">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Benefits of machine learning in healthcare">
-    <meta property="og:description" content="If you read much about technology, you have likely heard about machine learning, but may be wondering how it would work in healthcare. Where's the low-hanging fruit? And how could it help my clinical team? As always, we'll be practical in our discussion. Throughout healthcare, and many other industries, there">
-    <meta property="og:url" content="http://localhost:2368/2016/12/05/benefits-of-machine-learning-in-healthcare/">
-    <meta property="article:published_time" content="2016-12-05T16:02:23.000Z">
-    <meta property="article:modified_time" content="2016-12-05T16:19:42.000Z">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Benefits of machine learning in healthcare">
-    <meta name="twitter:description" content="If you read much about technology, you have likely heard about machine learning, but may be wondering how it would work in healthcare. Where's the low-hanging fruit? And how could it help my clinical team? As always, we'll be practical in our discussion. Throughout healthcare, and many other industries, there">
-    <meta name="twitter:url" content="http://localhost:2368/2016/12/05/benefits-of-machine-learning-in-healthcare/">
-    <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Levi Thatcher">
-    <meta name="twitter:creator" content="@levithatcher">
-    
-    <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "publisher": {
-        "@type": "Organization",
-        "name": "healthcare.ai",
-        "logo": "http://localhost:2368/ghost/img/ghosticon.jpg"
-    },
-    "author": {
-        "@type": "Person",
-        "name": "Levi Thatcher",
-        "url": "http://localhost:2368/author/levi/",
-        "sameAs": [
-            "https://twitter.com/levithatcher"
-        ],
-        "description": "Levi worked on hurricane models in grad school and is now happy using machine learning to improve healthcare (which is about as complicated as a hurricane)."
-    },
-    "headline": "Benefits of machine learning in healthcare",
-    "url": "http://localhost:2368/2016/12/05/benefits-of-machine-learning-in-healthcare/",
-    "datePublished": "2016-12-05T16:02:23.000Z",
-    "dateModified": "2016-12-05T16:19:42.000Z",
-    "description": "If you read much about technology, you have likely heard about machine learning, but may be wondering how it would work in healthcare. Where&#x27;s the low-hanging fruit? And how could it help my clinical team? As always, we&#x27;ll be practical in our discussion. Throughout healthcare, and many other industries, there",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "http://localhost:2368"
-    }
-}
-    </script>
 
-    <meta name="generator" content="Ghost 0.11">
-    <link rel="alternate" type="application/rss+xml" title="healthcare.ai" href="../../../../rss/index.html">
-        <!-- Bootstrap Core CSS -->
-    <link href="http://healthcare.ai/splashvendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <base href="http://healthcare.ai/" />
 
-	<!-- Custom Fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <!-- Bootstrap Core CSS -->
+    <link href="splashvendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- Theme CSS -->
-    <link href="../../../../assets/css/clean-blog.css" rel="stylesheet">
-	
-	<!-- jQuery -->
-    <script src="http://healthcare.ai/splashvendor/jquery/jquery.min.js"></script>
-	<!-- Bootstrap Core JavaScript -->
-    <script src="http://healthcare.ai/splashvendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Theme CSS -->
+    <link href="splashcss/clean-blog.css" rel="stylesheet">
 
-	<!-- Navigation -->
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.splashjs/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -88,23 +42,23 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <div class="navbar-brand"><img src="http://healthcare.ai/splashimg/healthcareAI.svg" width="207" height="30" alt="HCTools Logo"></div>
+                <div class="navbar-brand"><img src="./splashimg/healthcareAI.svg" width="207" height="30" alt="HCTools Logo"/></div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="http://healthcare.ai/#about">About</a>
+                        <a href="#about">About</a>
                     </li>
                     <li>
-                        <a href="http://healthcare.ai/blog">Blog</a>
+                        <a href="./blog">Blog</a>
                     </li>
                     <li>
-                        <a href="http://healthcare.ai/contact.html">Contact</a>
+                        <a href="./contact.html">Contact</a>
                     </li>
                     <li>
-                        <a href="http://healthcare.ai/#why">Why Open Source</a>
+                        <a href="#why">Why Open Source</a>
                     </li>
                 </ul>
             </div>
@@ -115,130 +69,69 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('http://healthcare.ai/splashimg/home-bg.jpg')">
+    <header class="intro-header" style="background-image: url('splashimg/home-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1 style="color:white;line-height: 1.1;letter-spacing:normal;text-indent:0;">healthcare.ai is open source software<br>streamlining healthcare machine learning</h1>
+                        <h1>healthcare.ai is open source software<br>streamlining healthcare machine learning</h1>
                         <span class="subheading">
-                        	<a href="http://healthcare.ai/r">
-                            <button type="button" class="btn btn-default"><img src="http://healthcare.ai/splashimg/rLang.png" width="70" height="45" alt="R Language Icon">R Package</button></a>
-                            <a href="http://healthcare.ai/py">
-                            <button type="button" class="btn btn-default"><img src="http://healthcare.ai/splashimg/python.png" width="70" height="45" alt="Python Language Icon">Python Package</button></a>
+                        	<a href="./r">
+                            <button type="button" class="btn btn-default"><img src="./splashimg/rLang.png" width="70" height="45" alt="R Language Icon"/>R Package</button></a>
+                            <a href="./py">
+							<button type="button" class="btn btn-default"><img src="./splashimg/python.png" width="70" height="45" alt="Python Language Icon"/>Python Package</button></a>
                         </span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<div class="content">
+    <div class="container">
+        <div class="row-fluid">
+                <h1 class="entry-title"><a href="">Benefits of machine learning in healthcare</a></h1>
+                December 05, 2016
+                <p>If you read much about technology, you have likely heard about machine learning, but may be wondering how it would work in healthcare. Where’s the low-hanging fruit? And how could it help my clinical team?</p>
 
-  ga('create', 'UA-85609357-1', 'auto');
-  ga('send', 'pageview');
+<p>As always, we’ll be practical in our discussion. Throughout healthcare, and many other industries, there are heuristics (or rules of thumb) that help people make decisions. A popular example in healthcare is the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2845681/">LACE index</a>, which provides a likelihood of patient 30-day readmission risk. You might have also heard of similar tools like the <a href="http://jamanetwork.com/journals/jama/fullarticle/194262">SOFA Score</a>, <a href="http://www.nejm.org/doi/full/10.1056/NEJM200102153440701#t=article">Apgar Score</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2999700/">PRISM Score</a>, and the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2999700/">PIM Score</a>.</p>
 
-</script>
-</head>
-<body class="post-template nav-closed">
+<p>Like most of these scores, the <a href="http://www.besler.com/lace-risk-score/">LACE calculation</a> is fairly simple. It’s based on length of stay, acuity of the admission, patient comorbities, and ED visits within the last six months. In each of these categories, points are assigned–a length of stay of three days equals three points, for example. Then the points from each categories are added up to form the LACE index.</p>
 
-    
+<p>It’s simple and indicative of how healthcare has worked for the last 20-30 years. First, there’s a national study, which eventually leads to guidelines and a simple calculation to help prioritize which patients are most at risk of something.</p>
 
-    <div class="site-wrapper">
+<p>So what’s wrong with that? Well, the guidelines can only be <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2845681/">narrowly applied</a> and even then <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4670852/">don’t give impressive results</a>. Think of it–LACE was developed from patients seen in Ontario from 2004-2008. Do your patient demographics closely match those in Ontario? Or, do your patient demographics even match your same set from ten years ago? Perhaps not. Another issue is applicability–since LACE requires the patient’s length of stay, the score is only available upon discharge. What if you want a risk score early during their stay?</p>
 
-        
+<p>These are a some of the reasons that machine learning is fantastic. First it learns the important relationships in your data on past patients and their outcomes. This means that the model is customized on your data from the last few years–you don’t have to rely on scores made on other populations, 10-20 years ago. In addition, machine learning allows one to create a model based on whatever data is available when you need a risk score (ie, upon admission rather than discharge).</p>
 
+<p>In summary, what does this customized model provide? Accurate risk scores, enabling confident and precise resource allocation, leading to lower costs and improved outcomes. As an added bonus, <a href="http://healthcare.ai/">healthcare.ai</a> is focused on providing guidance as to why a risk score was high, such that the the clinician not only knows who’s most at risk, but also can quickly see what can be done to lower that patient’s risk. We’ll detail this ability in a future post. Thanks, and please <a href="http://healthcare.ai/contact">reach out</a> with any questions or comments!</p>
 
-<header class="main-header post-head no-cover">
-    <nav class="main-nav  clearfix">
-        
-    </nav>
-</header>
-
-<main class="content" role="main">
-    <article class="post">
-
-        <header class="post-header">
-            <h1 class="post-title">Benefits of machine learning in healthcare</h1>
-            <section class="post-meta">
-                <time class="post-date" datetime="2016-12-05">05 December 2016</time> 
-            </section>
-        </header>
-
-        <section class="post-content">
-            <p>If you read much about technology, you have likely heard about machine learning, but may be wondering how it would work in healthcare. Where's the low-hanging fruit? And how could it help my clinical team?</p>
-
-<p>As always, we'll be practical in our discussion. Throughout healthcare, and many other industries, there are heuristics (or rules of thumb) that help people make decisions. A popular example in healthcare is the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2845681/">LACE index</a>, which provides a likelihood of patient 30-day readmission risk. You might have also heard of similar tools like the <a href="http://jamanetwork.com/journals/jama/fullarticle/194262">SOFA Score</a>, <a href="http://www.nejm.org/doi/full/10.1056/NEJM200102153440701#t=article">Apgar Score</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2999700/">PRISM Score</a>, and the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2999700/">PIM Score</a>. </p>
-
-<p>Like most of these scores, the LACE <a href="http://www.besler.com/lace-risk-score/">calculation</a> is fairly simple. It's based on length of stay, acuity of the admission, patient comorbities, and ED visits within the last six months. In each of these categories, points are assigned--a length of stay of three days equals three points, for example. Then the points from each categories are added up to form the LACE index.</p>
-
-<p>It's simple and indicative of how healthcare has worked for the last 20-30 years. First, there's a national study, which eventually leads to guidelines and a simple calculation to help prioritize which patients are most at risk of <em>something</em>. </p>
-
-<p>So what's wrong with that? Well, the guidelines can only be <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2845681/">narrowly applied</a> and even then <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4670852/">don't give impressive results</a>. Think of it--LACE was developed from patients seen in Ontario from 2004-2008. Do <em>your</em> patient demographics closely match those in Ontario? Or, do your patient demographics even match your same set from ten years ago? Perhaps not. Another issue is applicability--since LACE requires the patient's length of stay, the score is only available upon discharge. What if you want a risk score early during their stay?</p>
-
-<p>These are a some of the reasons that machine learning is fantastic. First it learns the important relationships in your data on past patients and their outcomes. This means that the model is customized on <em>your</em> data from the last few years--you don't have to rely on scores made on other populations, 10-20 years ago. In addition, machine learning allows one to create a model based on whatever data is available when you need a risk score (ie, upon admission rather than discharge).</p>
-
-<p>In summary, what does this customized model provide? Accurate risk scores, enabling confident and precise resource allocation, leading to lower costs and improved outcomes. As an added bonus, <a href="http://healthcare.ai/">healthcare.ai</a> is focused on providing guidance as to why a risk score was high, such that the the clinician not only knows who's most at risk, but also can quickly see what can be done to lower that patient's risk. We'll detail this ability in a future post. Thanks, and please <a href="http://healthcare.ai/contact">reach out</a> with any questions or comments!</p>
-        </section>
-
-        <footer class="post-footer">
-
-
-
-            <section class="author">
-                <h4><a href="../../../../author/levi/">Levi Thatcher</a></h4>
-
-                    <p>Levi worked on hurricane models in grad school and is now happy using machine learning to improve healthcare (which is about as complicated as a hurricane).</p>
-                <div class="author-meta">
-                    <span class="author-location icon-location">Salt Lake City</span>
-                    
+                
+        </div>
+      </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright">This project was started by and receives ongoing support from &nbsp;<a href="http://healthcatalyst.com"><img src="splashimg/healthCatalystWhite.png" width="142" height="37" alt="Health Catalyst Logo"/></a></p>
                 </div>
-            </section>
+            </div>
+        </div>
+    </footer>
 
+    <!-- jQuery -->
+    <script src="splashvendor/jquery/jquery.min.js"></script>
 
-            <section class="share">
-                <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Benefits%20of%20machine%20learning%20in%20healthcare&amp;url=http://localhost:2368/2016/12/05/benefits-of-machine-learning-in-healthcare/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    <span class="hidden">Twitter</span>
-                </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/2016/12/05/benefits-of-machine-learning-in-healthcare/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <span class="hidden">Facebook</span>
-                </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/2016/12/05/benefits-of-machine-learning-in-healthcare/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <span class="hidden">Google+</span>
-                </a>
-            </section>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="splashvendor/bootstrap/js/bootstrap.min.js"></script>
 
+    <!-- Contact Form JavaScript -->
+    <script src="splashjs/jqBootstrapValidation.js"></script>
+    <script src="splashjs/contact_me.js"></script>
 
-        </footer>
-
-    </article>
-</main>
-
-<aside class="read-next">
-    <a class="read-next-story prev no-cover" href="../../02/why-r-and-python/">
-        <section class="post">
-            <h2>Why R and Python?</h2>
-            <p>As time goes on, this blog will touch on many of the technical choices made at Health Catalyst. It…</p>
-        </section>
-    </a>
-</aside>
-
-
-
-        <footer class="site-footer clearfix">
-            <section class="copyright"><a href="../../../../">healthcare.ai</a> © 2016</section>
-            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
-        </footer>
-
-    </div>
-
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-    
-    <script type="text/javascript" src="http://localhost:2368/assets/js/jquery.fitvids.js?v=b1234655d4"></script>
-    <script type="text/javascript" src="http://localhost:2368/assets/js/index.js?v=b1234655d4"></script>
+    <!-- Theme JavaScript -->
+    <script src="splashjs/clean-blog.min.js"></script>
 
 </body>
+
+</html>
