@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Technical necessity of healthcare.ai"
+title:  "The technical need for healthcare.ai"
 date:   2016-12-09 07:47:05 -0700
 tags: overview
+author: Levi Thatcher
 categories: blog
 ---
 Many of you might be wondering how your organization could benefit from healthcare.ai. Even though you're read the broad statements on the [home page](http://healthcare.ai), you might be asking yourself, "how does it enable my team of analytsts or data scientists? And how can healthcare.ai finally bring accurate, informative models to my health system for the first time?"

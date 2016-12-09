@@ -3,6 +3,7 @@ layout: post
 title:  "Why R and Python?"
 date:   2016-12-02 07:17:06 -0700
 tags: overview
+author: Levi Thatcher
 categories: blog
 ---
 As time goes on, this blog will touch on many of the technical choices made at Health Catalyst. It will mostly focus on data science. If there's a particular topic that interests, [contact us](http://healthcare.ai/contact.html)! Some posts will be short, while others will be in-depth. The tone will be informal, with a focus on content and frequent posts (twice per-week) rather than polish. When we talk about doing things with data, we'll post the code, so you can follow along.

@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Benefits of machine learning in healthcare"
+title:  "The benefits of machine learning in healthcare"
 date:   2016-12-05 07:24:23 -0700
 tags: overview
+author: Levi Thatcher
 categories: blog
 ---
 
