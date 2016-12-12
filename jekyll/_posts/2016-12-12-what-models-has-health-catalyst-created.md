@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "What models has Health Catalyst created with healthcare.ai"
+title:  "What models has Health Catalyst created with healthcare.ai?"
 date:   2016-12-12 09:28:05 -0700
 tags: overview
 author: Levi Thatcher
