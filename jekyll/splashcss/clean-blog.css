@@ -28,8 +28,30 @@ a {
   color: #333333;
 }
 
-/* Testing */
-body { font-size: 34px;}
+
+
+.post-list{
+  float: left;
+  white-space:nowrap;
+  font-size: 24px;
+}
+
+.entry-date{
+  float: right;
+  white-space:nowrap;
+  font-size: 24px;
+  padding-right: 1.7cm;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -5,6 +5,7 @@ date:   2016-12-01 08:37:13 -0700
 tags: overview
 author: Levi Thatcher
 categories: blog
+excerpt: This blog will describe technical choices made at Health Catalyst
 ---
 Health Catalyst’s data science team is excited to present [healthcare.ai](http://healthcare.ai/). This ambitious new project offers healthcare-specific machine learning packages, as well as analysis, commentary, and advice on leveraging machine learning within any health system, regardless of size.
 
