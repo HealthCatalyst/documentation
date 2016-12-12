@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>healthcare.ai</title>
+
+    
+
+    <base href="http://healthcare.ai/" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="splashvendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="splashcss/clean-blog.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.splashjs/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <div class="navbar-brand"><img src="./splashimg/healthcareAI.svg" width="207" height="30" alt="HCTools Logo"/></div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="./blog">Blog</a>
+                    </li>
+                    <li>
+                        <a href="./contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#why">Why Open Source</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('splashimg/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>healthcare.ai is open source software<br>streamlining healthcare machine learning</h1>
+                        <span class="subheading">
+                        	<a href="./r">
+                            <button type="button" class="btn btn-default"><img src="./splashimg/rLang.png" width="70" height="45" alt="R Language Icon"/>R Package</button></a>
+                            <a href="./py">
+							<button type="button" class="btn btn-default"><img src="./splashimg/python.png" width="70" height="45" alt="Python Language Icon"/>Python Package</button></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<div class="content">
+    <div class="container">
+        <div class="row-fluid">
+                <h1 class="entry-title"><a href="">What models has Health Catalyst created with healthcare.ai</a></h1>
+                December 12, 2016
+                <p>After reading a few articles on healthcare.ai, some of you may be saying, well, that’s great–but what has Health Catalyst actually used it for? Since Health Catalyst has been open with sharing the tool set, it only makes sense that they’d also be willing to share details of its use. As the Director of Data Science at Health Catalyst and founder of healthcare.ai, I oversee all client predictive engagements, and will make a point of updating the community on our work from time to time. If you have questions, comments, or criticism, please <a href="http://healthcare.ai/contact">reach out</a>.</p>
+
+<p>The goal of healthcare.ai was to provide a simple, flexible tool to streamline healthcare machine learning. This means that it works across financial, operational, and clinical realms. If a health system has a business question that they want predictions for, we want healthcare.ai to be flexible enough to cover that use case. Today we’ll cover three predictive use cases, and save more for a future post.</p>
+
+<p>Let’s start with finance. Uncompensated care is a growing problem at all health systems. To help a particular client counter this trend, we’ve started using propensity-to-pay models. Recall that each health system interested in using machine learning to answer business questions gets a custom model, tailored to their data. Each month, for each person with an open account, the probability of payment is calculated and used to determine 1) who may need reminders, 2) who may need financial assistance, and 3) how the likelihood of payment changes over time and after particular life events. A few features that were important to the model turned were things like whether the person paid last month (surprise!), account balance, a person’s age, the month of the year, etc. These may vary for your health system (as your demographics are likely a bit different), but healthcare.ai makes it easy to customize the model to <em>your</em> payment data.</p>
+
+<p>Those who have ever worked in a clinical setting know how hard it is to maintain schedules that keep both clinicians and patients happy. Slots are often over or under-booked because someone showed up late, didn’t show up, or showed up without warning. Health Catalyst taken a first pass at this problem via a no-show predictive model. In this engagement, we gathered all past data on the characteristics of people that had showed or hadn’t showed for their appointments, and created an accurate predictive model to assess, with each scheduled appointment, the risk of a no-show. If the clinic feels that they can reduce their no-show rate by extra phone calls, this helps assure that the resources used are efficiently allocated. If, on the other hand, the clinic has found that it’s quite hard to reduce the no-show rate (even with this guidance), they can use the probability scores to over-book particular slots, such that clinical scheduling is optimized using past data. Features that were particularly helpful in this prediction were prior number of cancellations, appointment type, and week of the year.</p>
+
+<p>Finally, we’ll touch on a clinical case. Many health systems are <a href="http://www.modernhealthcare.com/article/20150803/NEWS/150809981">penalized</a> if their 30-day readmissions rate is too high. While general readmissions models are possible via healthcare.ai, we’ve found that focusing on particular disease cohorts (such as for heart failure, sepsis, or COPD) allows us to create a much more accurate model. We’ve had multiple engagements recently related to COPD readmissions (both 30 and 90-day). How it works is that the relevant data on past patients (and whether they had a 90-day readmission or now) is collected into a <a href="https://www.healthcatalyst.com/late-binding-data-warehouse/late-binding-data-bus/sam-designer/">subject area mart</a>, and a couple of different algorithms are used to create models. Once we matched a column set with an algorithm that produces an accurate model, we save the model and integrate it into our ETL. This way, clinicians in the relevant units receive guidance as to which of their patients is most likely to be readmitted. Features like prior readmissions, pre-existing conditions, and facility were particularly helpful to this model.</p>
+
+<p>Considering the resource constraints present in many hospital units, this type of machine learning guidance can be crucial to efficiently deploying resources toward achieving business goals (i.e., reducing readmissions, reducing 1-yr mortality, preventing <a href="https://www.cdc.gov/hai/">HAIs</a>, etc). As time goes on, we’ll detail more of these predictive projects, and explain how they might be useful to your health system.</p>
+
+<p>Thanks, and please <a href="http://healthcare.ai/contact.html">reach out</a> with any questions!</p>
+
+
+                
+
+                <p>Subscribe to email updates: <a href="https://feedburner.google.com/fb/a/mailverify?uri=healthcareai&amp;loc=en_US"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+                <a href="https://feedburner.google.com/fb/a/mailverify?uri=healthcareai&amp;loc=en_US" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >
+                <i class="fa-rss fa"></i></a></a></p>           
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright">This project was started by and receives ongoing support from &nbsp;<a href="http://healthcatalyst.com"><img src="splashimg/healthCatalystWhite.png" width="142" height="37" alt="Health Catalyst Logo"/></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="splashvendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="splashvendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="splashjs/jqBootstrapValidation.js"></script>
+    <script src="splashjs/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="splashjs/clean-blog.min.js"></script>
+
+</body>
+
+</html>
