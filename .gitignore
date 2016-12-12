@@ -1,1 +1,4 @@
 __pycache__
+
+# This lets one use localhost to inspect blog
+jekyll/assets/local_path_fix.txt

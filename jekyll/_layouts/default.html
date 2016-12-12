@@ -13,6 +13,12 @@
 
     {% assign base = 'http://healthcare.ai/' %}
 
+    {% for static_file in site.static_files %}
+        {% if static_file.path == '/assets/local_path_fix.txt' %}
+            {% assign base = '/' %}
+        {% endif %}
+    {% endfor %}
+   
     <base href="{{base}}" />
 
     <!-- Bootstrap Core CSS -->
