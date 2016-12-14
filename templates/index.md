@@ -41,6 +41,8 @@ library(healthcareai)
 ?healthcareai
 ```
 
+* If you need assistance, check out our [Google Group](https://groups.google.com/forum/#!forum/healthcareai-users)!
+
 ------------------
 
 ## How to help
