@@ -37,10 +37,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.splashjs/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    {% if base == 'http://healthcare.ai' %}
-    {% include analytics.html %}
-    {% endif %}
-
 </head>
 <body>
     
@@ -64,7 +60,8 @@
 
     <!-- Contact Form JavaScript -->
     <script src="splashjs/jqBootstrapValidation.js"></script>
-
+    
+    {% include analytics.html %}
 
 </body>
 

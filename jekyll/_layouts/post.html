@@ -11,6 +11,8 @@
 
     <title>healthcare.ai</title>
 
+    {% include analytics.html %}
+
     {% assign base = 'http://healthcare.ai/' %}
 
     {% for static_file in site.static_files %}
@@ -36,10 +38,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.splashjs/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    {% if base == 'http://healthcare.ai' %}
-    {% include analytics.html %}
-    {% endif %}
 
 </head>
 <body>
@@ -79,6 +77,8 @@
 
     <!-- Theme JavaScript -->
     <script src="splashjs/clean-blog.min.js"></script>
+
+    {% include analytics.html %}
 
 </body>
 
