@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Model Evaluation Using ROC Curves"
+title:  "Model evaluation using ROC Curves"
 date:   2016-12-15 15:37:00 -0700
 tags: overview
 author: Mike Mastanduno
