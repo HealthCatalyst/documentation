@@ -29,13 +29,21 @@ This package will get you started with healthcare machine learning in R.
 install.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lme4','lubridate','pROC','R6','ranger','ROCR','RODBC'),repos = "https://cran.cnr.berkeley.edu/")
 ```
 
-* Install healthcareai
+* Install the latest release of healthcareai
+
+```{r}
+library(devtools)
+devtools::install_url('https://github.com/HealthCatalystSLC/healthcareai-r/archive/v0.1.10.zip')
+```
+
+* Note: if you want the bleeding edge version, use this:
+
 ```{r}
 library(devtools)
 devtools::install_github(repo='HealthCatalystSLC/healthcareai-r')
 ```
 
-* Load the package and read the built-in docs
+* Load the package you just installed and read the built-in docs
 ```{r}
 library(healthcareai)
 ?healthcareai
