@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Contributing to Open Source Software Development Using Github"
+title:  "Contributing to open source software development using Github"
 date:   2017-01-12 01:32:11 -0700
 tags: workflow			
 author: Mike Mastanduno
@@ -37,7 +37,7 @@ When the topic branch you’ve been developing is done, documented, and function
     * Make sure it all still works!
     * Push the local branch to the server for review: `git push` 
 5. Pull Requests  
-After pushing a completed topic branch up to the server, the *pull request* acts as a request for code review. The term pull request ~~makes no sense to me~~ [Got it!](https://www.quora.com/GitHub-Why-is-the-pull-request-called-pull-request). Another developer will look through your changes and documentation, ask for revisions, and eventually approve the pull request. After this happens, the branch will be merged into the online master. Anyone who clones the master will now get your changes, and the branch can be deleted.
+After pushing a completed topic branch up to the server, the *pull request* acts as a request for code review. The term pull request ~~makes no sense to me~~ [Got it!](https://www.quora.com/GitHub-Why-is-the-pull-request-called-pull-request) Another developer will look through your changes and documentation, ask for revisions, and eventually approve the pull request. After this happens, the branch will be merged into the online master. Anyone who clones the master will now get your changes, and the branch can be deleted.
 
 There is a lot of vocabulary in this post, but we hope that it’s helpful to see these things defined in context of how they are used. Seasoned developers forget that Git language can be hard to interpret since it’s such an important part of their everyday work. The truth is, it’s a barrier to entry for the casual contributor. However, it’s extremely important for the health of a large code project and the team that works on it. 
 
