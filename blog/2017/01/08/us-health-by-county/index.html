@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>healthcare.ai</title>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85609357-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '747112772022739');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
+</noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+    
+
+    
+
+    <base href="/" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="splashvendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="splashcss/clean-blog.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.splashjs/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <div class="navbar-brand"><img src="./splashimg/healthcareAI.svg" width="207" height="30" alt="HCTools Logo"/></div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="./blog">Blog</a>
+                    </li>
+                    <li>
+                        <a href="./contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#why">Why Open Source</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('splashimg/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>healthcare.ai is open source software<br>streamlining healthcare machine learning</h1>
+                        <span class="subheading">
+                        	<a href="./r">
+                            <button type="button" class="btn btn-default"><img src="./splashimg/rLang.png" width="70" height="45" alt="R Language Icon"/>R Package</button></a>
+                            <a href="./py">
+							<button type="button" class="btn btn-default"><img src="./splashimg/python.png" width="70" height="45" alt="Python Language Icon"/>Python Package</button></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<div class="content">
+    <div class="container">
+        <div class="row-fluid">
+                <h1 class="entry-title"><a href="">Which regions of the US are healthy?</a></h1>
+                January 08, 2017
+                <p>While our previous posts have focused on healthcare machine learning, we’re also excited to post analyses of health data using R and Python. We do this to hopefully elevate the national discussion around health data, enhance the community’s understanding of health in the United States (US), and provide guidance as to how communities and health systems might increase the quality and length of people’s lives. Health Catalyst is an outcomes improvement company, and we realize that the inpatient setting is only one of several venues that affect a person’s health trajectory. Understanding the big picture of health is another way to approach outcomes improvements. These posts will not only attempt to educate on findings about health, but also on how to use R/Python for health data analysis, so we’ll always post links to the <a href="https://gist.github.com/levithatcher/070496ca48c165d7ced37e0ffcd24dc7">relevant code</a>.</p>
+
+<p>Those who have been in healthcare for any significant amount of time have heard that social determinants of health (SDOH) are important to healthcare outcomes. While it’s hard to overstate the importance of these factors, they’re often not well understood and overshadowed by inpatient optimizations when discussing outcomes improvement. This post is the first in a series where we’ll attempt to untangle the drivers behind population health differences across the US. Today we’ll talk about where the US stands from region to region in terms of social determinants of health. In subsequent posts we’ll discuss whether these differences mostly related to income, air pollution, access to healthy food, long commutes, access to healthcare, opioid addiction, or alcohol abuse.</p>
+
+<p>To try and answer that we’ll <a href="https://gist.github.com/levithatcher/070496ca48c165d7ced37e0ffcd24dc7">use R</a> and <a href="http://www.countyhealthrankings.org/sites/default/files/2015%20CHR%20Analytic%20Data.csv">data</a> from <a href="http://www.countyhealthrankings.org/">countyhealthrankings.org</a>, which is a fantastic resource on SDOH comparisons by county. We’ll start by presenting a choropleth map of median household 2015 <a href="http://www.countyhealthrankings.org/measure/median-household-income">income by county</a>:</p>
+
+<p><img src="../assets/Post10CountyHealthOverview/MedianIncomeByCounty.jpg" alt="IncomeByCounty" /></p>
+
+<p>Of course, what we find is that there are large regional differences in household income. Broadly, the Northeast, the West Coast, and metropolitan areas are associated with higher personal incomes, compared with rural areas and the South. Note that occasionally there is high intra-state variation, such as in Texas, compared to the more uniform median incomes across counties in Minnesota. But how do these regional variations in incomes correspond with healthcare outcomes? Data on <a href="http://www.countyhealthrankings.org/measure/low-birthweight">Low Birth-Weight</a> (LBW), i.e., live births under ~5 lbs 8 oz (2500 g), provides a <a href="https://www.ncbi.nlm.nih.gov/pubmed/7633862">helpful link</a> between social determinants and actual healthcare outcomes, as</p>
+
+<blockquote>
+  <p>“<a href="http://www.countyhealthrankings.org/measure/low-birthweight">LBW indicates maternal exposure to health risks</a> in all categories of health factors, including her health behaviors, access to health care the social and economic environment she inhabits, and environmental risks to which she is exposed. In terms of the infant’s health outcomes, LBW serves as a predictor of premature mortality and/or morbidity over the life course and for potential cognitive development problems.”</p>
+</blockquote>
+
+<p>Pulling data from <a href="http://www.countyhealthrankings.org/measure/low-birthweight">here</a>, and <a href="https://gist.github.com/levithatcher/070496ca48c165d7ced37e0ffcd24dc7">processing with R</a>, we plot the percentage of county live births with birth-weight under 5 lbs 8 oz:</p>
+
+<p><img src="../assets/Post10CountyHealthOverview/LowBirthWeightByCounty.jpg" alt="LBWByCounty" /></p>
+
+<p>While there’s a lot that could be unpacked here, we’ll simply note that the same regions that had lower personal incomes also have a higher percentage of LBW. Not a huge surprise—it is surprising, however, how much intra-state variation is present (like in NV and CO) and how the Deep South has rates of LBW that are often twice that of Minnesota and Wisconsin.</p>
+
+<p>While income appears to be associated with new-born morbidity and mortality, how does it affect populations later in life? We use <a href="http://www.countyhealthrankings.org/measure/premature-death-ypll">premature mortality</a> <a href="http://www.countyhealthrankings.org/sites/default/files/2015%20CHR%20Analytic%20Data.csv">data</a> from <a href="http://www.countyhealthrankings.org/">countyhealthrankings.org</a>, where a premature death is defined as occurring before 70 years of age, to answer this question. For each county, per 100k people, the years of death before 75 are summed. Think of it as incidence of early death, per county:</p>
+
+<p><img src="../assets/Post10CountyHealthOverview/PrematureDeathByCounty.jpg" alt="PrematureDeathByCounty" /></p>
+
+<p>Compared to LBW, it appears that premature mortality more closely corresponds with median county income. Note how the high incidence of premature mortality across Arkansas, Tennessee, and Kentucky closely tracks income (comparing with the first figure). Broadly, Appalachia appears to suffer more from deaths of prime-age adults compared to LBW (while the South appears to suffer greatly from both). Note that while the rust belt (i.e., PA, OH, IN, MI, IL, and WI) certainly has other issues, they seem to be doing a good job of keeping prime-age people alive, especially compared to Appalachia and the Deep South.</p>
+
+<p>While it’s old-hat to say that population health in the Deep South isn’t fantastic, let’s go one step further and see which counties in the US punch above their weight when it comes to using resources effectively. In other words, which counties are doing well for how poor they are. This is the metric that will let us understand what it is that poor and middle-income counties do well in terms of keeping people healthy.</p>
+
+<p>To get at this, we create percentiles for each county in terms of LBW (where 100 is best) and then subtract (for each county) the percentiles for income. We can call this the county Punch-Above-Their-Weight Index or PATWI for short. Before plotting the entire country, let’s look at LBW PATWI for the top ten counties in terms of income:</p>
+
+<p><img src="../assets/Post10CountyHealthOverview/TableHighestIncomeAndLBW.png" alt="TableHighestIncomeandLBW" /></p>
+
+<p>First, in this and the following tables, the PATWI column is just the fifth column minus the fourth column. While the counties above do have good scores in terms of LBW, it’s difficult for rich counties to punch above their weight, since they’re the 800-lb gorillas. We do, however, see the benefit of the PATWI, since the richest counties in the US <em>aren’t</em> those with the best LBW scores.</p>
+
+<p>Which counties have the best LBW, considering their income?</p>
+
+<p><img src="../assets/Post10CountyHealthOverview/TableHighestLBWPATWIAndIncome.png" alt="TableHighestPATWIAndIncome" /></p>
+
+<p>It’s impressive that these counties, which have median incomes one-third of that of Loudoun County (VA), have better LBW scores than Loudoun County. Note that the best LBW PATWI scores come from a scattered grouping of states, although, Michigan (MI) impressively has three entries and Missouri (MO) has two. That’s definitely good news for MI and MO public health officials. Note that this PATWI measure doesn’t just bias towards the poorest counties, either. While Buffalo County, SD—perhaps the poorest county in the nation—has a high LDW PATWI score, none of the counties from the Deep South or Appalachia show up in this list. Here’s LDW PATWI score for all counties:</p>
+
+<p><img src="../assets/Post10CountyHealthOverview/LBWComparedToIncomeByCounty.jpg" alt="LBWComparedToIncome" /></p>
+
+<p>Note that positive values here denote that the county is doing better at LBW than expected, based on their income*. Amongst other findings, we see that even though northern half of West Virginia is quite poor, they’re doing better than expected at helping mothers carry and deliver healthy babies. The Deep South, however, is doing about as poorly (or worse) than one would expect by looking at their income along. Note that Missouri is doing better than expected, as is rural Oregon, Minneapolis, and Wisconsin. Recall that metro areas tend to be richer than rural areas, so it’s impossible for richest areas like the Bay Area and NYC tend to have a high score (since their percentiles can’t go over 100)—this limitation makes this plot more of a measure of how middle and low income counties are doing relative to their income.
+Let’s do the same for the premature mortality metric we discussed above—in other words, which counties are doing a great job of avoiding early mortality. We’ll start with the richest counties:</p>
+
+<p><img src="../assets/Post10CountyHealthOverview/TableHighestIncomeAndPrematureDeath.png" alt="TableHighestIncomeAndLBW" /></p>
+
+<p>Yup, the richest counties are great at keeping people alive—even more so than avoiding low birth-weight (compare with the first table above). But, which poor or middle income counties are best at punching above their weight when it comes to keeping their citizens alive?</p>
+
+<p><img src="../assets/Post10CountyHealthOverview/TableHighestPrematureDeathPATWIAndIncome.png" alt="TableHighestLBWPATWIAndIncome" /></p>
+
+<p>It’s impressive how these relatively poor counties are achieving the top 10-20th percentile in terms of avoiding premature deaths (note that we’re using higher percentiles to mean good outcomes). It is an interesting mix of counties, indeed. Santa Cruz (AZ), Presidio County (TX), and Maverick County (TX) border Mexico; Crowley County (CO) has the largest per-capita prison population in the country. Madison County, home to BYU-Idaho, is <a href="http://www.slate.com/articles/life/map_of_the_week/2012/02/mormon_population_in_the_u_s_an_interactive_map.html">~80% Mormon</a>, which likely means that county overall has low rates of alcohol, tobacco, and drug dependency. In a future post we’ll go into how certain counties are punching above their weight, and for now offer the national view of premature-death PATWI score:</p>
+
+<p><img src="../assets/Post10CountyHealthOverview/PrematureDeathComparedToIncomeByCounty.jpg" alt="PrematureDeathComparedToIncome" /></p>
+
+<p>Recall that darker means that the county is doing well. At this level, what we notice is that Wisconsin, Michigan, and Missouri are doing a good job keeping prime-age people alive compared to Nevada and Wyoming. Knowing why this is occurring can significantly change how a health system interacts with its patients.</p>
+
+<p>At Health Catalyst, we strive to understand the significant way social determinants of health can affect decision making at health systems from the Deep South to the Bay Area. Our clients are located all across the continent. High-value improvements in one health system are not necessarily the best everywhere, and we’d be cheating ourselves to only look for improvements at inpatient units. We’re committed to leveraging the tools of population health to improve patient outcomes across the board. 
+This post is the first of many on population health, and in a future post we’ll dig more into which social determinants are most driving regional variations of LBW and premature death.</p>
+
+<p>Thanks for reading and please <a href="http://healthcare.ai/contact">reach out</a> with any questions or comments!</p>
+
+<p>* The distribution of county median income has a long tail, which means that when subtracting county income percentiles from the corresponding LBW or premature death percentiles, the result is typically positive.</p>
+
+                
+                <p>Subscribe to email updates: <a href="https://feedburner.google.com/fb/a/mailverify?uri=healthcareai&amp;loc=en_US"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+                <a href="https://feedburner.google.com/fb/a/mailverify?uri=healthcareai&amp;loc=en_US" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >
+                <i class="fa-rss fa"></i></a></a></p>           
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright">This project was started by and receives ongoing support from &nbsp;<a href="http://healthcatalyst.com"><img src="splashimg/healthCatalystWhite.png" width="142" height="37" alt="Health Catalyst Logo"/></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="splashvendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="splashvendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="splashjs/jqBootstrapValidation.js"></script>
+    <script src="splashjs/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="splashjs/clean-blog.min.js"></script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85609357-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '747112772022739');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
+</noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+</body>
+
+</html>
