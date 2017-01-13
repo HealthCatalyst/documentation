@@ -118,32 +118,58 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
 <div class="content">
     <div class="container">
         <div class="row-fluid">
-                <h1 class="entry-title"><a href="">Know your business question: A focus on readmissions</a></h1>
-                January 11, 2017
-                <p>As time goes on, we will not only discuss healthcare machine learning (ML) and health in the US at a high level, but also specific ways ML might help drive outcomes improvements. Many health systems are working on reducing their readmission rate—which is often considered a measure of quality of care and can be tied to penalties. For  hospital systems progressing toward ML for readmissions—or any measure—the first step is to identify your most important business questions; the next step is creating a suitable dataset to create the model. There are often several points where business logic dictates decisions related to the dataset and whether one or multiple models are needed to help with a specific process. That’s certainly the case when creating readmission risk models.</p>
-
-<p>Readmission risk models improve patient quality of life and decrease mortality by providing extra care or surveillance to high-risk patients. Implementing a readmission risk model could serve two different purposes:</p>
+                <h1 class="entry-title"><a href="">Contributing to Open Source Software Development Using Github</a></h1>
+                January 12, 2017
+                <p>The purpose of this post is to help you become familiar with <em>Git</em>, an essential part of contributing to <a href="www.healthcare.ai">healthcare.ai</a>. Git is essentially a collaboration tool for software developers, and <a href="www.github.com"><em>Github</em></a> is the accompanying online storage platform. If you have been reading about healthcare.ai, you probably know that it is an <a href="http://healthcare.ai/#why"><em>open source</em> software package</a>. Open source means that we aren’t hiding anything from our users. They can use the package, view the contents, and modify the package for their particular needs. We chose to make healthcare.ai open source for two major reasons:</p>
 
 <ol>
   <li>
-    <p>Identifying high-risk <em>observational</em> and <em>inpatient</em> patients as soon after their admission as possible to answer this question: <em>Which in-hospital patients are most at risk for readmission?</em> By answering this question, doctors, nurses, and in-hospital staff can intervene to try to lower a patient’s readmission risk.</p>
+    <p><strong>Anyone can contribute to its development.</strong> When an open source package becomes popular, there could be hundreds of people working on making it better!</p>
   </li>
   <li>
-    <p>Identifying high-risk <em>discharged</em> patients as soon after their discharge as possible to answer this question: <em>Which discharged patients are most at risk of readmission?</em> By answering this question, hospital support staff and transitional services can intervene to try to lower a patient’s readmission risk.</p>
+    <p><strong>The rising tide will raise all boats.</strong> We are trying to be a leader in healthcare machine learning, and hoping that our efforts will be visible, benefit the community, and benefit patient care.</p>
   </li>
 </ol>
 
-<p>Now, you might think, “Those are the same use case: they both predict readmissions, even sometimes for the same patients.” But remember, an ML model is only valuable if it provides actionable insight. Nurses are in the optimal position to help when the patient is in the hospital. Furthermore, as we <a href="http://healthcare.ai/blog/2017/01/06/data-leakage-in-healthcare-machine-learning/">discussed at length</a> last week, the data sources for these two use cases are very different. The type and amount of information available at discharge is different from what is available at admission. The best ML models are built custom to a specific dataset and use case. One risk model is not sufficient to answer both questions, and accuracy would almost certainly be compromised if they were naively combined. Though similar, these questions need models that relate to different types of patients and are targeted toward different interventions. Under the hood of the models, we need to use different datasets (to avoid <a href="http://healthcare.ai/blog/2017/01/06/data-leakage-in-healthcare-machine-learning/">data leakage</a>)—and maybe even different algorithms. The best ML model will always be built to answer a specific question, tailored to specific data, and targeted toward the most effective intervention.</p>
+<p>As our team (and number of contributors) grows, it doesn’t make sense to share our code using email attachments. We make thousands of changes on hundreds of files. Instead, we use Git. Git is an industry standard service that makes it easy for large teams to collaborate on code, keep files safe from unwanted changes through <em>version control</em>, and facilitate code review before changes are published.</p>
 
-<p>OK, so we know we need two models for readmission risk modeling. But to complicate things even more, we must keep in mind that the layman definition of readmission and the <a href="https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/PhysicianFeedbackProgram/Downloads/2014-ACR-MIF.pdf">CMS definition of readmission</a> are also subtly different. We must base our outcome variable on a definition very similar to that of CMS because it is consistent with the way many hospital systems track and report outcomes, and the CMS definition of readmissions is ultimately the measure hospital systems are trying to affect. Knowing that definition is critical to building a model to address it.</p>
+<p>The idea of Git is pretty easy to follow, but the vocabulary can be a little confusing at first. There are <a href="https://guides.github.com/introduction/flow/">many</a> <a href="http://git.huit.harvard.edu/guide/">great</a> <a href="https://guides.github.com/activities/hello-world/">resources</a> about Git online, but sometimes they are too basic for specific issues, or too complicated and lacking explanation. Hopefully you find these ideas basic but informative.</p>
 
-<p>Per the CMS definition, patients in the hospital can be <em>emergency department</em>, <em>observational</em>, or <em>inpatient</em>. To be considered an unplanned readmission patients must initially be discharged from the inpatient setting. A patient that is discharged from the emergency department or observation setting cannot be readmitted (0% probability) because they did not meet the inpatient requirement pertaining to the inpatient index admission. Similarly, even after a patient is admitted to the inpatient setting, we still do not yet know their what their discharge disposition or discharge diagnosis will be. If the patient leaves against medical advice or is assigned a cancer-related discharge, for instance, they meet a different set of exclusion criteria and cannot be readmitted (again, 0% probability). While the specific criteria behind the definition of a readmission makes practical sense, it creates a couple of challenges to training, testing, and deploying a readmission risk model that is to be leveraged while patients are still in the hospital.</p>
+<p>Imagine that you are writing a paper. You write some, save the file: “myPaper_version1.doc.” You write more, save version 2, version 3… Essentially, this is what Git is doing. The codebase, or repository, is written line by line, and each change can be stored as a <em>commit</em>. The commits flow linearly, and if you don’t like the latest changes, you can roll back to the previous commit. This <a href="http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf">excellent cheat sheet shows that process</a>, where each circle represents a commit.</p>
 
-<p>At the end of the day, we need to develop the model using the same data that we want it to perform well on in production. For the <em>in-hospital</em> use case, <em>observational</em> and <em>emergency department</em> patients that would ultimately be excluded at discharge must also be excluded from model development. These patients may skew the model toward predicting 0% readmission probability since they are guaranteed to be 0% risk as defined by CMS. This puts us in a tight spot. When <a href="http://healthcare.ai/blog/2016/12/15/model-evaluation-using-roc-curves/">evaluating the model</a>, it may appear to have higher accuracy by skewing toward low probabilities because it was improperly trained on data that should have been excluded. For the post-discharge use case, the discharge type is available and the model can match the CMS definition more closely. This will likely lead to increased accuracy overall, as more use-case specific data is available.</p>
+<p>I’ll focus on explaining 5 topics that are likely to help you collaborate.</p>
 
-<p>From our experience, understanding the definition of the readmission outcome variable, the specific use case, and the timing/target is crucial. There is clearly a trade-off between timeliness and accuracy, and to have the greatest impact on patient outcomes, it is important to develop readmission risk models based on data that reflects the use case in production. Again, the best ML model should answer a specific question, using specific data, with an actionable result. Keep these things in mind and your models will improve.</p>
+<ol>
+  <li>Local vs Source<br />
+A code repository lives at <a href="www.github.com">www.github.com</a>, and you’d like to work on it. The <em>master</em> source is online. You need to <em>clone</em> or <em>fork</em> the repo to create a local copy on your computer. You can make improvements, commit them, and document each change. Verify that your code is working, then, they can be <em>merged</em> into the source copy.</li>
+  <li>Pushing and Pulling<br />
+When you are ready to submit your changes to the master, you must first <em>pull</em> changes from the master source to your local copy. This ensures that you have the latest changes from the master in your local copy. Then you can <em>push</em> your changes up to the online master. If you take a few weeks away from the code, make sure you pull the latest changes into your local copy before starting your work.
+    <ul>
+      <li>Pull changes from the master source to your local copy: <code class="highlighter-rouge">git pull</code></li>
+      <li>Push your local changes to the online master: <code class="highlighter-rouge">git push</code></li>
+    </ul>
+  </li>
+  <li>Branches<br />
+<a href="https://github.com/HealthCatalystSLC/healthcareai-r/branches"><em>Branches</em></a> are used to help keep large changes, feature additions, etc. separate from the master source. They allow you to “break the code to fix it” without worrying that you are going to ruin the master. If you create a topic branch to work in, you now have two separate local copies: your local master, and your local branch. You can make ongoing changes to the code in your branch, then switch back to the master to actually use code that you know is working.
+    <ul>
+      <li>Create a new topic branch or switch to an existing topic branch: <code class="highlighter-rouge">git checkout -b nameofbranch</code></li>
+    </ul>
+  </li>
+  <li>Merging<br />
+When the topic branch you’ve been developing is done, documented, and functional, it’s ready to be merged back into the master branch. Again, update your local master, as other people could have been working on the code while you were. Merge the local master into your local branch (the ordering can be disputed, but this is how we do it at healthcare.ai), allowing you to test for functionality with all the latest changes. Finally, push the local branch up to the server and ask for review.
+    <ul>
+      <li>Check out the latest online master and merge into the local topic branch: <code class="highlighter-rouge">git merge origin/master</code></li>
+      <li>Make sure it all still works!</li>
+      <li>Push the local branch to the server for review: <code class="highlighter-rouge">git push</code></li>
+    </ul>
+  </li>
+  <li>Pull Requests<br />
+After pushing a completed topic branch up to the server, the <em>pull request</em> acts as a request for code review. The term pull request <del>makes no sense to me</del> <a href="https://www.quora.com/GitHub-Why-is-the-pull-request-called-pull-request">Got it!</a>. Another developer will look through your changes and documentation, ask for revisions, and eventually approve the pull request. After this happens, the branch will be merged into the online master. Anyone who clones the master will now get your changes, and the branch can be deleted.</li>
+</ol>
 
-<p>Thanks for reading and please <a href="http://healthcare.ai/contact">reach out</a> with any questions or comments!</p>
+<p>There is a lot of vocabulary in this post, but we hope that it’s helpful to see these things defined in context of how they are used. Seasoned developers forget that Git language can be hard to interpret since it’s such an important part of their everyday work. The truth is, it’s a barrier to entry for the casual contributor. However, it’s extremely important for the health of a large code project and the team that works on it.</p>
+
+<p>If you’ve become motivated to get down to business, make an account on Github [www.github.com], <a href="https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/CONTRIBUTING.md#clone-healthcareai-r-repo">clone our repo</a>, and help us shape the future of healthcare machine learning! There are more detailed instructions in the <a href="https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/README.md">readme</a> and <a href="https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/CONTRIBUTING.md">contributing</a> files, and you can feel free to <a href="http://healthcare.ai/contact.html">send questions</a> our way.</p>
 
                 
                 <p>Subscribe to email updates: <a href="https://feedburner.google.com/fb/a/mailverify?uri=healthcareai&amp;loc=en_US"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
