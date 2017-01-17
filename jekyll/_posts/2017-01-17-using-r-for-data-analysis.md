@@ -35,4 +35,4 @@ But, if you're often doing analysis using the tools mentioned above, we're excit
 - Offers machine learning
 - It's free
 
-We'll try to accomplish this in a series of blog posts. Each blog post will contain an R notebook, that'll have explanations, R code, and R plots to help you get stated. [Here's the first notebook in this series](www.healthcare.ai/notebooks/IntroHealthDataAnalysisInR.nb.html). Enjoy!
+We'll try to accomplish this in a series of blog posts. Each blog post will contain an R notebook, that'll have explanations, R code, and R plots to help you get stated. [Here's the first notebook in this series](/notebooks/IntroHealthDataAnalysisInR.nb.html). Enjoy!
