@@ -20,21 +20,59 @@ This package will get you started with healthcare machine learning in R.
 
 ------------------
 
-## How to install
+## How to install on Windows
 
 * If you haven't, install [R](https://cran.cnr.berkeley.edu) and [RStudio](https://www.rstudio.com/products/rstudio/download)
 
+
 * Grab prerequisites via the console of RGui or (preferably) RStudio
+
 ```{r}
 install.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lme4','lubridate','pROC','R6','ranger','ROCR','RODBC'),repos = "https://cran.cnr.berkeley.edu/")
 ```
-
-* Install the latest release of healthcareai
+  
+* Install healthcare.ai
 
 ```{r}
 library(devtools)
 devtools::install_url('https://github.com/HealthCatalystSLC/healthcareai-r/archive/v0.1.10.zip')
 ```
+
+## How to install on macOS
+
+Note: If using macOS with healthcare.ai, you'll have to write up your own database connectivity (or just use csv files). We'd [love to hear](http://healthcare.ai/contact) which databases your connecting to, so we can provide native support!
+
+* Open the Terminal
+
+* Install [Xcode](https://en.wikipedia.org/wiki/Xcode) compilers via `xcode-select –install`
+
+* Accept the Xcode license via `sudo xcodebuild -license`
+
+* Install Homebrew (the macOS package manager) with
+
+`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+
+* Install ODBC driver via `brew update && brew install unixODBC`
+
+* Open R Studio
+
+* In the console, install RODBC from source with `install.packages('RODBC',type = "source")`
+
+* In the console, install other R healthcare.ai prerequisites via
+
+```{r}
+install.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lme4','lubridate','pROC','R6','ranger','ROCR'),repos = "https://cran.cnr.berkeley.edu/")
+```
+
+* Install healthcare.ai
+
+```{r}
+library(devtools)
+devtools::install_url('https://github.com/HealthCatalystSLC/healthcareai-r/archive/v0.1.10.zip')
+```
+
+## Misc tips
 
 * Note: if you want the bleeding edge version, use this:
 
@@ -55,4 +93,4 @@ library(healthcareai)
 
 ## How to help
 
-Check out our github [repo](https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/README.md).
+Check out our github [repo](https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/README.md#contributing).

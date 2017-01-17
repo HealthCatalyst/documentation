@@ -71,7 +71,11 @@
                 
                     <li><a class="toctree-l4" href="#how-is-it-specific-to-healthcare">How is it specific to healthcare?</a></li>
                 
-                    <li><a class="toctree-l4" href="#how-to-install">How to install</a></li>
+                    <li><a class="toctree-l4" href="#how-to-install-on-windows">How to install on Windows</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-to-install-on-macos">How to install on macOS</a></li>
+                
+                    <li><a class="toctree-l4" href="#misc-tips">Misc tips</a></li>
                 
                     <li><a class="toctree-l4" href="#how-to-help">How to help</a></li>
                 
@@ -240,7 +244,7 @@
 <li>Risk-adjusted comparisons</li>
 </ul>
 <hr />
-<h2 id="how-to-install">How to install</h2>
+<h2 id="how-to-install-on-windows">How to install on Windows</h2>
 <ul>
 <li>
 <p>If you haven't, install <a href="https://cran.cnr.berkeley.edu">R</a> and <a href="https://www.rstudio.com/products/rstudio/download">RStudio</a></p>
@@ -253,12 +257,54 @@
 </code></pre>
 
 <ul>
-<li>Install the latest release of healthcareai</li>
+<li>Install healthcare.ai</li>
 </ul>
 <pre><code class="r">library(devtools)
 devtools::install_url('https://github.com/HealthCatalystSLC/healthcareai-r/archive/v0.1.10.zip')
 </code></pre>
 
+<h2 id="how-to-install-on-macos">How to install on macOS</h2>
+<p>Note: If using macOS with healthcare.ai, you'll have to write up your own database connectivity (or just use csv files). We'd <a href="http://healthcare.ai/contact">love to hear</a> which databases your connecting to, so we can provide native support!</p>
+<ul>
+<li>
+<p>Open the Terminal</p>
+</li>
+<li>
+<p>Install <a href="https://en.wikipedia.org/wiki/Xcode">Xcode</a> compilers via <code>xcode-select –install</code></p>
+</li>
+<li>
+<p>Accept the Xcode license via <code>sudo xcodebuild -license</code></p>
+</li>
+<li>
+<p>Install Homebrew (the macOS package manager) with</p>
+</li>
+</ul>
+<p><code>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></p>
+<ul>
+<li>
+<p>Install ODBC driver via <code>brew update &amp;&amp; brew install unixODBC</code></p>
+</li>
+<li>
+<p>Open R Studio</p>
+</li>
+<li>
+<p>In the console, install RODBC from source with <code>install.packages('RODBC',type = "source")</code></p>
+</li>
+<li>
+<p>In the console, install other R healthcare.ai prerequisites via</p>
+</li>
+</ul>
+<pre><code class="r">install.packages(c('caret','data.table','devtools','doParallel','e1071','grpreg','lme4','lubridate','pROC','R6','ranger','ROCR'),repos = &quot;https://cran.cnr.berkeley.edu/&quot;)
+</code></pre>
+
+<ul>
+<li>Install healthcare.ai</li>
+</ul>
+<pre><code class="r">library(devtools)
+devtools::install_url('https://github.com/HealthCatalystSLC/healthcareai-r/archive/v0.1.10.zip')
+</code></pre>
+
+<h2 id="misc-tips">Misc tips</h2>
 <ul>
 <li>Note: if you want the bleeding edge version, use this:</li>
 </ul>
@@ -278,7 +324,7 @@ devtools::install_github(repo='HealthCatalystSLC/healthcareai-r')
 </ul>
 <hr />
 <h2 id="how-to-help">How to help</h2>
-<p>Check out our github <a href="https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/README.md">repo</a>.</p>
+<p>Check out our github <a href="https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/README.md#contributing">repo</a>.</p>
               
             </div>
           </div>
@@ -327,5 +373,5 @@ devtools::install_github(repo='HealthCatalystSLC/healthcareai-r')
 
 <!--
 MkDocs version : 0.16.0
-Build Date UTC : 2017-01-01 03:11:22
+Build Date UTC : 2017-01-14 07:51:50
 -->
