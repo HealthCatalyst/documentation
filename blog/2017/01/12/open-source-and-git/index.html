@@ -120,7 +120,7 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
         <div class="row-fluid">
                 <h1 class="entry-title"><a href="">Contributing to open source software development using Github</a></h1>
                 January 12, 2017
-                <p>The purpose of this post is to help you become familiar with <em>Git</em>, an essential part of contributing to <a href="www.healthcare.ai">healthcare.ai</a>. Git is essentially a collaboration tool for software developers, and <a href="www.github.com"><em>Github</em></a> is the accompanying online storage platform. If you have been reading about healthcare.ai, you probably know that it is an <a href="http://healthcare.ai/#why"><em>open source</em> software package</a>. Open source means that we aren’t hiding anything from our users. They can use the package, view the contents, and modify the package for their particular needs. We chose to make healthcare.ai open source for two major reasons:</p>
+                <p>The purpose of this post is to help you become familiar with <em>Git</em>, an essential part of contributing to <a href="http://healthcare.ai">healthcare.ai</a>. Git is essentially a collaboration tool for software developers, and <a href="http://github.com"><em>Github</em></a> is the accompanying online storage platform. If you have been reading about healthcare.ai, you probably know that it is an <a href="http://healthcare.ai/#why"><em>open source</em> software package</a>. Open source means that we aren’t hiding anything from our users. They can use the package, view the contents, and modify the package for their particular needs. We chose to make healthcare.ai open source for two major reasons:</p>
 
 <ol>
   <li>
@@ -133,15 +133,15 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
 
 <p>As our team (and number of contributors) grows, it doesn’t make sense to share our code using email attachments. We make thousands of changes on hundreds of files. Instead, we use Git. Git is an industry standard service that makes it easy for large teams to collaborate on code, keep files safe from unwanted changes through <em>version control</em>, and facilitate code review before changes are published.</p>
 
-<p>The idea of Git is pretty easy to follow, but the vocabulary can be a little confusing at first. There are <a href="https://guides.github.com/introduction/flow/">many</a> <a href="http://git.huit.harvard.edu/guide/">great</a> <a href="https://guides.github.com/activities/hello-world/">resources</a> about Git online, but sometimes they are too basic for specific issues, or too complicated and lacking explanation. Hopefully you find these ideas basic but informative.</p>
+<p>The idea of Git is pretty easy to follow, but the vocabulary can be a little confusing at first. There are <a href="https://guides.github.com/introduction/flow/">many</a> <a href="http://git.huit.harvard.edu/guide/">great</a> <a href="https://guides.github.com/activities/hello-world/">resources</a> about Git online, but sometimes they are too basic for specific issues, or too complicated and lacking explanation. Hopefully you find the ideas below to be both useful and informative.</p>
 
 <p>Imagine that you are writing a paper. You write some, save the file: “myPaper_version1.doc.” You write more, save version 2, version 3… Essentially, this is what Git is doing. The codebase, or repository, is written line by line, and each change can be stored as a <em>commit</em>. The commits flow linearly, and if you don’t like the latest changes, you can roll back to the previous commit. This <a href="http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf">excellent cheat sheet shows that process</a>, where each circle represents a commit.</p>
 
-<p>I’ll focus on explaining 5 topics that are likely to help you collaborate.</p>
+<p>I’ll focus on explaining five topics that are likely to help you collaborate.</p>
 
 <ol>
   <li>Local vs Source<br />
-A code repository lives at <a href="www.github.com">www.github.com</a>, and you’d like to work on it. The <em>master</em> source is online. You need to <em>clone</em> or <em>fork</em> the repo to create a local copy on your computer. You can make improvements, commit them, and document each change. Verify that your code is working, then, they can be <em>merged</em> into the source copy.</li>
+A code repository lives at <a href="http://github.com">www.github.com</a>, and you’d like to work on it. The <em>master</em> source is online. You need to <em>clone</em> or <em>fork</em> the repo to create a local copy on your computer. You can make improvements, commit them, and document each change. Verify that your code is working, then, they can be <em>merged</em> into the source copy.</li>
   <li>Pushing and Pulling<br />
 When you are ready to submit your changes to the master, you must first <em>pull</em> changes from the master source to your local copy. This ensures that you have the latest changes from the master in your local copy. Then you can <em>push</em> your changes up to the online master. If you take a few weeks away from the code, make sure you pull the latest changes into your local copy before starting your work.
     <ul>
@@ -150,7 +150,7 @@ When you are ready to submit your changes to the master, you must first <em>pull
     </ul>
   </li>
   <li>Branches<br />
-<a href="https://github.com/HealthCatalystSLC/healthcareai-r/branches"><em>Branches</em></a> are used to help keep large changes, feature additions, etc. separate from the master source. They allow you to “break the code to fix it” without worrying that you are going to ruin the master. If you create a topic branch to work in, you now have two separate local copies: your local master, and your local branch. You can make ongoing changes to the code in your branch, then switch back to the master to actually use code that you know is working.
+<a href="http://github.com/HealthCatalystSLC/healthcareai-r/branches/"><em>Branches</em></a> are used to help keep large changes, feature additions, etc. separate from the master source. They allow you to “break the code to fix it” without worrying that you are going to ruin the master. If you create a topic branch to work in, you now have two separate local copies: your local master, and your local branch. You can make ongoing changes to the code in your branch, then switch back to the master to actually use code that you know is working.
     <ul>
       <li>Create a new topic branch or switch to an existing topic branch: <code class="highlighter-rouge">git checkout -b nameofbranch</code></li>
     </ul>
@@ -169,7 +169,7 @@ After pushing a completed topic branch up to the server, the <em>pull request</e
 
 <p>There is a lot of vocabulary in this post, but we hope that it’s helpful to see these things defined in context of how they are used. Seasoned developers forget that Git language can be hard to interpret since it’s such an important part of their everyday work. The truth is, it’s a barrier to entry for the casual contributor. However, it’s extremely important for the health of a large code project and the team that works on it.</p>
 
-<p>If you’ve become motivated to get down to business, make an account on Github [www.github.com], <a href="https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/CONTRIBUTING.md#clone-healthcareai-r-repo">clone our repo</a>, and help us shape the future of healthcare machine learning! There are more detailed instructions in the <a href="https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/README.md">readme</a> and <a href="https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/CONTRIBUTING.md">contributing</a> files, and you can feel free to <a href="http://healthcare.ai/contact.html">send questions</a> our way.</p>
+<p>If you’ve become motivated to get down to business, make an account on <a href="https://github.com/">Github</a>, <a href="https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/CONTRIBUTING.md#clone-healthcareai-r-repo">clone our repo</a>, and help us shape the future of healthcare machine learning! There are more detailed instructions in the <a href="https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/README.md">readme</a> and <a href="https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/CONTRIBUTING.md">contributing</a> files, and you can feel free to <a href="http://healthcare.ai/contact.html">send questions</a> our way.</p>
 
                 
                 <p>Subscribe to email updates: <a href="https://feedburner.google.com/fb/a/mailverify?uri=healthcareai&amp;loc=en_US"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
