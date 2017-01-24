@@ -118,60 +118,32 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
 <div class="content">
     <div class="container">
         <div class="row-fluid">
-                <h1 class="entry-title"><a href="">Contributing to open source software development using Github</a></h1>
-                January 12, 2017
-                <p>The purpose of this post is to help you become familiar with <em>Git</em>, an essential part of contributing to <a href="http://healthcare.ai">healthcare.ai</a>. Git is essentially a collaboration tool for software developers, and <a href="http://github.com"><em>Github</em></a> is the accompanying online storage platform. If you have been reading about healthcare.ai, you probably know that it is an <a href="http://healthcare.ai/#why"><em>open source</em> software package</a>. Open source means that we aren’t hiding anything from our users. They can use the package, view the contents, and modify the package for their particular needs. We chose to make healthcare.ai open source for two major reasons:</p>
+                <h1 class="entry-title"><a href="">Feature engineering in healthcare machine learning</a></h1>
+                January 24, 2017
+                <p>In previous blog posts, we’ve discussed specific <a href="http://healthcare.ai/blog/2016/12/22/applications-of-healthcare-machine-learning/">applications of machine learning (ML) in healthcare</a> and the <a href="http://healthcare.ai/blog/2016/12/21/which-algorithms-are-in-healthcareai/">available algorithms in healthcare.ai</a>. As you build an ML model, creating and selecting the right features can be just as foundationally important as matching the right algorithm with the right use case. In this post, we will discuss how domain knowledge of healthcare data can be used to create features that make your ML models more accurate and useful. This process is known as <a href="https://en.wikipedia.org/wiki/Feature_engineering">feature engineering</a>.</p>
 
-<ol>
+<p>Using an ML model off the shelf is easy but often ineffective. Feature engineering usually makes or breaks it. It’s the creative part of the process; it builds the foundation for everything else. Many of the features we use in our ML models can be categorized as demographics, vitals, labs, medications, clinical events, healthcare utilization, visit details, and comorbidities. We can break these categories out more granularly into the specific features that are helpful to our ML model. From here, we often develop multiple transformations of a feature based on the underlying reasons that might inherently make that specific form of the feature more predictive – this is the engineering part.</p>
+
+<p>For example, a patient’s blood pressure could be a clinical event feature that is predictive of their hospital length of stay. However, there are a bunch of things you need to consider before arriving at a truly predictive feature: Should you separate systolic from diastolic? Create a binary feature, hypotension or hypertension? Or continuous? When multiple records exist, do you use the highest values or the lowest? Earliest or the latest? And so on. You might even need to get so specific as to create a binary (Yes/No) feature defined by the question – “Was the patient’s systolic blood pressure 140 mmHg or higher during the first 12 hours following admission to the hospital?” or a continuous feature defined as the “Highest diastolic blood pressure value within the first 24 hours of admission to the hospital”.</p>
+
+<p>For clarity sake, two additional examples of basic feature engineering that we use on a regular basis are age and home address. A feature containing continuous age values could be helpful to the model on its own, or transformed into 10-year age groups, or a binary variable identifying patients age 65 and older. An address can be broken out into its various components like city, state, and zip code; all of which can serve as proxies for helpful information that is not always available in the data, like socioeconomic status. We can also use <a href="https://en.wikipedia.org/wiki/Geocoding">geocoding</a> to convert addresses into coordinates that can be plotted against relevant maps to pick up additional insight related to things like distance to a provider or local barriers to transportation.</p>
+
+<p>Clearly, you could come up with dozens of versions of a single feature and some are going to work much better than others. The great thing about machine learning is that you can use your healthcare domain knowledge to pare down the relevant and potentially useful iterations of your feature, and then let the ML algorithm help isolate the most predictive features and transformations during final <a href="https://en.wikipedia.org/wiki/Feature_selection">feature selection</a> (a related topic that we’ll dive into in an upcoming post). The ML algorithms in <a href="http://healthcare.ai/">healthcare.ai</a> can help select the right versions, but you have to do the leg work to get them in there to try. Also, we covered this recently, but don’t forget about <a href="https://en.wikipedia.org/wiki/Feature_selection">data leakage</a> when creating features; you’ll need to make sure you consider your use case so that you don’t train the ML model using features that would not yet be available at your preferred time of prediction.</p>
+
+<p>Feature engineering is a ton of work and underscores the importance of data scientists and data architects having a combination of technical skills and deep domain knowledge. Some good news related to lightening the workload – we’ve already included a couple of feature engineering functions in healthcare.ai that can save a significant amount of time and effort transforming certain features.</p>
+
+<ul>
   <li>
-    <p><strong>Anyone can contribute to its development.</strong> When an open source package becomes popular, there could be hundreds of people working on making it better!</p>
+    <p>One such function is called <a href="http://healthcare.ai/r/model-pre-processing/longitudinal-imputation/">longitudinal imputation</a> which works with longitudinal data to carry a value forward from a patient’s previous record to the fill in a NULL value in the most current record. An example might be using longitudinal imputation to pull a patient’s BMI forward from their previous visit to their current visit, if their weight and height have not yet been recorded. Using this function appropriately, can improve model accuracy by filling in data that might otherwise be left NULL or imputed with your dataset’s mean or mode for that feature.</p>
   </li>
   <li>
-    <p><strong>The rising tide will raise all boats.</strong> We are trying to be a leader in healthcare machine learning, and hoping that our efforts will be visible, benefit the community, and benefit patient care.</p>
+    <p>Another great feature engineering function in healthcare.ai helps with <a href="http://healthcare.ai/r/model-pre-processing/seasonality-handling/">seasonality handling</a> by transforming date-time columns, which are difficult for ML algorithms to handle, into their various components ultimately treating them as separate features. Event dates, like date of admission, can hold a lot of helpful information for seasonality handling and proxying for other things that might not be well represented in the data. With minimal effort, you can use this function to test which component(s) of the admit date-time stamp like month, day of week, hour, etc. are most helpful to your model.</p>
   </li>
-</ol>
+</ul>
 
-<p>As our team (and number of contributors) grows, it doesn’t make sense to share our code using email attachments. We make thousands of changes on hundreds of files. Instead, we use Git. Git is an industry standard service that makes it easy for large teams to collaborate on code, keep files safe from unwanted changes through <em>version control</em>, and facilitate code review before changes are published.</p>
+<p>Automating feature engineering is difficult to do, especially considering the complexity of healthcare data and the types of healthcare machine learning problems we are attempting to solve. Deep domain knowledge and human intuition are very difficult to replicate. However, it’s a hot area of research and we’ll definitely continue to explore and post on advances in feature engineering. Algorithms for automatically generating features for relational data sets like the <a href="http://groups.csail.mit.edu/EVO-DesignOpt/groupWebSite/uploads/Site/DSAA_DSM_2015.pdf">Deep Feature Synthesis algorithm</a> are becoming smarter and more dynamic every day. We look forward to incorporating new techniques and algorithms into healthcare.ai so that we can all focus our efforts on improving healthcare outcomes in new and exciting ways.</p>
 
-<p>The idea of Git is pretty easy to follow, but the vocabulary can be a little confusing at first. There are <a href="https://guides.github.com/introduction/flow/">many</a> <a href="http://git.huit.harvard.edu/guide/">great</a> <a href="https://guides.github.com/activities/hello-world/">resources</a> about Git online, but sometimes they are too basic for specific issues, or too complicated and lacking explanation. Hopefully you find the ideas below to be both useful and informative.</p>
-
-<p>Imagine that you are writing a paper. You write some, save the file: “myPaper_version1.doc.” You write more, save version 2, version 3… Essentially, this is what Git is doing. The codebase, or repository, is written line by line, and each change can be stored as a <em>commit</em>. The commits flow linearly, and if you don’t like the latest changes, you can roll back to the previous commit. This <a href="http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf">excellent cheat sheet shows that process</a>, where each circle represents a commit.</p>
-
-<p>I’ll focus on explaining five topics that are likely to help you collaborate.</p>
-
-<ol>
-  <li>
-    <p>Local vs source<br />
-A code repository lives at <a href="http://github.com">www.github.com</a>, and you’d like to work on it. The <em>master</em> source is online. You need to <em>clone</em> or <em>fork</em> the repo to create a local copy on your computer. You can make improvements, commit them, and document each change. Verify that your code is working, then, they can be <em>merged</em> into the source copy.</p>
-  </li>
-  <li>Pushing and Pulling<br />
-When you are ready to submit your changes to the master, you must first <em>pull</em> changes from the master source to your local copy. This ensures that you have the latest changes from the master in your local copy. Then you can <em>push</em> your changes up to the online master. If you take a few weeks away from the code, make sure you pull the latest changes into your local copy before starting your work.
-    <ul>
-      <li>Pull changes from the master source to your local copy: <code class="highlighter-rouge">git pull</code></li>
-      <li>Push your local changes to the online master: <code class="highlighter-rouge">git push</code></li>
-    </ul>
-  </li>
-  <li>Branches<br />
-<a href="http://github.com/HealthCatalystSLC/healthcareai-r/branches/"><em>Branches</em></a> are used to help keep large changes, feature additions, etc. separate from the master source. They allow you to “break the code to fix it” without worrying that you are going to ruin the master. If you create a topic branch to work in, you now have two separate local copies: your local master, and your local branch. You can make ongoing changes to the code in your branch, then switch back to the master to actually use code that you know is working.
-    <ul>
-      <li>Create a new topic branch or switch to an existing topic branch: <code class="highlighter-rouge">git checkout -b nameofbranch</code></li>
-    </ul>
-  </li>
-  <li>Merging<br />
-When the topic branch you’ve been developing is done, documented, and functional, it’s ready to be merged back into the master branch. Again, update your local master, as other people could have been working on the code while you were. Merge the local master into your local branch (the ordering can be disputed, but this is how we do it at healthcare.ai), allowing you to test for functionality with all the latest changes. Finally, push the local branch up to the server and ask for review.
-    <ul>
-      <li>Check out the latest online master and merge into the local topic branch: <code class="highlighter-rouge">git merge origin/master</code></li>
-      <li>Make sure it all still works!</li>
-      <li>Push the local branch to the server for review: <code class="highlighter-rouge">git push</code></li>
-    </ul>
-  </li>
-  <li>Pull Requests<br />
-After pushing a completed topic branch up to the server, the <em>pull request</em> acts as a request for code review. The term pull request <del>makes no sense to me</del> <a href="https://www.quora.com/GitHub-Why-is-the-pull-request-called-pull-request">Got it!</a> Another developer will look through your changes and documentation, ask for revisions, and eventually approve the pull request. After this happens, the branch will be merged into the online master. Anyone who clones the master will now get your changes, and the branch can be deleted.</li>
-</ol>
-
-<p>There is a lot of vocabulary in this post, but we hope that it’s helpful to see these things defined in context of how they are used. Seasoned developers forget that Git language can be hard to interpret since it’s such an important part of their everyday work. The truth is, it’s a barrier to entry for the casual contributor. However, it’s extremely important for the health of a large code project and the team that works on it.</p>
-
-<p>If you’ve become motivated to get down to business, make an account on <a href="https://github.com/">Github</a>, <a href="https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/CONTRIBUTING.md#clone-healthcareai-r-repo">clone our repo</a>, and help us shape the future of healthcare machine learning! There are more detailed instructions in the <a href="https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/README.md">readme</a> and <a href="https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/CONTRIBUTING.md">contributing</a> files, and you can feel free to <a href="http://healthcare.ai/contact.html">send questions</a> our way.</p>
+<p>Thanks for reading and please <a href="http://healthcare.ai/contact">reach out</a> with any questions or comments!</p>
 
                 
                 <p>Subscribe to email updates: <a href="https://feedburner.google.com/fb/a/mailverify?uri=healthcareai&amp;loc=en_US"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">

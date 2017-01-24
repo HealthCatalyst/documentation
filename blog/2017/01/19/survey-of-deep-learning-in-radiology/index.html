@@ -132,37 +132,72 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
 
 <p>As it turns out, <a href="http://www.nature.com/nature/journal/v521/n7553/full/nature14539.html">deep learning algorithms</a> excel at the same kind of analysis and pattern recognition that a radiologist does. The algorithms will examine thousands of images of every type and eventually learn how to distinguish them based on different sized sections of the image. There is potential to see patterns that would elude even best radiologists, detect exquisitely specific changes in a single person’s history, and totally transform radiology. This application could help to treat breast cancer more effectively, at lower cost, with less resources.
 Of course, there have already been efforts at individual academic medical centers in mammographic screening. Big breakthroughs in breast imaging are just starting to come out in the high-impact journals.</p>
+
 <ul>
-  <li>Recently, <a href="http://www.nature.com/articles/srep27327">Wang et al.</a> were able to detect <a href="http://www.mayoclinic.org/symptoms/breast-calcifications/basics/definition/sym-20050834">microcalcifications</a> in mammograms, in effective early indicator of breast cancer. They used a data set of approximately 1200 images to train a Stacked Auto-Encoder deep learning architecture, and were able to identify microcalcifications with an <a href="http://healthcare.ai/blog/2016/12/15/model-evaluation-using-roc-curves/">AUC</a> of 0.87.</li>
-  <li>In another study, <a href="http://www.nature.com/articles/srep24454">Cheng et al.</a> used a Stacked Denoising Auto-Encoder to differentiate malignant breast lesions from benign in 550 <a href="http://www.cancer.org/cancer/breast-cancer/screening-tests-and-early-detection/breast-ultrasound.html">ultrasound</a> images. They achieved an AUC of 0.90 for the task.</li>
-  <li>Finally, <a href="https://arxiv.org/abs/1612.00542">Levi et al.</a> trained several existing Convolutional Neural Network (CNN) architectures to classify pre-labeled regions from 1800 mammograms. Their GoogLeNet CNN was able to distinguish malignant from benign with precision of 0.92 and recall of 0.93.</li>
+  <li>
+    <p>Recently, <a href="http://www.nature.com/articles/srep27327">Wang et al.</a> were able to detect <a href="http://www.mayoclinic.org/symptoms/breast-calcifications/basics/definition/sym-20050834">microcalcifications</a> in mammograms, in effective early indicator of breast cancer. They used a data set of approximately 1200 images to train a Stacked Auto-Encoder deep learning architecture, and were able to identify microcalcifications with an <a href="http://healthcare.ai/blog/2016/12/15/model-evaluation-using-roc-curves/">AUC</a> of 0.87.</p>
+  </li>
+  <li>
+    <p>In another study, <a href="http://www.nature.com/articles/srep24454">Cheng et al.</a> used a Stacked Denoising Auto-Encoder to differentiate malignant breast lesions from benign in 550 <a href="http://www.cancer.org/cancer/breast-cancer/screening-tests-and-early-detection/breast-ultrasound.html">ultrasound</a> images. They achieved an AUC of 0.90 for the task.</p>
+  </li>
+  <li>
+    <p>Finally, <a href="https://arxiv.org/abs/1612.00542">Levi et al.</a> trained several existing Convolutional Neural Network (CNN) architectures to classify pre-labeled regions from 1800 mammograms. Their GoogLeNet CNN was able to distinguish malignant from benign with precision of 0.92 and recall of 0.93.</p>
+  </li>
 </ul>
 
 <p>If we were to move forward with a deep learning model for breast imaging, reproducing one of these studies would be a good starting point. Screening mammograms are probably the best place to start, due to their high volume in healthcare. In addition to breast imaging, <a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7463094">this excellent review</a> points out several other promising areas to begin. Additional promising areas are in lung cancer screening from CT images, and in automated tissue labeling of brain MRI. In lung cancer screening and automatic brain segmentation,</p>
+
 <ul>
-  <li><a href="https://arxiv.org/ftp/arxiv/papers/1611/1611.06651.pdf">Yang et al.</a> employed a CNN to classify known lung nodules as either malignant or benign from 4 separate data sets. Some of their models failed to generalize well, but others could achieve extremely high classification accuracy on the validation set.</li>
-  <li>In the same paper as their breast study, <a href="http://www.nature.com/articles/srep24454">Cheng et al.</a> classified 1400 lung nodules from chest CT images. They saw AUC as high as 0.98 depending on the algorithm configuration.</li>
-  <li><a href="http://www.sciencedirect.com/science/article/pii/S1361841516300330">Havaei et al.</a> present their state of the art in segmentation of glioblastoma brain tumors from MRI images. They use a CNN to segment a competition data set with practical speed (0.5 to 3 minutes) and high accuracy.</li>
+  <li>
+    <p><a href="https://arxiv.org/ftp/arxiv/papers/1611/1611.06651.pdf">Yang et al.</a> employed a CNN to classify known lung nodules as either malignant or benign from 4 separate data sets. Some of their models failed to generalize well, but others could achieve extremely high classification accuracy on the validation set.</p>
+  </li>
+  <li>
+    <p>In the same paper as their breast study, <a href="http://www.nature.com/articles/srep24454">Cheng et al.</a> classified 1400 lung nodules from chest CT images. They saw AUC as high as 0.98 depending on the algorithm configuration.</p>
+  </li>
+  <li>
+    <p><a href="http://www.sciencedirect.com/science/article/pii/S1361841516300330">Havaei et al.</a> present their state of the art in segmentation of glioblastoma brain tumors from MRI images. They use a CNN to segment a competition data set with practical speed (0.5 to 3 minutes) and high accuracy.</p>
+  </li>
 </ul>
 
 <p>It would be crazy to try to cover every bit of research in this post. There are countless studies to cover beyond those discussed here, plus annual conferences such as <a href="https://nips.cc/">NIPS</a> and <a href="https://2017.icml.cc/">ICML</a>. However, it would be worth mentioning a few areas of research from the private sector.</p>
+
 <ul>
-  <li>Google Deepmind <a href="https://deepmind.com/applied/deepmind-health/">recently announced a health initiative</a> and has been working to identify diabetic retinopathy from images of the eye.</li>
-  <li>The San Francisco based start-up, <a href="http://www.enlitic.com/">Enlitic</a>, works to develop deep learning methods for the use cases above and has partnered with several hospitals already.</li>
-  <li><a href="http://siris-medical.com/">Siris Medical</a> works to use past patient data to automate radiation treatment planning and brain segmentation.</li>
+  <li>
+    <p>Google Deepmind <a href="https://deepmind.com/applied/deepmind-health/">recently announced a health initiative</a> and has been working to identify diabetic retinopathy from images of the eye.</p>
+  </li>
+  <li>
+    <p>The San Francisco based start-up, <a href="http://www.enlitic.com/">Enlitic</a>, works to develop deep learning methods for the use cases above and has partnered with several hospitals already.</p>
+  </li>
+  <li>
+    <p><a href="http://siris-medical.com/">Siris Medical</a> works to use past patient data to automate radiation treatment planning and brain segmentation.</p>
+  </li>
 </ul>
 
 <p>Finally, many of the data sets that were used in the studies mentioned above are open source and freely available.</p>
+
 <ul>
-  <li><a href="http://www.visceral.eu/">Visceral</a></li>
-  <li><a href="http://image-net.org/">ImageNet</a></li>
-  <li><a href="https://www.kaggle.com/c/data-science-bowl-2017">Kaggle Data Science Bowl</a></li>
-  <li><a href="https://grand-challenge.org/All_Challenges/">Grand Challenge</a></li>
-  <li><a href="https://imaging.cancer.gov/programsandresources/informationsystems/lidc">Lung Image Database Consortium</a></li>
-  <li><a href="http://braintumorsegmentation.org/">Multimodal Brain Tumor Segmentation Challenge</a></li>
+  <li>
+    <p><a href="http://www.visceral.eu/">Visceral</a></p>
+  </li>
+  <li>
+    <p><a href="http://image-net.org/">ImageNet</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.kaggle.com/c/data-science-bowl-2017">Kaggle Data Science Bowl</a></p>
+  </li>
+  <li>
+    <p><a href="https://grand-challenge.org/All_Challenges/">Grand Challenge</a></p>
+  </li>
+  <li>
+    <p><a href="https://imaging.cancer.gov/programsandresources/informationsystems/lidc">Lung Image Database Consortium</a></p>
+  </li>
+  <li>
+    <p><a href="http://braintumorsegmentation.org/">Multimodal Brain Tumor Segmentation Challenge</a></p>
+  </li>
 </ul>
 
 <p>Breast screening, lung screening, and brain segmentation are the some of the most popular and promising applications of deep learning in healthcare currently. Early research in these areas has shown encouraging results, and there is a lot of effort towards advancements. Furthermore, these areas have the potential to benefit a lot of patients as they include common diseases, treatments, and procedures. It’s an exciting time to be in healthcare machine learning, and we look forward to implementing deep learning into our package.   Thanks for reading, and please feel free to <a href="http://healthcare.ai/contact">reach out</a> with questions!</p>
+
 
                 
                 <p>Subscribe to email updates: <a href="https://feedburner.google.com/fb/a/mailverify?uri=healthcareai&amp;loc=en_US"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
