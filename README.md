@@ -24,6 +24,20 @@ Please do a pull request if you see typos!
 
 4) Run `mkdocs serve` or `python -m http.server` to view docs
 
+## Python sphinx update instructions
+
+1) `cd` to the docs directory in the healthcareai-py repo
+
+2) Edit the .rst files within docs folder
+
+3) Build the docs and generate a py directory via `sphinx-build -b html docs py`
+
+4) Use `python -m http.server` to view the new docs in /py
+
+5) To place the docs within the right spot, run `cp -rf py ../documentation`
+
+6) Delete py folder in the healthcareai-py repo via `rm -rf py`
+
 ## Jekyll update instructions
 
 1) Add the new .md file in jekyll/\_posts
