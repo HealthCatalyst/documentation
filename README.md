@@ -34,7 +34,7 @@ Please do a pull request if you see typos!
 
 4) Use `python -m http.server` to view the new docs in /py
 
-5) To place the docs within the right spot, run `cp -rf py ../documentation`
+5) To place the docs within the right spot in the *documentation* repo, run `cp -rf py ../documentation`
 
 6) Delete py folder in the healthcareai-py repo via `rm -rf py`
 
