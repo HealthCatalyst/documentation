@@ -26,6 +26,12 @@ Please do a pull request if you see typos!
 
 ## Python sphinx update instructions
 
+Pre-requisites:
+
+- Clone the healthcareai-py repo in addition to the documentation repo
+
+- Install the packages in healthcareai-py/dev-requirements.txt
+
 1) `cd` to the docs directory in the healthcareai-py repo
 
 2) Edit the .rst files within docs folder
