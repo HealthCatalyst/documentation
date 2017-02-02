@@ -6,4 +6,5 @@ jekyll/_site/
 _site/
 .idea
 .vscode
+jekyll/vendor
 
