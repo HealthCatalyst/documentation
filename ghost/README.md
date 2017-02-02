@@ -1,1 +1,0 @@
-# Health Catalyst Tech Blog
