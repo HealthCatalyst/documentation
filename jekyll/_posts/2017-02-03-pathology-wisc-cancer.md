@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Using healthcare.ai Python"
-date:   2017-02-03 16:00:00 -0700t
+date:   2017-02-03 6:00:00 -0700t
 tags: example
 author: Mike Mastanduno
 categories: blog
@@ -18,7 +18,7 @@ This example uses a dataset that can be found on the [UCI Machine Learning Repos
 3. A pathologist read the slides to determine whether the cells were malignant or benign. 
 4. The pathologist recorded observations about the size, shape, and characteristics of the cell nuclei. 
 
-![Pathology slide example]( ../assets/breast-cancer-images-enlarged.png)
+![Pathology slide example]( ../assets/breast-cancer-images-small.png)
 
 The cellular characteristics in the slides help the pathologist make the distinction between malignant and benign lesions. Since the pathologist had the courtesy to record the features, we can see if a machine learning algorithm can distinguish the tissue samples as well as the pathologist could. Like [R notebooks](r post 2), Python can be written into a *Jupyter Notebook* for easy annotation and sharing. As there is a lot of code, data, and visualization contained within this post, it would be good if you would follow along with the [notebook](nb).
 
@@ -27,12 +27,12 @@ The basic process is:
 2. Explore the data through statistics and visualization.
 3. Implement machine learning models.  
 
-Again, check out the example notebook, thanks for reading, and [contact us](contact) with any questions. 
+Again, check out the [example notebook](nb), thanks for reading, and [contact us](contact) with any questions. 
 
 
 [hcai-py]:http://healthcare.ai/py/
 [uci]:https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29
-[nb]:http://healthcare.ai/notebooks/Wisconsin-Pathology-Notebook.nb.html
+[nb]:http://healthcare.ai/notebooks/Wisconsin-Pathology-Notebook.html
 [r post]:http://healthcare.ai/blog/2017/01/17/using-r-for-data-analysis/
 [contact]:http://healthcare.ai/contact.html
 [r post 2]:http://healthcare.ai/blog/2017/01/08/us-health-by-county/
