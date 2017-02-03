@@ -39,7 +39,7 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
 <!-- End Facebook Pixel Code -->
 
     
-   
+
     <base href="http://healthcare.ai/" />
 
     <!-- Bootstrap Core CSS -->
@@ -60,7 +60,6 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
 
 </head>
 <body>
-    
 <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
@@ -118,83 +117,42 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
 <div class="content">
     <div class="container">
         <div class="row-fluid">
+                <h1 class="entry-title"><a href="">How can precision-recall curves help evaluate your model?</a></h1>
+                January 31, 2017
+                <p>Whenever we use machine learning (ML) for prediction, the question of how to evaluate the model is of the utmost importance. Of course, different metrics are appropriate for different kinds of models and business questions. If we were to predict patient length of stay (LOS)—a numeric value—we’d use a different model evaluation metric than if we were evaluating a model that predicts 30-day readmissions, which is a binary column (i.e., Y or N). It’s these types of decisions that <a href="http://healthcare.ai/">healthcare.ai</a> streamlines.</p>
 
-            <p style="font-size:26px">
-            This blog will touch on many of the technical choices made at Health Catalyst, mainly around data science. If there’s a particular topic that interests, <a href ="http://healthcare.ai/contact">contact us!</a> Some posts will be short, while others will be in-depth. The tone will be informal, with a focus on content and frequent posts (twice per-week) rather than polish. When we talk about doing things with data, we’ll post the code, so you can follow along. Please excuse any temporary issues on mobile devices, as we're experimenting with what might work best.
-            </p>
-            
-            <hr>
+<p>In healthcare, we’re most commonly focused binary predictions—think of readmissions, hospital-acquired infections, mortality, appointment no-shows, etc. In addition, our data frequently has <em>imbalanced classes</em>. What this means is that, for the column we’re predicting (i.e., no-shows, readmissions, etc.), there are many more of either Y’s or N’s. In healthcare ML, it’s typically the case that N is much more common than Y. That’s a good thing. It’s nice that most people don’t get a hospital-acquired infection. However, because of this label imbalance, the most common classification evaluation metric could benefit from some adjustments.</p>
 
-            <div style="display:block;">
-            <ul style="font-size: 24px;">
-             
-            <article><a href="http://healthcare.ai/blog/2017/02/03/pathology-wisc-cancer/">Using healthcare.ai Python <span class="entry-date"><time datetime="2017-02-03T06:00:00-07:00">February 03, 2017</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2017/01/31/au-pr-vs-au-roc/">How can precision-recall curves help evaluate your model? <span class="entry-date"><time datetime="2017-01-31T03:00:00-07:00">January 31, 2017</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2017/01/26/training-testing/">How should you divide your data? <span class="entry-date"><time datetime="2017-01-26T03:00:00-07:00">January 26, 2017</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2017/01/24/feature-engineering/">Feature engineering in healthcare machine learning <span class="entry-date"><time datetime="2017-01-24T03:00:00-07:00">January 24, 2017</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2017/01/19/survey-of-deep-learning-in-radiology/">Survey of deep learning in radiology <span class="entry-date"><time datetime="2017-01-19T16:32:11-07:00">January 19, 2017</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2017/01/17/using-r-for-data-analysis/">Using R for healthcare data analysis <span class="entry-date"><time datetime="2017-01-17T11:12:11-07:00">January 17, 2017</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2017/01/12/open-source-and-git/">Contributing to open source software development using Github <span class="entry-date"><time datetime="2017-01-12T01:32:11-07:00">January 12, 2017</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2017/01/11/know-your-business-question-a-focus-on-readmissions/">Know your business question: A focus on readmissions <span class="entry-date"><time datetime="2017-01-11T21:00:00-07:00">January 11, 2017</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2017/01/08/us-health-by-county/">Which regions of the US are healthy? <span class="entry-date"><time datetime="2017-01-08T16:00:00-07:00">January 08, 2017</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2017/01/06/data-leakage-in-healthcare-machine-learning/">Data leakage in healthcare machine learning <span class="entry-date"><time datetime="2017-01-06T15:00:00-07:00">January 06, 2017</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2016/12/22/applications-of-healthcare-machine-learning/">Applications of healthcare machine learning <span class="entry-date"><time datetime="2016-12-22T21:39:11-07:00">December 22, 2016</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2016/12/21/which-algorithms-are-in-healthcareai/">Which algorithms are in healthcare.ai? <span class="entry-date"><time datetime="2016-12-21T20:17:11-07:00">December 21, 2016</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2016/12/15/model-evaluation-using-roc-curves/">Model evaluation using ROC Curves <span class="entry-date"><time datetime="2016-12-15T15:37:00-07:00">December 15, 2016</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2016/12/12/what-models-has-health-catalyst-created/">What models has Health Catalyst created with healthcare.ai? <span class="entry-date"><time datetime="2016-12-12T09:28:05-07:00">December 12, 2016</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2016/12/09/technical-necessity-of-healthcareai/">The technical need for healthcare.ai <span class="entry-date"><time datetime="2016-12-09T07:47:05-07:00">December 09, 2016</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2016/12/05/benefits-of-machine-learning-in-healthcare/">The benefits of machine learning in healthcare <span class="entry-date"><time datetime="2016-12-05T07:24:23-07:00">December 05, 2016</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2016/12/02/why-r-and-python/">Why R and Python? <span class="entry-date"><time datetime="2016-12-02T07:17:06-07:00">December 02, 2016</time></span></a></article>
-            <br>
-             
-            <article><a href="http://healthcare.ai/blog/2016/12/01/welcome-to-healthcareai/">Welcome to healthcare.ai <span class="entry-date"><time datetime="2016-12-01T08:37:13-07:00">December 01, 2016</time></span></a></article>
-            <br>
-            
-            </ul>
-            </div>
-            
-            <hr>
+<p>For binary classification, the gold-standard for evaluation is the ROC curve and the associated area under the curve (AUC). <a href="http://healthcare.ai/blog/2016/12/15/model-evaluation-using-roc-curves/">In a past post</a>, we’ve detailed why these are common. Considering that imbalanced classes are so pervasive in healthcare, we’re excited to detail why we’ve also included precision-recall (PR) curves and the associated area under the curve in the R 0.1.10 release of healthcare.ai. In the following discussion, we’ll focus on the curves themselves, but the same thoughts apply to both AU_ROC and AU_PR, which is area under the ROC and PR curves, respectively.</p>
 
-            <p style="font-size:26px">Subscribe to email updates: <a href="https://feedburner.google.com/fb/a/mailverify?uri=healthcareai&amp;loc=en_US"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-            <a href="https://feedburner.google.com/fb/a/mailverify?uri=healthcareai&amp;loc=en_US" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >
-            <i class="fa-rss fa"></i></a></a></p>
-       
+<p>Recall that the <a href="http://healthcare.ai/blog/2016/12/15/model-evaluation-using-roc-curves/">ROC</a> shows the <em>True Positive Rate (TPR)</em> on the y-axis and the <em>False Positive Rate (FPR)</em> on the X-axis. As that <a href="http://healthcare.ai/blog/2016/12/15/model-evaluation-using-roc-curves/">previous post</a> explained, <em>TPR</em> is the proportion of actual readmissions that the test correctly predicted would be readmitted. <em>FPR</em> is the proportion of patients whom the model predicted would be readmitted, but were not. Here’s a ROC curve, for reference.</p>
+
+<p><img src="../assets/AUCPost_ROCExample.png" alt="Example ROC Curves" /></p>
+
+<p>TPR is also known as <a href="https://en.wikipedia.org/wiki/Precision_and_recall#Definition_.28classification_context.29"><em>recall</em></a> and also is present in PR curves. Compared to a ROC curve, a PR curve simple moves TPR (i.e., recall) to the x-axis and swaps out FPR for precision (which is on the y-axis). Now, why is that so significant when it comes to data with imbalanced classes? Consider the true negative. When you have data with a 10% rate of 30-day readmissions and that’s what you’re predicting, your model could simply predict N 90% of the time and be correct. Introducing precision instead of FPR in the PR curve is helpful because, as <a href="http://machinelearning.wustl.edu/mlpapers/paper_files/icml2006_DavisG06.pdf">this paper</a> states, “a large change in the number of false positives can lead to a small change in the false positive rate.” Basically, with highly-imbalanced classes FPR is overwhelmed by the number of true negatives. Precision, on the other hand, focuses on true positives and false positives (which are much more relevant than true negatives when your classes are imbalanced toward negatives). We’ve created a guide that was inspired by this Stack Overflow <a href="http://stats.stackexchange.com/a/90783/124897">answer</a>:</p>
+
+<p><img src="../assets/Post17PRcurve/Equations_final.jpg" alt="Equations" /></p>
+
+<p>Note the lack of TNs in the second set of equations. Now, <em>how do the two metrics compare on the same dataset?</em> Let’s use the <a href="https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/inst/extdata/HCRDiabetesClinical.csv">diabetes dataset</a> that comes with healthcare.ai to compare Lasso vs. Random Forest when predicting readmissions:</p>
+
+<p><img src="../assets/Post17PRcurve/ROCExample.png" alt="ROCExample" /></p>
+
+<p><img src="../assets/Post17PRcurve/PRCurveExample.png" alt="PRExample" /></p>
+
+<p>Note that the Random Forest-based model performs better than the Lasso-based model—note the greater area under the curve. However, we find that the difference between the algorithms is much more stark in terms of the ROC curve compared with the PR curve. Is this typically the case?</p>
+
+<p>As we read in <a href="http://machinelearning.wustl.edu/mlpapers/paper_files/icml2006_DavisG06.pdf">this paper</a>, “an algorithm that optimizes the area under the ROC curve is not guaranteed to optimize the area under the PR curve.” If you have highly imbalanced classes, you may want to focus on the PR curve and maximizing the area under the curve (i.e., AU_PR), even though common benchmarks and your related presentation may tout your awesome results in terms of ROC. Happy modeling!</p>
+
+<p>Feel free to <a href="http://healthcare.ai/contact.html">reach out with questions</a>, and thanks for reading.</p>
+
+
+                
+                <p>Subscribe to email updates: <a href="https://feedburner.google.com/fb/a/mailverify?uri=healthcareai&amp;loc=en_US"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+                <a href="https://feedburner.google.com/fb/a/mailverify?uri=healthcareai&amp;loc=en_US" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >
+                <i class="fa-rss fa"></i></a></a></p>           
         </div>
     </div>
 </div>
-
     <footer>
         <div class="container">
             <div class="row">
@@ -213,7 +171,11 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
 
     <!-- Contact Form JavaScript -->
     <script src="splashjs/jqBootstrapValidation.js"></script>
-    
+    <script src="splashjs/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="splashjs/clean-blog.min.js"></script>
+
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
