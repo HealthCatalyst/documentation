@@ -47,7 +47,7 @@ This is the jekyll workflow until we use [readthedocs](https://readthedocs.org/)
 
 ### QA the new post
 
-1. In the top-level repo directory, run `update_jekyll.sh`
+1. In the top-level repo directory, run `./update_jekyll.sh`
 2. Run `python -m http.server` to  [locally in the browser](localhost:8000) via  Note: now use port :8000
 3. Verify that things like good not only on healthcare.ai/blog, but also /py and /r
 
