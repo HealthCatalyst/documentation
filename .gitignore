@@ -3,3 +3,4 @@ jekyll/_site
 .idea
 .vscode
 jekyll/vendor
+jekyll/.sass-cache
