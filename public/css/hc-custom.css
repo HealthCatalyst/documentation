@@ -1,3 +1,4 @@
+/****************** Landing page header ******************/
 
 .site-heading h1 {
     font-size: 35px;
@@ -5,6 +6,7 @@
     font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
+/****************** Site wide nav bar ******************/
 .navbar.hc-custom {
     /*font-weight: 600;*/
     /*font-size: 12px;*/
@@ -20,6 +22,8 @@
     padding-right: 100px;
 }
 
+
+/****************** Upcoming webinar plug ******************/
 div#upcoming-webinar {
     margin-top: 22px;
 }
@@ -44,9 +48,15 @@ div#upcoming-webinar {
 #upcoming-webinar a.btn {
     width: 240px;
 }
+@media only screen and (max-width: 425px) {
+        #upcoming-webinar img.avatar {
+        height: 80px;
+        width: 80px;
+    }
+}
 
 
-/*********** learnmore ******************/
+/****************** learn more ******************/
 div.hc-learn-more .hc-package-link img {
     width: auto;
     height: 33px;
@@ -70,8 +80,7 @@ div.hc-learn-more div.hc-collaborate a {
 }
 
 
-/*lifted from clean-blog*/
-
+/****************** stolen from clean blog theme ******************/
 footer {
     padding: 0 0 25px;
     background-color: #384655;
