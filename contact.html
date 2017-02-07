@@ -5,19 +5,25 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="healthcare.ai is software in python and R that makes machine learning in healthcare approachable." />
+    <meta name="description"
+          content="healthcare.ai is software in python and R that makes machine learning in healthcare approachable."/>
     <meta name="author" content=""/>
 
-    <title>healthcare.ai Contact</title>
+    <title>healthcare.ai - contact</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="splashvendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS & customized theme -->
+    <link href="/public/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/bootstrap-3.3.7/dist/css/bootstrap-theme.min.css" rel="stylesheet">
 
-    <!-- Theme CSS -->
-    <link href="splashcss/clean-blog.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="/public/font-awesome-4.7.0/css/font-awesome.min.css">
 
-    <!-- Custom Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- custom Google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+
+    <!-- Custom CSS overrides (keep minimal) -->
+    <link href='/public/css/hc-custom.css' rel='stylesheet'/>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,11 +32,19 @@
     <script src="https://oss.maxcdn.com/libs/respond.splashjs/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- google analytics -->
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-85609357-1', 'auto');
         ga('send', 'pageview');
@@ -38,46 +52,64 @@
 
     <!-- Facebook Pixel Code -->
     <script>
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-            document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq)return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window,
+            document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '747112772022739');
         fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1" /></noscript>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
+    </noscript>
     <!-- DO NOT MODIFY -->
     <!-- End Facebook Pixel Code -->
 </head>
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top hc-custom">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    Menu <i class="fa fa-bars"></i>
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <i class="fa fa-bars" title="Toggle navigation"></i><span class="sr-only">Toggle navigation</span> Menu
                 </button>
-                <div class="navbar-brand"><img src="splashimg/healthcareAI.svg" width="207" height="30" alt="HCTools Logo"/></div>
+                <div class="navbar-brand">
+                    <a href="/"><img src="splashimg/healthcareAI.svg" width="207" height="30" alt="HCTools Logo"/></a>
+                </div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="../#about">About</a>
+                        <a href="/learnmore.html">Learn More</a>
                     </li>
                     <li>
-                        <a href="../blog">Blog</a>
+                        <a href="/blog">Data Science Blog</a>
                     </li>
                     <li>
-                        <a href="../contact.html">Contact</a>
+                        <a href="/r">R Package</a>
                     </li>
                     <li>
-                        <a href="../#why">Why Open Source</a>
+                        <a href="/py">Python Package</a>
                     </li>
                 </ul>
             </div>
@@ -87,19 +119,18 @@
     </nav>
 
     <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
     <header class="intro-header" style="background-image: url('splashimg/home-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>healthcare.ai is open source software<br>streamlining healthcare machine learning</h1>
-                        <span class="subheading">
-                        	<a href="./r">
-                            <button type="button" class="btn btn-default"><img src="splashimg/rLang.png" width="70" height="45" alt="R Language Icon"/>R Package</button></a>
-                            <a href="./py">
-							<button type="button" class="btn btn-default"><img src="splashimg/python.png" width="70" height="45" alt="Python Language Icon"/>Python Package</button></a>
-                        </span>
+                        <h1>healthcare.ai is open source software<br/>streamlining healthcare machine learning</h1>
+                        <a href="/learnmore.html" class="btn btn-lg btn-success">
+                            <i class="fa fa-question-circle-o" aria-hidden="true"></i> Learn More
+                        </a>
+                        <a href="/learnmore.html#get-started" class="btn btn-lg btn-info">
+                            <i class="fa fa-cloud-download" aria-hidden="true"></i> Get Started
+                        </a>
                     </div>
                 </div>
             </div>
@@ -109,18 +140,16 @@
     <!-- Main Content -->
     <div class="container">
         <div class="row">
-          <div class="col-sm-offset-1 col-sm-5">
+          <div class="col-sm-offset-1 col-sm-10">
             <div class="post-preview">
-                <h2 class="post-title">
-                    <a name="about">We welcome comments and questions!</a>
-                </h2>
-                <h3 class="post-subtitle"><br>
-                Levi Thatcher - <a href="mailto:levi.thatcher@healthcatalyst.com">Email</a> - <a href="http://twitter.com/levithatcher">Twitter</a>
-                <br><br>
-                Mike Mastanduno - <a href="mailto:michael.mastanduno@healthcatalyst.com">Email</a>
-                <br><br>
-                Taylor Larsen - <a href="mailto:taylor.larsen@healthcatalyst.com">Email</a>
-                </h3>
+                <h2 class="post-title">Contact Us</h2>
+                <p>We welcome comments, collaboration and questions!</p>
+                <ul>
+                    <li><a href="https://github.com/HealthCatalystSLC">HealthCatalystSLC GitHub</a></li>
+                    <li>Levi Thatcher - <a href="mailto:levi.thatcher@healthcatalyst.com">Email</a> - <a href="http://twitter.com/levithatcher">Twitter</a></li>
+                    <li>Mike Mastanduno - <a href="mailto:michael.mastanduno@healthcatalyst.com">Email</a></li>
+                    <li>Taylor Larsen - <a href="mailto:taylor.larsen@healthcatalyst.com">Email</a></li>
+                </ul>
             </div>
           </div>
           
@@ -140,19 +169,11 @@
         </div>
     </footer>
 
+
     <!-- jQuery -->
-    <script src="splashvendor/jquery/jquery.min.js"></script>
+    <script src="/splashvendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="splashvendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="splashjs/jqBootstrapValidation.js"></script>
-    <script src="splashjs/contact_me.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="splashjs/clean-blog.min.js"></script>
-
+    <script src="/public/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
 </body>
-
 </html>

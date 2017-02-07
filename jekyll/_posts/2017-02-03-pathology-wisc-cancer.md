@@ -30,12 +30,12 @@ The basic process is:
 Again, check out the [example notebook][nb], thanks for reading, and [contact us][contact] with any questions. 
 
 
-[hcai-py]:http://healthcare.ai/py/
+[hcai-py]:/py/
 [uci]:https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29
-[nb]:http://healthcare.ai/notebooks/Wisconsin-Pathology-Notebook.html
-[r post]:http://healthcare.ai/blog/2017/01/17/using-r-for-data-analysis/
-[contact]:http://healthcare.ai/contact.html
-[r post 2]:http://healthcare.ai/blog/2017/01/08/us-health-by-county/
+[nb]:/notebooks/Wisconsin-Pathology-Notebook.html
+[r post]:/blog/2017/01/17/using-r-for-data-analysis/
+[contact]:/contact.html
+[r post 2]:/blog/2017/01/08/us-health-by-county/
 
 
 
