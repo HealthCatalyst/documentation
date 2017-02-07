@@ -18,7 +18,7 @@ Before we can get to the curve itself, we need a few definitions. Let’s say we
 
  The ROC is a common way to avoid this. It is a graphical representation of the balance between TPR and FPR at *every* possible decision boundary. The Area Under the Curve (AUC) is that magic solution that we have been looking for. The AUC is a single number that can evaluate a model’s performance, regardless of the chosen decision boundary. The perfect machine learning model will have an AUC of 1.0 (cyan), while a random one will have an AUC of 0.5 (orange). A good model will be over 0.7, a great one will be over 0.85. It might not be possible to perfectly classify a data set, but the AUC is a good way to compare models on that data, across patient cohorts, and give a sense of how trustworthy that model is in general. 
 
-![Example ROC Curves](../assets/AUCPost_ROCExample.png)
+![Example ROC Curves](/assets/AUCPost_ROCExample.png)
 
 Whenever we are getting ready to deploy a model into use, we need to evaluate its overall performance. The AUC gives us a transparent, easy-to-interpret way to do that. Of course, it has limitations. For example, the usefulness of the ROC curve begins to break down with heavily imbalanced classes, obviously a big problem for healthcare data. One solution is to use AUC from a Precision-Recall Curve, but we’ll save that for a future post. If you’re interested in trying out ROC curves on your data, you’ll find some handy tools already built into the healthcare.ai package to help you evalutate your models. Finally, if you’re hungry for more, there are many [great tutorials online](https://classeval.wordpress.com/introduction/introduction-to-the-roc-receiver-operating-characteristics-plot/) for ROC curves. 
 
