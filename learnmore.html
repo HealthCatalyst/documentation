@@ -79,6 +79,9 @@
     </noscript>
     <!-- DO NOT MODIFY -->
     <!-- End Facebook Pixel Code -->
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 <body>
 <!-- Navigation -->
@@ -99,7 +102,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/learnmore.html">Learn More</a>
+                    <a href="#">Learn More</a>
                 </li>
                 <li>
                     <a href="/blog">Data Science Blog</a>
@@ -117,112 +120,73 @@
     <!-- /.container -->
 </nav>
 
-<!-- Page Header -->
-<!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('splashimg/home-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>healthcare.ai is open source software<br/>streamlining healthcare machine learning</h1>
-                    <a href="/learnmore.html" class="btn btn-lg btn-success">
-                        <i class="fa fa-question-circle-o" aria-hidden="true"></i> Learn More
-                    </a>
-                    <a href="/learnmore.html#get-started" class="btn btn-lg btn-info">
-                        <i class="fa fa-cloud-download" aria-hidden="true"></i> Get Started
-                    </a>
+<!-- Main Content -->
+<div class="container hc-learn-more" style="margin-top: 100px;">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 style="margin-top: 0;">What can I do with healthcare.ai?</h2>
+                    <ul>
+                        <li>Create and compare models based on your data.</li>
+                        <li>Save and deploy a model.</li>
+                        <li>Perform risk-adjusted comparisons.</li>
+                        <li>Do trend analysis following Nelson rules.</li>
+                        <li>Improve sparse data via longitudinal imputation.</li>
+                        <li>Fill in missing data via imputation.</li>
+                        <li>Deploy a model to produce daily predictions.</li>
+                        <li>Write predictions back to a database.</li>
+                        <li>Learn what factors drive each prediction.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>How is it tailored to healthcare?</h2>
+                    <ul>
+                        <li>Longitudinal machine learning via mixed models.</li>
+                        <li>Longitudinal imputation.</li>
+                        <li>Risk-adjusted comparisons.</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+        <div class="col-md-3 col-md-offset-1 hc-collaborate">
+            <h3>Collaborate!</h3>
+            <p>Our goal with this project is to expedite adoption of ML in healthcare by building pragmatic world class
+                tools to help anyone with access to healthcare data.</p>
+            <p>You can help in many ways:</p>
+            <ul>
+                <li>Try out the packages and let us know what needs improvement!</li>
+                <li>Check out our <a href="https://github.com/HealthCatalystSLC">Github repos</a></li>
+            </ul>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row" id="upcoming-webinar">
-        <div class="col-xs-10 col-xs-offset-1">
-            <div class="row">
-                <div class="col-xs-3">
-                    <p class="text-center"><img class="avatar" src="/public/img/leviWebinar.png"/>
-                    </p>
-                </div>
-                <div class="col-xs-9">
-                    <h4>Upcoming Webinar</h4>
-                    <p>Wednesday, Feb 8 2017 1:00pm ET</p>
-                    <h3>Machine Learning Using Healthcare.ai</h3>
-                    <p>Hosted by Levi Thatcher and Michael Mastanduno, PhD</p>
-                    <a class="btn btn-sm btn-primary"
-                       href=https://pages.healthcatalyst.com/2017-02-08HealthcareaiWebinarWebsite.html">Register Now</a>
-                </div>
-            </div>
+           <p> <a class="github-button" href="https://github.com/HealthCatalystSLC" data-style="mega" data-count-href="/HealthCatalystSLC/followers" data-count-api="/users/HealthCatalystSLC#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @HealthCatalystSLC on GitHub">Follow @HealthCatalystSLC</a>
+            <!--<a class="github-button" href="https://github.com/HealthCatalystSLC/healthcareai-py/issues" data-style="mega" data-count-api="/repos/HealthCatalystSLC/healthcareai-py#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue HealthCatalystSLC/healthcareai-py on GitHub">Issue</a>--></p>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-offset-1 col-sm-5">
-            <div class="post-preview">
-                <h2>What is healthcare.ai</h2>
-                <p class="post-subtitle">The healthcare.ai packages are designed to streamline healthcare machine
-                    learning.
-                    They do this by including functionality specific to healthcare, as well as simplifying the workflow
-                    of creating and deploying models. We believe that machine learning is too helpful and important to
-                    be handled solely by full-time data scientists. These packages are a humble attempt at machine
-                    learning democratization in a realm that needs it most—healthcare.
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-offset-1 col-sm-5">
-            <div class="imgCenter"><img class="img-responsive" src="/public/img/MachineLearning-min.png" width="295"
-                                        alt=""/></div>
-        </div>
         <div class="col-sm-offset-1 col-sm-10">
-            <div class="post-preview">
-                <h2>What does it do?</h2>
-                <p class="post-subtitle">
-                    Both healthcare.ai packages provide an easy way to create models on your data. This includes
-                    linear and random forest models, ways to handle missing data, guidance on feature selection,
-                    proper performance metrics, and easy database connections.
-                </p>
-            </div>
+            <h2><a name="get-started"></a>How do I get started?</h2>
+            <p>Healthcare.ai is available in packages for both R and Python, two of the most common languages used
+                by data scientists. If you don't previous experience with either language, we recommend the R package
+                as it currently has more features and R is more newbie-friendly.</p>
+            <p>The buttons below will take you to the documentation which includes installation instructions,
+                feature references, as well as hints and tips.</p>
         </div>
-        <div class="col-sm-offset-1 col-sm-10">
-            <div class="post-preview">
-                <h2>How does healthcare.ai focus on healthcare?</h2>
-                <p class="post-subtitle">
-                    The two packages that comprise healthcare.ai differ from other machine learning packages in that
-                    they focus on data issues specific to healthcare. This means that we pay attention to longitudinal
-                    questions, offer an easy way to do risk-adjusted comparisons, and provide easy connections and
-                    deployment to databases.
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-offset-1 col-sm-5">
-            <div class="post-preview">
-                <h2>Who is healthcare.ai designed for?</h2>
-                <p class="post-subtitle">
-                    While data scientists in healthcare will likely find these packages valuable, the audience
-                    healthcare.ai targets are those BI developers, data architects, and SQL developers that would
-                    love to create appropriate and accurate models with healthcare data. While existing machine
-                    learning packages are certainly irreplaceable, we think that there is a set of data problems
-                    specific to healthcare that warrant new tools.
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-5">
-            <div class="post-preview">
-                <h2>Why did Health Catalyst open source this?</h2>
-                <p class="post-subtitle">
-                    We believe that everyone benefits when healthcare is made more efficient and outcomes are
-                    improved. Machine learning is surprisingly still fairly new to healthcare and we want to
-                    quickly take healthcare down the machine learning adoption path. We believe that making helpful,
-                    simple tools widely available is one small way to help healthcare organizations transform their
-                    data into actionable insight that can be used to improve outcomes.
-                </p>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 text-center">
+            <a href="./r" class="hc-package-link btn btn-default btn-lg">
+                <img src="/public/img/rLang.png" title="package logo"/> R Package
+            </a>
+            <a href="./py" class="hc-package-link btn btn-default btn-lg">
+                <img src="/public/img/python.png" title="package logo"/> Python Package
+            </a>
         </div>
     </div>
 </div>
-
-<br />
+<br/>
 
 <!-- Footer -->
 <footer>
