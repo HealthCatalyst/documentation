@@ -1,9 +1,12 @@
 /****************** Landing page header ******************/
-
 .site-heading h1 {
     font-size: 35px;
     color: #fff;
     font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+.site-heading a.btn {
+    margin: 6px 15px;
+    width: 219px;
 }
 
 /****************** Site wide nav bar ******************/
@@ -26,6 +29,7 @@
 /****************** Upcoming webinar plug ******************/
 div#upcoming-webinar {
     margin-top: 22px;
+    margin-bottom: 50px;
 }
 #upcoming-webinar h4, #upcoming-webinar h3 {
     font-size: 18px;

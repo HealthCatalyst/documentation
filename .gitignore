@@ -4,3 +4,4 @@ jekyll/_site
 .vscode
 jekyll/vendor
 jekyll/.sass-cache
+public/bootstrap-3.3.7/node_modules

@@ -14,6 +14,13 @@ obscure folder structure.
 - Building of R/Py docs is currently manual process and we use github pages from this repo.
 - Please do a pull request if you see typos!
 
+## Compiling Bootstrap
+
+1. Install grunt using the [bootstrap docs]((http://getbootstrap.com/getting-started/#grunt)).
+2. Modify your .less files in `public/bootstrap-3-3.7/less`
+3. From the `public/bootstrap-3-3.7/` directory, run `grunt dist` to compile the `.less` to `.css` (or if you're making
+frequent changes run `grunt watch`)
+
 ## Updating R package docs with mkdocs
 
 1. `cd` to root directory of repo
@@ -25,7 +32,8 @@ obscure folder structure.
 
 ### Pre-requisites (only needed once)
 
-- Clone the [healthcareai-py](https://github.com/HealthCatalystSLC/healthcareai-py) repo in addition to the [documentation](https://github.com/HealthCatalystSLC/documentation) repo
+- Clone the [healthcareai-py](https://github.com/HealthCatalystSLC/healthcareai-py) repo in addition to the
+[documentation](https://github.com/HealthCatalystSLC/documentation) repo
 - Install the packages with `pip install -r healthcareai-py/dev-requirements.txt`
 
 ### Update process
