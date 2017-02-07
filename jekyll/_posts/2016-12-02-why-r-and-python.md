@@ -22,7 +22,7 @@ While R is more narrowly focused on statistics compared to Python, it is also gr
 
 In terms of support, here's a plot showing the popularity of each of these languages over time on [Stack Overflow](http://stackoverflow.com/), a popular Q and A site:
 
-![Popularity Plot](../assets/RvsPyPost_LanguageComparisonOverTime.png){: .center-image }
+![Popularity Plot](/assets/RvsPyPost_LanguageComparisonOverTime.png){: .center-image }
 
 While there are many other options for doing statistics in healthcare, R and Python are among the very best, and we're excited to use them to improve patient care.
 

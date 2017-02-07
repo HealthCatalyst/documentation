@@ -18,7 +18,7 @@ This example uses a dataset that can be found on the [UCI Machine Learning Repos
 3. A pathologist read the slides to determine whether the cells were malignant or benign. 
 4. The pathologist recorded observations about the size, shape, and characteristics of the cell nuclei. 
 
-![Pathology slide example](../assets/breast-cancer-images-small.png)
+![Pathology slide example](/assets/breast-cancer-images-small.png)
 
 The cellular characteristics in the slides help the pathologist make the distinction between malignant and benign lesions. Since the pathologist had the courtesy to record the features, we can see if a machine learning algorithm can distinguish the tissue samples as well as the pathologist could. Like [R notebooks][r post 2], Python can be written into a *Jupyter Notebook* for easy annotation and sharing. As there is a lot of code, data, and visualization contained within this post, it would be good if you would follow along with the [notebook](nb).
 
