@@ -15,15 +15,16 @@ if jekyll build; then
         # Move into where new blog html files are
         cd _site
 
-        # Move blog main page into /blog (so it shows at healthcare.ai/blog instead of at healthcare.ai)
-        # TODO fix this hack so it doesn't use relative links #215-6
-        mv index.html blog/
-
-        # Move everything within _site to healthcare.ai/blog
+        # Move everything within `_site` to the root `/`
         #echo 'Moving files'
         mv ./* ../../
 
-        echo 'Blog generated.'
+        # reconstruct the public folder from the source in `jekyll/public` to the root `/`
+        # IMPORTANT- only run this script from the root!
+        cd ../../
+        ./rebuild_public_folder.sh
+
+        echo 'Site generated.'
     fi
 else
     echo 'Build failed, aborting'

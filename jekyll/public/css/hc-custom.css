@@ -1,0 +1,155 @@
+/****************** Landing page header ******************/
+.site-heading h1 {
+    font-size: 35px;
+    color: #fff;
+    font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+.site-heading a.btn {
+    margin: 6px 15px;
+    width: 219px;
+}
+
+/****************** Site wide nav bar ******************/
+.navbar.hc-custom {
+    /*font-weight: 600;*/
+    /*font-size: 12px;*/
+    text-transform: uppercase;
+    background: #384654;
+}
+.navbar .navbar-toggle {
+    color: white;
+    border-color: #ddd;
+}
+.navbar.hc-custom a.btn {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+/****************** Data Science Blog Index ******************/
+div.blog-index, div.blog-post {
+    margin-top: 80px;
+}
+div.blog-post .blog-post-content {
+    margin: 2em 0 4em 0;
+}
+article.post {
+}
+article.post h2 {
+}
+article.post h3.author {
+    text-transform: uppercase;
+    font-size: 1em;
+    color: #333;
+    margin-top: 0;
+}
+article.post h3.time {
+    text-transform: uppercase;
+    margin: -6px 0 0 0;
+}
+article.post p.excerpt {
+}
+
+/****************** Data Science Blog Posts ******************/
+div.blog-post img {
+    height: auto;
+    width: 400px;
+    margin: 1em auto;
+}
+
+/****************** Upcoming webinar plug ******************/
+div#upcoming-webinar {
+    margin-top: 22px;
+    margin-bottom: 50px;
+}
+#upcoming-webinar h4, #upcoming-webinar h3 {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+#upcoming-webinar h4 {
+    text-transform: uppercase;
+}
+#upcoming-webinar h3 {
+}
+#upcoming-webinar p {
+    margin-top: .2em;
+    margin-bottom: .6em;
+}
+#upcoming-webinar img.avatar {
+    height: 120px;
+    width: 120px;
+}
+#upcoming-webinar a.btn {
+    width: 240px;
+}
+@media only screen and (max-width: 425px) {
+        #upcoming-webinar img.avatar {
+        height: 80px;
+        width: 80px;
+    }
+}
+
+
+/****************** learn more ******************/
+div.hc-learn-more .hc-package-link img {
+    width: auto;
+    height: 33px;
+    margin-right: -10px;
+}
+div.hc-learn-more a.hc-package-link {
+    width: 250px;
+    margin: 20px 20px;
+}
+
+div.hc-learn-more div.hc-collaborate {
+    color: #fff;
+    background: #384654;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+div.hc-learn-more div.hc-collaborate a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+/****************** stolen from clean blog theme ******************/
+footer {
+    padding: 0 0 25px;
+    background-color: #384655;
+}
+footer p {
+    margin: 30px;
+}
+footer .list-inline {
+    margin: 0;
+    padding: 0;
+}
+footer .copyright {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 0;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: white;
+    line-height: 37px;
+}
+
+.intro-header .site-heading,
+.intro-header .post-heading,
+.intro-header .page-heading {
+    padding: 100px 0 50px;
+    color: white;
+}
+.intro-header .site-heading,
+.intro-header .page-heading {
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+    /*.navbar.hc-custom {*/
+    /*background: transparent;*/
+    /*border-bottom: 1px solid transparent;*/
+    /*}*/
+}

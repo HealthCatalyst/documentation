@@ -29,5 +29,6 @@ theme: minima
 gems:
   - jekyll-feed
 exclude:
+  - public
   - Gemfile
   - Gemfile.lock
