@@ -7,7 +7,7 @@ author: Levi Thatcher
 categories: blog
 excerpt: This blog will describe technical choices made at Health Catalyst
 ---
-Health Catalyst’s data science team is excited to present [healthcare.ai](http://healthcare.ai/). This ambitious new project offers healthcare-specific machine learning packages, as well as analysis, commentary, and advice on leveraging machine learning within any health system, regardless of size.
+Health Catalyst’s data science team is excited to present [healthcare.ai](http://healthcare.ai). This ambitious new project offers healthcare-specific machine learning packages, as well as analysis, commentary, and advice on leveraging machine learning within any health system, regardless of size.
 
 While companies like [Google](https://research.google.com/teams/brain/healthcare/), [Microsoft](http://searchhealthit.techtarget.com/opinion/Microsoft-Project-Adam-may-reach-healthcare-specialties), and [IBM](https://www.mskcc.org/about/innovative-collaborations/watson-oncology) are doing machine learning on the outskirts of healthcare, we work from the center. We bring practical, accurate predictive models to health systems interested in improving their operational, financial, and clinical efficiencies. First and foremost, we want to improve patient outcomes.
 
@@ -22,4 +22,4 @@ We'll share more details about healthcare.ai in the coming weeks, but here's a s
 - Guidance on where and how to apply machine learning in healthcare
 - Analysis on outcomes improvement via CAFE, the largest healthcare dataset ever compiled
 
-To get started with healthcare machine learning now, see [healthcare.ai](http://healthcare.ai/) for R and Python.
+To get started with healthcare machine learning now, see [healthcare.ai](http://healthcare.ai) for R and Python.

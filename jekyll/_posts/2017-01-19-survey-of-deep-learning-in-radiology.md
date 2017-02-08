@@ -66,7 +66,7 @@ Finally, many of the data sets that were used in the studies mentioned above are
 - [Multimodal Brain Tumor Segmentation Challenge](http://braintumorsegmentation.org/)
 
 
-Breast screening, lung screening, and brain segmentation are the some of the most popular and promising applications of deep learning in healthcare today. Early research in these areas has shown encouraging results, and there is a lot of effort toward advancements. Furthermore, these areas have the potential to benefit a lot of patients as they include common diseases, treatments, and procedures. It’s an exciting time to be in healthcare machine learning, and we look forward to implementing deep learning into our package.   Thanks for reading, and please feel free to [reach out](http://healthcare.ai/contact) with questions!
+Breast screening, lung screening, and brain segmentation are the some of the most popular and promising applications of deep learning in healthcare today. Early research in these areas has shown encouraging results, and there is a lot of effort toward advancements. Furthermore, these areas have the potential to benefit a lot of patients as they include common diseases, treatments, and procedures. It’s an exciting time to be in healthcare machine learning, and we look forward to implementing deep learning into our package.   Thanks for reading, and please feel free to [reach out](/contact.html) with questions!
 
 
 [1]:http://www.nature.com/articles/srep27327

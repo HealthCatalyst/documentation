@@ -21,4 +21,4 @@ This is why machine learning is fantastic—it fills these gaps. First, it learn
 
 In summary, what does a machine learning model provide? Accurate, timely risk scores, enabling confident and precise resource allocation, leading to lower costs and improved outcomes. As an added bonus, [healthcare.ai](http://healthcare.ai/) shows why a risk score was high, so the clinician not only knows which patients are most at risk, but also what can be done to lower that patient's risk. We'll detail this ability in a future post. 
 
-Thanks, and please [reach out](http://healthcare.ai/contact) with any questions or comments!
+Thanks, and please [reach out](/contact.html) with any questions or comments!

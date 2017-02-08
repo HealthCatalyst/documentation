@@ -31,4 +31,4 @@ More specifically, leakage in the context of healthcare machine learning occurs 
 
 Clearly, leakage is an issue that we face on a regular basis, especially when dealing with all the complexities associated with healthcare data. Through experience and diligent analysis, it is an issue we can easily avoid. [Healthcare.ai](http://healthcare.ai/) has several tools to help understand the timing, scope, and source of variables when model building, which can be used to eliminate data leakage during the model’s initial creation. Taking these steps will mean deploying useful models that are widely adopted, and ultimately improve healthcare outcomes. 
 
-Thanks for reading and please [reach out](http://healthcare.ai/contact) with any questions or comments!
+Thanks for reading and please [reach out](/contact.html) with any questions or comments!

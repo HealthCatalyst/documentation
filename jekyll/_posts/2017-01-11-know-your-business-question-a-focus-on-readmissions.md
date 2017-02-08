@@ -26,4 +26,4 @@ At the end of the day, we need to develop the model using the same data that we 
 
 From our experience, understanding the definition of the readmission outcome variable, the specific use case, and the timing/target is crucial. There is clearly a trade-off between timeliness and accuracy, and to have the greatest impact on patient outcomes, it is important to develop readmission risk models based on data that reflects the use case in production. Again, the best ML model should answer a specific question, using specific data, with an actionable result. Keep these things in mind and your models will improve. 
 
-Thanks for reading and please [reach out](http://healthcare.ai/contact) with any questions or comments!
+Thanks for reading and please [reach out](/contact.html) with any questions or comments!

@@ -32,4 +32,4 @@ Feature engineering is a ton of work and underscores the importance of data scie
 Automating feature engineering is difficult to do, especially considering the complexity of healthcare data and the types of healthcare ML problems we are attempting to solve. Deep domain knowledge and human intuition are very difficult to replicate. However, it’s a hot area of research and we’ll definitely continue to explore and post on advances in feature engineering. Algorithms for automatically generating features for relational data sets like the [Deep Feature Synthesis algorithm](http://groups.csail.mit.edu/EVO-DesignOpt/groupWebSite/uploads/Site/DSAA_DSM_2015.pdf) are becoming smarter and more dynamic every day. We look forward to incorporating new techniques and algorithms into healthcare.ai so that we can all focus our efforts on improving healthcare outcomes in new and exciting ways.
 
 
-Thanks for reading, and please [reach out](http://healthcare.ai/contact) with any questions or comments!
+Thanks for reading, and please [reach out](/contact.html) with any questions or comments!

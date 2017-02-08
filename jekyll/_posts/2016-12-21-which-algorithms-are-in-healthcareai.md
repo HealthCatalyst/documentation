@@ -27,4 +27,4 @@ This frequent longitudinal aspect of healthcare data is why we're excited to off
 
 Again, the goal of healthcare.ai is to help the medical community use machine learning to improve healthcare outcomes. On the first pass, we have implemented what we feel are the simplest and most effective algorithms specific to healthcare data. We’ll certainly expand in the future, but for now there are a lot of efficiency gains to be <achieved></achieved> with basic algorithms, standardized performance metrics, smart implementation, and centralized documentation. 
 
-If you want more detail, check out [our code](https://github.com/HealthCatalystSLC/healthcareai-r). If you have questions or feedback, [contact us](http://healthcare.ai/contact)!
+If you want more detail, check out [our code](https://github.com/HealthCatalystSLC/healthcareai-r). If you have questions or feedback, [contact us](/contact.html)!

@@ -34,4 +34,4 @@ In the deployment step, the model is put into production and left to make new pr
 [over]:http://machinelearningmastery.com/overfitting-and-underfitting-with-machine-learning-algorithms/
 [hcai]:http://healthcare.ai/
 [imba]:http://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/
-[contact]:http://healthcare.ai/contact.html
+[contact]:/contact.html

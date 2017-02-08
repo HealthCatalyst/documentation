@@ -7,7 +7,7 @@ author: Levi Thatcher
 categories: blog
 ---
 
-After reading a few articles on healthcare.ai, some of you may be saying, well, that's great--but what has Health Catalyst actually used it for? Since Health Catalyst has been open with sharing the tool set, it only makes sense that they'd also be willing to share details of its use. As the Director of Data Science at Health Catalyst and founder of healthcare.ai, I oversee all client predictive engagements, and will make a point of frequently updating the community on our work. If you have questions, comments, or criticism, please [reach out](http://healthcare.ai/contact).
+After reading a few articles on healthcare.ai, some of you may be saying, well, that's great--but what has Health Catalyst actually used it for? Since Health Catalyst has been open with sharing the tool set, it only makes sense that they'd also be willing to share details of its use. As the Director of Data Science at Health Catalyst and founder of healthcare.ai, I oversee all client predictive engagements, and will make a point of frequently updating the community on our work. If you have questions, comments, or criticism, please [reach out](/contact.html).
 
 
 The goal of healthcare.ai was to provide a simple, flexible tool to streamline healthcare machine learning. This means that it works across financial, operational, and clinical realms. If a health system has a business question that they want predictions for, we will make healthcare.ai flexible enough to cover that use case. Today we'll briefly cover three recent predictive project, and detail more for a future post.
@@ -25,7 +25,7 @@ Finally, we'll touch on a clinical case. Many health systems are [penalized](htt
 Considering the resource constraints present in many hospital units, this type of machine learning guidance can be crucial to efficiently deploying resources toward achieving business goals (i.e., reducing readmissions, reducing 1-yr mortality, preventing [HAIs](https://www.cdc.gov/hai/), etc). As time goes on, we'll detail more of these predictive projects, and explain how they might be useful to your health system.
 
 
-Thanks, and please [reach out](http://healthcare.ai/contact.html) with any questions!
+Thanks, and please [reach out](/contact.html) with any questions!
 
 
 

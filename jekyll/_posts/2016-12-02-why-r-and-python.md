@@ -6,7 +6,7 @@ tags: overview
 author: Levi Thatcher
 categories: blog
 ---
-As time goes on, this blog will touch on many of the technical choices made at Health Catalyst. It will mostly focus on data science. If there's a particular topic that interests, [contact us](http://healthcare.ai/contact.html)! Some posts will be short, while others will be in-depth. The tone will be informal, with a focus on content and frequent posts (twice per-week) rather than polish. When we talk about doing things with data, we'll post the code, so you can follow along.
+As time goes on, this blog will touch on many of the technical choices made at Health Catalyst. It will mostly focus on data science. If there's a particular topic that interests, [contact us](/contact.html)! Some posts will be short, while others will be in-depth. The tone will be informal, with a focus on content and frequent posts (twice per-week) rather than polish. When we talk about doing things with data, we'll post the code, so you can follow along.
 
 When doing healthcare machine learning, why'd we choice R and Python? To be honest, this decision wasn't that complicated. Of course, there are a lot of fantastic statistical tools available today besides just R and Python: Matlab, SAS, Stata, SPSS, and others. While languages like Java, C++, and C# are great, they're [compiled](https://en.wikipedia.org/wiki/Compiled_language), which makes them difficult to use for data analysis. We had just a few criteria when narrowing down the list.
 

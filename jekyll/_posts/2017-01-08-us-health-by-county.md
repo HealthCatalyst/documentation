@@ -65,6 +65,6 @@ Recall that darker means that the county is doing well. At this level, what we n
 At Health Catalyst, we strive to understand the significant way social determinants of health can affect decision making at health systems from the Deep South to the Bay Area. Our clients are located all across the continent. High-value improvements in one health system are not necessarily the best everywhere, and we’d be cheating ourselves to only look for improvements at inpatient units. We’re committed to leveraging the tools of population health to improve patient outcomes across the board. 
 This post is the first of many on population health, and in a future post we’ll dig more into which social determinants are most driving regional variations of LBW and premature death.
 
-Thanks for reading and please [reach out](http://healthcare.ai/contact) with any questions or comments!
+Thanks for reading and please [reach out](/contact.html) with any questions or comments!
 
 \* The distribution of county median income has a long tail, which means that when subtracting county income percentiles from the corresponding LBW or premature death percentiles, the result is typically positive. 

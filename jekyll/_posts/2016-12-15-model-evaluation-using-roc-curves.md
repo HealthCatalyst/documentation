@@ -23,4 +23,4 @@ Before we can get to the curve itself, we need a few definitions. Let’s say we
 Whenever we are getting ready to deploy a model into use, we need to evaluate its overall performance. The AUC gives us a transparent, easy-to-interpret way to do that. Of course, it has limitations. For example, the usefulness of the ROC curve begins to break down with heavily imbalanced classes, obviously a big problem for healthcare data. One solution is to use AUC from a Precision-Recall Curve, but we’ll save that for a future post. If you’re interested in trying out ROC curves on your data, you’ll find some handy tools already built into the healthcare.ai package to help you evalutate your models. Finally, if you’re hungry for more, there are many [great tutorials online](https://classeval.wordpress.com/introduction/introduction-to-the-roc-receiver-operating-characteristics-plot/) for ROC curves. 
 
 
-Thanks for reading and please [reach out](http://healthcare.ai/contact) with any questions or comments!
+Thanks for reading and please [reach out](/contact.html) with any questions or comments!

@@ -40,4 +40,4 @@ Feel free to [reach out with questions][contact], and thanks for reading.
 [Davis paper]:http://machinelearning.wustl.edu/mlpapers/paper_files/icml2006_DavisG06.pdf
 [SO post]:http://stats.stackexchange.com/a/90783/124897
 [healthcareai data]:https://github.com/HealthCatalystSLC/healthcareai-r/blob/master/inst/extdata/HCRDiabetesClinical.csv
-[contact]:http://healthcare.ai/contact.html
+[contact]:/contact.html
