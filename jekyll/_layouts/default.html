@@ -16,8 +16,39 @@
     {% include analytics.html %}
 </head>
 <body>
-    
-{% include blog-head.html %}
+{% include navbar.html %}
+
+<div class="content blog-index">
+    <div class="container">
+        <div class="row-fluid">
+            <h1>Data Science Blog</h1>
+
+            <p>This blog will touch on many of the technical choices made at Health Catalyst, mainly around data
+                science. If there’s a particular topic that interests you, please <a href="/contact.html">contact
+                    us!</a></p>
+            <p>Some posts will be short, while others will be in-depth. We are focused on on content and frequent posts
+                (twice per-week) rather than polish. When we talk about doing things with data, we’ll post the code, so
+                you can follow along.</p>
+
+            <hr />
+
+            <div>
+                <ul>
+                    {% for post in site.categories.blog %}
+                    <article>
+                        <a href="{{ post.url }}">{{ post.title }}
+                            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                        </a>
+                    </article>
+                    <br />
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% include subscribe_to_email.html %}
+        </div>
+    </div>
+</div>
 
 {% include footer.html %}
 

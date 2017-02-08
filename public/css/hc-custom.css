@@ -25,6 +25,14 @@
     padding-right: 100px;
 }
 
+/****************** Data Science Blog Index ******************/
+div.blog-index, div.blog-post {
+    margin-top: 80px;
+}
+div.blog-post .blog-post-content {
+    margin: 2em 0 4em 0;
+}
+
 
 /****************** Upcoming webinar plug ******************/
 div#upcoming-webinar {
