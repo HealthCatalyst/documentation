@@ -32,6 +32,22 @@ div.blog-index, div.blog-post {
 div.blog-post .blog-post-content {
     margin: 2em 0 4em 0;
 }
+article.post {
+}
+article.post h2 {
+}
+article.post h3.author {
+    text-transform: uppercase;
+    font-size: 1em;
+    color: #333;
+    margin-top: 0;
+}
+article.post h3.time {
+    text-transform: uppercase;
+    margin: -6px 0 0 0;
+}
+article.post p.excerpt {
+}
 
 
 /****************** Upcoming webinar plug ******************/

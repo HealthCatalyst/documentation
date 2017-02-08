@@ -20,33 +20,45 @@
 
 <div class="content blog-index">
     <div class="container">
-        <div class="row-fluid">
-            <h1>Data Science Blog</h1>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h1>Data Science Blog</h1>
 
-            <p>This blog will touch on many of the technical choices made at Health Catalyst, mainly around data
-                science. If there’s a particular topic that interests you, please <a href="/contact.html">contact
-                    us!</a></p>
-            <p>Some posts will be short, while others will be in-depth. We are focused on on content and frequent posts
-                (twice per-week) rather than polish. When we talk about doing things with data, we’ll post the code, so
-                you can follow along.</p>
+                <p>This blog will touch on many of the technical choices made at Health Catalyst, mainly around data
+                    science. If there’s a particular topic that interests you, please <a href="/contact.html">contact
+                        us!</a></p>
+                <p>Some posts will be short, while others will be in-depth. We are focused on on content and frequent
+                    posts
+                    (twice per-week) rather than polish. When we talk about doing things with data, we’ll post the code,
+                    so
+                    you can follow along.</p>
 
-            <hr />
-
-            <div>
-                <ul>
-                    {% for post in site.categories.blog %}
-                    <article>
-                        <a href="{{ post.url }}">{{ post.title }}
-                            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-                        </a>
-                    </article>
-                    <br />
-                    {% endfor %}
-                </ul>
+                <hr />
             </div>
-
-            {% include subscribe_to_email.html %}
         </div>
+
+        {% for post in site.categories.blog %}
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <article class="post">
+                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                    <h3 class="time">
+                        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y"
+                            }}
+                        </time>
+                    </h3>
+                    <h3 class="author">by {{ post.author }}</h3>
+                    <p class="excerpt">{{ post.excerpt }} <a href="{{ post.url }}">Continue reading <i class="fa fa-chevron-circle-right"></i></a></p>
+                </article>
+            </div>
+        </div>
+        {% endfor %}
+
+        <br />
+        <br />
+        <br />
+        <br />
+        {% include subscribe_to_email.html %}
     </div>
 </div>
 
