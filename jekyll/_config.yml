@@ -16,9 +16,9 @@
 title: healthcare.ai
 email: levi.thatcher@healthcatalyst.com
 baseurl: "" # the subpath of your site, e.g. /blog
-# url: "http://healthcare.ai" # the base hostname & protocol for your site, e.g. http://example.com
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-site.url: "/blog"
+#url: "http://healthcare.ai" # the base hostname & protocol for your site, e.g. http://example.com
+#url: "" # the base hostname & protocol for your site, e.g. http://example.com
+#site.url: "/blog"
 # site.url: "http://healthcare.ai/blog"
 permalink: /blog/:year/:month/:day/:title/
 
