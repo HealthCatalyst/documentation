@@ -64,12 +64,12 @@ This is the jekyll workflow until we use [readthedocs](https://readthedocs.org/)
 2. From the repo root directory, run `python -m http.server` or `python -m SimpleHTTPServer` to see the entire site
  [served up locally](localhost:8000).
 3. Verify all the things. Such as:
-    - [/](localhost:8000/)
-    - [/r](localhost:8000/r)
-    - [/py](localhost:8000/py)
-    - [/blog](localhost:8000/blog)
-    - [/contact.html](localhost:8000/contact.html)
-    - [/learn_more](localhost:8000/learn_more)
+    - [localhost:8000/](localhost:8000/)
+    - [localhost:8000/r](localhost:8000/r)
+    - [localhost:8000/py](localhost:8000/py)
+    - [localhost:8000/blog](localhost:8000/blog)
+    - [localhost:8000/contact.html](localhost:8000/contact.html)
+    - [localhost:8000/learn_more](localhost:8000/learn_more)
 4. At this point it is suggested to use a perceptual diff tool like [dpxdt](https://dpxdt-test.appspot.com) to aid in
 the QA process.
 
