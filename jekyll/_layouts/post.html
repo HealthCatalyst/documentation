@@ -19,23 +19,21 @@
 
 {% include navbar.html %}
 
-<div class="content blog-post">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h1 class="entry-title"><a href="{{ page.link }}">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}{% endif %}</a></h1>
-                {{ page.date | date: '%B %d, %Y' }}
+<div class="container blog-post">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1 class="entry-title"><a href="{{ page.link }}">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}{% endif %}</a></h1>
+            {{ page.date | date: '%B %d, %Y' }}
 
-                <div class="blog-post-content">
-                    {{ content }}
-                </div>
-
-                <br />
-                <br />
-                <br />
-                <br />
-                {% include subscribe_to_email.html %}
+            <div class="blog-post-content">
+                {{ content }}
             </div>
+
+            <br />
+            <br />
+            <br />
+            <br />
+            {% include subscribe_to_email.html %}
         </div>
     </div>
 </div>

@@ -49,6 +49,12 @@ article.post h3.time {
 article.post p.excerpt {
 }
 
+/****************** Data Science Blog Posts ******************/
+div.blog-post img {
+    height: auto;
+    width: 400px;
+    margin: 1em auto;
+}
 
 /****************** Upcoming webinar plug ******************/
 div#upcoming-webinar {
