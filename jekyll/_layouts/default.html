@@ -2,62 +2,66 @@
 <html lang="en">
 
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description"
+          content="healthcare.ai is software in python and R that makes machine learning in healthcare approachable."/>
+    <meta name="author" content=""/>
 
     <title>healthcare.ai</title>
 
-
-    <!-- {% assign base = 'http://healthcare.ai/' %}
-
-    <base href="{{base}}" /> -->
-
-    <!-- Bootstrap Core CSS & customized theme -->
-    <link href="/public/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/public/bootstrap-3.3.7/dist/css/bootstrap-theme.min.css" rel="stylesheet">
-
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="/public/font-awesome-4.7.0/css/font-awesome.min.css">
-
-    <!-- custom Google fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
-          rel='stylesheet' type='text/css'>
-
-    <!-- Custom CSS overrides (keep minimal) -->
-    <link href='/public/css/hc-custom.css' rel='stylesheet'/>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.splashjs/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    {% include head_style_stuff.html %}
 
     {% include analytics.html %}
 </head>
 <body>
-    
-{% include blog-head.html %}
+{% include navbar.html %}
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p class="copyright">This project was started by and receives ongoing support from &nbsp;<a href="http://healthcatalyst.com"><img src="/splashimg/healthCatalystWhite.png" width="142" height="37" alt="Health Catalyst Logo"/></a></p>
-                </div>
-            </div>
+<div class="container blog-index">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1>Data Science Blog</h1>
+
+            <p>This blog will touch on many of the technical choices made at Health Catalyst, mainly around data
+                science. If there’s a particular topic that interests you, please <a href="/contact.html">contact
+                    us!</a></p>
+            <p>Some posts will be short, while others will be in-depth. We are focused on on content and frequent
+                posts
+                (twice per-week) rather than polish. When we talk about doing things with data, we’ll post the code,
+                so
+                you can follow along.</p>
+
+            <hr />
         </div>
-    </footer>
+    </div>
 
-<!-- jQuery -->
-<script src="/splashvendor/jquery/jquery.min.js"></script>
+    {% for post in site.categories.blog %}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <article class="post">
+                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                <h3 class="time">
+                    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y"
+                        }}
+                    </time>
+                </h3>
+                <h3 class="author">by {{ post.author }}</h3>
+                <p class="excerpt">{{ post.excerpt }} <a href="{{ post.url }}">Continue reading <i class="fa fa-chevron-circle-right"></i></a></p>
+            </article>
+        </div>
+    </div>
+    {% endfor %}
 
-<!-- Bootstrap Core JavaScript -->
-<script src="/public/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+    <br />
+    <br />
+    <br />
+    <br />
+    {% include subscribe_to_email.html %}
+</div>
+
+{% include footer.html %}
+
+{% include footer_scripts.html %}
 </body>
-
 </html>
