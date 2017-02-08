@@ -61,7 +61,6 @@ This is the jekyll workflow until we use [readthedocs](https://readthedocs.org/)
 
 1. From the repo root directory, run `./update_jekyll.sh`
     - This deletes all prior generated files to prevent cruft from building up.
-    - 
 2. From the repo root directory, run `python -m http.server` or `python -m SimpleHTTPServer` to see the entire site
  [served up locally](localhost:8000).
 3. Verify all the things. Such as:
