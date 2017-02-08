@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>healthcare.ai</title>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85609357-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '747112772022739');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
+</noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+    
+
+    
+
+    <base href="http://healthcare.ai/" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="splashvendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="splashcss/clean-blog.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.splashjs/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <div class="navbar-brand"><img src="./splashimg/healthcareAI.svg" width="207" height="30" alt="HCTools Logo"/></div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="./blog">Blog</a>
+                    </li>
+                    <li>
+                        <a href="./contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#why">Why Open Source</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('splashimg/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>healthcare.ai is open source software<br>streamlining healthcare machine learning</h1>
+                        <span class="subheading">
+                        	<a href="./r">
+                            <button type="button" class="btn btn-default"><img src="./splashimg/rLang.png" width="70" height="45" alt="R Language Icon"/>R Package</button></a>
+                            <a href="./py">
+							<button type="button" class="btn btn-default"><img src="./splashimg/python.png" width="70" height="45" alt="Python Language Icon"/>Python Package</button></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<div class="content">
+    <div class="container">
+        <div class="row-fluid">
+                <h1 class="entry-title"><a href="">Applications of healthcare machine learning</a></h1>
+                December 22, 2016
+                <p>Now that we have been through some of the applications of machine learning (ML) in mainstream technology, we thought it would be nice to give a broader overview of some of the different types of ML and how they might be applied to improve patient care. <a href="http://healthcare.ai/blog/2016/12/21/which-algorithms-are-in-healthcareai/">We explored the algorithms</a> that currently make up healthcare.ai, and alluded to the fact that there is lots of room for expansion. We’ll take this post as an opportunity to speculate on where healthcare ML could go in the near and distant future. Along the way, we’ll discuss the different types of ML algorithms and give examples of their use in healthcare. 
+At its most basic definition, machine learning refers to a group of algorithms that learn from data. These algorithms are different from <a href="https://fiftyexamples.readthedocs.io/en/latest/celsius.html">conventional ones</a> since they work using examples rather than rules. If you went to the hospital for flu like symptoms, a doctor thinking along the lines of traditional algorithms might say, “You have a fever, aches, general weakness, and no cold symptoms. This looks like the flu.” A different doctor, thinking like an ML algorithm, would say, “Hmmm, your symptoms are the same as 50 recent patients who had the flu. You probably do too.” Silly example, but it’s worth noting a couple of things. First, the ML doctor doesn’t actually need to know anything about the flu before they start making diagnoses. Second, their diagnoses probably won’t be very good until they have seen a lot of examples to compare against.</p>
+
+<p><strong>Classification vs. Regression</strong></p>
+
+<p>The above scenario is an example of a classification machine learning problem. A classification algorithm will give a probability score of a person having the disease, or, more broadly, the probability of event happening vs. not. Healthcare.ai has already implemented some of the simplest <a href="http://healthcare.ai/blog/2016/12/21/which-algorithms-are-in-healthcareai/">algorithms</a> to answer questions like:</p>
+
+<ol>
+  <li>What is the likelihood that a patient will develop a central line infection?</li>
+  <li>What is the likelihood that a COPD patient will be readmitted within 90 days of discharge?</li>
+  <li>What is the likelihood that a person will no-show for their appointment?</li>
+</ol>
+
+<p>These questions are posed with a lot of example data and the expectation that a model will give a probability from 0 (low) to 1 (high). It’s up to us to draw the line of what we call a positive prediction and what we call a negative prediction. On the other hand, a regression algorithm will predict a continuous value. Here are some examples of questions that we have or plan to tackle using regression algorithms:</p>
+
+<ol>
+  <li>How many days will a patient need to stay in the hospital?</li>
+  <li>How many people do we need on staff in the ED on a given night?</li>
+  <li>How much money will a patient cost the health system over the next year?</li>
+</ol>
+
+<p>There are a lot of exciting questions that can be answered with very basic machine learning! As we’ve said before, we are focused on trying to answer the questions that will make the most impact right now. Luckily for us, there is still a lot of low-hanging fruit in healthcare for our team to address. As long as there is good example data, ML could help answer a huge range of questions.</p>
+
+<p><strong>Supervised vs. Unsupervised</strong></p>
+
+<p>All the problems that this post has discussed so far are supervised machine learning problems. For each of these there is a ground truth associated with every patient example being used to train the model. The other major type of machine learning is unsupervised. There is no ground truth associated with the data. The algorithms in this category are largely related to identifying patterns and similarity, and using them to group or stratify data into different categories. This type of functionality is a high priority capability that we are working on implementing in healthcare.ai. In the very near future, we hope to be able to use clustering methods and anomaly detection to answer questions like:</p>
+
+<ol>
+  <li>Does this patient (who hasn’t been associated with diabetes) belong in a diabetes registry? Or a heart disease registry? And with what likelihood?</li>
+  <li>How similar are my high-utilizing patients? Do they fall into particular clusters? What can we learn about the characteristics of these separate clusters?</li>
+</ol>
+
+<p>These questions are typically more nebulous than supervised learning problems, but useful insights can still be gathered. For example, there would be value in labeling a non-diabetic patient as a person to watch and intervene before they ever develop diabetes. This is great information to have and ML will absolutely make an impact by answering such questions.</p>
+
+<p><strong>The Future</strong></p>
+
+<p>The third arm of machine learning that has especially gotten a lot of attention lately is in Artificial Intelligence (AI), mostly implemented with what’s called deep learning. <a href="https://www.tesla.com/autopilot">Self-driving cars</a>, <a href="https://www.facebook.com/notes/mark-zuckerberg/building-jarvis/10154361492931634/">home assistants</a>, and <a href="http://www.nytimes.com/2016/12/14/magazine/the-great-ai-awakening.html?smid=pl-share&amp;_r=0">translation services</a> are some applications of AI. This is the cutting edge in ML right now. In the 2-5 year timeframe, we will start to see more mainstream impact from these techniques. In healthcare, the first big use case is for image analysis in radiology and pathology departments. It’s possible that computers will learn to assess images with high speed and accuracy in the very near future. When the community is ready for adoption, we will be excited to provide these tools in healthcare.ai.
+Hopefully this post helped you to understand the different types of machine learning and begin to think about the types of questions that can be reliably answered. There will never be any shortage of work for machine learning. The bottleneck is the number of people with the necessary expertise. As we’ve said before, another goal of healthcare.ai is to help commoditize machine learning in healthcare. If you’d like to get involved, please <a href="https://github.com/HealthCatalystSLC/healthcareai-r">start using and contributing to the package</a> on your data and feel free to <a href="http://healthcare.ai/contact">reach out</a> with questions!</p>
+
+
+                
+                <p>Subscribe to email updates: <a href="https://feedburner.google.com/fb/a/mailverify?uri=healthcareai&amp;loc=en_US"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+                <a href="https://feedburner.google.com/fb/a/mailverify?uri=healthcareai&amp;loc=en_US" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >
+                <i class="fa-rss fa"></i></a></a></p>           
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright">This project was started by and receives ongoing support from &nbsp;<a href="http://healthcatalyst.com"><img src="splashimg/healthCatalystWhite.png" width="142" height="37" alt="Health Catalyst Logo"/></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="splashvendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="splashvendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="splashjs/jqBootstrapValidation.js"></script>
+    <script src="splashjs/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="splashjs/clean-blog.min.js"></script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85609357-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '747112772022739');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
+</noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+</body>
+
+</html>

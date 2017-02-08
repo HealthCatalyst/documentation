@@ -24,14 +24,14 @@ In the deployment step, the model is put into production and left to make new pr
  
  Hopefully this post helps you get the most out of your dataset, and you can use it to build models that generalize well to new data. As always, feel free to [reach out with questions][contact], and thanks for reading.
 
-[feat]:http://healthcare.ai/blog/2017/01/24/feature-engineering/ 
-[roc]:http://healthcare.ai/blog/2016/12/15/model-evaluation-using-roc-curves/
+[feat]:/blog/2017/01/24/feature-engineering/ 
+[roc]:/blog/2016/12/15/model-evaluation-using-roc-curves/
 [nyt]:http://www.nytimes.com/2012/02/12/sunday-review/big-datas-impact-in-the-world.html
-[algo]:http://healthcare.ai/blog/2016/12/21/which-algorithms-are-in-healthcareai/
+[algo]:/blog/2016/12/21/which-algorithms-are-in-healthcareai/
 [hyp]:https://www.quora.com/What-are-hyperparameters-in-machine-learning
 [sample]:http://docs.aws.amazon.com/machine-learning/latest/dg/splitting-types.html
-[leak]:http://healthcare.ai/blog/2017/01/06/data-leakage-in-healthcare-machine-learning/
+[leak]:/blog/2017/01/06/data-leakage-in-healthcare-machine-learning/
 [over]:http://machinelearningmastery.com/overfitting-and-underfitting-with-machine-learning-algorithms/
-[hcai]:http://healthcare.ai/
+[hcai]:/
 [imba]:http://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/
 [contact]:/contact.html
