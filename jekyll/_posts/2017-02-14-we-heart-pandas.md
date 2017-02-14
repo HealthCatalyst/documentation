@@ -59,7 +59,9 @@ I picked up a dataset called [U.S. Chronic Disease Indicators (CDI)
 
 ### Load the data and explore it a bit
 
-After I've loaded some data to explore, I always run a few quick commands to get an initial peek at the data structure. The first is `dataframe.colums`, which returns a list of all the column names (if your source has named columns). When you import data, pandas infers the datatype. Running `dataframe.ftypes` The next command I run is `dataframe.head(10)` and `dataframe.tail(5)` to get a peek at the first and last **n** number of rows. This is a good sanity check and an easy way to see some of your data.
+After I've loaded some data to explore, I always run a few quick commands to get an initial peek at the data structure. The first is `dataframe.columns`, which returns a list of all the column names (if your source has named columns). When you import data, pandas infers the datatype. Running `dataframe.ftypes`
+
+The next command I run is `dataframe.head(10)` and `dataframe.tail(5)` to get a peek at the first and last **n** number of rows. This is a good sanity check and an easy way to see some of your data.
 
 #### Accessing columns
 
@@ -67,7 +69,9 @@ There are many ways to access a column in your dataframe. Let's say you have a d
 
 - Age
 - Gender
-- Height
+- State
+- Height (inches)
+- Weight (pounds)
 - Encounter Number
 
 While columns can be access directly as an attribute of the dataframe like this `dataframe.Age`, because you may have columns with spaces or other problematic characters, the preferred way to reference a column is with the item bracket notation like this:  `dataframe.['Age']`
@@ -82,10 +86,10 @@ Rows can be accessed individually or sliced by index (row number). Running `data
 
 Pandas has robust query tools built in. For example, to return a dataframe with just patients over the age of 18 you could run `dataframe[dataframe.Age > 18]`, or select just the patients who live in New Mexico `dataframe[dataframe.State == 'NM']`. Perhaps you yearn for something more complex like selecting all records (rows) who have live in a list of states:
     
-    ```python
-    target_states = ['NM', 'TX', 'AK']
-    dataframe.loc[~dataframe['State'].isin(target_states)]
-    ```
+```python
+target_states = ['NM', 'TX', 'AK']
+dataframe.loc[~dataframe['State'].isin(target_states)]
+```
 
 ### Sorting
 
@@ -97,7 +101,7 @@ Pandas has some brilliant descriptive statistics tools built in. After you've lo
 
 ### Column calculation and feature engineering
 
-Often when you are preparing data for a machine learning model you will want to engineer some features. For example, imagine you had a dataset with patient details and you have weight in pounds and height in inches, but you hypothesise that adding BMI([body mass index](https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmicalc.htm)) as a feature will help improve your model. Recall that BMI is calculated by dividing a patient's weight in *kg* by the square of their height in *m*. Creating a derived column using pandas is delightfully simple:
+Often when you are preparing data for a machine learning model you will want to engineer some features. For example, imagine you had a dataset with patient details and you have weight in pounds and height in inches, but you hypothesise that adding BMI ([body mass index](https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmicalc.htm)) as a feature will help improve your model. Recall that BMI is calculated by dividing a patient's weight in *kg* by the square of their height in *m*. Creating a derived column using pandas is delightfully simple:
    ```python
    height_in_meters = (dataframe['Height'] / 25.4 ) / 1000
    weight_in_kg = dataframe['Weight'] / 2.2
@@ -125,14 +129,11 @@ import pandas
 from sqlalchemy import create_engine
 engine = create_engine('mssql+pyodbc://user:password@my_data_source_name')
 pandas.to_sql('my_dataframe', engine)
-
 ```
 
 To see how to connect to other databases, see the [sqlalchemy connection engine docs](http://docs.sqlalchemy.org/en/latest/core/engines.html)
 
 ## How can I learn more?
-
-In this short article, we've been through some essential basics, and while we have seen some powerful tools, thi
 
 Pandas is a very robust and mature data tool. While this article has shown you some essential functionality, it is well worth exploring the incredible things that it can do. Take a few minutes and browse through the stellar  [pandas docs](http://pandas.pydata.org/pandas-docs/stable/) to broaden your data horizon.
  
