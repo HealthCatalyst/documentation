@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description"
+          content="healthcare.ai is software in python and R that makes machine learning in healthcare approachable."/>
+    <meta name="author" content=""/>
+
+    <title>healthcare.ai</title>
+
+    <!-- Bootstrap Core CSS & customized theme -->
+<link href="/public/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="/public/bootstrap-3.3.7/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="/public/font-awesome-4.7.0/css/font-awesome.min.css">
+
+<!-- custom Google fonts -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+      rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS overrides (keep minimal) -->
+<link href='/public/css/hc-custom.css' rel='stylesheet'/>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.splashjs/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85609357-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '747112772022739');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
+</noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top hc-custom">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <i class="fa fa-bars" title="Toggle navigation"></i><span class="sr-only">Toggle navigation</span> Menu
+            </button>
+            <div class="navbar-brand">
+                <a href="/"><img src="/public/img/healthcareAI.svg" width="207" height="30" alt="healthcare.ai logo"/></a>
+            </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/learn_more">Learn More</a>
+                </li>
+                <li>
+                    <a href="/blog">Data Science Blog</a>
+                </li>
+                <li>
+                    <a href="/r">R Package</a>
+                </li>
+                <li>
+                    <a href="/py">Python Package</a>
+                </li>
+                <li>
+                    <a href="/contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<div class="container blog-post">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1 class="entry-title"><a href="">We Heart Pandas</a></h1>
+            February 14, 2017
+
+            <div class="blog-post-content">
+                <h1 id="we-heart-pandas">We Heart Pandas</h1>
+
+<p>Imagine a tool that can read in columnar data, manipulate, transpose, derive, query, describe, analyze, visualize and more. That’s python’s <a href="http://pandas.pydata.org/">pandas library</a>! In our <a href="/py">healthcare.ai python package</a>, we use pandas extensively under the hood since it is robust, fast and proven in data science. It seemed apropos to introduce you to it.</p>
+
+<p>This post is also written as a <a href="/notebooks/we_heart_pandas.html">juptyer notebook</a> hosted on our github site. You can follow along there or <a href="/notebooks/we_heart_pandas.ipynb">download it</a> and run it yourself if you prefer.</p>
+
+<h2 id="what-is-pandas">What is Pandas?</h2>
+
+<p>Pandas is an amazing data manipulation, cleaning, munging and analysis toolkit <a href="http://pandas.pydata.org">library</a> for python. It is great for working with structured data from many different sources such as:</p>
+
+<ul>
+  <li>Flat files such as <code class="highlighter-rouge">.xls</code> Excel spreadsheets or <code class="highlighter-rouge">.csv</code> files exported from sundry systems</li>
+  <li>Data from SQL queries.</li>
+  <li>Time series data.</li>
+</ul>
+
+<h2 id="pandas-data-structures">Pandas Data Structures</h2>
+
+<p>Pandas has two main data structures:</p>
+
+<ul>
+  <li><strong>Series:</strong> a 1 dimensional structure. Think of this as a row in a table or an list in python. Under the covers it is actually a <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html">numpy ndarray</a>, a highly optimized array of fixed size elements.
+    <div class="language-python highlighter-rouge"><pre class="highlight"><code>  <span class="p">[</span><span class="s">'Doe, John'</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mf">23.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">115</span><span class="p">]</span>
+</code></pre>
+    </div>
+  </li>
+  <li><strong>DataFrame:</strong> a 2 dimensional structure. For those familiar with R dataframes, this is similar. Think of this as a database table, excel spreadsheet or list of lists:
+    <div class="language-python highlighter-rouge"><pre class="highlight"><code>  <span class="p">[</span>
+      <span class="p">[</span><span class="s">'Doe, Jane'</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mf">23.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+      <span class="p">[</span><span class="s">'Doe, John'</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mf">34.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+      <span class="p">[</span><span class="s">'Doe, Jenny'</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mf">77.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+      <span class="p">[</span><span class="s">'Doe, Jake'</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mf">28.3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+      <span class="o">...</span>
+  <span class="p">]</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h2 id="what-can-pandas-do">What can pandas do?</h2>
+
+<p>The short answer? A lot. The long answer?</p>
+
+<ul>
+  <li>Robust data IO to/from disparate sources, such as CSV, Excel files, databases, and more.</li>
+  <li>Missing data handling, aka null handling. When you create a dataframe nulls are repesented by <code class="highlighter-rouge">NaN</code>.</li>
+  <li>Easy creation of new and derived columns, as well as deletion.</li>
+  <li>Grouping functions.</li>
+  <li>Slicing, joining, and sub-setting datasets</li>
+  <li>Reshaping and pivoting</li>
+  <li>Descriptive statistics and summaries of large datasets</li>
+  <li>Visualization with very little effort</li>
+</ul>
+
+<h2 id="examples">Examples</h2>
+
+<p>Let’s load a sample dataset, get some insight into our data with some easy descriptive statistics, manipulate some columns and explore the data. If you don’t have any data of your own to play with, you can always find something interesting from the U.S. Government’s <a href="https://www.data.gov/">open data initiative</a>.</p>
+
+<p>I picked up a dataset called <a href="https://catalog.data.gov/dataset/u-s-chronic-disease-indicators-cdi-e50c9">U.S. Chronic Disease Indicators (CDI)
+</a>.</p>
+
+<h3 id="load-the-data">Load the data</h3>
+
+<p>First, be sure to import pandas then load the <code class="highlighter-rouge">.csv</code> file in as a new dataframe:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span>
+<span class="n">us_cdi_data</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">''</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h3 id="initial-exploration">Initial exploration</h3>
+
+<p>After I’ve loaded some data to explore, I always run a few quick commands to get an initial peek at the data structure. The first is <code class="highlighter-rouge">dataframe.columns</code>, which returns a list of all the column names (if your source has named columns). When you import data, pandas infers the datatype. Running <code class="highlighter-rouge">dataframe.ftypes</code></p>
+
+<p>The next command I run is <code class="highlighter-rouge">dataframe.head(10)</code> and <code class="highlighter-rouge">dataframe.tail(5)</code> to get a peek at the first and last <strong>n</strong> number of rows. This is a good sanity check and an easy way to see some of your data.</p>
+
+<p>Run those now:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">us_cdi_data</span><span class="o">.</span><span class="n">columns</span>
+</code></pre>
+</div>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">us_cdi_data</span><span class="o">.</span><span class="n">ftypes</span>
+</code></pre>
+</div>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">us_cdi_data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre>
+</div>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">us_cdi_data</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h4 id="accessing-columns">Accessing columns</h4>
+
+<p>There are many ways to access a column in your dataframe. Let’s say you have a dataframe called <code class="highlighter-rouge">dataframe</code> that has the following columns:</p>
+
+<ul>
+  <li>Age</li>
+  <li>Gender</li>
+  <li>State</li>
+  <li>Height (inches)</li>
+  <li>Weight (pounds)</li>
+  <li>Encounter Number</li>
+</ul>
+
+<p>While columns can be access directly as an attribute of the dataframe like this <code class="highlighter-rouge">dataframe.Age</code>, because you may have columns with spaces or other problematic characters, the preferred way to reference a column is with the item bracket notation like this: <code class="highlighter-rouge">dataframe.['Age']</code></p>
+
+<p>When you access a column, pandas will return a <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html">pandas Series</a>.</p>
+
+<h4 id="accessing-rows">Accessing rows</h4>
+
+<p>Rows can be accessed individually or sliced by index (row number). Running <code class="highlighter-rouge">dataframe[5]</code> would return the 6th row as a Series. If you wanted to access the rows between 100 and 200 you would run <code class="highlighter-rouge">dataframe[100:200]</code>. This functions the same as python’s list syntax.</p>
+
+<h3 id="querying-data">Querying Data</h3>
+
+<p>Pandas has robust query tools built in. For example, to return a dataframe with just patients over the age of 18 you could run <code class="highlighter-rouge">dataframe[dataframe.Age &gt; 18]</code>, or select just the patients who live in New Mexico <code class="highlighter-rouge">dataframe[dataframe.State == 'NM']</code>. Perhaps you yearn for something more complex like selecting all records (rows) who have live in a list of states:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">target_states</span> <span class="o">=</span> <span class="p">[</span><span class="s">'NM'</span><span class="p">,</span> <span class="s">'TX'</span><span class="p">,</span> <span class="s">'AK'</span><span class="p">]</span>
+<span class="n">dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dataframe</span><span class="p">[</span><span class="s">'State'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">target_states</span><span class="p">)]</span>
+</code></pre>
+</div>
+
+<p>Let’s pull out all rows where the <strong>State</strong> column is either ‘CO’, ‘CT’, or ‘CA’</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">target_sources</span> <span class="o">=</span> <span class="p">[</span><span class="s">'CO'</span><span class="p">,</span> <span class="s">'CA'</span><span class="p">,</span> <span class="s">'CT'</span><span class="p">]</span>
+<span class="n">us_cdi_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">us_cdi_data</span><span class="p">[</span><span class="s">'LocationAbbr'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">target_sources</span><span class="p">)]</span>
+</code></pre>
+</div>
+
+<h3 id="sorting">Sorting</h3>
+
+<p>You can sort a dataframe by any column using the <code class="highlighter-rouge">.sort_by</code> method. If you have a column named ‘Age’ you could run <code class="highlighter-rouge">dataframe.sort_values(by='Age')</code>. For our dataset, let’s sort by <em>YearEnd</em>:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">us_cdi_data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s">'YearEnd'</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h3 id="column-calculation-and-feature-engineering">Column calculation and feature engineering</h3>
+
+<p>Often when you are preparing data for a machine learning model you will want to engineer some features. For example, imagine you had a dataset with patient details and you have weight in pounds and height in inches, but you hypothesise that adding BMI (<a href="https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmicalc.htm">body mass index</a>) as a feature will help improve your model. Recall that BMI is calculated by dividing a patient’s weight in <em>kg</em> by the square of their height in <em>m</em>. Creating a derived column using pandas is delightfully simple:</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>   <span class="n">height_in_meters</span> <span class="o">=</span> <span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s">'Height'</span><span class="p">]</span> <span class="o">/</span> <span class="mf">25.4</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span>
+   <span class="n">weight_in_kg</span> <span class="o">=</span> <span class="n">dataframe</span><span class="p">[</span><span class="s">'Weight'</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.2</span>
+   <span class="n">dataframe</span><span class="p">[</span><span class="s">'BMI'</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight_in_kg</span> <span class="o">/</span> <span class="p">(</span><span class="n">height_in_meters</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre>
+</div>
+<p>Using this pattern, columns can be created from arbitrarily complex calculations of other columns (or other data altogether). This makes exploratory feature engineering simple and fast to iterate.</p>
+
+<p>For our dataset, let’s make a column that counts the number of years between the start and end dates:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">us_cdi_data</span><span class="p">[</span><span class="s">'YearsDelta'</span><span class="p">]</span> <span class="o">=</span> <span class="n">us_cdi_data</span><span class="p">[</span><span class="s">'YearEnd'</span><span class="p">]</span> <span class="o">-</span> <span class="n">us_cdi_data</span><span class="p">[</span><span class="s">'YearStart'</span><span class="p">]</span>
+</code></pre>
+</div>
+
+<h2 id="writing-data">Writing data</h2>
+
+<p>Once you’ve done some manipulation, you may want to write the resulting dataframe out to a file or database.</p>
+
+<h3 id="writing-to-a-file">Writing to a file</h3>
+
+<ul>
+  <li>Dumping a dataframe out to a file is trivial with <code class="highlighter-rouge">dataframe.to_csv('my_filename.csv')</code>.</li>
+  <li>Write a dataframe to an excel file is just as easy with <code class="highlighter-rouge">dataframe.to_excel('my_filename.xlsx', sheet_name='My Data'')</code></li>
+</ul>
+
+<p>Let’s try this with our example:</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">us_cdi_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">'US_CDI_manipulated.csv'</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h3 id="writing-to-a-database">Writing to a database</h3>
+
+<p>This process is a little more involved since you need to use <a href="http://www.sqlalchemy.org/">sqlalchemy</a>, a python database library that works with many different databases including SQLite, Postgresql, MySQL, Oracle, MS-SQL, Firebird, Sybase and others.</p>
+
+<p>Your code will look something like this (assuming you have a MSSQL database and a dataframe called <code class="highlighter-rouge">my_dataframe</code>).</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s">'mssql+pyodbc://user:password@my_data_source_name'</span><span class="p">)</span>
+<span class="n">pandas</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s">'my_dataframe'</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>To see how to connect to other databases, see the <a href="http://docs.sqlalchemy.org/en/latest/core/engines.html">sqlalchemy connection engine docs</a></p>
+
+<h2 id="how-can-i-learn-more">How can I learn more?</h2>
+
+<p>Pandas is a very robust and mature data tool. While this article has shown you some essential functionality, it is well worth exploring the incredible things that it can do. Take a few minutes and browse through the stellar  <a href="http://pandas.pydata.org/pandas-docs/stable/">pandas docs</a> to broaden your data horizon.</p>
+
+<p>If that’s not enough, or if you want some more concise references, here is a list of great resources if you are looking to learn more.</p>
+
+<ul>
+  <li>Start with this <a href="http://pandas.pydata.org/pandas-docs/stable/10min.html">10 Minutes to pandas</a> tutorial.</li>
+  <li>When you’ve mastered that, run through <a href="http://pandas.pydata.org/pandas-docs/stable/basics.html">Essential Basic Functionality</a>.</li>
+  <li>When you are ready to visualize some data, check out the comprehensive <a href="http://pandas.pydata.org/pandas-docs/stable/visualization.html">Pandas Visualization docs</a>.</li>
+  <li>For visual learners like myself, I recommend <a href="https://www.youtube.com/watch?v=9d5-Ti6onew">Jason Wirth’s Visual Pandas talk</a> (26 min youtube video)</li>
+  <li>For a quick reference card, print out Datacamp’s <a href="https://www.datacamp.com/community/blog/python-pandas-cheat-sheet">Pandas Basics Cheatsheet</a> and tape it to your cubicle.</li>
+  <li>For details on connecting to databases, see the <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_sql.html">Pandas to_sql docs</a> and the <a href="http://docs.sqlalchemy.org/en/latest/core/engines.html">sqlalchemy database engine docs</a>.</li>
+  <li>To get started with healthcare machine learning now, see <a href="/">healthcare.ai</a> for R and Python.</li>
+</ul>
+
+            </div>
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h4>Want to get blog and broadcast updates via email?</h4>
+        <p>Register to receive blog and live broadcast notifications</p>
+        <a class="btn btn-lrg btn-primary"
+           href="https://pages.healthcatalyst.com/MachineLearningNewsletterRegistration.html">Register for updates</a>
+    </div>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p class="copyright text-center">This project was started by and receives ongoing support from &nbsp;
+                    <a href="http://healthcatalyst.com"><img src="/public/img/healthCatalystWhite.png" width="142" height="37" alt="Health Catalyst Logo"/></a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/public/js/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/public/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
