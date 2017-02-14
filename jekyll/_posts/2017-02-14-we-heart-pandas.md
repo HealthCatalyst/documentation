@@ -7,6 +7,8 @@ author: Taylor Miller
 categories: blog
 excerpt: Imagine a tool that can read in columnar data, manipulate, transpose, derive, query, describe, analyze, visualize and more. That's python's <strong>pandas library!</strong> In our <a href='/py'>healthcare.ai</a> python package, we use pandas extensively under the hood since it is robust, fast and proven in data science. It seemed apropos to introduce you to it.
 ---
+# We Heart Pandas
+
 Imagine a tool that can read in columnar data, manipulate, transpose, derive, query, describe, analyze, visualize and more. That's python's [pandas library](http://pandas.pydata.org/)! In our [healthcare.ai python package](/py), we use pandas extensively under the hood since it is robust, fast and proven in data science. It seemed apropos to introduce you to it.
 
 ## What is Pandas?
@@ -57,11 +59,39 @@ Let's load a sample dataset, get some insight into our data with some easy descr
 I picked up a dataset called [U.S. Chronic Disease Indicators (CDI)
 ](https://catalog.data.gov/dataset/u-s-chronic-disease-indicators-cdi-e50c9).
 
-### Load the data and explore it a bit
+### Load the data
+
+First, be sure to load pandas
+```python
+import pandas
+```
+
+Let's load the `.csv` file in as a new dataframe:
+
+```python
+us_cdi_data = pandas.read_csv('')
+```
+
+### Initial exploration
 
 After I've loaded some data to explore, I always run a few quick commands to get an initial peek at the data structure. The first is `dataframe.columns`, which returns a list of all the column names (if your source has named columns). When you import data, pandas infers the datatype. Running `dataframe.ftypes`
 
 The next command I run is `dataframe.head(10)` and `dataframe.tail(5)` to get a peek at the first and last **n** number of rows. This is a good sanity check and an easy way to see some of your data.
+
+Run those now:
+
+```python
+us_cdi_data.columns
+```
+```python
+us_cdi_data.ftypes
+```
+```python
+us_cdi_data.head(10)
+```
+```python
+us_cdi_data.tail(5)
+```
 
 #### Accessing columns
 
@@ -74,7 +104,7 @@ There are many ways to access a column in your dataframe. Let's say you have a d
 - Weight (pounds)
 - Encounter Number
 
-While columns can be access directly as an attribute of the dataframe like this `dataframe.Age`, because you may have columns with spaces or other problematic characters, the preferred way to reference a column is with the item bracket notation like this:  `dataframe.['Age']`
+While columns can be access directly as an attribute of the dataframe like this `dataframe.Age`, because you may have columns with spaces or other problematic characters, the preferred way to reference a column is with the item bracket notation like this: `dataframe.['Age']`
  
 When you access a column, pandas will return a [pandas Series](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html).
 
