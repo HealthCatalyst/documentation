@@ -11,6 +11,8 @@ excerpt: Imagine a tool that can read in columnar data, manipulate, transpose, d
 
 Imagine a tool that can read in columnar data, manipulate, transpose, derive, query, describe, analyze, visualize and more. That's python's [pandas library](http://pandas.pydata.org/)! In our [healthcare.ai python package](/py), we use pandas extensively under the hood since it is robust, fast and proven in data science. It seemed apropos to introduce you to it.
 
+This post is also written as a [juptyer notebook](/notebooks/we_heart_pandas.html) hosted on our github site. You can follow along there or [download it](/notebooks/we_heart_pandas.ipynb) and run it yourself if you prefer.
+
 ## What is Pandas?
 
 Pandas is an amazing data manipulation, cleaning, munging and analysis toolkit [library](http://pandas.pydata.org) for python. It is great for working with structured data from many different sources such as:
@@ -61,14 +63,10 @@ I picked up a dataset called [U.S. Chronic Disease Indicators (CDI)
 
 ### Load the data
 
-First, be sure to load pandas
+First, be sure to import pandas then load the `.csv` file in as a new dataframe:
+
 ```python
 import pandas
-```
-
-Let's load the `.csv` file in as a new dataframe:
-
-```python
 us_cdi_data = pandas.read_csv('')
 ```
 
@@ -115,19 +113,26 @@ Rows can be accessed individually or sliced by index (row number). Running `data
 ### Querying Data
 
 Pandas has robust query tools built in. For example, to return a dataframe with just patients over the age of 18 you could run `dataframe[dataframe.Age > 18]`, or select just the patients who live in New Mexico `dataframe[dataframe.State == 'NM']`. Perhaps you yearn for something more complex like selecting all records (rows) who have live in a list of states:
-    
+
 ```python
 target_states = ['NM', 'TX', 'AK']
-dataframe.loc[~dataframe['State'].isin(target_states)]
+dataframe.loc[dataframe['State'].isin(target_states)]
+```
+
+Let's pull out all rows where the **State** column is either 'CO', 'CT', or 'CA'
+
+```python
+target_sources = ['CO', 'CA', 'CT']
+us_cdi_data.loc[us_cdi_data['LocationAbbr'].isin(target_sources)]
 ```
 
 ### Sorting
 
-You can sort a dataframe by any column using the `.sort_by` method. If you have a column named 'Age' you could run `dataframe.sort_by('Age')`
+You can sort a dataframe by any column using the `.sort_by` method. If you have a column named 'Age' you could run `dataframe.sort_values(by='Age')`. For our dataset, let's sort by *YearEnd*:
 
-### Descriptive Stats
-
-Pandas has some brilliant descriptive statistics tools built in. After you've loaded some data into a dataframe, you can run `dataframe.summary()` to get a quick overview of your data.
+```python
+us_cdi_data.sort_values(by='YearEnd')
+```
 
 ### Column calculation and feature engineering
 
@@ -139,6 +144,12 @@ Often when you are preparing data for a machine learning model you will want to 
    ```
 Using this pattern, columns can be created from arbitrarily complex calculations of other columns (or other data altogether). This makes exploratory feature engineering simple and fast to iterate.
 
+For our dataset, let's make a column that counts the number of years between the start and end dates:
+
+```python
+us_cdi_data['YearsDelta'] = us_cdi_data['YearEnd'] - us_cdi_data['YearStart']
+```
+
 ## Writing data
 
 Once you've done some manipulation, you may want to write the resulting dataframe out to a file or database.
@@ -147,6 +158,11 @@ Once you've done some manipulation, you may want to write the resulting datafram
 
 - Dumping a dataframe out to a file is trivial with `dataframe.to_csv('my_filename.csv')`.
 - Write a dataframe to an excel file is just as easy with `dataframe.to_excel('my_filename.xlsx', sheet_name='My Data'')`
+
+Let's try this with our example:
+```python
+us_cdi_data.to_csv('US_CDI_manipulated.csv')
+```
 
 ### Writing to a database
 
