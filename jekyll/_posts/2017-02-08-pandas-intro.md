@@ -60,11 +60,29 @@ Let's load a sample dataset, get some insight into our data with some easy descr
 
 ### Load the data and explore it a bit
 
-- first...
+After I've loaded some data to explore, I always run `dataframe.head(10)` and `dataframe.tail(5)` to get a peek at the first and last **n** number of rows. This is a good sanity check and an easy way to see some of your data.
+
+#### Accessing columns
+
+There are many ways to access a column in your dataframe. Let's say you have a dataframe called `dataframe` that has the following columns:
+
+- Age
+- Gender
+- Height
+- Encounter Number
+
+While columns can be access directly as an attribute of the dataframe like this `dataframe.Age`, because you may have columns with spaces or other problematic characters, the preferred way to reference a column is with the item bracket notation like this:  `dataframe.['Age']`
+ 
+When you access a column, pandas will return a [pandas Series](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html), which is actually a one dimensional numpy array.
+
+#### Accessing rows
+
+- TODO write this and maybe talk about iloc vs loc
+
 
 ### Descriptive Stats
 
-- first...
+Pandas has some brilliant descriptive statistics tools built in. After you've loaded some data into a dataframe, you can run `dataframe.summary()` to get a quick overview of your data.
 
 ### Column manipulation
 
@@ -74,6 +92,9 @@ Let's load a sample dataset, get some insight into our data with some easy descr
 
 - first...
 
+## Other tips
+
+- 
 ## How can I learn more?
 
 It's worth noting that the [pandas docs](http://pandas.pydata.org/pandas-docs/stable/) are stellar. Here's a list of great resources if you are looking to learn more.
