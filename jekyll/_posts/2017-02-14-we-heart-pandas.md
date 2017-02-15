@@ -67,7 +67,7 @@ First, be sure to import pandas then load the `.csv` file in as a new dataframe:
 
 ```python
 import pandas
-us_cdi_data = pandas.read_csv('')
+us_cdi_data = pandas.read_csv('U.S._Chronic_Disease_Indicators__CDI_.csv')
 ```
 
 ### Initial exploration
