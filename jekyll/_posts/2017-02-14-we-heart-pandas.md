@@ -13,7 +13,7 @@ Imagine a tool that can read in columnar data, manipulate, transpose, derive, qu
 
 This post is also written as a [juptyer notebook](/notebooks/we_heart_pandas.html) hosted on our github site. You can follow along there or [download it](/notebooks/we_heart_pandas.ipynb) and run it yourself if you prefer.
 
-## What is Pandas?
+## What is pandas?
 
 Pandas is an amazing data manipulation, cleaning, munging and analysis toolkit [library](http://pandas.pydata.org) for python. It is great for working with structured data from many different sources such as:
     
@@ -21,7 +21,7 @@ Pandas is an amazing data manipulation, cleaning, munging and analysis toolkit [
 - Data from SQL queries.
 - Time series data.
 
-## Pandas Data Structures
+## Pandas data structures
 
 Pandas has two main data structures:
 
@@ -30,7 +30,7 @@ Pandas has two main data structures:
     ['Doe, John', 54, 23.5, 0, 1, 115]
     ```
 
-- **DataFrame:** a 2 dimensional structure. For those familiar with R dataframes, this is similar. Think of this as a database table, excel spreadsheet or list of lists:
+- **DataFrame:** a 2 dimensional structure. For those familiar with R dataframes, this is similar. Think of this as a database table, Excel spreadsheet or list of lists:
     ```python
     [
         ['Doe, Jane', F, 54, 23.5, 0, 1],
@@ -46,7 +46,7 @@ Pandas has two main data structures:
 The short answer? A lot. The long answer?
 
 - Robust data IO to/from disparate sources, such as CSV, Excel files, databases, and more.
-- Missing data handling, aka null handling. When you create a dataframe nulls are repesented by `NaN`.
+- Missing data handling, aka null handling when you create a dataframe nulls are represented by `NaN`.
 - Easy creation of new and derived columns, as well as deletion.
 - Grouping functions.
 - Slicing, joining, and sub-setting datasets
@@ -72,7 +72,7 @@ us_cdi_data = pandas.read_csv('U.S._Chronic_Disease_Indicators__CDI_.csv')
 
 ### Initial exploration
 
-After I've loaded some data to explore, I always run a few quick commands to get an initial peek at the data structure. The first is `dataframe.columns`, which returns a list of all the column names (if your source has named columns). When you import data, pandas infers the datatype. Running `dataframe.ftypes`
+After I've loaded some data to explore, I always run a few quick commands to get an initial peek at the data structure. The first is `dataframe.columns`, which returns a list of all the column names (if your source has named columns). When you import data, pandas infers the datatype. Running `dataframe.ftypes` is a great way to see all the columns and the inferred datatypes.
 
 The next command I run is `dataframe.head(10)` and `dataframe.tail(5)` to get a peek at the first and last **n** number of rows. This is a good sanity check and an easy way to see some of your data.
 
@@ -102,7 +102,7 @@ There are many ways to access a column in your dataframe. Let's say you have a d
 - Weight (pounds)
 - Encounter Number
 
-While columns can be access directly as an attribute of the dataframe like this `dataframe.Age`, because you may have columns with spaces or other problematic characters, the preferred way to reference a column is with the item bracket notation like this: `dataframe.['Age']`
+While columns can be accessed directly as an attribute of the dataframe like this `dataframe.Age`, because you may have columns with spaces or other problematic characters, the preferred way to reference a column is with the item bracket notation like this: `dataframe.['Age']`
  
 When you access a column, pandas will return a [pandas Series](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html).
 
@@ -110,7 +110,7 @@ When you access a column, pandas will return a [pandas Series](http://pandas.pyd
 
 Rows can be accessed individually or sliced by index (row number). Running `dataframe[5]` would return the 6th row as a Series. If you wanted to access the rows between 100 and 200 you would run `dataframe[100:200]`. This functions the same as python's list syntax.
 
-### Querying Data
+### Querying data
 
 Pandas has robust query tools built in. For example, to return a dataframe with just patients over the age of 18 you could run `dataframe[dataframe.Age > 18]`, or select just the patients who live in New Mexico `dataframe[dataframe.State == 'NM']`. Perhaps you yearn for something more complex like selecting all records (rows) who have live in a list of states:
 
@@ -136,7 +136,7 @@ us_cdi_data.sort_values(by='YearEnd')
 
 ### Column calculation and feature engineering
 
-Often when you are preparing data for a machine learning model you will want to engineer some features. For example, imagine you had a dataset with patient details and you have weight in pounds and height in inches, but you hypothesise that adding BMI ([body mass index](https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmicalc.htm)) as a feature will help improve your model. Recall that BMI is calculated by dividing a patient's weight in *kg* by the square of their height in *m*. Creating a derived column using pandas is delightfully simple:
+Often when you are preparing data for a machine learning model you will want to engineer some features. For example, imagine you had a dataset with patient details and you have weight in pounds and height in inches, but you hypothesize that adding BMI ([body mass index](https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmicalc.htm)) as a feature will help improve your model. BMI is calculated by dividing a patient's weight in *kg* by the square of their height in *m*. Creating a derived column using pandas is delightfully simple:
    ```python
    height_in_meters = (dataframe['Height'] / 25.4 ) / 1000
    weight_in_kg = dataframe['Weight'] / 2.2
@@ -188,7 +188,7 @@ If that's not enough, or if you want some more concise references, here is a lis
 - Start with this [10 Minutes to pandas](http://pandas.pydata.org/pandas-docs/stable/10min.html) tutorial.
 - When you've mastered that, run through [Essential Basic Functionality](http://pandas.pydata.org/pandas-docs/stable/basics.html).
 - When you are ready to visualize some data, check out the comprehensive [Pandas Visualization docs](http://pandas.pydata.org/pandas-docs/stable/visualization.html).
-- For visual learners like myself, I recommend [Jason Wirth's Visual Pandas talk](https://www.youtube.com/watch?v=9d5-Ti6onew) (26 min youtube video)
+- For visual learners like myself, I recommend [Jason Wirth's Visual Pandas talk](https://www.youtube.com/watch?v=9d5-Ti6onew) (26 min YouTube video)
 - For a quick reference card, print out Datacamp's [Pandas Basics Cheatsheet](https://www.datacamp.com/community/blog/python-pandas-cheat-sheet) and tape it to your cubicle.
 - For details on connecting to databases, see the [Pandas to_sql docs](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_sql.html) and the [sqlalchemy database engine docs](http://docs.sqlalchemy.org/en/latest/core/engines.html).
 - To get started with healthcare machine learning now, see [healthcare.ai](/) for R and Python.

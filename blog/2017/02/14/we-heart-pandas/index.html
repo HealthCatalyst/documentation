@@ -112,7 +112,7 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
 
 <p>This post is also written as a <a href="/notebooks/we_heart_pandas.html">juptyer notebook</a> hosted on our github site. You can follow along there or <a href="/notebooks/we_heart_pandas.ipynb">download it</a> and run it yourself if you prefer.</p>
 
-<h2 id="what-is-pandas">What is Pandas?</h2>
+<h2 id="what-is-pandas">What is pandas?</h2>
 
 <p>Pandas is an amazing data manipulation, cleaning, munging and analysis toolkit <a href="http://pandas.pydata.org">library</a> for python. It is great for working with structured data from many different sources such as:</p>
 
@@ -122,7 +122,7 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
   <li>Time series data.</li>
 </ul>
 
-<h2 id="pandas-data-structures">Pandas Data Structures</h2>
+<h2 id="pandas-data-structures">Pandas data structures</h2>
 
 <p>Pandas has two main data structures:</p>
 
@@ -132,7 +132,7 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
 </code></pre>
     </div>
   </li>
-  <li><strong>DataFrame:</strong> a 2 dimensional structure. For those familiar with R dataframes, this is similar. Think of this as a database table, excel spreadsheet or list of lists:
+  <li><strong>DataFrame:</strong> a 2 dimensional structure. For those familiar with R dataframes, this is similar. Think of this as a database table, Excel spreadsheet or list of lists:
     <div class="language-python highlighter-rouge"><pre class="highlight"><code>  <span class="p">[</span>
       <span class="p">[</span><span class="s">'Doe, Jane'</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mf">23.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
       <span class="p">[</span><span class="s">'Doe, John'</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mf">34.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
@@ -151,7 +151,7 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
 
 <ul>
   <li>Robust data IO to/from disparate sources, such as CSV, Excel files, databases, and more.</li>
-  <li>Missing data handling, aka null handling. When you create a dataframe nulls are repesented by <code class="highlighter-rouge">NaN</code>.</li>
+  <li>Missing data handling, aka null handling when you create a dataframe nulls are represented by <code class="highlighter-rouge">NaN</code>.</li>
   <li>Easy creation of new and derived columns, as well as deletion.</li>
   <li>Grouping functions.</li>
   <li>Slicing, joining, and sub-setting datasets</li>
@@ -178,7 +178,7 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
 
 <h3 id="initial-exploration">Initial exploration</h3>
 
-<p>After I’ve loaded some data to explore, I always run a few quick commands to get an initial peek at the data structure. The first is <code class="highlighter-rouge">dataframe.columns</code>, which returns a list of all the column names (if your source has named columns). When you import data, pandas infers the datatype. Running <code class="highlighter-rouge">dataframe.ftypes</code></p>
+<p>After I’ve loaded some data to explore, I always run a few quick commands to get an initial peek at the data structure. The first is <code class="highlighter-rouge">dataframe.columns</code>, which returns a list of all the column names (if your source has named columns). When you import data, pandas infers the datatype. Running <code class="highlighter-rouge">dataframe.ftypes</code> is a great way to see all the columns and the inferred datatypes.</p>
 
 <p>The next command I run is <code class="highlighter-rouge">dataframe.head(10)</code> and <code class="highlighter-rouge">dataframe.tail(5)</code> to get a peek at the first and last <strong>n</strong> number of rows. This is a good sanity check and an easy way to see some of your data.</p>
 
@@ -210,7 +210,7 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
   <li>Encounter Number</li>
 </ul>
 
-<p>While columns can be access directly as an attribute of the dataframe like this <code class="highlighter-rouge">dataframe.Age</code>, because you may have columns with spaces or other problematic characters, the preferred way to reference a column is with the item bracket notation like this: <code class="highlighter-rouge">dataframe.['Age']</code></p>
+<p>While columns can be accessed directly as an attribute of the dataframe like this <code class="highlighter-rouge">dataframe.Age</code>, because you may have columns with spaces or other problematic characters, the preferred way to reference a column is with the item bracket notation like this: <code class="highlighter-rouge">dataframe.['Age']</code></p>
 
 <p>When you access a column, pandas will return a <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html">pandas Series</a>.</p>
 
@@ -218,7 +218,7 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
 
 <p>Rows can be accessed individually or sliced by index (row number). Running <code class="highlighter-rouge">dataframe[5]</code> would return the 6th row as a Series. If you wanted to access the rows between 100 and 200 you would run <code class="highlighter-rouge">dataframe[100:200]</code>. This functions the same as python’s list syntax.</p>
 
-<h3 id="querying-data">Querying Data</h3>
+<h3 id="querying-data">Querying data</h3>
 
 <p>Pandas has robust query tools built in. For example, to return a dataframe with just patients over the age of 18 you could run <code class="highlighter-rouge">dataframe[dataframe.Age &gt; 18]</code>, or select just the patients who live in New Mexico <code class="highlighter-rouge">dataframe[dataframe.State == 'NM']</code>. Perhaps you yearn for something more complex like selecting all records (rows) who have live in a list of states:</p>
 
@@ -244,7 +244,7 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
 
 <h3 id="column-calculation-and-feature-engineering">Column calculation and feature engineering</h3>
 
-<p>Often when you are preparing data for a machine learning model you will want to engineer some features. For example, imagine you had a dataset with patient details and you have weight in pounds and height in inches, but you hypothesise that adding BMI (<a href="https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmicalc.htm">body mass index</a>) as a feature will help improve your model. Recall that BMI is calculated by dividing a patient’s weight in <em>kg</em> by the square of their height in <em>m</em>. Creating a derived column using pandas is delightfully simple:</p>
+<p>Often when you are preparing data for a machine learning model you will want to engineer some features. For example, imagine you had a dataset with patient details and you have weight in pounds and height in inches, but you hypothesize that adding BMI (<a href="https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmicalc.htm">body mass index</a>) as a feature will help improve your model. BMI is calculated by dividing a patient’s weight in <em>kg</em> by the square of their height in <em>m</em>. Creating a derived column using pandas is delightfully simple:</p>
 <div class="language-python highlighter-rouge"><pre class="highlight"><code>   <span class="n">height_in_meters</span> <span class="o">=</span> <span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s">'Height'</span><span class="p">]</span> <span class="o">/</span> <span class="mf">25.4</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span>
    <span class="n">weight_in_kg</span> <span class="o">=</span> <span class="n">dataframe</span><span class="p">[</span><span class="s">'Weight'</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.2</span>
    <span class="n">dataframe</span><span class="p">[</span><span class="s">'BMI'</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight_in_kg</span> <span class="o">/</span> <span class="p">(</span><span class="n">height_in_meters</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
@@ -299,7 +299,7 @@ src="https://www.facebook.com/tr?id=747112772022739&ev=PageView&noscript=1"/>
   <li>Start with this <a href="http://pandas.pydata.org/pandas-docs/stable/10min.html">10 Minutes to pandas</a> tutorial.</li>
   <li>When you’ve mastered that, run through <a href="http://pandas.pydata.org/pandas-docs/stable/basics.html">Essential Basic Functionality</a>.</li>
   <li>When you are ready to visualize some data, check out the comprehensive <a href="http://pandas.pydata.org/pandas-docs/stable/visualization.html">Pandas Visualization docs</a>.</li>
-  <li>For visual learners like myself, I recommend <a href="https://www.youtube.com/watch?v=9d5-Ti6onew">Jason Wirth’s Visual Pandas talk</a> (26 min youtube video)</li>
+  <li>For visual learners like myself, I recommend <a href="https://www.youtube.com/watch?v=9d5-Ti6onew">Jason Wirth’s Visual Pandas talk</a> (26 min YouTube video)</li>
   <li>For a quick reference card, print out Datacamp’s <a href="https://www.datacamp.com/community/blog/python-pandas-cheat-sheet">Pandas Basics Cheatsheet</a> and tape it to your cubicle.</li>
   <li>For details on connecting to databases, see the <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_sql.html">Pandas to_sql docs</a> and the <a href="http://docs.sqlalchemy.org/en/latest/core/engines.html">sqlalchemy database engine docs</a>.</li>
   <li>To get started with healthcare machine learning now, see <a href="/">healthcare.ai</a> for R and Python.</li>
