@@ -5,11 +5,11 @@ date:   2017-02-14 13:43:00 -0700
 tags: python
 author: Taylor Miller
 categories: blog
-excerpt: Imagine a tool that can read in columnar data, manipulate, transpose, derive, query, describe, analyze, visualize and more. That's python's <strong>pandas library!</strong> In our <a href='/py'>healthcare.ai</a> python package, we use pandas extensively under the hood since it is robust, fast and proven in data science. It seemed apropos to introduce you to it.
+excerpt: Imagine a tool that can read in columnar data, manipulate, transpose, derive, query, describe, analyze, visualize and more. That's python's <strong>pandas library!</strong> In our <a href='http://healthcareai-py.readthedocs.io'>healthcare.ai</a> python package, we use pandas extensively under the hood since it is robust, fast and proven in data science. It seemed apropos to introduce you to it.
 ---
 # We Heart Pandas
 
-Imagine a tool that can read in columnar data, manipulate, transpose, derive, query, describe, analyze, visualize and more. That's python's [pandas library](http://pandas.pydata.org/)! In our [healthcare.ai python package](/py), we use pandas extensively under the hood since it is robust, fast and proven in data science. It seemed apropos to introduce you to it.
+Imagine a tool that can read in columnar data, manipulate, transpose, derive, query, describe, analyze, visualize and more. That's python's [pandas library](http://pandas.pydata.org/)! In our [healthcare.ai python package](http://healthcareai-py.readthedocs.io), we use pandas extensively under the hood since it is robust, fast and proven in data science. It seemed apropos to introduce you to it.
 
 This post is also written as a [juptyer notebook](/notebooks/we_heart_pandas.html) hosted on our github site. You can follow along there or [download it](/notebooks/we_heart_pandas.ipynb) and run it yourself if you prefer.
 

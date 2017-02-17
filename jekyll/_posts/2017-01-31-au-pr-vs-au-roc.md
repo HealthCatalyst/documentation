@@ -34,7 +34,7 @@ As we read in [this paper][Davis paper], "an algorithm that optimizes the area u
 
 Feel free to [reach out with questions][contact], and thanks for reading.
 
-[release]:http://healthcare.ai/r/#how-to-install-on-windows
+[release]:http://http://healthcareai-py.readthedocs.io
 [ROC post]:http://healthcare.ai/blog/2016/12/15/model-evaluation-using-roc-curves/
 [recall definition]:https://en.wikipedia.org/wiki/Precision_and_recall#Definition_.28classification_context.29
 [Davis paper]:http://machinelearning.wustl.edu/mlpapers/paper_files/icml2006_DavisG06.pdf
