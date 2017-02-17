@@ -30,7 +30,7 @@ The basic process is:
 Again, check out the [example notebook][nb], thanks for reading, and [contact us][contact] with any questions. 
 
 
-[hcai-py]:/py/
+[hcai-py]:http://healthcareai-py.readthedocs.io
 [uci]:https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29
 [nb]:/notebooks/Wisconsin-Pathology-Notebook.html
 [r post]:/blog/2017/01/17/using-r-for-data-analysis/
