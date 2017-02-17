@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>http://healthcare.ai/</loc>
+     <lastmod>2017-02-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://healthcare.ai/getting_started/</loc>
+     <lastmod>2017-02-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://healthcare.ai/FAQ/</loc>
+     <lastmod>2017-02-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://healthcare.ai/hints/</loc>
+     <lastmod>2017-02-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://healthcare.ai/develop/</loc>
+     <lastmod>2017-02-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://healthcare.ai/deploy/</loc>
+     <lastmod>2017-02-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://healthcare.ai/compile/</loc>
+     <lastmod>2017-02-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+</urlset>

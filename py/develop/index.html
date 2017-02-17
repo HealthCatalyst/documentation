@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Developing and comparing models.md - healthcare.ai</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Developing and comparing models.md";
+    var mkdocs_page_input_path = "develop.md";
+    var mkdocs_page_url = "/develop/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-85609357-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> healthcare.ai</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../getting_started/">Getting started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/">FAQ</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../hints/">Hints and tips</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Developing and comparing models.md</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#developing-and-comparing-models">Developing and comparing models</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-is-developsupervisedmodel">What is DevelopSupervisedModel?</a></li>
+                
+                    <li><a class="toctree-l4" href="#am-i-ready-for-model-creation">Am I ready for model creation?</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-1-pull-in-the-data">Step 1: Pull in the data</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-2-set-your-data-prep-parameters">Step 2: Set your data-prep parameters</a></li>
+                
+                    <li><a class="toctree-l4" href="#step-3-create-and-compare-models">Step 3: Create and compare models</a></li>
+                
+                    <li><a class="toctree-l4" href="#go-further-using-utility-methods">Go further using utility methods</a></li>
+                
+                    <li><a class="toctree-l4" href="#full-example-code">Full example code</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../deploy/">Saving and deploying a model</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../compile/">Compiling python files to an executable</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">healthcare.ai</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Developing and comparing models.md</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/HealthCatalystSLC/healthcareai-py/"> Edit on healthcareai-py</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="developing-and-comparing-models">Developing and comparing models</h1>
+<h2 id="what-is-developsupervisedmodel">What is <code>DevelopSupervisedModel</code>?</h2>
+<ul>
+<li>This class let's one create and compare custom models on diverse
+    datasets.</li>
+<li>One can do both classification (ie, predict Y/N) as well as
+    regression (ie, predict a numeric field).</li>
+<li>To jump straight to an example notebook, see
+    <a href="https://github.com/HealthCatalystSLC/healthcareai-py/blob/master/notebooks/Example1.ipynb">here</a></li>
+</ul>
+<h2 id="am-i-ready-for-model-creation">Am I ready for model creation?</h2>
+<p>Maybe. It'll help if you follow these guidelines:</p>
+<blockquote>
+<ul>
+<li>Don't use 0 or 1 for the independent variable when doing
+    classification. Use Y/N instead. The IIF function in T-SQL may
+    help here.</li>
+<li>Don't pull in test data in this step. In other words, we just pull
+    in those rows where the target (ie, predicted column has a value
+    already).</li>
+</ul>
+</blockquote>
+<p>Of course, feature engineering is always a good idea.</p>
+<h2 id="step-1-pull-in-the-data">Step 1: Pull in the data</h2>
+<p>For SQL:</p>
+<pre><code class="python">import pyodbc
+cnxn = pyodbc.connect(&quot;&quot;&quot;SERVER=localhost;
+                        DRIVER={SQL Server Native Client 11.0};
+                        Trusted_Connection=yes;
+                        autocommit=True&quot;&quot;&quot;)
+
+ df = pd.read_sql(
+     sql=&quot;&quot;&quot;SELECT *
+            FROM [SAM].[dbo].[HCPyDiabetesClinical]&quot;&quot;&quot;,
+     con=cnxn)
+
+
+ # Handle missing data (if needed)
+ df.replace(['None'],[None],inplace=True)
+</code></pre>
+
+<p>For CSV:</p>
+<pre><code class="python">df = pd.read_csv('healthcareai/tests/fixtures/HCPyDiabetesClinical.csv',
+                 na_values=['None'])
+</code></pre>
+
+<h2 id="step-2-set-your-data-prep-parameters">Step 2: Set your data-prep parameters</h2>
+<p>The <code>DevelopSupervisedModel</code> class cleans and prepares the data before
+model creation</p>
+<ul>
+<li><strong>Return</strong>: an object.</li>
+<li><strong>Arguments</strong>:
+    :   -   <strong>modeltype</strong>: a string. This will either be
+            'classification' or 'regression'.
+        -   <strong>df</strong>: a data frame. The data your model will be based on.
+        -   <strong>predictedcol</strong>: a string. Name of variable (or column)
+            that you want to predict.
+        -   <strong>graincol</strong>: a string, defaults to None. Name of possible
+            GrainID column in your dataset. If specified, this column
+            will be removed, as it won't help the algorithm.
+        -   <strong>impute</strong>: a boolean. Whether to impute by replacing NULLs
+            with column mean (for numeric columns) or column mode (for
+            categorical columns).
+        -   <strong>debug</strong>: a boolean, defaults to False. If TRUE, console
+            output when comparing models is verbose for easier
+            debugging.</li>
+</ul>
+<p>Example code:</p>
+<pre><code class="python">o = DevelopSupervisedModel(modeltype='classification',
+                           df=df,
+                           predictedcol='ThirtyDayReadmitFLG',
+                           graincol='PatientEncounterID', #OPTIONAL
+                           impute=True,
+                           debug=False)
+</code></pre>
+
+<h2 id="step-3-create-and-compare-models">Step 3: Create and compare models</h2>
+<p>Example code:</p>
+<pre><code class="python"># Run the linear model
+o.linear(cores=1)
+
+# Run the random forest model
+o.random_forest(cores=1)
+</code></pre>
+
+<h2 id="go-further-using-utility-methods">Go further using utility methods</h2>
+<p>The <code>plot_rffeature_importance</code> method plots the input columns in order
+of importance to the model.</p>
+<ul>
+<li><strong>Return</strong>: a plot.</li>
+<li><strong>Arguments</strong>:
+    :   -   <strong>save</strong>: a boolean, defaults to False. If True, the plot is
+            saved to the location displayed in the console.</li>
+</ul>
+<p>Example code:</p>
+<pre><code class="python"># Look at the feature importance rankings
+o.plot_rffeature_importance(save=False)
+</code></pre>
+
+<p>The <code>plot_roc</code> method plots the AU_ROC chart, for easier model
+comparison.</p>
+<ul>
+<li><strong>Return</strong>: a plot.</li>
+<li><strong>Arguments</strong>:
+    :   -   <strong>save</strong>: a boolean, defaults to False. If True, the plot is
+            saved to the location displayed in the console.
+        -   <strong>debug</strong>: a boolean. If True, console output is verbose for
+            easier debugging.</li>
+</ul>
+<p>Example code:</p>
+<pre><code class="python"># Create ROC plot to compare the two models
+o.plot_roc(debug=False,
+           save=False)
+</code></pre>
+
+<h2 id="full-example-code">Full example code</h2>
+<p>Note: you can run (out-of-the-box) from the healthcareai-py folder:</p>
+<pre><code class="python">from healthcareai import DevelopSupervisedModel
+import pandas as pd
+import time
+
+def main():
+
+    t0 = time.time()
+
+    # CSV snippet for reading data into dataframe
+    df = pd.read_csv('healthcareai/tests/fixtures/HCPyDiabetesClinical.csv',
+                    na_values=['None'])
+
+    # SQL snippet for reading data into dataframe
+    import pyodbc
+    cnxn = pyodbc.connect(&quot;&quot;&quot;SERVER=localhost;
+                            DRIVER={SQL Server Native Client 11.0};
+                            Trusted_Connection=yes;
+                            autocommit=True&quot;&quot;&quot;)
+
+    df = pd.read_sql(
+        sql=&quot;&quot;&quot;SELECT *
+            FROM [SAM].[dbo].[HCPyDiabetesClinical]
+            -- In this step, just grab rows that have a target
+            WHERE ThirtyDayReadmitFLG is not null&quot;&quot;&quot;,
+        con=cnxn)
+
+    # Set None string to be None type
+    df.replace(['None'],[None],inplace=True)
+
+    # Look at data that's been pulled in
+    print(df.head())
+    print(df.dtypes)
+
+    # Drop columns that won't help machine learning
+    df.drop(['PatientID','InTestWindowFLG'],axis=1,inplace=True)
+
+    # Step 1: compare two models
+    o = DevelopSupervisedModel(modeltype='classification',
+                            df=df,
+                            predictedcol='ThirtyDayReadmitFLG',
+                            graincol='PatientEncounterID', #OPTIONAL
+                            impute=True,
+                            debug=False)
+
+    # Run the linear model
+    o.linear(cores=1)
+
+    # Run the random forest model
+    o.random_forest(cores=1,
+                    tune=True)
+
+    # Look at the RF feature importance rankings
+    o.plot_rffeature_importance(save=False)
+
+    # Create ROC plot to compare the two models
+    o.plot_roc(debug=False,
+            save=False)
+
+    print('\nTime:\n', time.time() - t0)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../deploy/" class="btn btn-neutral float-right" title="Saving and deploying a model">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../hints/" class="btn btn-neutral" title="Hints and tips"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../hints/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../deploy/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
