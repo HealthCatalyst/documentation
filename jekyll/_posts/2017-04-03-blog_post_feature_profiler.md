@@ -62,6 +62,7 @@ It's worth noting that none of these solutions are ideal and all involve trade-o
 library(healthcareai)
 library(RODBC)
 
+# Setup the database connection
 connection.string = "
 driver={SQL Server};
 server=localhost;
@@ -69,16 +70,26 @@ database=SAM;
 trusted_connection=true
 "
 
+# Build your query
 query = "
 SELECT
 [AdmitDateTime]
-[patientID]
-[MRN]  | [Height] | [Weight] | [Age]  | [Gender] | [LabRBC] | [LabHematocrit]
+,[ColumnLoadDateTime]
+,[patientID]
+,[MRN]
+,[Height]
+,[Weight]
+,[Age]
+,[Gender]
+,[LabRBC]
+,[LabHematocrit]
 FROM [SAM].[dbo].[Inpatients]
 "
 
+# Create a dataframe
 dataframe = selectData(connection.string, query)
 
+# Run the profiler
 healthcareai::featureAvailabiltyProfiler(dataframe, 'AdmitDateTime', 'LastLoadTime')
 ```
 
@@ -86,23 +97,38 @@ healthcareai::featureAvailabiltyProfiler(dataframe, 'AdmitDateTime', 'LastLoadTi
 
 ```python
 import pandas as pd
+import pyodbc
+from healthcareai.common.feature_availability_profiler import feature_availability_profiler
 
+# Connect to the database
+db_connection = pyodbc.connect("""DRIVER={SQL Server Native Client 11.0};
+                                   SERVER=localhost;
+                                   Trusted_Connection=yes;""")
+# Build your query
 query = """
 SELECT
 [AdmitDateTime]
-[patientID]
-[MRN]  | [Height] | [Weight] | [Age]  | [Gender] | [LabRBC] | [LabHematocrit]
+,[ColumnLoadDateTime]
+,[patientID]
+,[MRN]
+,[Height]
+,[Weight]
+,[Age]
+,[Gender]
+,[LabRBC]
+,[LabHematocrit]
 FROM [SAM].[dbo].[Inpatients]
 """
 
-dataframe = pd.read_sql(connection, query)
+# Create a dataframe
+dataframe = pd.read_sql(db_connection, query)
 
-
+# Run the profiler
+feature_availability_profiler(dataframe, admit_col_name='AdmitDateTime', last_load_col_name='ColumnLoadDateTime')
 ```
 
 ## Conclusion
 
-Data leakage is a real problem. This tool might give you some
-
 If you do not have access to large amounts of 'active' (meaning not retrospective fully populated records) rows, you may want to run this over the course of a few days to get a more clear picture on what the profiles look like.
 
+Data leakage is a real problem. This tool might give you some insight and help you build models that will perform better in the wild.
