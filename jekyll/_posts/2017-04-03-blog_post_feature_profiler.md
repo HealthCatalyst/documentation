@@ -1,6 +1,12 @@
 # Feature Availability Profiler
 
-## Background
+## Background - Why Profile?
+
+### TL;DR
+
+Often models are trained on retrospective data, which is typically highly available and clean. When models are deployed,  realtime production data is never as clean or available. The **Feature Availabilty Profiler** can expose some of these problems.
+
+### More Details
 
 Let's say that I developed and trained a predictive machine learning model on retrospective data from an inpatient unit. I may be trying to identfy patients at risk for a certain outcome during their stay in the hospital.
 
@@ -18,9 +24,9 @@ What's happening here? It is likely I might be experiencing some [data leakage](
 | 2017-04-02 00:13:07 | 1    | 180    | 66     | 56   | F      | 5.5    | 41            |
 | 2017-04-03 00:21:12 | 2    | 177    | 57     | 45   | M      | 6.3    | 48            |
 
-Let's imagine that the model used height, weight, age, gender, red blood count and hematocrit as features.
+Let's imagine that our model used height, weight, age, gender, red blood count and hematocrit as features.
 
-However, realtime data is never this clean and available. If I were to look at records of patients who are currently in hospital, I might see something like this:
+However, realtime data is never this clean and available. If we were to look at records of patients who are currently in hospital, we might see something like this:
 
 
 | AdmitDateTime       | MRN  | Height | Weight | Age  | Gender | LabRBC | LabHematocrit |
@@ -31,9 +37,9 @@ However, realtime data is never this clean and available. If I were to look at r
 | 2017-04-02 00:13:07 | 4    | 180    | 66     | 56   | F      |        |               |
 | 2017-04-03 00:21:12 | 5    | 177    | 57     |      | M      |        |               |
 
-Here I see a few patients (id 1 & 2) have been here for a few days and have had CBC labs done. However if I look at patients 3-5 I see that they have not been admits as long and are missing some labs. Patient 5 was admitted a few hours ago and I don't even have access to his age yet.
+Here we see a few patients (id 1 & 2) have been inpatients for a few days and have had CBC labs done. However if we look at patients 3-5 we see that they have not been admits as long and are missing some labs. Patient 5 was admitted a few hours ago and we don't even have access to his age yet.
 
-When I run the predictive model on these patients with missing values the model has less information about each patient and will therefore make a less accurate prediction.
+When we run the predictive model on these patients with missing values the model has less information about each patient and will therefore make a less accurate prediction.
 
 ## A solution
 
@@ -41,11 +47,13 @@ As our team helps users with healthcare.ai, we keep seeing this problem. So, we 
 
 ## How the Feature Availability Profiler works
 
-The profiler is an easy tool you can run on a snapshot of your data. Rather than collecting data over time (which would be more accurate), I opted to look at a table for a single point in time as a quick starting point.
+The profiler is an easy tool you can run on a snapshot of your data. Rather than collecting data over time (which would be more accurate), we opted to look at a table for a single point in time as a quick starting point.
 
 1. Build a dataframe that contains an entire table with all the feature columns you care about. Make sure that the dataframe has a timestamp column that shows when the patient was admitted. You will also need to know the timestamp of the last data load. (This is used to calculate the hours each patient has been admitted.)
 2. Run the feature profiler using your **dataframe**, the **admit column name** and the **load timestamp column**.
-3. You will see a plot that shows each feature's average availability as time goes on.
+3. You will see a plot that shows each feature's average availability in each time window.
+
+![Sample output from Feature Availabilty Profiler](../assets/featureAvailabilityProfiler_Plot_20170413.png)
 
 This plot can be used to get some insight into when you're features can be used (in other words, when the values are no longer null values). From this insight you can do a few things (and we'd love your ideas...):
 
@@ -55,6 +63,10 @@ This plot can be used to get some insight into when you're features can be used 
 - Consider clinician workflow and research ways to get fields populated faster.
 
 It's worth noting that none of these solutions are ideal and all involve trade-offs. Sometimes you'll have to delay predictions. Sometimes you'll have to throw away very predictive columns because. Sometimes you'll have to change clinician workflow and processes.
+
+## Using the Feature Availability Profiler
+
+The availability profiler assumes that your data has two date/time columns. One is the patient's admit time. The other is the timestamp when the data was last saved to the database. Both date fields are needed for caluculating how long a patient has been in the unit. If you do not have the second date, you could add a column with the current time to the dataframe.
 
 ### Use in R - healthcare.ai
 
