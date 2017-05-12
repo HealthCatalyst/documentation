@@ -70,6 +70,8 @@ The availability profiler assumes that your data has two date/time columns. One 
 
 ### Use in R - healthcare.ai
 
+The profiler is available in the 0.1.12 release, so you may need to update your tools.
+
 ```R
 library(healthcareai)
 library(RODBC)
@@ -106,6 +108,8 @@ healthcareai::featureAvailabiltyProfiler(dataframe, 'AdmitDateTime', 'LastLoadTi
 ```
 
 ### Use in Python - healthcare.ai
+
+The profiler is in the forthcoming python release. If you want to try it now you can install the master branch.
 
 ```python
 import pandas as pd
