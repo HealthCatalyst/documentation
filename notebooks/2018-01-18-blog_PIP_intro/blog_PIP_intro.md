@@ -446,4 +446,4 @@ group](http://healthcare.ai/slack/) and say hello. Thanks for reading!
 
 *Note: the Patient Impact Predictor project (codename: LIMONE) was
 started and driven by the esteemed Yannick Van Huele, while a data
-science intern at Health Catalyst.*
+science intern at [Health Catalyst](https://www.healthcatalyst.com/).*
