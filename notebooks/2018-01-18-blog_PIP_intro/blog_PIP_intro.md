@@ -14,9 +14,9 @@ interventions. Risk scores are a great first step, but [prescriptive
 guidance](https://en.wikipedia.org/wiki/Prescriptive_analytics#Applications_in_healthcare)
 is where results ML may actually catch up to the hype. For example, it’s
 very useful to know that Eddy Exampleton has a 57% risk of heart
-failure. In past versions of healthcare.ai, we not offered not only that
-but also a list top three variables responsible for that patient’s high
-risk score.
+failure. In past versions of healthcare.ai, we offered not only that but
+also a list top three variables responsible for that patient’s high risk
+score.
 
 But what if
 
@@ -32,14 +32,14 @@ should leverage subject-matter expertise: in our case, subject-matter
 expertise is critical for carefully selecting the variables on which to
 make recommendations.
 
-How do we do this? Ask is often the case with healthcare.ai, we take try
+How do we do this? As is often the case with healthcare.ai, we take try
 to incorporate the most practical techniques from machine learning and
 apply it to healthcare decision support. En route to this prescriptive
 breakthrough, we were inspired by
 [LIME](https://arxiv.org/pdf/1602.04938v1.pdf), which is used for [model
 interpretability](https://christophm.github.io/interpretable-ml-book/lime.html).
 
-### An Example
+### An example
 
 Let’s illustrate how this works using the UCI Machine Learning
 Repository’s [Fertility
@@ -293,7 +293,7 @@ now by simply sorting the patient list by the `Modify1Delta` column
 above, either when discussing a csv file or surfacing this guidance in a
 visualization.
 
-### Motivation: Machine Learning Model Interpretability
+### Motivation: machine learning model interpretability
 
 Machine learning models are very good at learning from historical data
 to make accurate predictions on new data. In order to make such accurate
@@ -323,7 +323,7 @@ to a high risk prediction, we can take steps to reduce blood pressure).
 But we wanted to take this a step further and directly surface
 recommendations on a *per-patient* basis.
 
-### The Basic Idea
+### The basic idea
 
 The idea behind the recommendations is fairly simple. Recommendations
 are made using counterfactual predictions: that is, we take the true
@@ -353,7 +353,7 @@ biggest predicted reduction in risk (from 27.5% down to 15.9%), followed
 by the presence of a surgical intervention (from 27.5% down to 23.1%),
 and then smoking cessation (from 27.5% down to 26.6%).
 
-### Flexibility and Pitfalls
+### Flexibility and pitfalls
 
 The function `getProcessVariablesDf` takes some optional parameters that
 can be set. We describe some of these in this section. More details and
@@ -374,7 +374,7 @@ variable, but this can also be toggled: for example, the top
 recommendation might be to heavily reduce alcohol consumption but we
 might still want to know the effects of a smaller reduction.
 
-#### Continuous Variables and Level Restrictions
+#### Continuous variables and baselines
 
 In the fertility example, all of our modifiable variables were
 categorical variables. To get recommendations for continuous variables,
@@ -409,10 +409,10 @@ recommendations about the variable `hours_sitting`, but have to specify
 levels. To use a different illustration, if the initial health benefits
 of LDL reduction can largely be seen by getting down to 140 mg/dL, with
 a subsequent boost by getting down to 120 mg/dL (*for example*), this
-type of multiple goal setup can be handled by this healthcare.ai PIP
+type of multiple baseline setup can be handled by this healthcare.ai PIP
 framework.
 
-#### Which Variables to Use
+#### Which variables to use
 
 Selecting the right variables to use as modifiable variables can greatly
 affect the usefulness of the recommendations. Here are a few issues to

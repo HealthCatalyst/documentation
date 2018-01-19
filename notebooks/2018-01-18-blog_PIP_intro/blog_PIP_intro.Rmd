@@ -69,7 +69,7 @@ Last summer we discussed the simplified interface of the  [1.0 CRAN release of h
 
 ### Patients like this, should be treated like this
 
-This week we'd like to highlight new functionality that allows one to go a step beyond surfacing predictions to also surface targeted interventions. Risk scores are a great first step, but [prescriptive guidance](https://en.wikipedia.org/wiki/Prescriptive_analytics#Applications_in_healthcare) is where results ML may actually catch up to the hype. For example, it's very useful to know that Eddy Exampleton has a 57% risk of heart failure. In past versions of healthcare.ai, we not offered not only that but also a list top three variables responsible for that patient's high risk score. 
+This week we'd like to highlight new functionality that allows one to go a step beyond surfacing predictions to also surface targeted interventions. Risk scores are a great first step, but [prescriptive guidance](https://en.wikipedia.org/wiki/Prescriptive_analytics#Applications_in_healthcare) is where results ML may actually catch up to the hype. For example, it's very useful to know that Eddy Exampleton has a 57% risk of heart failure. In past versions of healthcare.ai, we offered not only that but also a list top three variables responsible for that patient's high risk score. 
 
 But what if
 
@@ -78,9 +78,9 @@ But what if
 
 For example, we might want to know how Eddy's risk changes if a certain medical procedure is performed, if a different medication is prescribed, or if Eddy works to change his blood pressure. As with most machine learning in healthcare, to get the most of out this functionality, one should leverage subject-matter expertise: in our case, subject-matter expertise is critical for carefully selecting the variables on which to make recommendations.
 
-How do we do this? Ask is often the case with healthcare.ai, we take try to incorporate the most practical techniques from machine learning and apply it to healthcare decision support. En route to this prescriptive breakthrough, we were inspired by [LIME](https://arxiv.org/pdf/1602.04938v1.pdf), which is used for [model interpretability](https://christophm.github.io/interpretable-ml-book/lime.html).
+How do we do this? As is often the case with healthcare.ai, we take try to incorporate the most practical techniques from machine learning and apply it to healthcare decision support. En route to this prescriptive breakthrough, we were inspired by [LIME](https://arxiv.org/pdf/1602.04938v1.pdf), which is used for [model interpretability](https://christophm.github.io/interpretable-ml-book/lime.html).
 
-### An Example
+### An example
 
 Let's illustrate how this works using the UCI Machine Learning Repository's [Fertility Dataset](https://archive.ics.uci.edu/ml/datasets/Fertility), a 100 row data set capturing information about how various factors are related to male fertility. After doing some slight feature engineering, here's a sample of the pertinent varialbes:
 
@@ -145,7 +145,7 @@ By default, this PIP-based suggestive guidance contains the top three interventi
 
 Note that one of the main benefits of this new functionality is that the nurse manager or bed-side clinician is able to focus resources on the most _impactable_ patients. This differs from most healthcare decision support and early versions of healthcare.ai, where the common framework is to stratify patients based on risk, which is a less actionable way of managing your cohort. Focusing on impactability is best and can be done now by simply sorting the patient list by the `Modify1Delta` column above, either when discussing a csv file or surfacing this guidance in a visualization.
 
-### Motivation: Machine Learning Model Interpretability
+### Motivation: machine learning model interpretability
 
 Machine learning models are very good at learning from historical data to make accurate predictions on new data. In order to make such accurate predictions, we often must [sacrifice interpretability](https://healthcare.ai/machine-learning-versus-statistics-use/). In many fields such as healthcare, we would like to make use of the strong predictive power of machine learning, but we can [run into trouble](http://people.dbmi.columbia.edu/noemie/papers/15kdd.pdf) if the model is too opaque. This problem has led to renewed focus on machine learning interpretability and tools such as [LIME](https://homes.cs.washington.edu/~marcotcr/blog/lime/), [FairML](http://blog.fastforwardlabs.com/2017/03/09/fairml-auditing-black-box-predictive-models.html), and [many others](https://www.oreilly.com/ideas/ideas-on-interpreting-machine-learning)
 
@@ -153,7 +153,7 @@ Some model interpretability is already included in the [healthcare.ai package](h
 
 Understanding how a model works is useful for determining how to act on a prediction (if we know that high blood pressure contributed strongly to a high risk prediction, we can take steps to reduce blood pressure). But we wanted to take this a step further and directly surface recommendations on a _per-patient_ basis.
 
-### The Basic Idea
+### The basic idea
 
 The idea behind the recommendations is fairly simple. Recommendations are made using counterfactual predictions: that is, we take the true attributes of a patient, changes values in a controlled way, and use the model to make new predictions for the modified data. 
 
@@ -161,7 +161,7 @@ For example, patient 39 is 30 years old, did not have a surgical intervention, s
 
 We repeat this process for several different values of several different variables (for example, we might want to check the effect of reducing alcohol consumption to just one beverage per week). At the end of this process, we find that greatly reducing alcohol consumption led to the biggest predicted reduction in risk (from 27.5% down to 15.9%), followed by the presence of a surgical intervention (from 27.5% down to 23.1%), and then smoking cessation (from 27.5% down to 26.6%).
 
-### Flexibility and Pitfalls
+### Flexibility and pitfalls
 
 The function `getProcessVariablesDf` takes some optional parameters that can be set. We describe some of these in this section. More details and examples can be found in the documentation via either `?RandomForestDeployment` or `?LassoDeployment`.
 
@@ -169,16 +169,16 @@ The function `getProcessVariablesDf` takes some optional parameters that can be 
 
 You may have noticed that there were no positive delta values in the example above. Because the positive (yes) class usually corresponds to an undesirable outcome in healthcare (readmission, infection, etc.), the default behavior is to surface recommendations which reduce the predicted probability. This can be reversed in cases where the positive class represents a desirable outcome. It's also possible to include as many recommendations as you'd like or to restrict to fewer than 3. Finally, by default we surface only one recommendation for each variable, but this can also be toggled: for example, the top recommendation might be to heavily reduce alcohol consumption but we might still want to know the effects of a smaller reduction. 
 
-#### Continuous Variables and Level Restrictions
+#### Continuous variables and baselines
 
 In the fertility example, all of our modifiable variables were categorical variables. To get recommendations for continuous variables, you have to do a little more work. This is because continuous variables are tricky: In order to make good recommendations, we need some extra information which can be difficult to automatically extract from the data. We can get an idea of the complications by studying a model which predicts which patients are most likely to pay their medical bills. The patient's balance seems like a potential variable to use in making recommendations. For example, it may be worth it to reduce a patient's balance if it significantly increases the likelihood that they will pay their bill. Here are the main difficulties we run into:
 
 1. Useful recommendations on continuous variables need to vary in magnitude: In our fertility model, there were only three values the smoking variable could take, but a continuous variable can take many more values. For example, in the model to predict likelihood of bill payment, a \$50 discount might make a difference for a patient who owes \$200, but is unlikely to affect a patient who owes \$100,000.
 2. Often, there are important restrictions we need to impose on our recommendations. We probably don't want to reduce a patient's balance all the way down to \$0. Even worse, we don't want to increase the patient's balance just because the model thinks that would improve their chance of payment. Anomalies like this are especially a concern with smaller datasets where real-world relationships aren't always well reflected in the data.
 
-To address these issues, we allow for recommendations on continuous variables, but only if comparison baselines are explicitly specified by the user. For example, in our fertility model we can make recommendations about the variable `hours_sitting`, but have to specify levels. To use a different illustration, if the initial health benefits of LDL reduction can largely be seen by getting down to 140 mg/dL, with a subsequent boost by getting down to 120 mg/dL (*for example*), this type of multiple goal setup can be handled by this healthcare.ai PIP framework.
+To address these issues, we allow for recommendations on continuous variables, but only if comparison baselines are explicitly specified by the user. For example, in our fertility model we can make recommendations about the variable `hours_sitting`, but have to specify levels. To use a different illustration, if the initial health benefits of LDL reduction can largely be seen by getting down to 140 mg/dL, with a subsequent boost by getting down to 120 mg/dL (*for example*), this type of multiple baseline setup can be handled by this healthcare.ai PIP framework.
 
-#### Which Variables to Use
+#### Which variables to use
 
 Selecting the right variables to use as modifiable variables can greatly affect the usefulness of the recommendations. Here are a few issues to keep in mind:
 
