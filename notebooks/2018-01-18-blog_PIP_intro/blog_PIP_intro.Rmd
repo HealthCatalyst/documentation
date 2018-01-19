@@ -1,6 +1,6 @@
 ---
 title: "Patient impact predictor--the new suggestive guidance in healthcare.ai"
-output: html_document(keep_md = TRUE)
+output: md_document
 ---
 
 ```{r setup, include=FALSE}
@@ -189,3 +189,5 @@ Selecting the right variables to use as modifiable variables can greatly affect 
 To deal with these issues, carefully study the data when building the model, consult with subject-matter experts when selecting which variables to work with, and then check the recommendations on new data.
 
 As always, we'd love to hear your feedback! Check out the [Slack group](http://healthcare.ai/slack/) and say hello. Thanks for reading!
+
+_Note: the Patient Impact Predictor project (codename: LIMONE) was started and driven by the esteemed Yannick Van Huele, while a data science intern at Health Catalyst._

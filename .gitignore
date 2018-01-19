@@ -7,4 +7,5 @@ jekyll/.sass-cache
 public/bootstrap-3.3.7/node_modules
 .Rproj.user
 **/.DS_Store
+.Rhistory
 Documentation.Rproj
